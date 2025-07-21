@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+
+# Environment or build folders
+env/
+venv/
+*.egg-info/
+*.so
+
+# PyBullet, sim data, and numpy arrays
+*.npy
+*.npz
+*.log
+*.bullet
+*.urdf
+*.sdf
