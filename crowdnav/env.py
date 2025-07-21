@@ -11,7 +11,7 @@ from .world import create_world
 from .pedestrian import create_random_pedestrian, update_pedestrian
 
 import traceback
-
+#added comments
 
 TURTLEBOT_RADIUS = 0.11  # Radius of TurtleBot3 Burger (half of 0.22m diameter)
 
