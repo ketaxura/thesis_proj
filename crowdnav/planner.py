@@ -3,6 +3,15 @@ import heapq
 
 def a_star(grid, start, goal):
     """A* path planning algorithm for grid-based navigation."""
+
+    print("A* Grid unique values:", np.unique(grid))
+    
+    # Optional safety check
+    if grid[start] != 0:
+        raise ValueError(f"Start {start} is not in free space!")
+    if grid[goal] != 0:
+        raise ValueError(f"Goal {goal} is not in free space!")
+
     def heuristic(a, b):
         return np.linalg.norm(np.array(a) - np.array(b))
 
@@ -24,7 +33,10 @@ def a_star(grid, start, goal):
 
         for dx, dy in neighbors:
             next_node = (current[0] + dx, current[1] + dy)
-            if 0 <= next_node[0] < grid.shape[0] and 0 <= next_node[1] < grid.shape[1] and grid[next_node] == 0:
+            if 0 <= next_node[0] < grid.shape[0] and 0 <= next_node[1] < grid.shape[1]:
+                if grid[next_node] == 1:
+                    print(f"Skipping obstacle at {next_node}")
+                    continue
                 move_cost = np.hypot(dx, dy)
                 new_cost = cost_so_far[current] + move_cost
                 if next_node not in cost_so_far or new_cost < cost_so_far[next_node]:

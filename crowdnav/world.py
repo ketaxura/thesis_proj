@@ -97,27 +97,54 @@ def create_occupancy_grid(resolution, map_size):
 
     return grid
 
+
+def mark_box_on_grid(grid, center, size, resolution, map_size):
+    half_size = map_size / 2
+    min_x = int(((center[0] - size[0]) + half_size) / resolution)
+    max_x = int(((center[0] + size[0]) + half_size) / resolution)
+    min_y = int(((center[1] - size[1]) + half_size) / resolution)
+    max_y = int(((center[1] + size[1]) + half_size) / resolution)
+
+    min_x = max(min_x, 0)
+    max_x = min(max_x, grid.shape[0] - 1)
+    min_y = max(min_y, 0)
+    max_y = min(max_y, grid.shape[1] - 1)
+
+    grid[min_x:max_x+1, min_y:max_y+1] = 1
+
+def mark_cylinder_on_grid(grid, center, radius, resolution, map_size):
+    half_size = map_size / 2
+    cx_idx = int((center[0] + half_size) / resolution)
+    cy_idx = int((center[1] + half_size) / resolution)
+    r_cells = int(np.ceil(radius / resolution))
+
+    for dx in range(-r_cells, r_cells + 1):
+        for dy in range(-r_cells, r_cells + 1):
+            x_idx = cx_idx + dx
+            y_idx = cy_idx + dy
+            if (0 <= x_idx < grid.shape[0] and 0 <= y_idx < grid.shape[1]):
+                dist = np.sqrt(dx**2 + dy**2) * resolution
+                if dist <= radius:
+                    grid[x_idx, y_idx] = 1
+
 def create_world(client, resolution=0.1, map_size=25.0):
-    """Create the PyBullet world with walls, obstacles, and robot."""
     p.resetSimulation(client)
     p.setGravity(0, 0, -9.81)
     p.loadURDF("plane.urdf")
+
     grid = create_occupancy_grid(resolution, map_size)
 
-    # Load TurtleBot3
     robot_id = p.loadURDF(
         "/home/max/thesis_proj/turtlebot3/turtlebot3_description/urdf/turtlebot3_burger.urdf",
         basePosition=[1.0, 2.0, 0.1],
         useFixedBase=False
     )
 
-    # Detect wheel joint IDs
     left_wheel_joint_id = None
     right_wheel_joint_id = None
     for i in range(p.getNumJoints(robot_id)):
         joint_info = p.getJointInfo(robot_id, i)
         joint_name = joint_info[1].decode("utf-8")
-        print(f"Joint {i}: {joint_name}")
         if "wheel_left_joint" in joint_name:
             left_wheel_joint_id = i
         elif "wheel_right_joint" in joint_name:
@@ -126,55 +153,65 @@ def create_world(client, resolution=0.1, map_size=25.0):
     assert left_wheel_joint_id is not None, "Left wheel joint not found!"
     assert right_wheel_joint_id is not None, "Right wheel joint not found!"
 
-    # Let robot settle
     for _ in range(120):  # Simulate 2 seconds
         p.stepSimulation()
         time.sleep(1.0 / 60.0)
 
-    # Create walls and obstacles after grid (for consistency)
-    walls = []
-    cylinders = []
-    static_obs = []
+    L, T, H = map_size, 0.2, 1.0
+    half_L = L / 2
 
-    L, T, H = 25.0, 0.2, 1.0
-
-    # Outer walls
     create_wall = lambda center, size: p.createMultiBody(
         baseMass=0,
         baseCollisionShapeIndex=p.createCollisionShape(p.GEOM_BOX, halfExtents=size),
         baseVisualShapeIndex=p.createVisualShape(p.GEOM_BOX, halfExtents=size, rgbaColor=[0.5, 0.5, 0.5, 1]),
-        basePosition=[center[0], center[1], center[2]]
+        basePosition=center
     )
-    walls.append((create_wall([0, L/2, H/2], [L/2, T/2, H/2]), 0, L/2, H/2, L/2, T/2, H/2))  # Top
-    walls.append((create_wall([0, -L/2, H/2], [L/2, T/2, H/2]), 0, -L/2, H/2, L/2, T/2, H/2))  # Bottom
-    walls.append((create_wall([-L/2, 0, H/2], [T/2, L/2, H/2]), -L/2, 0, H/2, T/2, L/2, H/2))  # Left
-    walls.append((create_wall([L/2, 0, H/2], [T/2, L/2, H/2]), L/2, 0, H/2, T/2, L/2, H/2))   # Right
 
-    # Inner walls
-    walls.append((create_wall([-8, 10.5, H/2], [20/6, 0.8, H/2]), -8, 10.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, 7.5, H/2], [20/6, 0.8, H/2]), -8, 7.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, 4.5, H/2], [20/6, 0.8, H/2]), -8, 4.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, 1.5, H/2], [20/6, 0.8, H/2]), -8, 1.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, -1.5, H/2], [20/6, 0.8, H/2]), -8, -1.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, -4.5, H/2], [20/6, 0.8, H/2]), -8, -4.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, -7.5, H/2], [20/6, 0.8, H/2]), -8, -7.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, -10.5, H/2], [20/6, 0.8, H/2]), -8, -10.5, H/2, 20/6, 0.8, H/2))
+    # === Outer Walls ===
+    wall_defs = [
+        ([0, half_L, H/2], [half_L, T/2, H/2]),
+        ([0, -half_L, H/2], [half_L, T/2, H/2]),
+        ([-half_L, 0, H/2], [T/2, half_L, H/2]),
+        ([half_L, 0, H/2], [T/2, half_L, H/2])
+    ]
+    for center, size in wall_defs:
+        create_wall(center, size)
+        mark_box_on_grid(grid, center[:2], size[:2], resolution, map_size)
 
-    walls.append((create_wall([-2, 2, H/2], [1, 9, H/2]), -2, 2, H/2, 1, 9, H/2))
-    walls.append((create_wall([1, 2, H/2], [1, 9, H/2]), 1, 2, H/2, 1, 9, H/2))
-    walls.append((create_wall([4, 2, H/2], [1, 9, H/2]), 4, 2, H/2, 1, 9, H/2))
-    walls.append((create_wall([7, 2, H/2], [1, 9, H/2]), 7, 2, H/2, 1, 9, H/2))
-    walls.append((create_wall([10, 2, H/2], [1, 9, H/2]), 10, 2, H/2, 1, 9, H/2))
+    # === Inner Walls ===
+    inner_wall_defs = [
+        ([-8, 10.5, H/2], [20/6, 0.8, H/2]),
+        ([-8, 7.5, H/2], [20/6, 0.8, H/2]),
+        ([-8, 4.5, H/2], [20/6, 0.8, H/2]),
+        ([-8, 1.5, H/2], [20/6, 0.8, H/2]),
+        ([-8, -1.5, H/2], [20/6, 0.8, H/2]),
+        ([-8, -4.5, H/2], [20/6, 0.8, H/2]),
+        ([-8, -7.5, H/2], [20/6, 0.8, H/2]),
+        ([-8, -10.5, H/2], [20/6, 0.8, H/2]),
+        ([-2, 2, H/2], [1, 9, H/2]),
+        ([1, 2, H/2], [1, 9, H/2]),
+        ([4, 2, H/2], [1, 9, H/2]),
+        ([7, 2, H/2], [1, 9, H/2]),
+        ([10, 2, H/2], [1, 9, H/2])
+    ]
+    for center, size in inner_wall_defs:
+        create_wall(center, size)
+        mark_box_on_grid(grid, center[:2], size[:2], resolution, map_size)
 
-    # Cylinders
-    create_cylinder = lambda center, radius, height: p.createMultiBody(
-        baseMass=0,
-        baseCollisionShapeIndex=p.createCollisionShape(p.GEOM_CYLINDER, radius=radius, height=height),
-        baseVisualShapeIndex=p.createVisualShape(p.GEOM_CYLINDER, radius=radius, length=height, rgbaColor=[0.5, 0.5, 0.5, 1]),
-        basePosition=[center[0], center[1], center[2] + height / 2]
-    )
-    cylinders.append((create_cylinder([10, -10, 0], 1.5, 1.0), 10, -10, 0, 1.5, 1.0))
-    cylinders.append((create_cylinder([4, -10, 0], 1.5, 1.0), 4, -10, 0, 1.5, 1.0))
-    cylinders.append((create_cylinder([-2, -10, 0], 1.5, 1.0), -2, -10, 0, 1.5, 1.0))
+    # === Cylinders ===
+    cylinder_defs = [
+        ([10, -10, 0], 1.5, 1.0),
+        ([4, -10, 0], 1.5, 1.0),
+        ([-2, -10, 0], 1.5, 1.0)
+    ]
+    for center, radius, height in cylinder_defs:
+        p.createMultiBody(
+            baseMass=0,
+            baseCollisionShapeIndex=p.createCollisionShape(p.GEOM_CYLINDER, radius=radius, height=height),
+            baseVisualShapeIndex=p.createVisualShape(p.GEOM_CYLINDER, radius=radius, length=height, rgbaColor=[0.5, 0.5, 0.5, 1]),
+            basePosition=[center[0], center[1], center[2] + height / 2]
+        )
+        mark_cylinder_on_grid(grid, center[:2], radius, resolution, map_size)
 
+    static_obs = []  # Fill this if you need additional static obstacle metadata
     return robot_id, left_wheel_joint_id, right_wheel_joint_id, grid, static_obs
