@@ -5,8 +5,8 @@ import pybullet_data
 import time
 import gym
 import matplotlib.pyplot as plt
-from .planner import a_star
-
+from .planner import a_star, inflate_obstacles
+import sys
 
 
 
@@ -20,6 +20,19 @@ L = 25.0  # World length in meters
 T = 0.07  # Wall thickness
 H = 1.0   # Wall height
 TURTLEBOT_RADIUS = 0.11  # Radius of TurtleBot3 Burger (half of 0.22m diameter)
+
+
+
+def visualize_grid(grid, start_idx, goal_idx):
+    vis_grid = np.copy(grid)
+    vis_grid[start_idx[1], start_idx[0]] = 2  # Start
+    vis_grid[goal_idx[1], goal_idx[0]] = 3    # Goal
+
+    plt.imshow(vis_grid, cmap='gray')
+    plt.title("Inflated Grid with Start (green) and Goal (red)")
+    plt.colorbar()
+    plt.show()
+
 
 
 def get_random_position():
@@ -190,21 +203,55 @@ def update_astar_path(robot_pos, goal_pos, grid, resolution):
         print("Start index:", start_idx, "Value:", grid[start_idx])
         print("Goal index:", goal_idx, "Value:", grid[goal_idx])
 
-        debug_grid = grid.copy()
-        debug_grid[start_idx] = 0.5  # Mark start
-        debug_grid[goal_idx] = 0.8   # Mark goal
-        plt.imshow(1 - debug_grid.T, origin='lower', cmap='gray')
-        plt.title("Debug Grid with Start and Goal")
-        plt.colorbar()
-        plt.show()
+        # debug_grid = grid.copy()
+        # debug_grid[start_idx] = 0.5  # Mark start
+        # debug_grid[goal_idx] = 0.8   # Mark goal
+        # plt.imshow(1 - debug_grid.T, origin='lower', cmap='gray')
+        # plt.title("Debug Grid with Start and Goal")
+        # plt.colorbar()
+        # plt.show()
 
-        # 🔁 Call A*
-        path = a_star(grid, start_idx, goal_idx)
+
+        
+        
+        # Call A*
+        # Save the original stdout
+        original_stdout = sys.stdout
+ 
+
+
+        with open("astar_debug_log.txt", "w") as f:
+            sys.stdout = f  # Redirect prints to file
+
+            try:
+                
+                # Example values — update based on your system
+                robot_radius = 0.2           # meters
+                grid_resolution = 0.05       # meters per cell
+                original_grid = grid
+
+                inflated_grid = inflate_obstacles(original_grid, robot_radius, grid_resolution)
+                visualize_grid(inflated_grid, start_idx, goal_idx)
+                path = a_star(grid, start_idx, goal_idx)
+            except Exception as e:
+                print("Exception during A*: ", e)
+                path = []  # Ensure path is defined
+
+            sys.stdout = original_stdout  # Reset to normal
+
+        print(" A* debug log saved to astar_debug_log.txt")
+                
+
+        # Check the path only if it exists
+        if not path:
+            print("⚠️ Empty or failed A* path.")
+            return []
+
         for (y, x) in path:
             if grid[y, x] == 1:
                 print(f"❌ A* path goes through obstacle at grid[{y}, {x}]")
 
-        print(f"A* Path Length: {len(path)}")
+        print(f"✅ A* Path Length: {len(path)}")
         return path
 
     except Exception as e:

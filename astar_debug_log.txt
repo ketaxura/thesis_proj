@@ -1,0 +1,2 @@
+A* Grid unique values: [0 1]
+Exception during A*:  Goal (109, 52) is not in free space!

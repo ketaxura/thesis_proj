@@ -229,7 +229,8 @@ class CrowdNavPyBulletEnv(gym.Env):
             if not self.global_path_idx:
                 print("No valid A* path, using goal position as fallback")
                 half_size = 12.5
-                sampled = [(self.goal_pos + half_size) / self.resolution.astype(int)] * self.N
+                sampled = [((self.goal_pos + half_size) / self.resolution).astype(int)] * self.N
+
             elif len(self.global_path_idx) < self.N:
                 sampled = self.global_path_idx + [self.global_path_idx[-1]] * (self.N - len(self.global_path_idx))
             else:
