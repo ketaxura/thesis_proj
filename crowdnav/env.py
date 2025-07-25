@@ -10,16 +10,11 @@ from .planner import a_star
 from .mpc import build_mpc_solver_random_obs
 from .world import create_world
 from .pedestrian import create_random_pedestrian, update_pedestrian
+from .utils import L, T, H, TURTLEBOT_RADIUS
+from .utils import get_random_position, find_free_position, update_astar_path
 
 import traceback
-#added comments
-#some more comments
 
-
-L = 25.0  # World length in meters
-T = 0.07  # Wall thickness
-H = 1.0   # Wall height
-TURTLEBOT_RADIUS = 0.11  # Radius of TurtleBot3 Burger (half of 0.22m diameter)
 
 class CrowdNavPyBulletEnv(gym.Env):
     """Main Gym environment for CrowdNav with PyBullet."""
@@ -53,158 +48,27 @@ class CrowdNavPyBulletEnv(gym.Env):
             self.solver, self.f_dyn, self.T, self.N = build_mpc_solver_random_obs(max_obs=num_peds, max_static=max_static)
 
             # Validate and set initial goal position
-            self.goal_pos = self._find_free_position(self._get_random_position(), "goal")
-
+            self.goal_pos = find_free_position(
+                get_random_position(),
+                "goal",
+                self.grid,
+                self.resolution,
+                self.grid_size
+            )
+            
+            
             # Observation and action spaces
             obs_dim = 16 + 2 + 1  # LIDAR + goal_dir + goal_dist
             self.observation_space = spaces.Box(low=0.0, high=1.0, shape=(obs_dim,), dtype=np.float32)
             self.action_space = spaces.Box(low=0.0, high=1.0, shape=(3,), dtype=np.float32)
 
-            # # Visualize grid for debugging
-            # import matplotlib.pyplot as plt
-            # plt.imshow(self.grid.T, origin='lower', cmap='binary')
-            # plt.plot(self.robot_pos[1]/self.resolution, self.robot_pos[0]/self.resolution, 'ro', label='Robot')
-            # plt.plot(self.goal_pos[1]/self.resolution, self.goal_pos[0]/self.resolution, 'go', label='Goal')
-            # plt.legend()
-            # plt.title("Occupancy Grid")
-            # plt.show()
 
         except Exception as e:
             print(f"Error in __init__: {e}")
             traceback.print_exc()
             raise
 
-    def _find_free_position(self, pos, label, min_distance_from=None):
-        """Find the nearest free position in the grid for a given position, accounting for robot radius and map interior."""
-        half_size = 12.5  # Half of 25m map size
-        # Define an interior region inside the walls (excluding 0.07m wall thickness)
-        interior_margin = 0.07  # Wall thickness
-        min_x = -half_size + interior_margin
-        max_x = half_size - interior_margin
-        min_y = -half_size + interior_margin
-        max_y = half_size - interior_margin
-        if not (min_x <= pos[0] <= max_x and min_y <= pos[1] <= max_y):
-            pos = np.array([np.random.uniform(min_x, max_x), np.random.uniform(min_y, max_y)])
-            print(f"Adjusting {label} position {pos} to be inside the map")
 
-        x_idx = int((pos[0] + half_size) / self.resolution)
-        y_idx = int((pos[1] + half_size) / self.resolution)
-        # Check a neighborhood around the position based on robot radius
-        radius_cells = int(np.ceil(TURTLEBOT_RADIUS / self.resolution))
-        is_free = True
-        for dx in range(-radius_cells, radius_cells + 1):
-            for dy in range(-radius_cells, radius_cells + 1):
-                new_x_idx = x_idx + dx
-                new_y_idx = y_idx + dy
-                if (0 <= new_x_idx < self.grid_size[0] and 0 <= new_y_idx < self.grid_size[1] and
-                        self.grid[new_x_idx, new_y_idx] == 1):
-                    is_free = False
-                    break
-            if not is_free:
-                break
-        if (0 <= x_idx < self.grid_size[0] and 0 <= y_idx < self.grid_size[1] and is_free and
-                (min_distance_from is None or np.linalg.norm(pos - min_distance_from) >= 0.5)):
-            print(f"{label} position {pos} is free at grid index ({x_idx}, {y_idx})")
-            return pos
-        print(f"Warning: {label} position {pos} at grid index ({x_idx}, {y_idx}) is invalid, occupied, or too close")
-        # Enhanced search for a free position
-        for r in range(1, max(self.grid_size) * 2):  # Increased search radius
-            for dx in range(-r, r + 1):
-                for dy in range(-r, r + 1):
-                    new_x_idx = x_idx + dx
-                    new_y_idx = y_idx + dy
-                    if 0 <= new_x_idx < self.grid_size[0] and 0 <= new_y_idx < self.grid_size[1]:
-                        is_free = True
-                        for dx2 in range(-radius_cells, radius_cells + 1):
-                            for dy2 in range(-radius_cells, radius_cells + 1):
-                                check_x = new_x_idx + dx2
-                                check_y = new_y_idx + dy2
-                                if (0 <= check_x < self.grid_size[0] and 0 <= check_y < self.grid_size[1] and
-                                        self.grid[check_x, check_y] == 1):
-                                    is_free = False
-                                    break
-                            if not is_free:
-                                break
-                        if is_free and (min_distance_from is None or np.linalg.norm(
-                                np.array([new_x_idx * self.resolution - half_size, new_y_idx * self.resolution - half_size]) - min_distance_from) >= 0.5):
-                            new_pos = np.array([
-                                new_x_idx * self.resolution - half_size,
-                                new_y_idx * self.resolution - half_size
-                            ])
-                            if min_x <= new_pos[0] <= max_x and min_y <= new_pos[1] <= max_y:
-                                print(f"Found free {label} position {new_pos} at grid index ({new_x_idx}, {new_y_idx})")
-                                return new_pos
-        raise ValueError(f"Could not find a free {label} position inside the map near {pos} with robot radius buffer after extensive search")
-
-    def _get_random_position(self):
-        """Generate a random position within the scaled world bounds, biased toward the interior."""
-        half_size = 12.5  # Half of 25m map size
-        interior_margin = T + TURTLEBOT_RADIUS + 0.01  # Extra buffer
-        min_x = -half_size + interior_margin
-        max_x = half_size - interior_margin
-        min_y = -half_size + interior_margin
-        max_y = half_size - interior_margin
-        return np.array([np.random.uniform(min_x, max_x), np.random.uniform(min_y, max_y)])
-
-    # def reset(self):
-    #     """Reset the environment to initial state with random start position."""
-    #     try:
-    #         self.step_count = 0
-    #         # Generate random start position until a valid one is found
-    #         max_attempts = 100
-    #         for _ in range(max_attempts):
-    #             candidate_pos = self._get_random_position()
-    #             try:
-    #                 self.robot_pos = self._find_free_position(candidate_pos, "start", min_distance_from=self.goal_pos)
-    #                 break
-    #             except ValueError:
-    #                 continue
-    #         else:
-    #             raise ValueError("Could not find a valid random start position after maximum attempts")
-    #         self.theta = 0.0
-    #         # Position for PyBullet (no scaling needed)
-    #         p.resetBasePositionAndOrientation(self.robot_id, [self.robot_pos[0], self.robot_pos[1], 0.1],
-    #                                           p.getQuaternionFromEuler([0, 0, self.theta]))
-    #         # Re-validate goal position to ensure it remains free
-    #         self.goal_pos = self._find_free_position(self._get_random_position(), "goal", min_distance_from=self.robot_pos)
-    #         self.peds = [create_random_pedestrian(self.robot_pos, self.client) for _ in range(self.num_peds)]
-    #         self._update_astar_path()
-
-    #         # Add debug line for goal (green)
-    #         p.addUserDebugLine([self.goal_pos[0], self.goal_pos[1], 0], [self.goal_pos[0], self.goal_pos[1], 10], [0, 1, 0], lineWidth=3, lifeTime=0)
-
-    #         # Debug scene objects
-    #         print("\nScene Object Summary:")
-    #         for i in range(p.getNumBodies()):
-    #             name = p.getBodyInfo(i)[1].decode("utf-8") or f"Unnamed (ID {i})"
-    #             print(f"Body ID {i}: {name}")
-    #         print("Floor collision info:")
-    #         for i in range(p.getNumBodies()):
-    #             name = p.getBodyInfo(i)[1].decode("utf-8") or f"Unnamed (ID {i})"
-    #             if 'plane' in name.lower() or 'ground' in name.lower():
-    #                 print(p.getCollisionShapeData(i, -1))
-    #                 pos, orn = p.getBasePositionAndOrientation(i)
-    #                 print(f"{name} origin: {pos}")
-
-    #         # Update grid visualization
-    #         import matplotlib.pyplot as plt
-    #         plt.imshow(self.grid.T, origin='lower', cmap='binary')
-    #         plt.plot(self.robot_pos[1]/self.resolution, self.robot_pos[0]/self.resolution, 'ro', label='Robot')
-    #         plt.plot(self.goal_pos[1]/self.resolution, self.goal_pos[0]/self.resolution, 'go', label='Goal')
-    #         plt.legend()
-    #         plt.title("Occupancy Grid")
-    #         plt.show()
-
-    #         print(f"Robot pos: {self.robot_pos}, Grid idx: {((self.robot_pos + 12.5) / self.resolution).astype(int)}")
-    #         print(f"Goal pos: {self.goal_pos}, Grid idx: {((self.goal_pos + 12.5) / self.resolution).astype(int)}")
-
-
-
-    #         return self._get_observation()
-    #     except Exception as e:
-    #         print(f"Error in reset: {e}")
-    #         traceback.print_exc()
-    #         raise
 
     def _plot_environment_debug(self):
         import matplotlib.pyplot as plt
@@ -241,9 +105,17 @@ class CrowdNavPyBulletEnv(gym.Env):
 
             # Randomize robot position
             for _ in range(max_attempts):
-                candidate_pos = self._get_random_position()
+                candidate_pos = get_random_position()
                 try:
-                    self.robot_pos = self._find_free_position(candidate_pos, "start", min_distance_from=self.goal_pos)
+                    self.robot_pos = find_free_position(
+                        candidate_pos,
+                        "start",
+                        self.grid,
+                        self.resolution,
+                        self.grid_size,
+                        min_distance_from=self.goal_pos
+                    )
+
                     break
                 except ValueError:
                     continue
@@ -258,13 +130,27 @@ class CrowdNavPyBulletEnv(gym.Env):
             )
 
             # Re-generate valid goal
-            self.goal_pos = self._find_free_position(self._get_random_position(), "goal", min_distance_from=self.robot_pos)
+            self.goal_pos = find_free_position(
+                get_random_position(),
+                "goal",
+                self.grid,
+                self.resolution,
+                self.grid_size,
+                min_distance_from=self.robot_pos
+            )
+
 
             # Spawn pedestrians
             self.peds = [create_random_pedestrian(self.robot_pos, self.client) for _ in range(self.num_peds)]
 
             # Plan new A* path
-            self._update_astar_path()
+            self.global_path_idx = update_astar_path(
+                self.robot_pos,
+                self.goal_pos,
+                self.grid,
+                self.resolution
+            )
+
             # Plot the path for debugging
             # if visualize:
             # self._plot_astar_path()
@@ -330,47 +216,6 @@ class CrowdNavPyBulletEnv(gym.Env):
         plt.show()
         plt.close()
 
-
-
-
-    def _update_astar_path(self):
-        """Update the global A* path from robot to goal."""
-        try:
-            # Convert unscaled positions to grid indices
-            half_size = 12.5  # Half of 25m map size
-            start_idx = tuple(((self.robot_pos + half_size) / self.resolution).astype(int))
-            goal_idx = tuple(((self.goal_pos + half_size) / self.resolution).astype(int))
-            print(f"Start Index: {start_idx}, Goal Index: {goal_idx}, Grid Value at Goal: {self.grid[goal_idx]}")
-            # Check if indices are within grid bounds
-            if not (0 <= start_idx[0] < self.grid_size[0] and 0 <= start_idx[1] < self.grid_size[1]):
-                print(f"Warning: Start index {start_idx} out of grid bounds {self.grid_size}")
-                self.global_path_idx = []
-                return
-            if not (0 <= goal_idx[0] < self.grid_size[0] and 0 <= goal_idx[1] < self.grid_size[1]):
-                print(f"Warning: Goal index {goal_idx} out of grid bounds {self.grid_size}")
-                self.global_path_idx = []
-                return
-            # Check if start or goal is in an obstacle
-            if self.grid[start_idx[0], start_idx[1]] == 1:
-                print(f"Warning: Start position {self.robot_pos} is in an obstacle")
-                self.global_path_idx = []
-                return
-            if self.grid[goal_idx[0], goal_idx[1]] == 1:
-                print(f"Warning: Goal position {self.goal_pos} is in an obstacle at index {goal_idx}")
-                self.global_path_idx = []
-                return
-            
-
-
-            self.global_path_idx = a_star(self.grid, start_idx, goal_idx)
-            print(f"A* Path Length: {len(self.global_path_idx)}")
-            if not self.global_path_idx:
-                print("Warning: A* returned an empty path")
-        except Exception as e:
-            print(f"Error in _update_astar_path: {e}")
-            traceback.print_exc()
-            self.global_path_idx = []
-            raise
 
     def step(self, action):
         """Execute one step in the environment."""
@@ -495,38 +340,29 @@ class CrowdNavPyBulletEnv(gym.Env):
             raise
 
 
-    # def show_occupancy_grid(self, grid):
-    #     import matplotlib.pyplot as plt
-    #     print("Grid dtype:", type(grid))
-    #     print("Grid shape:", grid.shape)
-    #     print("Grid contents (sample):", grid[:5, :5])
-        
-    #     print("Grid dtype:", grid.dtype)
-    #     print("Unique values in grid:", np.unique(grid))
-    #     print("grid[224, 104] =", grid[224, 104])
-    #     print("grid[194, 28]  =", grid[194, 28])
-    #     print("grid[132, 25]  =", grid[132, 25])
-    #     print("grid[105, 98]  =", grid[105, 98])
-        
-    #     plt.imshow(grid.T, origin='lower', cmap='gray')
-    #     plt.title("Occupancy Grid")
-    #     plt.grid(False)
-    #     plt.show()
-
 
     def show_occupancy_grid(self, grid, path=None):
         import matplotlib.pyplot as plt
         print("Grid shape:", grid.shape)
-        plt.imshow(grid.T, origin='lower', cmap='gray')
+        # plt.imshow(grid.T, origin='lower', cmap='gray')
+        plt.imshow(1 - grid.T, origin='lower', cmap='gray')
 
-        if path is not None:
-            path = np.array(path)  # Should be list of (y, x) or (row, col)
+
+        if path is not None and len(path) > 0 and len(path[0]) == 2:
+            path = np.array(path)
+            for (y, x) in path:
+                if grid[y, x] == 1:
+                    print(f"❌ A* path goes through obstacle at grid[{y}, {x}]")
+
             path_x = path[:, 1]
             path_y = path[:, 0]
             plt.plot(path_x, path_y, 'b-', linewidth=2, label='A* Path')
             plt.plot(path_x[0], path_y[0], 'go', label='Start')
             plt.plot(path_x[-1], path_y[-1], 'ro', label='Goal')
             plt.legend()
+        else:
+            print("Warning: A* path is empty or not 2D.")
+
 
         plt.title("Occupancy Grid with A* Path")
         plt.grid(False)
