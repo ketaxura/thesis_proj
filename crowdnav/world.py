@@ -1,75 +1,207 @@
 import pybullet as p
 import numpy as np
 import time
+from .utils import MAP_SCALE
+
+
 
 def create_occupancy_grid(resolution, map_size):
     """Generate an occupancy grid for the environment."""
     # Calculate grid dimensions
-    grid_size = int(map_size / resolution)
+    L = map_size * MAP_SCALE
+    # grid_size = int(map_size / resolution)
+    grid_size = int(L / resolution)
     grid = np.zeros((grid_size, grid_size), dtype=np.uint8)
 
-    # Convert world coordinates to grid indices
-    def world_to_grid(x, y, resolution, map_size):
-        half_size = map_size / 2
-        x_idx = int((x + half_size) / resolution)
-        y_idx = int((y + half_size) / resolution)
-        return x_idx, y_idx
+
+    half_size = L / 2
+
+    
+    def world_to_grid(x, y):
+       # x, y already scaled by MAP_SCALE when passed in
+        col = int((x + half_size) / resolution)
+        row = int((y + half_size) / resolution)
+        return row, col
 
     # Mark wall and obstacle footprints (using unscaled coordinates)
     walls = []
     cylinders = []
     static_obs = []
 
+    
+
     def mark_occupied(x_min, x_max, y_min, y_max):
-        x_min_idx, y_min_idx = world_to_grid(x_min, y_min, resolution, map_size)
-        x_max_idx, y_max_idx = world_to_grid(x_max, y_max, resolution, map_size)
-        x_min_idx = max(0, min(x_min_idx, grid_size - 1))
-        x_max_idx = max(0, min(x_max_idx, grid_size - 1))
-        y_min_idx = max(0, min(y_min_idx, grid_size - 1))
-        y_max_idx = max(0, min(y_max_idx, grid_size - 1))
-        grid[x_min_idx:x_max_idx + 1, y_min_idx:y_max_idx + 1] = 1
+        row_min, col_min = world_to_grid(x_min, y_min)
+        row_max, col_max = world_to_grid(x_max, y_max)
+        row_min = max(0, min(row_min, grid_size - 1))
+        row_max = max(0, min(row_max, grid_size - 1))
+        col_min = max(0, min(col_min, grid_size - 1))
+        col_max = max(0, min(col_max, grid_size - 1))
+        grid[row_min:row_max + 1, col_min:col_max + 1] = 1
 
-    # Create walls and obstacles
-    L, T, H = 25.0, 0.2, 1.0
 
-    # Outer walls
+    # Create walls and obstacles    
+    # T, H = 25.0, 0.2, 1.0
+    T = 0.2 * MAP_SCALE
+    H = 1.0 * MAP_SCALE
+
+    #Create object functions
     create_wall = lambda center, size: p.createMultiBody(
         baseMass=0,
         baseCollisionShapeIndex=p.createCollisionShape(p.GEOM_BOX, halfExtents=size),
         baseVisualShapeIndex=p.createVisualShape(p.GEOM_BOX, halfExtents=size, rgbaColor=[0.5, 0.5, 0.5, 1]),
         basePosition=[center[0], center[1], center[2]]
     )
-    walls.append((create_wall([0, L/2, H/2], [L/2, T/2, H/2]), 0, L/2, H/2, L/2, T/2, H/2))  # Top
-    walls.append((create_wall([0, -L/2, H/2], [L/2, T/2, H/2]), 0, -L/2, H/2, L/2, T/2, H/2))  # Bottom
-    walls.append((create_wall([-L/2, 0, H/2], [T/2, L/2, H/2]), -L/2, 0, H/2, T/2, L/2, H/2))  # Left
-    walls.append((create_wall([L/2, 0, H/2], [T/2, L/2, H/2]), L/2, 0, H/2, T/2, L/2, H/2))   # Right
-
-    # Inner walls
-    walls.append((create_wall([-8, 10.5, H/2], [20/6, 0.8, H/2]), -8, 10.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, 7.5, H/2], [20/6, 0.8, H/2]), -8, 7.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, 4.5, H/2], [20/6, 0.8, H/2]), -8, 4.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, 1.5, H/2], [20/6, 0.8, H/2]), -8, 1.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, -1.5, H/2], [20/6, 0.8, H/2]), -8, -1.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, -4.5, H/2], [20/6, 0.8, H/2]), -8, -4.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, -7.5, H/2], [20/6, 0.8, H/2]), -8, -7.5, H/2, 20/6, 0.8, H/2))
-    walls.append((create_wall([-8, -10.5, H/2], [20/6, 0.8, H/2]), -8, -10.5, H/2, 20/6, 0.8, H/2))
-
-    walls.append((create_wall([-2, 2, H/2], [1, 9, H/2]), -2, 2, H/2, 1, 9, H/2))
-    walls.append((create_wall([1, 2, H/2], [1, 9, H/2]), 1, 2, H/2, 1, 9, H/2))
-    walls.append((create_wall([4, 2, H/2], [1, 9, H/2]), 4, 2, H/2, 1, 9, H/2))
-    walls.append((create_wall([7, 2, H/2], [1, 9, H/2]), 7, 2, H/2, 1, 9, H/2))
-    walls.append((create_wall([10, 2, H/2], [1, 9, H/2]), 10, 2, H/2, 1, 9, H/2))
-
-    # Cylinders
+    
+        # Cylinders
     create_cylinder = lambda center, radius, height: p.createMultiBody(
         baseMass=0,
         baseCollisionShapeIndex=p.createCollisionShape(p.GEOM_CYLINDER, radius=radius, height=height),
         baseVisualShapeIndex=p.createVisualShape(p.GEOM_CYLINDER, radius=radius, length=height, rgbaColor=[0.5, 0.5, 0.5, 1]),
         basePosition=[center[0], center[1], center[2] + height / 2]
     )
-    cylinders.append((create_cylinder([10, -10, 0], 1.5, 1.0), 10, -10, 0, 1.5, 1.0))
-    cylinders.append((create_cylinder([4, -10, 0], 1.5, 1.0), 4, -10, 0, 1.5, 1.0))
-    cylinders.append((create_cylinder([-2, -10, 0], 1.5, 1.0), -2, -10, 0, 1.5, 1.0))
+    
+    # Outer walls
+    walls.append((create_wall([0, L/2, H/2], [L/2, T/2, H/2]), 0, L/2, H/2, L/2, T/2, H/2))  # Top
+    walls.append((create_wall([0, -L/2, H/2], [L/2, T/2, H/2]), 0, -L/2, H/2, L/2, T/2, H/2))  # Bottom
+    walls.append((create_wall([-L/2, 0, H/2], [T/2, L/2, H/2]), -L/2, 0, H/2, T/2, L/2, H/2))  # Left
+    walls.append((create_wall([L/2, 0, H/2], [T/2, L/2, H/2]), L/2, 0, H/2, T/2, L/2, H/2))   # Right
+
+
+
+    # === Inner walls (scaled by MAP_SCALE) ===
+    walls.append((
+        create_wall(
+            [-8*MAP_SCALE,  10.5*MAP_SCALE, H/2],
+            [(20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2]
+        ),
+        -8*MAP_SCALE,  10.5*MAP_SCALE, H/2,
+        (20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [-8*MAP_SCALE,   7.5*MAP_SCALE, H/2],
+            [(20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2]
+        ),
+        -8*MAP_SCALE,   7.5*MAP_SCALE, H/2,
+        (20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [-8*MAP_SCALE,   4.5*MAP_SCALE, H/2],
+            [(20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2]
+        ),
+        -8*MAP_SCALE,   4.5*MAP_SCALE, H/2,
+        (20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [-8*MAP_SCALE,   1.5*MAP_SCALE, H/2],
+            [(20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2]
+        ),
+        -8*MAP_SCALE,   1.5*MAP_SCALE, H/2,
+        (20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [-8*MAP_SCALE,  -1.5*MAP_SCALE, H/2],
+            [(20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2]
+        ),
+        -8*MAP_SCALE,  -1.5*MAP_SCALE, H/2,
+        (20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [-8*MAP_SCALE,  -4.5*MAP_SCALE, H/2],
+            [(20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2]
+        ),
+        -8*MAP_SCALE,  -4.5*MAP_SCALE, H/2,
+        (20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [-8*MAP_SCALE,  -7.5*MAP_SCALE, H/2],
+            [(20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2]
+        ),
+        -8*MAP_SCALE,  -7.5*MAP_SCALE, H/2,
+        (20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [-8*MAP_SCALE, -10.5*MAP_SCALE, H/2],
+            [(20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2]
+        ),
+        -8*MAP_SCALE, -10.5*MAP_SCALE, H/2,
+        (20/6)*MAP_SCALE, 0.8*MAP_SCALE, H/2
+    ))
+
+    walls.append((
+        create_wall(
+            [-2*MAP_SCALE,   2*MAP_SCALE, H/2],
+            [1*MAP_SCALE,   9*MAP_SCALE, H/2]
+        ),
+        -2*MAP_SCALE,   2*MAP_SCALE, H/2,
+        1*MAP_SCALE,   9*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [ 1*MAP_SCALE,   2*MAP_SCALE, H/2],
+            [1*MAP_SCALE,   9*MAP_SCALE, H/2]
+        ),
+        1*MAP_SCALE,    2*MAP_SCALE, H/2,
+        1*MAP_SCALE,   9*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [ 4*MAP_SCALE,   2*MAP_SCALE, H/2],
+            [1*MAP_SCALE,   9*MAP_SCALE, H/2]
+        ),
+        4*MAP_SCALE,    2*MAP_SCALE, H/2,
+        1*MAP_SCALE,   9*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [ 7*MAP_SCALE,   2*MAP_SCALE, H/2],
+            [1*MAP_SCALE,   9*MAP_SCALE, H/2]
+        ),
+        7*MAP_SCALE,    2*MAP_SCALE, H/2,
+        1*MAP_SCALE,   9*MAP_SCALE, H/2
+    ))
+    walls.append((
+        create_wall(
+            [10*MAP_SCALE,   2*MAP_SCALE, H/2],
+            [1*MAP_SCALE,   9*MAP_SCALE, H/2]
+        ),
+        10*MAP_SCALE,   2*MAP_SCALE, H/2,
+        1*MAP_SCALE,   9*MAP_SCALE, H/2
+    ))
+
+    # === Cylinders (scaled) ===
+    cylinders.append((
+        create_cylinder(
+            [ 10*MAP_SCALE, -10*MAP_SCALE, 0],
+            1.5*MAP_SCALE, 1.0*MAP_SCALE
+        ),
+        10*MAP_SCALE, -10*MAP_SCALE, 0,
+        1.5*MAP_SCALE, 1.0*MAP_SCALE
+    ))
+    cylinders.append((
+        create_cylinder(
+            [  4*MAP_SCALE, -10*MAP_SCALE, 0],
+            1.5*MAP_SCALE, 1.0*MAP_SCALE
+        ),
+        4*MAP_SCALE,  -10*MAP_SCALE, 0,
+        1.5*MAP_SCALE, 1.0*MAP_SCALE
+    ))
+    cylinders.append((
+        create_cylinder(
+            [ -2*MAP_SCALE, -10*MAP_SCALE, 0],
+            1.5*MAP_SCALE, 1.0*MAP_SCALE
+        ),
+        -2*MAP_SCALE, -10*MAP_SCALE, 0,
+        1.5*MAP_SCALE, 1.0*MAP_SCALE
+    ))
+
 
     # Mark occupied areas on grid
     for wall_id, cx, cy, cz, sx, sy, sz in walls:
@@ -86,20 +218,23 @@ def create_occupancy_grid(resolution, map_size):
         y_max = cy + radius
         mark_occupied(x_min, x_max, y_min, y_max)
 
-    # Populate static_obs from grid
-    for x in range(grid.shape[0]):
-        for y in range(grid.shape[1]):
-            if grid[x, y] == 1:
+
+
+    half_L = L / 2
+    for r in range(grid.shape[0]):
+        for c in range(grid.shape[1]):
+            if grid[r, c] == 1:
                 static_obs.append(np.array([
-                    x * resolution + resolution / 2 - (map_size / 2),
-                    y * resolution + resolution / 2 - (map_size / 2)
+                    r * resolution + resolution/2 - half_L,
+                    c * resolution + resolution/2 - half_L
                 ]))
+
 
     return grid
 
 
 def mark_box_on_grid(grid, center, size, resolution, map_size):
-    half_size = map_size / 2
+    half_size = (map_size * MAP_SCALE) / 2
     min_x = int(((center[0] - size[0]) + half_size) / resolution)
     max_x = int(((center[0] + size[0]) + half_size) / resolution)
     min_y = int(((center[1] - size[1]) + half_size) / resolution)
@@ -113,7 +248,7 @@ def mark_box_on_grid(grid, center, size, resolution, map_size):
     grid[min_x:max_x+1, min_y:max_y+1] = 1
 
 def mark_cylinder_on_grid(grid, center, radius, resolution, map_size):
-    half_size = map_size / 2
+    half_size = (map_size * MAP_SCALE) / 2
     cx_idx = int((center[0] + half_size) / resolution)
     cy_idx = int((center[1] + half_size) / resolution)
     r_cells = int(np.ceil(radius / resolution))
@@ -133,10 +268,13 @@ def create_world(client, resolution=0.1, map_size=25.0):
     p.loadURDF("plane.urdf")
 
     grid = create_occupancy_grid(resolution, map_size)
+    L = map_size * MAP_SCALE
+    half_L = L / 2
 
     robot_id = p.loadURDF(
         "/home/max/thesis_proj/turtlebot3/turtlebot3_description/urdf/turtlebot3_burger.urdf",
-        basePosition=[1.0, 2.0, 0.1],
+        # basePosition=[1.0, 2.0, 0.1],
+        basePosition=[1.0 * MAP_SCALE, 2.0 * MAP_SCALE, 0.1],
         useFixedBase=False
     )
 
@@ -157,9 +295,14 @@ def create_world(client, resolution=0.1, map_size=25.0):
         p.stepSimulation()
         time.sleep(1.0 / 60.0)
 
-    L, T, H = map_size, 0.2, 1.0
-    half_L = L / 2
+    # L, T, H = map_size, 0.2, 1.0
+    # Apply map scale to everything
+    L = map_size * MAP_SCALE   # total world size
+    T = 0.2 * MAP_SCALE        # wall thickness
+    H = 1.0 * MAP_SCALE        # wall height
 
+     
+     
     create_wall = lambda center, size: p.createMultiBody(
         baseMass=0,
         baseCollisionShapeIndex=p.createCollisionShape(p.GEOM_BOX, halfExtents=size),
@@ -177,41 +320,6 @@ def create_world(client, resolution=0.1, map_size=25.0):
     for center, size in wall_defs:
         create_wall(center, size)
         mark_box_on_grid(grid, center[:2], size[:2], resolution, map_size)
-
-    # === Inner Walls ===
-    inner_wall_defs = [
-        ([-8, 10.5, H/2], [20/6, 0.8, H/2]),
-        ([-8, 7.5, H/2], [20/6, 0.8, H/2]),
-        ([-8, 4.5, H/2], [20/6, 0.8, H/2]),
-        ([-8, 1.5, H/2], [20/6, 0.8, H/2]),
-        ([-8, -1.5, H/2], [20/6, 0.8, H/2]),
-        ([-8, -4.5, H/2], [20/6, 0.8, H/2]),
-        ([-8, -7.5, H/2], [20/6, 0.8, H/2]),
-        ([-8, -10.5, H/2], [20/6, 0.8, H/2]),
-        ([-2, 2, H/2], [1, 9, H/2]),
-        ([1, 2, H/2], [1, 9, H/2]),
-        ([4, 2, H/2], [1, 9, H/2]),
-        ([7, 2, H/2], [1, 9, H/2]),
-        ([10, 2, H/2], [1, 9, H/2])
-    ]
-    for center, size in inner_wall_defs:
-        create_wall(center, size)
-        mark_box_on_grid(grid, center[:2], size[:2], resolution, map_size)
-
-    # === Cylinders ===
-    cylinder_defs = [
-        ([10, -10, 0], 1.5, 1.0),
-        ([4, -10, 0], 1.5, 1.0),
-        ([-2, -10, 0], 1.5, 1.0)
-    ]
-    for center, radius, height in cylinder_defs:
-        p.createMultiBody(
-            baseMass=0,
-            baseCollisionShapeIndex=p.createCollisionShape(p.GEOM_CYLINDER, radius=radius, height=height),
-            baseVisualShapeIndex=p.createVisualShape(p.GEOM_CYLINDER, radius=radius, length=height, rgbaColor=[0.5, 0.5, 0.5, 1]),
-            basePosition=[center[0], center[1], center[2] + height / 2]
-        )
-        mark_cylinder_on_grid(grid, center[:2], radius, resolution, map_size)
 
     static_obs = []  # Fill this if you need additional static obstacle metadata
     return robot_id, left_wheel_joint_id, right_wheel_joint_id, grid, static_obs

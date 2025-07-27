@@ -10,8 +10,9 @@ from .planner import a_star
 from .mpc import build_mpc_solver_random_obs
 from .world import create_world
 from .pedestrian import create_random_pedestrian, update_pedestrian
-from .utils import L, T, H, TURTLEBOT_RADIUS
 from .utils import get_random_position, find_free_position, update_astar_path
+from .utils import MAP_SCALE, map_size, TURTLEBOT_RADIUS
+
 
 import traceback
 
@@ -28,6 +29,8 @@ class CrowdNavPyBulletEnv(gym.Env):
 
             # Environment parameters
             self.resolution = resolution
+            self.world_size = map_size * MAP_SCALE   # total width in meters
+            self.half_size  = self.world_size / 2    # half‑width in meters
             self.max_steps = max_steps
             self.step_count = 0
             self.robot_pos = np.array([1.0, 1.0])  # Initial placeholder, will be randomized in reset
@@ -37,7 +40,7 @@ class CrowdNavPyBulletEnv(gym.Env):
             self.max_static = max_static
             self.peds = []
             self.static_obs = []
-            self.half_size = L/2  # (or 12.5)
+
 
             # Initialize world and robot
             self.robot_id, self.left_wheel_joint_id, self.right_wheel_joint_id, self.grid, self.static_obs = create_world(
@@ -49,17 +52,7 @@ class CrowdNavPyBulletEnv(gym.Env):
 
             # MPC setup
             self.solver, self.f_dyn, self.T, self.N = build_mpc_solver_random_obs(max_obs=num_peds, max_static=max_static)
-
-            # # Validate and set initial goal position
-            # self.goal_pos = find_free_position(
-            #     get_random_position(),
-            #     "goal",
-            #     self.grid,
-            #     self.resolution,
-            #     self.grid_size
-            # )
-            
-            
+              
             #We are getting start and goal poses inside of init, but why????
             goal_idx    = self.find_free_grid(label="goal")
             self.goal_pos = self.grid_to_world(goal_idx)
@@ -75,9 +68,7 @@ class CrowdNavPyBulletEnv(gym.Env):
             traceback.print_exc()
             raise
         
-        
-        
-        
+
 
         # ----------------------------------------------------------------
     # Helpers for a single canonical coord convention:
@@ -97,16 +88,25 @@ class CrowdNavPyBulletEnv(gym.Env):
         return np.array([x, y])
     
     
-    def find_free_grid(self, label, avoid=None, min_dist=0.5, max_attempts=200):
-        """Sample random grid‐cells until we find one that’s free and far enough from `avoid`."""
+
+    def find_free_grid(self, label, avoid=None, min_dist=0.5, max_attempts=100):
+        """Sample a free (row,col) within the scaled world, respecting a minimum distance from `avoid`."""
         for _ in range(max_attempts):
-            pos = get_random_position()
-            idx = self.world_to_grid(pos)
-            if self.grid[idx] == 1:
-                world = self.grid_to_world(idx)
-                if avoid is None or np.linalg.norm(world - avoid) >= min_dist:
-                    return idx
+            # 1) sample in the true bounds ±half_size
+            x = np.random.uniform(-self.half_size, self.half_size)
+            y = np.random.uniform(-self.half_size, self.half_size)
+            # 2) convert to grid and clamp to [0..grid.shape-1]
+            r, c = self.world_to_grid((x, y))
+            r = np.clip(r, 0, self.grid.shape[0] - 1)
+            c = np.clip(c, 0, self.grid.shape[1] - 1)
+            # 3) accept if free and far enough from avoid
+            if self.grid[r, c] != 0:
+                continue
+            world = self.grid_to_world((r, c))
+            if avoid is None or np.linalg.norm(world - avoid) >= min_dist:
+                return (r, c)
         raise ValueError(f"Could not find free {label} cell after {max_attempts} tries")
+
 
 
     def _plot_environment_debug(self):
@@ -136,88 +136,183 @@ class CrowdNavPyBulletEnv(gym.Env):
 
 
 
+    # def reset(self, visualize=False):
+    #     """Reset the environment to initial state with random start position."""
+    #     try:
+    #         self.step_count = 0
+    #         max_attempts = 100
+
+    #         # start_idx = self.find_free_grid(label="start", avoid=self.goal_pos)
+    #         start_idx=[28, 95]
+    #         self.robot_pos = self.grid_to_world(start_idx)
+
+    #         self.theta = 0.0
+    #         p.resetBasePositionAndOrientation(
+    #             self.robot_id,
+    #             [self.robot_pos[0], self.robot_pos[1], 0.1],
+    #             p.getQuaternionFromEuler([0, 0, self.theta])
+    #         )
+    #         goal_idx =[18,14]
+            
+    #         # goal_idx    = self.find_free_grid(label="goal", avoid=self.robot_pos)
+    #         self.goal_pos = self.grid_to_world(goal_idx)    
+
+    #     # Robot pos: [-6.4  0.1], Grid idx: [ 61 126]
+    #     # Goal pos: [-10.6 -10.7], Grid idx: [19 18]
+
+    #         # inside reset(), after picking start & goal:
+    #         self.start_idx = self.world_to_grid(self.robot_pos)
+    #         self.goal_idx  = self.world_to_grid(self.goal_pos)
+
+    #         # Spawn pedestrians
+    #         self.peds = [create_random_pedestrian(self.robot_pos, self.client) for _ in range(self.num_peds)]
+
+    #         # print(f"Robot pos: {self.robot_pos}, Grid idx: {((self.robot_pos + 12.5) / self.resolution).astype(int)}")
+    #         # print(f"Goal pos: {self.goal_pos}, Grid idx: {((self.goal_pos + 12.5) / self.resolution).astype(int)}")   
+
+    #         print(f"Robot pos: {self.robot_pos}, Grid idx: {((self.robot_pos + self.half_size) / self.resolution).astype(int)}")
+    #         print(f"Robot pos: {self.goal_pos}, Grid idx: {((self.goal_pos + self.half_size) / self.resolution).astype(int)}")
+
+    #         # Plan new A* path
+    #         self.global_path_idx = update_astar_path(
+    #             self.robot_pos,
+    #             self.goal_pos,
+    #             self.grid,
+    #             self.resolution
+    #         )
+
+
+    #         self.show_occupancy_grid(self.grid, self.global_path_idx)
+
+    #         # Visual goal line
+    #         p.addUserDebugLine(
+    #             [self.goal_pos[0], self.goal_pos[1], 0],
+    #             [self.goal_pos[0], self.goal_pos[1], 10],
+    #             [0, 1, 0], lineWidth=3, lifeTime=0
+    #         )
+
+
+
+    #         return self._get_observation()
+
+
+    #     except Exception as e:
+    #         print(f"Error in reset: {e}")
+    #         traceback.print_exc()
+    #         raise
+
+    # def reset(self, visualize=False):
+    #     """Reset the environment to a fixed start/goal for testing."""
+    #     try:
+    #         self.step_count = 0
+    #         self.theta = 0.0
+
+    #         # 1) YOUR MANUAL GRID INDICES (row, col)
+    #         manual_start = (88, 18)
+    #         manual_goal  = (22, 14)
+
+    #         print(self.grid[manual_start])
+    #         print(self.grid[manual_goal])
+
+    #         # 2) CHECK THEY'RE IN FREE SPACE
+    #         if self.grid[manual_start] != 1:
+                
+    #             raise ValueError(f"Manual start {manual_start} lies inside an obstacle!")
+    #         if self.grid[manual_goal] != 1:
+                
+    #             raise ValueError(f"Manual goal  {manual_goal} lies inside an obstacle!")
+
+    #         # 3) STORE THEM AND CONVERT ONCE TO WORLD COORDS
+    #         self.start_idx = manual_start
+    #         self.goal_idx  = manual_goal
+    #         self.robot_pos = self.grid_to_world(self.start_idx)
+    #         self.goal_pos  = self.grid_to_world(self.goal_idx)
+
+    #         # 4) RESET ROBOT IN PYBULLET
+    #         p.resetBasePositionAndOrientation(
+    #             self.robot_id,
+    #             [self.robot_pos[0], self.robot_pos[1], 0.1],
+    #             p.getQuaternionFromEuler([0, 0, self.theta])
+    #         )
+
+    #         # 5) SPAWN PEDESTRIANS (if any)
+    #         self.peds = [
+    #             create_random_pedestrian(self.robot_pos, self.client)
+    #             for _ in range(self.num_peds)
+    #         ]
+
+    #         # 6) PLAN A* PATH ON THE GRID
+    #         self.global_path_idx = update_astar_path(
+    #             self.robot_pos,
+    #             self.goal_pos,
+    #             self.grid,
+    #             self.resolution
+    #         )
+
+    #         # 7) DRAW GRID + PATH + START/GOAL
+    #         self.show_occupancy_grid(self.grid, self.global_path_idx)
+
+    #         # 8) DRAW A VERTICAL GOAL MARKER IN THE SIM
+    #         p.addUserDebugLine(
+    #             [self.goal_pos[0], self.goal_pos[1], 0],
+    #             [self.goal_pos[0], self.goal_pos[1], 10],
+    #             [0, 1, 0], lineWidth=3, lifeTime=0
+    #         )
+
+    #         return self._get_observation()
+
+    #     except Exception as e:
+    #         print(f"Error in reset: {e}")
+    #         traceback.print_exc()
+    #         raise
+
+
     def reset(self, visualize=False):
-        """Reset the environment to initial state with random start position."""
-        try:
-            self.step_count = 0
-            max_attempts = 100
+        """Reset the environment to a fixed start/goal for testing."""
+        self.step_count = 0
+        self.theta = 0.0
 
-            # start_idx = self.find_free_grid(label="start", avoid=self.goal_pos)
-            start_idx=[126, 61]
-            self.robot_pos = self.grid_to_world(start_idx)
-
-            self.theta = 0.0
-            p.resetBasePositionAndOrientation(
-                self.robot_id,
-                [self.robot_pos[0], self.robot_pos[1], 0.1],
-                p.getQuaternionFromEuler([0, 0, self.theta])
-            )
-            goal_idx =[33,25]
-            # goal_idx    = self.find_free_grid(label="goal", avoid=self.robot_pos)
-            self.goal_pos = self.grid_to_world(goal_idx)    
-
-        # Robot pos: [-6.4  0.1], Grid idx: [ 61 126]
-        # Goal pos: [-10.6 -10.7], Grid idx: [19 18]
+        # 1) the *screen* click was at (x=88, y=18)
+        #    so grid indices = (row=y, col=x):
+        manual_start = (18, 88)
+        manual_goal  = (14, 22)
 
 
+        # ─── 2) SANITY CHECKS (1 means obstacle):
+        if self.grid[manual_start] == 1:
+            raise ValueError(f"Manual start {manual_start} lies inside an obstacle!")
+        if self.grid[manual_goal] == 1:
+            raise ValueError(f"Manual goal  {manual_goal}  lies inside an obstacle!")
 
+        # ─── 3) STORE and convert once:
+        self.start_idx = manual_start
+        self.goal_idx  = manual_goal
+        self.robot_pos = self.grid_to_world(self.start_idx)
+        self.goal_pos  = self.grid_to_world(self.goal_idx)
 
-            # inside reset(), after picking start & goal:
-            self.start_idx = self.world_to_grid(self.robot_pos)
-            self.goal_idx  = self.world_to_grid(self.goal_pos)
+        # ─── 4) Place robot/goal in PyBullet:
+        p.resetBasePositionAndOrientation(
+            self.robot_id,
+            [*self.robot_pos, 0.1],
+            p.getQuaternionFromEuler([0, 0, self.theta])
+        )
 
-            # Spawn pedestrians
-            self.peds = [create_random_pedestrian(self.robot_pos, self.client) for _ in range(self.num_peds)]
+        p.addUserDebugLine(
+            [*self.goal_pos, 0],
+            [*self.goal_pos, 10],
+            [0,1,0], lineWidth=3, lifeTime=0
+        )
 
-            print(f"Robot pos: {self.robot_pos}, Grid idx: {((self.robot_pos + 12.5) / self.resolution).astype(int)}")
-            print(f"Goal pos: {self.goal_pos}, Grid idx: {((self.goal_pos + 12.5) / self.resolution).astype(int)}")
+        # ─── 5) Plan A* and show grid:
+        self.global_path_idx = update_astar_path(
+            self.robot_pos,
+            self.goal_pos,
+            self.grid,
+            self.resolution
+        )
+        self.show_occupancy_grid(self.grid, self.global_path_idx)
 
-            # Plan new A* path
-            self.global_path_idx = update_astar_path(
-                self.robot_pos,
-                self.goal_pos,
-                self.grid,
-                self.resolution
-            )
-
-
-            self.show_occupancy_grid(self.grid, self.global_path_idx)
-
-            # Visual goal line
-            p.addUserDebugLine(
-                [self.goal_pos[0], self.goal_pos[1], 0],
-                [self.goal_pos[0], self.goal_pos[1], 10],
-                [0, 1, 0], lineWidth=3, lifeTime=0
-            )
-
-            # # Optional debug info
-            # print("\nScene Object Summary:")
-            # for i in range(p.getNumBodies()):
-            #     name = p.getBodyInfo(i)[1].decode("utf-8") or f"Unnamed (ID {i})"
-            #     print(f"Body ID {i}: {name}")
-            # print("Floor collision info:")
-            # for i in range(p.getNumBodies()):
-            #     name = p.getBodyInfo(i)[1].decode("utf-8") or f"Unnamed (ID {i})"
-            #     if 'plane' in name.lower() or 'ground' in name.lower():
-            #         print(p.getCollisionShapeData(i, -1))
-            #         pos, orn = p.getBasePositionAndOrientation(i)
-            #         print(f"{name} origin: {pos}")
-
-            # # Visualize occupancy grid + path (only when requested)
-            # if visualize:
-            #     self._plot_environment_debug()
-
-
-
-            return self._get_observation()
-
-
-        except Exception as e:
-            print(f"Error in reset: {e}")
-            traceback.print_exc()
-            raise
-
-
+        return self._get_observation()
 
 
 
@@ -256,7 +351,7 @@ class CrowdNavPyBulletEnv(gym.Env):
             # Prepare MPC inputs
             if not self.global_path_idx:
                 print("No valid A* path, using goal position as fallback")
-                half_size = 12.5
+                half_size = self.half_size
                 sampled = [((self.goal_pos + half_size) / self.resolution).astype(int)] * self.N
 
             elif len(self.global_path_idx) < self.N:
@@ -265,7 +360,7 @@ class CrowdNavPyBulletEnv(gym.Env):
                 sampled = np.linspace(0, len(self.global_path_idx) - 1, self.N).astype(int)
                 sampled = [self.global_path_idx[i] for i in sampled]
             # Convert grid indices to unscaled world coordinates
-            half_size = 12.5
+            half_size = self.half_size
             path = [np.array(idx) * self.resolution - half_size for idx in sampled]
             path = np.array(path).flatten()
 
@@ -372,7 +467,7 @@ class CrowdNavPyBulletEnv(gym.Env):
 
     def show_occupancy_grid(self, grid, path=None):
         plt.figure(figsize=(6,6))
-        plt.imshow(grid.T, origin='lower', cmap='gray_r')
+        plt.imshow(grid, origin='lower', cmap='gray_r')
 
         # Always plot start & goal
         sr, sc = self.start_idx

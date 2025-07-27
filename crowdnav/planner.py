@@ -58,7 +58,7 @@ def a_star(grid, start, goal):
 
     while open_set:
         _, current_cost, current = heapq.heappop(open_set)
-        print(f"\n📌 Expanding node: {current}, cost: {current_cost:.3f}")
+        print(f"\n Expanding node: {current}, cost: {current_cost:.3f}")
 
         if current == goal:
             # Reconstruct path
@@ -67,7 +67,7 @@ def a_star(grid, start, goal):
                 current = came_from[current]
                 path.append(current)
             path.reverse()
-            print("\n✅ Final path:")
+            print("\n Final path:")
             for i, (x, y) in enumerate(path):
                 print(f"  Step {i}: Grid[{x}, {y}], value={grid[y, x]}")
             print("Start value:", grid[start[1], start[0]])
@@ -103,5 +103,5 @@ def a_star(grid, start, goal):
                 came_from[neighbor] = current
 
     # If we reach here, no path was found
-    print("❌ No valid path found by A*")
+    print(" No valid path found by A*")
     return []
