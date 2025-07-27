@@ -32,6 +32,7 @@ class CrowdNavPyBulletEnv(gym.Env):
             self.world_size = map_size * MAP_SCALE   # total width in meters
             self.half_size  = self.world_size / 2    # half‑width in meters
             self.max_steps = max_steps
+            # self.static_obs = static_obs
             self.step_count = 0
             self.robot_pos = np.array([1.0, 1.0])  # Initial placeholder, will be randomized in reset
             self.theta = 0.0
