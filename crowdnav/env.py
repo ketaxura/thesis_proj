@@ -17,8 +17,9 @@ import traceback
 
 
 class CrowdNavPyBulletEnv(gym.Env):
+    
     """Main Gym environment for CrowdNav with PyBullet."""
-    def __init__(self, num_peds=2, max_static=1, max_steps=200, resolution=0.1):
+    def __init__(self, num_peds=1, max_static=1, max_steps=200, resolution=0.1):
         super().__init__()
         try:
             self.client = p.connect(p.GUI)
@@ -36,26 +37,32 @@ class CrowdNavPyBulletEnv(gym.Env):
             self.max_static = max_static
             self.peds = []
             self.static_obs = []
+            self.half_size = L/2  # (or 12.5)
 
             # Initialize world and robot
             self.robot_id, self.left_wheel_joint_id, self.right_wheel_joint_id, self.grid, self.static_obs = create_world(
                 self.client, resolution=self.resolution
             )
+            
             self.grid_size = self.grid.shape
-            print(f"Grid Shape: {self.grid_size}")
+            # print(f"Grid Shape: {self.grid_size}")
 
             # MPC setup
             self.solver, self.f_dyn, self.T, self.N = build_mpc_solver_random_obs(max_obs=num_peds, max_static=max_static)
 
-            # Validate and set initial goal position
-            self.goal_pos = find_free_position(
-                get_random_position(),
-                "goal",
-                self.grid,
-                self.resolution,
-                self.grid_size
-            )
+            # # Validate and set initial goal position
+            # self.goal_pos = find_free_position(
+            #     get_random_position(),
+            #     "goal",
+            #     self.grid,
+            #     self.resolution,
+            #     self.grid_size
+            # )
             
+            
+            #We are getting start and goal poses inside of init, but why????
+            goal_idx    = self.find_free_grid(label="goal")
+            self.goal_pos = self.grid_to_world(goal_idx)
             
             # Observation and action spaces
             obs_dim = 16 + 2 + 1  # LIDAR + goal_dir + goal_dist
@@ -67,7 +74,39 @@ class CrowdNavPyBulletEnv(gym.Env):
             print(f"Error in __init__: {e}")
             traceback.print_exc()
             raise
+        
+        
+        
+        
 
+        # ----------------------------------------------------------------
+    # Helpers for a single canonical coord convention:
+    #   grid indices = (row, col)
+    #   world coords   = (x,   y) in meters
+    # ----------------------------------------------------------------
+    def world_to_grid(self, pos):
+        """(x,y) [m] → (row,col) on self.grid."""
+        c = int((pos[0] + self.half_size) / self.resolution)
+        r = int((pos[1] + self.half_size) / self.resolution)
+        return r, c
+
+    def grid_to_world(self, idx):
+        """(row,col) → (x,y) [m]."""
+        x = idx[1] * self.resolution - self.half_size
+        y = idx[0] * self.resolution - self.half_size
+        return np.array([x, y])
+    
+    
+    def find_free_grid(self, label, avoid=None, min_dist=0.5, max_attempts=200):
+        """Sample random grid‐cells until we find one that’s free and far enough from `avoid`."""
+        for _ in range(max_attempts):
+            pos = get_random_position()
+            idx = self.world_to_grid(pos)
+            if self.grid[idx] == 1:
+                world = self.grid_to_world(idx)
+                if avoid is None or np.linalg.norm(world - avoid) >= min_dist:
+                    return idx
+        raise ValueError(f"Could not find free {label} cell after {max_attempts} tries")
 
 
     def _plot_environment_debug(self):
@@ -89,7 +128,7 @@ class CrowdNavPyBulletEnv(gym.Env):
             print("Warning: A* path is empty or not initialized.")
 
         plt.legend()
-        plt.title("A*  dadadada Path on Occupancy Grid")
+        plt.title("A* dadaPath on Occupancy Grid")
         plt.tight_layout()
         plt.grid(False)
         plt.show()
@@ -103,24 +142,9 @@ class CrowdNavPyBulletEnv(gym.Env):
             self.step_count = 0
             max_attempts = 100
 
-            # Randomize robot position
-            for _ in range(max_attempts):
-                candidate_pos = get_random_position()
-                try:
-                    self.robot_pos = find_free_position(
-                        candidate_pos,
-                        "start",
-                        self.grid,
-                        self.resolution,
-                        self.grid_size,
-                        min_distance_from=self.goal_pos
-                    )
-
-                    break
-                except ValueError:
-                    continue
-            else:
-                raise ValueError("Could not find a valid random start position after maximum attempts")
+            # start_idx = self.find_free_grid(label="start", avoid=self.goal_pos)
+            start_idx=[126, 61]
+            self.robot_pos = self.grid_to_world(start_idx)
 
             self.theta = 0.0
             p.resetBasePositionAndOrientation(
@@ -128,20 +152,25 @@ class CrowdNavPyBulletEnv(gym.Env):
                 [self.robot_pos[0], self.robot_pos[1], 0.1],
                 p.getQuaternionFromEuler([0, 0, self.theta])
             )
+            goal_idx =[33,25]
+            # goal_idx    = self.find_free_grid(label="goal", avoid=self.robot_pos)
+            self.goal_pos = self.grid_to_world(goal_idx)    
 
-            # Re-generate valid goal
-            self.goal_pos = find_free_position(
-                get_random_position(),
-                "goal",
-                self.grid,
-                self.resolution,
-                self.grid_size,
-                min_distance_from=self.robot_pos
-            )
+        # Robot pos: [-6.4  0.1], Grid idx: [ 61 126]
+        # Goal pos: [-10.6 -10.7], Grid idx: [19 18]
 
+
+
+
+            # inside reset(), after picking start & goal:
+            self.start_idx = self.world_to_grid(self.robot_pos)
+            self.goal_idx  = self.world_to_grid(self.goal_pos)
 
             # Spawn pedestrians
             self.peds = [create_random_pedestrian(self.robot_pos, self.client) for _ in range(self.num_peds)]
+
+            print(f"Robot pos: {self.robot_pos}, Grid idx: {((self.robot_pos + 12.5) / self.resolution).astype(int)}")
+            print(f"Goal pos: {self.goal_pos}, Grid idx: {((self.goal_pos + 12.5) / self.resolution).astype(int)}")
 
             # Plan new A* path
             self.global_path_idx = update_astar_path(
@@ -151,13 +180,8 @@ class CrowdNavPyBulletEnv(gym.Env):
                 self.resolution
             )
 
-            # Plot the path for debugging
-            # if visualize:
-            # self._plot_astar_path()
-            # self.show_occupancy_grid(self.grid)
 
             self.show_occupancy_grid(self.grid, self.global_path_idx)
-
 
             # Visual goal line
             p.addUserDebugLine(
@@ -166,32 +190,36 @@ class CrowdNavPyBulletEnv(gym.Env):
                 [0, 1, 0], lineWidth=3, lifeTime=0
             )
 
-            # Optional debug info
-            print("\nScene Object Summary:")
-            for i in range(p.getNumBodies()):
-                name = p.getBodyInfo(i)[1].decode("utf-8") or f"Unnamed (ID {i})"
-                print(f"Body ID {i}: {name}")
-            print("Floor collision info:")
-            for i in range(p.getNumBodies()):
-                name = p.getBodyInfo(i)[1].decode("utf-8") or f"Unnamed (ID {i})"
-                if 'plane' in name.lower() or 'ground' in name.lower():
-                    print(p.getCollisionShapeData(i, -1))
-                    pos, orn = p.getBasePositionAndOrientation(i)
-                    print(f"{name} origin: {pos}")
+            # # Optional debug info
+            # print("\nScene Object Summary:")
+            # for i in range(p.getNumBodies()):
+            #     name = p.getBodyInfo(i)[1].decode("utf-8") or f"Unnamed (ID {i})"
+            #     print(f"Body ID {i}: {name}")
+            # print("Floor collision info:")
+            # for i in range(p.getNumBodies()):
+            #     name = p.getBodyInfo(i)[1].decode("utf-8") or f"Unnamed (ID {i})"
+            #     if 'plane' in name.lower() or 'ground' in name.lower():
+            #         print(p.getCollisionShapeData(i, -1))
+            #         pos, orn = p.getBasePositionAndOrientation(i)
+            #         print(f"{name} origin: {pos}")
 
-            # Visualize occupancy grid + path (only when requested)
-            if visualize:
-                self._plot_environment_debug()
+            # # Visualize occupancy grid + path (only when requested)
+            # if visualize:
+            #     self._plot_environment_debug()
 
-            print(f"Robot pos: {self.robot_pos}, Grid idx: {((self.robot_pos + 12.5) / self.resolution).astype(int)}")
-            print(f"Goal pos: {self.goal_pos}, Grid idx: {((self.goal_pos + 12.5) / self.resolution).astype(int)}")
+
 
             return self._get_observation()
+
 
         except Exception as e:
             print(f"Error in reset: {e}")
             traceback.print_exc()
             raise
+
+
+
+
 
     def _plot_astar_path(self):
         """Plot the A* path on the occupancy grid."""
@@ -343,31 +371,30 @@ class CrowdNavPyBulletEnv(gym.Env):
 
 
     def show_occupancy_grid(self, grid, path=None):
-        import matplotlib.pyplot as plt
-        print("Grid shape:", grid.shape)
-        # plt.imshow(grid.T, origin='lower', cmap='gray')
-        plt.imshow(1 - grid.T, origin='lower', cmap='gray')
+        plt.figure(figsize=(6,6))
+        plt.imshow(grid.T, origin='lower', cmap='gray_r')
 
+        # Always plot start & goal
+        sr, sc = self.start_idx
+        gr, gc = self.goal_idx
+        plt.scatter([sc], [sr], c='g', s=100, marker='*', label='Start')
+        plt.scatter([gc], [gr], c='r', s=100, marker='X', label='Goal')
 
-        if path is not None and len(path) > 0 and len(path[0]) == 2:
-            path = np.array(path)
-            for (y, x) in path:
-                if grid[y, x] == 1:
-                    print(f"❌ A* path goes through obstacle at grid[{y}, {x}]")
-
-            path_x = path[:, 1]
-            path_y = path[:, 0]
-            plt.plot(path_x, path_y, 'b-', linewidth=2, label='A* Path')
-            plt.plot(path_x[0], path_y[0], 'go', label='Start')
-            plt.plot(path_x[-1], path_y[-1], 'ro', label='Goal')
-            plt.legend()
+        # If A* path exists, plot it too
+        if path:
+            arr = np.array(path)
+            rows, cols = arr[:,0], arr[:,1]
+            plt.plot(rows, cols, 'b-', linewidth=2, label='A* Path')
         else:
-            print("Warning: A* path is empty or not 2D.")
+            plt.text(0.5, 0.95, "No valid A* path", color='orange',
+                    transform=plt.gca().transAxes,
+                    ha='center', va='top', bbox=dict(boxstyle="round,pad=0.3", fc="yellow", alpha=0.5))
 
-
-        plt.title("Occupancy Grid with A* Path")
+        plt.legend(loc='upper right')
+        plt.title("Occupancy Grid — Start (★), Goal (✕)")
         plt.grid(False)
         plt.show()
+
 
 
 

@@ -38,7 +38,8 @@ def visualize_grid(grid, start_idx, goal_idx):
 def get_random_position():
     """Generate a random position within the scaled world bounds, biased toward the interior."""
     half_size = 12.5  # Half of 25m map size
-    interior_margin = T + TURTLEBOT_RADIUS + 0.01  # Extra buffer
+    # interior_margin = T + TURTLEBOT_RADIUS + 0.01  # Extra buffer
+    interior_margin = 0
     min_x = -half_size + interior_margin
     max_x = half_size - interior_margin
     min_y = -half_size + interior_margin
@@ -226,13 +227,22 @@ def update_astar_path(robot_pos, goal_pos, grid, resolution):
             try:
                 
                 # Example values — update based on your system
-                robot_radius = 0.2           # meters
-                grid_resolution = 0.05       # meters per cell
+                robot_radius = TURTLEBOT_RADIUS           # meters
+                grid_resolution = resolution       # meters per cell
                 original_grid = grid
 
+                # inflated_grid = inflate_obstacles(original_grid, robot_radius, grid_resolution)
+                # visualize_grid(inflated_grid, start_idx, goal_idx)
+                # path = a_star(grid, start_idx, goal_idx)
+                
+                
                 inflated_grid = inflate_obstacles(original_grid, robot_radius, grid_resolution)
                 visualize_grid(inflated_grid, start_idx, goal_idx)
-                path = a_star(grid, start_idx, goal_idx)
+                # plan on the inflated grid, not the raw one:
+                path = a_star(inflated_grid, start_idx, goal_idx)
+                
+                
+                
             except Exception as e:
                 print("Exception during A*: ", e)
                 path = []  # Ensure path is defined
