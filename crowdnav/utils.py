@@ -10,6 +10,7 @@ import sys
 
 
 
+
 # Constants for the CrowdNavPyBulletEnv
 MAP_SCALE = 0.45
 WHEEL_RADIUS = 0.033  # TurtleBot3 wheel radius in meters
@@ -24,15 +25,27 @@ TURTLEBOT_RADIUS = 0.11  # Radius of TurtleBot3 Burger (half of 0.22m diameter)
 
 
 def visualize_grid(grid, start_idx, goal_idx):
-    vis_grid = np.copy(grid)
-    vis_grid[start_idx[1], start_idx[0]] = 2  # Start
-    vis_grid[goal_idx[1], goal_idx[0]] = 3    # Goal
+    """
+    grid       : 2D numpy array (0=free, 1=inflated obstacle)
+    start_idx  : tuple (row, col)
+    goal_idx   : tuple (row, col)
+    """
+    plt.figure(figsize=(6,6))
+    # show free=white, obstacle=black
+    plt.imshow(grid, origin='lower', cmap='gray_r')  
 
-    plt.imshow(vis_grid, cmap='gray')
-    plt.title("Inflated Grid with Start (green) and Goal (red)")
-    plt.colorbar()
+    # unpack
+    sr, sc = start_idx
+    gr, gc = goal_idx
+
+    # plot start as green star, goal as red X
+    plt.scatter([sc], [sr], c='g', s=100, marker='*', label='Start')
+    plt.scatter([gc], [gr], c='r', s=100, marker='X', label='Goal')
+
+    plt.legend(loc='upper right')
+    plt.title("Inflated Grid — Start ★, Goal ✕")
+    plt.axis('off')
     plt.show()
-
 
 
 def get_random_position():
@@ -106,18 +119,29 @@ def find_free_position(pos, label, grid, resolution, grid_size, robot_radius=0.1
     raise ValueError(f"Could not find a free {label} position inside the map near {pos}")
 
 
-
-
 def update_astar_path(robot_pos, goal_pos, grid, resolution):
     import matplotlib.pyplot as plt
+    
+    
+    import matplotlib.pyplot as plt
 
+    # helper exactly like in your Env:
+    def world_to_grid(pos, half_size, res):
+        c = int((pos[0] + half_size) / res)   # x→col
+        r = int((pos[1] + half_size) / res)   # y→row
+        return (r, c)
+
+    
     try:
-        half_size = 12.5
-        start_idx = tuple(((robot_pos + half_size) / resolution).astype(int))
-        goal_idx = tuple(((goal_pos + half_size) / resolution).astype(int))
+        half_size = (grid.shape[0] * resolution) / 2
+        # use the helper, not the broken one‑liner
+        start_idx = world_to_grid(robot_pos, half_size, resolution)
+        goal_idx  = world_to_grid(goal_pos,  half_size, resolution)
+        
         grid_size = grid.shape
 
         if not (0 <= start_idx[0] < grid_size[0] and 0 <= start_idx[1] < grid_size[1]):
+            print(start_idx)
             print(f"Start index {start_idx} out of bounds.")
             return []
 
@@ -154,15 +178,43 @@ def update_astar_path(robot_pos, goal_pos, grid, resolution):
             sys.stdout = f  # Redirect prints to file
 
             try:
-                
-                # Example values — update based on your system
-                robot_radius = TURTLEBOT_RADIUS           # meters
-                grid_resolution = resolution       # meters per cell
+                # INFLATION_SCALE = 0.01
+                # # Example values — update based on your system
+                # # robot_radius = TURTLEBOT_RADIUS           # meters
+                # grid_resolution = resolution       # meters per cell
                 original_grid = grid
 
+                # 1) choose a fraction of the true radius you want as buffer
+                INFLATION_SCALE = 0.8               # e.g. 20% of robot radius
+                desired_m       = TURTLEBOT_RADIUS * INFLATION_SCALE
+
+                # 2) compute cells by rounding
+                cells = int(np.round(desired_m / resolution))
+                print("desired buffer [m]:", desired_m)
+                print("grid resolution [m]:", resolution)
+                print("inflation radius (cells):", cells)
+
+                # 3) call inflate_obstacles with meter args:
+                inflation_radius_m = cells * resolution
+                inflated_grid      = inflate_obstacles(original_grid,
+                                                    inflation_radius_m,
+                                                    resolution)
                 
-                inflated_grid = inflate_obstacles(original_grid, robot_radius, grid_resolution)
+                inflated_grid[start_idx[0], start_idx[1]] = 0
+                inflated_grid[goal_idx[0],  goal_idx[1]]  = 0
+
+                print("raw occupied:",     np.sum(original_grid==1))
+                print("inflated occupied:", np.sum(inflated_grid==1))
+
+
+                print("dasdasdasdasdasdasdaj;lsdkja;lkjf;lsakfjsd;lfkj")
+                # Debug check:
+
+                print("inflation cells:", int(np.ceil(desired_m / resolution)))
+                print("raw occupied cells:", np.sum(original_grid == 1))
+                print("inflated occupied cells:", np.sum(inflated_grid == 1))
                 visualize_grid(inflated_grid, start_idx, goal_idx)
+
                 # plan on the inflated grid, not the raw one:
                 path = a_star(inflated_grid, start_idx, goal_idx)
                 
@@ -176,8 +228,12 @@ def update_astar_path(robot_pos, goal_pos, grid, resolution):
 
         print(" A* debug log saved to astar_debug_log.txt")
                 
-
-        # Check the path only if it exists
+        if path:
+            if path[0] != start_idx:
+                path.insert(0, start_idx)
+            if path[-1] != goal_idx:
+                path.append(goal_idx)
+                # Check the path only if it exists
         if not path:
             print(" Empty or failed A* path.")
             return []

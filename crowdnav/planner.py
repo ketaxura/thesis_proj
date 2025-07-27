@@ -3,28 +3,30 @@ import heapq
 from scipy.ndimage import binary_dilation
 
 
+from scipy.ndimage import binary_dilation
+import numpy as np
+
 def inflate_obstacles(grid, robot_radius_m, grid_resolution_m):
     """
-    Inflate binary obstacle map to account for robot radius.
-    
-    grid: 2D numpy array (0 = free, 1 = obstacle)
-    robot_radius_m: radius of robot in meters
-    grid_resolution_m: size of 1 grid cell in meters
+    Inflate binary obstacle map by rounding the required radius (in cells),
+    so you can dial it below one full cell.
     """
-    # inflate_radius = int(np.ceil(robot_radius_m / grid_resolution_m))
-    inflate_radius = max(1, int(np.ceil(0.09 * robot_radius_m / grid_resolution_m)))
+    # 1) Compute inflation radius in *cells*, rounding rather than always up:
+    inflate_radius = int(np.round(robot_radius_m / grid_resolution_m))
+    # (this will be 0 if robot_radius_m < 0.5 * grid_resolution_m)
 
-    structure = np.ones((2 * inflate_radius + 1, 2 * inflate_radius + 1), dtype=np.uint8)
+    # 2) Build a structuring element—must be ≥1×1
+    if inflate_radius > 0:
+        size = 2 * inflate_radius + 1
+        structure = np.ones((size, size), dtype=np.uint8)
+    else:
+        # zero clearance ⇒ no inflation
+        structure = np.ones((1, 1), dtype=np.uint8)
 
-    # Create binary obstacle mask
+    # 3) Dilate only if needed
     obstacle_mask = (grid == 1)
-
-    # Perform binary dilation
     inflated_mask = binary_dilation(obstacle_mask, structure=structure)
-
-    # Return new grid
-    inflated_grid = np.where(inflated_mask, 1, 0)  # force binary result (0 or 1)
-    return inflated_grid
+    return np.where(inflated_mask, 1, 0)
 
     
 
