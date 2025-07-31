@@ -20,7 +20,7 @@ import traceback
 class CrowdNavPyBulletEnv(gym.Env):
     
     """Main Gym environment for CrowdNav with PyBullet."""
-    def __init__(self, num_peds=1, max_static=1, max_steps=200, resolution=0.1):
+    def __init__(self, num_peds=0, max_static=1, max_steps=200, resolution=0.1):
         super().__init__()
         try:
             self.client = p.connect(p.GUI)
@@ -52,9 +52,9 @@ class CrowdNavPyBulletEnv(gym.Env):
             # print(f"Grid Shape: {self.grid_size}")
 
             # MPC setup
-            self.solver, self.f_dyn, self.T, self.N = build_mpc_solver_random_obs(max_obs=num_peds, max_static=max_static)
+            self.solver, self.f_dyn, self.T, self.N = build_mpc_solver_random_obs(max_obs=0, max_static=0)
               
-            #We are getting start and goal poses inside of init, but why????
+            #We are getting start and goal poses inside of init, this is being done to initialize the environment?
             goal_idx    = self.find_free_grid(label="goal")
             self.goal_pos = self.grid_to_world(goal_idx)
             
@@ -263,11 +263,11 @@ class CrowdNavPyBulletEnv(gym.Env):
 
             # Solve MPC
             # weights = np.array([w_goal, w_smooth, w_obs, 0.1])
-            weights = np.array([1.0, 0.1, 0.01, 0.1])
+            weights = np.array([10.0, 0.1, 0.01, 0.0])
             P = np.concatenate([state, path, obs_traj, static_flat, weights])
             lbx = [0.0, -1.0] * self.N + [-1e20] * 3 * (self.N + 1)
             ubx = [1.0, 1.0] * self.N + [1e20] * 3 * (self.N + 1)
-            u0 = np.ones((2 * self.N + 3 * (self.N + 1), 1)) * 0.1
+            u0 = np.ones((2 * self.N + 3 * (self.N + 1), 1)) * 0.5
             g_len = self.N * 3 + 3
 
             try:
