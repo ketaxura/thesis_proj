@@ -30,8 +30,22 @@ class CrowdNavPyBulletEnv(gym.Env):
             # Environment parameters
             self.resolution = resolution
             self.world_size = map_size * MAP_SCALE   # total width in meters
+            
+            # In __init__(), after you set resolution, world_size, etc.:
+            self.num_rays  = 32                    # how many beams per scan
+            self.fov       = 270 * np.pi / 180     # 270° field of view
+            self.max_range = 5.0                   # maximum distance (m)
+            self.lidar_height = 0.175
             self.half_size  = self.world_size / 2    # half‑width in meters
             self.max_steps = max_steps
+            # Still in __init__(), right after the above:
+            angles = np.linspace(-self.fov/2, +self.fov/2, self.num_rays)
+            self.lidar_dirs = np.stack([
+                np.cos(angles),                     # x components
+                np.sin(angles),                     # y components
+                np.zeros_like(angles)               # z = 0 (planar)
+            ], axis=1)  # shape = (num_rays, 3)
+
             # self.static_obs = static_obs
             self.step_count = 0
             self.robot_pos = np.array([1.0, 1.0])  # Initial placeholder, will be randomized in reset
@@ -51,16 +65,26 @@ class CrowdNavPyBulletEnv(gym.Env):
             self.grid_size = self.grid.shape
             # print(f"Grid Shape: {self.grid_size}")
 
-            # MPC setup
-            self.solver, self.f_dyn, self.T, self.N = build_mpc_solver_random_obs(max_obs=0, max_static=0)
+            # # MPC setup
+            # self.solver, self.f_dyn, self.T, self.N = build_mpc_solver_random_obs(max_obs=0, max_static=0)
+            
+            
+            self.solver, self.f_dyn, self.T, self.N = build_mpc_solver_random_obs(
+                max_obs=self.num_peds,
+                max_static=self.max_static
+            )
               
             #We are getting start and goal poses inside of init, this is being done to initialize the environment?
             goal_idx    = self.find_free_grid(label="goal")
             self.goal_pos = self.grid_to_world(goal_idx)
             
-            # Observation and action spaces
-            obs_dim = 16 + 2 + 1  # LIDAR + goal_dir + goal_dist
-            self.observation_space = spaces.Box(low=0.0, high=1.0, shape=(obs_dim,), dtype=np.float32)
+            # Replace any old hard-coded dims:
+            obs_dim = self.num_rays + 2 + 1       # ranges + goal_dir(x,y) + goal_dist
+            self.observation_space = spaces.Box(
+                low=0.0, high=1.0,
+                shape=(obs_dim,), dtype=np.float32
+            )
+            
             self.action_space = spaces.Box(low=0.0, high=1.0, shape=(3,), dtype=np.float32)
 
 
@@ -162,7 +186,7 @@ class CrowdNavPyBulletEnv(gym.Env):
         # ─── 4) Place robot/goal in PyBullet:
         p.resetBasePositionAndOrientation(
             self.robot_id,
-            [*self.robot_pos, 0.1],
+            [*self.robot_pos, 0.008],
             p.getQuaternionFromEuler([0, 0, self.theta])
         )
 
@@ -270,6 +294,19 @@ class CrowdNavPyBulletEnv(gym.Env):
             u0 = np.ones((2 * self.N + 3 * (self.N + 1), 1)) * 0.5
             g_len = self.N * 3 + 3
 
+
+            # — assemble and reshape into a column vector —
+            P = np.concatenate([state, path, obs_traj, static_flat, weights])
+            P = P.reshape((-1, 1))   # now shape is (29,1)
+
+            # — shape‐check instead of size‐check —
+            expected_shape = self.solver.size_in('p')  # e.g. (29,1)
+            print(f"[DEBUG] P.shape = {P.shape}, solver expects {expected_shape}")
+            assert P.shape == expected_shape, (
+                f"P-shape mismatch: got {P.shape}, solver wants {expected_shape}"
+            )
+
+
             try:
                 sol = self.solver(x0=u0, p=P, lbg=[0.0] * g_len, ubg=[0.0] * g_len, lbx=lbx, ubx=ubx)
                 u_opt = sol['x'][:2 * self.N].full().reshape(self.N, 2)
@@ -318,18 +355,55 @@ class CrowdNavPyBulletEnv(gym.Env):
             traceback.print_exc()
             raise
 
+    # def _get_observation(self):
+    #     """Generate observation vector."""
+    #     try:
+    #         lidar = np.ones(16)  # Placeholder
+    #         goal_vec = self.goal_pos - self.robot_pos
+    #         goal_dist = np.linalg.norm(goal_vec)
+    #         goal_dir = goal_vec / (goal_dist + 1e-6) if goal_dist > 0 else np.zeros(2)
+    #         return np.concatenate([lidar, goal_dir, [goal_dist]]).astype(np.float32)
+    #     except Exception as e:
+    #         print(f"Error in _get_observation: {e}")
+    #         traceback.print_exc()
+    #         raise
+    
+    
     def _get_observation(self):
-        """Generate observation vector."""
-        try:
-            lidar = np.ones(16)  # Placeholder
-            goal_vec = self.goal_pos - self.robot_pos
-            goal_dist = np.linalg.norm(goal_vec)
-            goal_dir = goal_vec / (goal_dist + 1e-6) if goal_dist > 0 else np.zeros(2)
-            return np.concatenate([lidar, goal_dir, [goal_dist]]).astype(np.float32)
-        except Exception as e:
-            print(f"Error in _get_observation: {e}")
-            traceback.print_exc()
-            raise
+        # 1) Robot pose in world
+        pos, quat = p.getBasePositionAndOrientation(self.robot_id)
+        pos = np.array(pos)                                 # (x,y,z)
+        pos[2] = self.lidar_height
+        R   = np.array(p.getMatrixFromQuaternion(quat))\
+                .reshape(3,3)                               # rotation matrix
+
+        # 2) Beam start/end points
+        origins    = np.repeat(pos[None,:], self.num_rays, axis=0)          # (num_rays,3)
+        dirs_world = (R @ self.lidar_dirs.T).T                              # (num_rays,3)
+        ends       = origins + dirs_world * self.max_range                  # (num_rays,3)
+
+        # 3) Cast rays in batch
+        results = p.rayTestBatch(
+            rayFromPositions=origins.tolist(),
+            rayToPositions  =ends.tolist()
+        )
+        
+        for ori, end in zip(origins, ends):
+            p.addUserDebugLine(ori, end, [1,0,0], lifeTime=0.1)
+
+        # 4) Extract normalized distances
+        lidar = np.array([hit[2] for hit in results], dtype=np.float32)
+        # hit[2] = fraction along ray (1.0 means no hit within max_range)
+
+        # 5) Compute goal info
+        goal_vec  = self.goal_pos - pos[:2]
+        goal_dist = np.linalg.norm(goal_vec) + 1e-6
+        goal_dir  = goal_vec / goal_dist
+
+        # 6) Return full observation
+        return np.concatenate([lidar, goal_dir, [goal_dist]])
+
+
 
 
 
