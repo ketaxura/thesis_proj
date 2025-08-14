@@ -20,7 +20,7 @@ if __name__ == "__main__":
         # …
         if done: break
         print(f"Reward: {reward:.3f}, Done: {done}")
-        time.sleep(0.05)
+        # time.sleep(0.05)
         if done:
             print("Episode finished")
             break

@@ -213,7 +213,9 @@ def update_astar_path(robot_pos, goal_pos, grid, resolution):
                 print("inflation cells:", int(np.ceil(desired_m / resolution)))
                 print("raw occupied cells:", np.sum(original_grid == 1))
                 print("inflated occupied cells:", np.sum(inflated_grid == 1))
-                visualize_grid(inflated_grid, start_idx, goal_idx)
+                
+                #To show occup grid plot with the inflated obstacles.
+                #visualize_grid(inflated_grid, start_idx, goal_idx)
 
                 # plan on the inflated grid, not the raw one:
                 path = a_star(inflated_grid, start_idx, goal_idx)

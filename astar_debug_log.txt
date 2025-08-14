@@ -8,828 +8,679 @@ inflation cells: 1
 raw occupied cells: 7072
 inflated occupied cells: 9280
 A* Grid unique values: [0 1]
-Checking start at grid[18,88] = 0
+Checking start at grid[15,83] = 0
 Checking goal  at grid[14,22] = 0
 
- Expanding node: (18, 88), cost: 0.000
+ Expanding node: (15, 83), cost: 0.000
 
- Expanding node: (18, 87), cost: 1.000
+ Expanding node: (15, 82), cost: 1.000
 
- Expanding node: (18, 86), cost: 2.000
+ Expanding node: (15, 81), cost: 2.000
 
- Expanding node: (18, 85), cost: 3.000
+ Expanding node: (14, 82), cost: 1.414
 
- Expanding node: (18, 84), cost: 4.000
+ Expanding node: (16, 82), cost: 1.414
 
- Expanding node: (18, 83), cost: 5.000
+ Expanding node: (16, 81), cost: 2.414
 
- Expanding node: (18, 82), cost: 6.000
+ Expanding node: (16, 80), cost: 3.414
 
- Expanding node: (18, 81), cost: 7.000
+ Expanding node: (17, 81), cost: 2.828
 
- Expanding node: (18, 80), cost: 8.000
+ Expanding node: (17, 80), cost: 3.828
 
- Expanding node: (18, 79), cost: 9.000
+ Expanding node: (17, 79), cost: 4.828
 
- Expanding node: (18, 78), cost: 10.000
+ Expanding node: (14, 83), cost: 1.000
 
- Expanding node: (17, 87), cost: 1.414
+ Expanding node: (16, 83), cost: 1.000
 
- Expanding node: (17, 86), cost: 2.414
+ Expanding node: (18, 80), cost: 4.243
 
- Expanding node: (17, 85), cost: 3.414
+ Expanding node: (18, 79), cost: 5.243
 
- Expanding node: (17, 84), cost: 4.414
+ Expanding node: (18, 78), cost: 6.243
 
- Expanding node: (17, 83), cost: 5.414
+ Expanding node: (13, 82), cost: 2.414
 
- Expanding node: (17, 82), cost: 6.414
+ Expanding node: (17, 82), cost: 2.414
 
- Expanding node: (17, 81), cost: 7.414
+ Expanding node: (19, 79), cost: 5.657
 
- Expanding node: (17, 80), cost: 8.414
+ Expanding node: (19, 78), cost: 6.657
 
- Expanding node: (17, 79), cost: 9.414
+ Expanding node: (19, 77), cost: 7.657
 
- Expanding node: (19, 87), cost: 1.414
+ Expanding node: (19, 76), cost: 8.657
 
- Expanding node: (19, 86), cost: 2.414
+ Expanding node: (19, 75), cost: 9.657
 
- Expanding node: (19, 85), cost: 3.414
+ Expanding node: (19, 74), cost: 10.657
 
- Expanding node: (19, 84), cost: 4.414
+ Expanding node: (19, 73), cost: 11.657
 
- Expanding node: (19, 83), cost: 5.414
+ Expanding node: (19, 72), cost: 12.657
 
- Expanding node: (19, 82), cost: 6.414
+ Expanding node: (19, 71), cost: 13.657
 
- Expanding node: (19, 81), cost: 7.414
+ Expanding node: (19, 70), cost: 14.657
 
- Expanding node: (19, 80), cost: 8.414
+ Expanding node: (19, 69), cost: 15.657
 
- Expanding node: (19, 79), cost: 9.414
+ Expanding node: (19, 68), cost: 16.657
 
- Expanding node: (19, 78), cost: 10.414
+ Expanding node: (19, 67), cost: 17.657
 
- Expanding node: (19, 77), cost: 11.414
+ Expanding node: (19, 66), cost: 18.657
 
- Expanding node: (19, 76), cost: 12.414
+ Expanding node: (19, 65), cost: 19.657
 
- Expanding node: (19, 75), cost: 13.414
+ Expanding node: (19, 64), cost: 20.657
 
- Expanding node: (19, 74), cost: 14.414
+ Expanding node: (19, 63), cost: 21.657
 
- Expanding node: (19, 73), cost: 15.414
+ Expanding node: (18, 81), cost: 3.828
 
- Expanding node: (19, 72), cost: 16.414
+ Expanding node: (18, 81), cost: 3.828
 
- Expanding node: (19, 71), cost: 17.414
+ Expanding node: (19, 62), cost: 22.657
 
- Expanding node: (19, 70), cost: 18.414
+ Expanding node: (19, 61), cost: 23.657
 
- Expanding node: (19, 69), cost: 19.414
+ Expanding node: (19, 60), cost: 24.657
 
- Expanding node: (19, 68), cost: 20.414
+ Expanding node: (19, 59), cost: 25.657
 
- Expanding node: (19, 67), cost: 21.414
+ Expanding node: (19, 58), cost: 26.657
 
- Expanding node: (19, 66), cost: 22.414
+ Expanding node: (15, 84), cost: 1.000
 
- Expanding node: (19, 65), cost: 23.414
+ Expanding node: (13, 83), cost: 2.000
 
- Expanding node: (19, 64), cost: 24.414
+ Expanding node: (19, 57), cost: 27.657
 
- Expanding node: (19, 63), cost: 25.414
+ Expanding node: (19, 56), cost: 28.657
 
- Expanding node: (19, 62), cost: 26.414
+ Expanding node: (19, 55), cost: 29.657
 
- Expanding node: (19, 61), cost: 27.414
+ Expanding node: (19, 54), cost: 30.657
 
- Expanding node: (19, 60), cost: 28.414
+ Expanding node: (19, 53), cost: 31.657
 
- Expanding node: (19, 59), cost: 29.414
+ Expanding node: (19, 52), cost: 32.657
 
- Expanding node: (19, 58), cost: 30.414
+ Expanding node: (17, 83), cost: 2.000
 
- Expanding node: (19, 57), cost: 31.414
+ Expanding node: (19, 51), cost: 33.657
 
- Expanding node: (19, 56), cost: 32.414
+ Expanding node: (19, 50), cost: 34.657
 
- Expanding node: (19, 55), cost: 33.414
+ Expanding node: (19, 49), cost: 35.657
 
- Expanding node: (19, 54), cost: 34.414
+ Expanding node: (19, 48), cost: 36.657
 
- Expanding node: (19, 53), cost: 35.414
+ Expanding node: (19, 47), cost: 37.657
 
- Expanding node: (19, 52), cost: 36.414
+ Expanding node: (19, 46), cost: 38.657
 
- Expanding node: (19, 51), cost: 37.414
+ Expanding node: (19, 45), cost: 39.657
 
- Expanding node: (19, 50), cost: 38.414
+ Expanding node: (19, 44), cost: 40.657
 
- Expanding node: (16, 86), cost: 2.828
+ Expanding node: (18, 69), cost: 16.071
 
- Expanding node: (16, 85), cost: 3.828
+ Expanding node: (19, 43), cost: 41.657
 
- Expanding node: (16, 84), cost: 4.828
+ Expanding node: (18, 68), cost: 17.071
 
- Expanding node: (16, 83), cost: 5.828
+ Expanding node: (18, 67), cost: 18.071
 
- Expanding node: (16, 82), cost: 6.828
+ Expanding node: (18, 66), cost: 19.071
 
- Expanding node: (16, 81), cost: 7.828
+ Expanding node: (18, 65), cost: 20.071
 
- Expanding node: (16, 80), cost: 8.828
+ Expanding node: (18, 64), cost: 21.071
 
- Expanding node: (19, 49), cost: 39.414
+ Expanding node: (18, 63), cost: 22.071
 
- Expanding node: (19, 48), cost: 40.414
+ Expanding node: (18, 62), cost: 23.071
 
- Expanding node: (19, 47), cost: 41.414
+ Expanding node: (19, 42), cost: 42.657
 
- Expanding node: (19, 46), cost: 42.414
+ Expanding node: (18, 61), cost: 24.071
 
- Expanding node: (19, 45), cost: 43.414
+ Expanding node: (18, 60), cost: 25.071
 
- Expanding node: (19, 44), cost: 44.414
+ Expanding node: (18, 59), cost: 26.071
 
- Expanding node: (18, 69), cost: 19.828
+ Expanding node: (18, 58), cost: 27.071
 
- Expanding node: (19, 43), cost: 45.414
+ Expanding node: (18, 57), cost: 28.071
 
- Expanding node: (18, 68), cost: 20.828
+ Expanding node: (19, 41), cost: 43.657
 
- Expanding node: (18, 67), cost: 21.828
+ Expanding node: (18, 56), cost: 29.071
 
- Expanding node: (18, 66), cost: 22.828
+ Expanding node: (18, 55), cost: 30.071
 
- Expanding node: (18, 65), cost: 23.828
+ Expanding node: (18, 54), cost: 31.071
 
- Expanding node: (18, 64), cost: 24.828
+ Expanding node: (18, 53), cost: 32.071
 
- Expanding node: (18, 63), cost: 25.828
+ Expanding node: (18, 52), cost: 33.071
 
- Expanding node: (18, 62), cost: 26.828
+ Expanding node: (19, 40), cost: 44.657
 
- Expanding node: (19, 42), cost: 46.414
+ Expanding node: (18, 51), cost: 34.071
 
- Expanding node: (18, 61), cost: 27.828
+ Expanding node: (19, 39), cost: 45.657
 
- Expanding node: (18, 60), cost: 28.828
+ Expanding node: (20, 78), cost: 7.071
 
- Expanding node: (18, 59), cost: 29.828
+ Expanding node: (20, 77), cost: 8.071
 
- Expanding node: (18, 58), cost: 30.828
+ Expanding node: (20, 76), cost: 9.071
 
- Expanding node: (18, 57), cost: 31.828
+ Expanding node: (20, 75), cost: 10.071
 
- Expanding node: (19, 41), cost: 47.414
+ Expanding node: (14, 84), cost: 1.414
 
- Expanding node: (18, 56), cost: 32.828
+ Expanding node: (20, 74), cost: 11.071
 
- Expanding node: (17, 88), cost: 1.000
+ Expanding node: (19, 38), cost: 46.657
 
- Expanding node: (18, 55), cost: 33.828
+ Expanding node: (20, 73), cost: 12.071
 
- Expanding node: (18, 54), cost: 34.828
+ Expanding node: (20, 72), cost: 13.071
 
- Expanding node: (18, 53), cost: 35.828
+ Expanding node: (20, 71), cost: 14.071
 
- Expanding node: (18, 52), cost: 36.828
+ Expanding node: (20, 70), cost: 15.071
 
- Expanding node: (19, 40), cost: 48.414
+ Expanding node: (16, 84), cost: 1.414
 
- Expanding node: (18, 51), cost: 37.828
+ Expanding node: (12, 82), cost: 3.414
 
- Expanding node: (20, 86), cost: 2.828
+ Expanding node: (20, 69), cost: 16.071
 
- Expanding node: (20, 85), cost: 3.828
+ Expanding node: (19, 80), cost: 5.243
 
- Expanding node: (20, 84), cost: 4.828
+ Expanding node: (19, 80), cost: 5.243
 
- Expanding node: (20, 83), cost: 5.828
+ Expanding node: (20, 68), cost: 17.071
 
- Expanding node: (20, 82), cost: 6.828
+ Expanding node: (18, 42), cost: 43.071
 
- Expanding node: (20, 81), cost: 7.828
+ Expanding node: (19, 37), cost: 47.657
 
- Expanding node: (19, 39), cost: 49.414
+ Expanding node: (20, 67), cost: 18.071
 
- Expanding node: (20, 80), cost: 8.828
+ Expanding node: (20, 66), cost: 19.071
 
- Expanding node: (20, 79), cost: 9.828
+ Expanding node: (18, 41), cost: 44.071
 
- Expanding node: (20, 79), cost: 9.828
+ Expanding node: (20, 65), cost: 20.071
 
- Expanding node: (20, 78), cost: 10.828
+ Expanding node: (20, 64), cost: 21.071
 
- Expanding node: (20, 78), cost: 10.828
+ Expanding node: (20, 63), cost: 22.071
 
- Expanding node: (20, 77), cost: 11.828
+ Expanding node: (18, 40), cost: 45.071
 
- Expanding node: (20, 77), cost: 11.828
+ Expanding node: (20, 62), cost: 23.071
 
- Expanding node: (20, 76), cost: 12.828
+ Expanding node: (20, 61), cost: 24.071
 
- Expanding node: (20, 76), cost: 12.828
+ Expanding node: (18, 39), cost: 46.071
 
- Expanding node: (20, 75), cost: 13.828
+ Expanding node: (20, 60), cost: 25.071
 
- Expanding node: (20, 75), cost: 13.828
+ Expanding node: (18, 82), cost: 3.414
 
- Expanding node: (20, 74), cost: 14.828
+ Expanding node: (20, 59), cost: 26.071
 
- Expanding node: (20, 74), cost: 14.828
+ Expanding node: (18, 38), cost: 47.071
 
- Expanding node: (19, 38), cost: 50.414
+ Expanding node: (20, 58), cost: 27.071
 
- Expanding node: (20, 73), cost: 15.828
+ Expanding node: (20, 57), cost: 28.071
 
- Expanding node: (20, 73), cost: 15.828
+ Expanding node: (17, 67), cost: 18.485
 
- Expanding node: (20, 72), cost: 16.828
+ Expanding node: (17, 66), cost: 19.485
 
- Expanding node: (19, 88), cost: 1.000
+ Expanding node: (17, 65), cost: 20.485
 
- Expanding node: (20, 71), cost: 17.828
+ Expanding node: (17, 64), cost: 21.485
 
- Expanding node: (20, 70), cost: 18.828
+ Expanding node: (17, 63), cost: 22.485
 
- Expanding node: (20, 69), cost: 19.828
+ Expanding node: (18, 37), cost: 48.071
 
- Expanding node: (20, 68), cost: 20.828
+ Expanding node: (20, 56), cost: 29.071
 
- Expanding node: (18, 42), cost: 46.828
+ Expanding node: (17, 62), cost: 23.485
 
- Expanding node: (19, 37), cost: 51.414
+ Expanding node: (17, 61), cost: 24.485
 
- Expanding node: (20, 67), cost: 21.828
+ Expanding node: (17, 60), cost: 25.485
 
- Expanding node: (20, 66), cost: 22.828
+ Expanding node: (17, 59), cost: 26.485
 
- Expanding node: (18, 41), cost: 47.828
+ Expanding node: (17, 58), cost: 27.485
 
- Expanding node: (20, 65), cost: 23.828
+ Expanding node: (20, 55), cost: 30.071
 
- Expanding node: (15, 85), cost: 4.243
+ Expanding node: (17, 57), cost: 28.485
 
- Expanding node: (15, 84), cost: 5.243
+ Expanding node: (17, 56), cost: 29.485
 
- Expanding node: (15, 83), cost: 6.243
+ Expanding node: (17, 55), cost: 30.485
 
- Expanding node: (15, 82), cost: 7.243
+ Expanding node: (17, 54), cost: 31.485
 
- Expanding node: (15, 81), cost: 8.243
+ Expanding node: (20, 54), cost: 31.071
 
- Expanding node: (15, 81), cost: 8.243
+ Expanding node: (17, 53), cost: 32.485
 
- Expanding node: (20, 64), cost: 24.828
+ Expanding node: (17, 52), cost: 33.485
 
- Expanding node: (20, 63), cost: 25.828
+ Expanding node: (20, 53), cost: 32.071
 
- Expanding node: (18, 40), cost: 48.828
+ Expanding node: (20, 52), cost: 33.071
 
- Expanding node: (20, 62), cost: 26.828
+ Expanding node: (20, 51), cost: 34.071
 
- Expanding node: (20, 61), cost: 27.828
+ Expanding node: (20, 50), cost: 35.071
 
- Expanding node: (18, 39), cost: 49.828
+ Expanding node: (20, 49), cost: 36.071
 
- Expanding node: (20, 60), cost: 28.828
+ Expanding node: (17, 40), cost: 45.485
 
- Expanding node: (20, 59), cost: 29.828
+ Expanding node: (17, 39), cost: 46.485
 
- Expanding node: (18, 38), cost: 50.828
+ Expanding node: (20, 48), cost: 37.071
 
- Expanding node: (20, 58), cost: 30.828
+ Expanding node: (17, 38), cost: 47.485
 
- Expanding node: (20, 57), cost: 31.828
+ Expanding node: (20, 47), cost: 38.071
 
- Expanding node: (17, 67), cost: 22.243
+ Expanding node: (17, 37), cost: 48.485
 
- Expanding node: (17, 66), cost: 23.243
+ Expanding node: (20, 46), cost: 39.071
 
- Expanding node: (17, 65), cost: 24.243
+ Expanding node: (18, 70), cost: 15.657
 
- Expanding node: (17, 64), cost: 25.243
+ Expanding node: (13, 83), cost: 2.828
 
- Expanding node: (17, 63), cost: 26.243
+ Expanding node: (20, 45), cost: 40.071
 
- Expanding node: (18, 37), cost: 51.828
+ Expanding node: (20, 44), cost: 41.071
 
- Expanding node: (20, 56), cost: 32.828
+ Expanding node: (17, 83), cost: 2.828
 
- Expanding node: (17, 62), cost: 27.243
+ Expanding node: (20, 43), cost: 42.071
 
- Expanding node: (17, 61), cost: 28.243
+ Expanding node: (21, 77), cost: 8.485
 
- Expanding node: (17, 60), cost: 29.243
+ Expanding node: (21, 76), cost: 9.485
 
- Expanding node: (17, 59), cost: 30.243
+ Expanding node: (16, 66), cost: 19.899
 
- Expanding node: (17, 58), cost: 31.243
+ Expanding node: (21, 75), cost: 10.485
 
- Expanding node: (20, 55), cost: 33.828
+ Expanding node: (16, 65), cost: 20.899
 
- Expanding node: (17, 57), cost: 32.243
+ Expanding node: (16, 64), cost: 21.899
 
- Expanding node: (17, 56), cost: 33.243
+ Expanding node: (16, 63), cost: 22.899
 
- Expanding node: (17, 55), cost: 34.243
+ Expanding node: (16, 62), cost: 23.899
 
- Expanding node: (17, 54), cost: 35.243
+ Expanding node: (16, 61), cost: 24.899
 
- Expanding node: (20, 54), cost: 34.828
+ Expanding node: (20, 42), cost: 43.071
 
- Expanding node: (17, 53), cost: 36.243
+ Expanding node: (16, 60), cost: 25.899
 
- Expanding node: (17, 52), cost: 37.243
+ Expanding node: (16, 59), cost: 26.899
 
- Expanding node: (20, 53), cost: 35.828
+ Expanding node: (21, 74), cost: 11.485
 
- Expanding node: (20, 52), cost: 36.828
+ Expanding node: (16, 58), cost: 27.899
 
- Expanding node: (20, 51), cost: 37.828
+ Expanding node: (16, 57), cost: 28.899
 
- Expanding node: (16, 87), cost: 2.414
+ Expanding node: (16, 56), cost: 29.899
 
- Expanding node: (20, 50), cost: 38.828
+ Expanding node: (16, 55), cost: 30.899
 
- Expanding node: (20, 49), cost: 39.828
+ Expanding node: (16, 54), cost: 31.899
 
- Expanding node: (17, 40), cost: 49.243
+ Expanding node: (21, 73), cost: 12.485
 
- Expanding node: (17, 39), cost: 50.243
+ Expanding node: (16, 53), cost: 32.899
 
- Expanding node: (20, 48), cost: 40.828
+ Expanding node: (20, 79), cost: 6.657
 
- Expanding node: (17, 38), cost: 51.243
+ Expanding node: (20, 79), cost: 6.657
 
- Expanding node: (20, 47), cost: 41.828
+ Expanding node: (21, 72), cost: 13.485
 
- Expanding node: (17, 37), cost: 52.243
+ Expanding node: (21, 71), cost: 14.485
 
- Expanding node: (20, 46), cost: 42.828
+ Expanding node: (21, 70), cost: 15.485
 
- Expanding node: (18, 70), cost: 19.414
+ Expanding node: (20, 41), cost: 44.071
 
- Expanding node: (20, 45), cost: 43.828
+ Expanding node: (21, 69), cost: 16.485
 
- Expanding node: (21, 85), cost: 4.243
+ Expanding node: (21, 68), cost: 17.485
 
- Expanding node: (20, 44), cost: 44.828
+ Expanding node: (16, 39), cost: 46.899
 
- Expanding node: (21, 84), cost: 5.243
+ Expanding node: (16, 38), cost: 47.899
 
- Expanding node: (21, 83), cost: 6.243
+ Expanding node: (21, 67), cost: 18.485
 
- Expanding node: (21, 82), cost: 7.243
+ Expanding node: (16, 37), cost: 48.899
 
- Expanding node: (21, 81), cost: 8.243
+ Expanding node: (12, 83), cost: 3.000
 
- Expanding node: (21, 81), cost: 8.243
+ Expanding node: (18, 43), cost: 42.657
 
- Expanding node: (14, 84), cost: 5.657
+ Expanding node: (21, 66), cost: 19.485
 
- Expanding node: (14, 83), cost: 6.657
+ Expanding node: (19, 81), cost: 4.828
 
- Expanding node: (14, 82), cost: 7.657
+ Expanding node: (16, 36), cost: 49.899
 
- Expanding node: (21, 80), cost: 9.243
+ Expanding node: (20, 40), cost: 45.071
 
- Expanding node: (21, 80), cost: 9.243
+ Expanding node: (21, 65), cost: 20.485
 
- Expanding node: (20, 43), cost: 45.828
+ Expanding node: (16, 35), cost: 50.899
 
- Expanding node: (21, 79), cost: 10.243
+ Expanding node: (21, 64), cost: 21.485
 
- Expanding node: (21, 79), cost: 10.243
+ Expanding node: (16, 34), cost: 51.899
 
- Expanding node: (21, 78), cost: 11.243
+ Expanding node: (21, 63), cost: 22.485
 
- Expanding node: (21, 78), cost: 11.243
+ Expanding node: (16, 33), cost: 52.899
 
- Expanding node: (21, 77), cost: 12.243
+ Expanding node: (21, 62), cost: 23.485
 
- Expanding node: (21, 77), cost: 12.243
+ Expanding node: (16, 32), cost: 53.899
 
- Expanding node: (20, 87), cost: 2.414
+ Expanding node: (20, 39), cost: 46.071
 
- Expanding node: (21, 76), cost: 13.243
+ Expanding node: (21, 61), cost: 24.485
 
- Expanding node: (21, 76), cost: 13.243
+ Expanding node: (16, 31), cost: 54.899
 
- Expanding node: (16, 66), cost: 23.657
+ Expanding node: (21, 60), cost: 25.485
 
- Expanding node: (21, 75), cost: 14.243
+ Expanding node: (18, 83), cost: 3.000
 
- Expanding node: (21, 75), cost: 14.243
+ Expanding node: (21, 59), cost: 26.485
 
- Expanding node: (16, 65), cost: 24.657
+ Expanding node: (16, 30), cost: 55.899
 
- Expanding node: (16, 64), cost: 25.657
+ Expanding node: (20, 38), cost: 47.071
 
- Expanding node: (16, 63), cost: 26.657
+ Expanding node: (21, 58), cost: 27.485
 
- Expanding node: (16, 62), cost: 27.657
+ Expanding node: (17, 68), cost: 18.071
 
- Expanding node: (16, 61), cost: 28.657
+ Expanding node: (21, 57), cost: 28.485
 
- Expanding node: (20, 42), cost: 46.828
+ Expanding node: (16, 29), cost: 56.899
 
- Expanding node: (16, 60), cost: 29.657
+ Expanding node: (21, 56), cost: 29.485
 
- Expanding node: (16, 59), cost: 30.657
+ Expanding node: (21, 55), cost: 30.485
 
- Expanding node: (21, 74), cost: 15.243
+ Expanding node: (16, 28), cost: 57.899
 
- Expanding node: (21, 74), cost: 15.243
+ Expanding node: (20, 37), cost: 48.071
 
- Expanding node: (16, 58), cost: 31.657
+ Expanding node: (21, 54), cost: 31.485
 
- Expanding node: (16, 57), cost: 32.657
+ Expanding node: (21, 53), cost: 32.485
 
- Expanding node: (16, 56), cost: 33.657
+ Expanding node: (16, 27), cost: 58.899
 
- Expanding node: (16, 55), cost: 34.657
+ Expanding node: (21, 52), cost: 33.485
 
- Expanding node: (16, 54), cost: 35.657
+ Expanding node: (17, 41), cost: 45.071
 
- Expanding node: (21, 73), cost: 16.243
+ Expanding node: (21, 51), cost: 34.485
 
- Expanding node: (16, 53), cost: 36.657
+ Expanding node: (15, 65), cost: 21.314
 
- Expanding node: (21, 72), cost: 17.243
+ Expanding node: (15, 64), cost: 22.314
 
- Expanding node: (21, 71), cost: 18.243
+ Expanding node: (15, 63), cost: 23.314
 
- Expanding node: (21, 71), cost: 18.243
+ Expanding node: (15, 62), cost: 24.314
 
- Expanding node: (21, 70), cost: 19.243
+ Expanding node: (15, 61), cost: 25.314
 
- Expanding node: (21, 70), cost: 19.243
+ Expanding node: (15, 60), cost: 26.314
 
- Expanding node: (20, 41), cost: 47.828
+ Expanding node: (15, 59), cost: 27.314
 
- Expanding node: (21, 69), cost: 20.243
+ Expanding node: (15, 58), cost: 28.314
 
- Expanding node: (21, 69), cost: 20.243
+ Expanding node: (15, 57), cost: 29.314
 
- Expanding node: (21, 68), cost: 21.243
+ Expanding node: (15, 56), cost: 30.314
 
- Expanding node: (21, 68), cost: 21.243
+ Expanding node: (15, 55), cost: 31.314
 
- Expanding node: (16, 39), cost: 50.657
+ Expanding node: (15, 54), cost: 32.314
 
- Expanding node: (16, 38), cost: 51.657
+ Expanding node: (15, 38), cost: 48.314
 
- Expanding node: (21, 67), cost: 22.243
+ Expanding node: (15, 37), cost: 49.314
 
- Expanding node: (21, 67), cost: 22.243
+ Expanding node: (21, 50), cost: 35.485
 
- Expanding node: (16, 37), cost: 52.657
+ Expanding node: (15, 36), cost: 50.314
 
- Expanding node: (18, 43), cost: 46.414
+ Expanding node: (15, 35), cost: 51.314
 
- Expanding node: (21, 66), cost: 23.243
+ Expanding node: (15, 34), cost: 52.314
 
- Expanding node: (21, 66), cost: 23.243
+ Expanding node: (15, 33), cost: 53.314
 
- Expanding node: (16, 36), cost: 53.657
+ Expanding node: (15, 32), cost: 54.314
 
- Expanding node: (20, 40), cost: 48.828
+ Expanding node: (15, 31), cost: 55.314
 
- Expanding node: (21, 65), cost: 24.243
+ Expanding node: (16, 26), cost: 59.899
 
- Expanding node: (21, 65), cost: 24.243
+ Expanding node: (18, 82), cost: 4.243
 
- Expanding node: (16, 35), cost: 54.657
+ Expanding node: (15, 30), cost: 56.314
 
- Expanding node: (21, 64), cost: 25.243
+ Expanding node: (21, 49), cost: 36.485
 
- Expanding node: (21, 64), cost: 25.243
+ Expanding node: (15, 29), cost: 57.314
 
- Expanding node: (16, 34), cost: 55.657
+ Expanding node: (15, 28), cost: 58.314
 
- Expanding node: (21, 63), cost: 26.243
+ Expanding node: (21, 48), cost: 37.485
 
- Expanding node: (21, 63), cost: 26.243
+ Expanding node: (15, 27), cost: 59.314
 
- Expanding node: (15, 86), cost: 3.828
+ Expanding node: (13, 84), cost: 2.414
 
- Expanding node: (15, 86), cost: 3.828
+ Expanding node: (15, 26), cost: 60.314
 
- Expanding node: (16, 33), cost: 56.657
+ Expanding node: (21, 47), cost: 38.485
 
- Expanding node: (21, 62), cost: 27.243
+ Expanding node: (15, 25), cost: 61.314
 
- Expanding node: (21, 62), cost: 27.243
+ Expanding node: (21, 46), cost: 39.485
 
- Expanding node: (16, 32), cost: 57.657
+ Expanding node: (17, 84), cost: 2.414
 
- Expanding node: (20, 39), cost: 49.828
+ Expanding node: (22, 76), cost: 9.899
 
- Expanding node: (21, 61), cost: 28.243
+ Expanding node: (11, 82), cost: 4.414
 
- Expanding node: (21, 61), cost: 28.243
+ Expanding node: (22, 75), cost: 10.899
 
- Expanding node: (16, 31), cost: 58.657
+ Expanding node: (16, 25), cost: 60.899
 
- Expanding node: (21, 60), cost: 29.243
+ Expanding node: (21, 78), cost: 8.071
 
- Expanding node: (21, 60), cost: 29.243
+ Expanding node: (22, 74), cost: 11.899
 
- Expanding node: (21, 59), cost: 30.243
+ Expanding node: (22, 73), cost: 12.899
 
- Expanding node: (21, 59), cost: 30.243
+ Expanding node: (21, 45), cost: 40.485
 
- Expanding node: (16, 30), cost: 59.657
+ Expanding node: (16, 67), cost: 19.485
 
- Expanding node: (20, 38), cost: 50.828
+ Expanding node: (22, 72), cost: 13.899
 
- Expanding node: (21, 58), cost: 31.243
+ Expanding node: (22, 71), cost: 14.899
 
- Expanding node: (21, 58), cost: 31.243
+ Expanding node: (15, 24), cost: 62.314
 
- Expanding node: (17, 68), cost: 21.828
+ Expanding node: (20, 80), cost: 6.243
 
- Expanding node: (21, 57), cost: 32.243
+ Expanding node: (22, 70), cost: 15.899
 
- Expanding node: (16, 29), cost: 60.657
+ Expanding node: (21, 44), cost: 41.485
 
- Expanding node: (21, 56), cost: 33.243
+ Expanding node: (22, 69), cost: 16.899
 
- Expanding node: (21, 55), cost: 34.243
+ Expanding node: (22, 68), cost: 17.899
 
- Expanding node: (16, 28), cost: 61.657
+ Expanding node: (16, 40), cost: 46.485
 
- Expanding node: (20, 37), cost: 51.828
+ Expanding node: (22, 67), cost: 18.899
 
- Expanding node: (21, 54), cost: 35.243
+ Expanding node: (22, 66), cost: 19.899
 
- Expanding node: (21, 53), cost: 36.243
+ Expanding node: (21, 43), cost: 42.485
 
- Expanding node: (16, 88), cost: 2.000
+ Expanding node: (19, 82), cost: 4.414
 
- Expanding node: (16, 27), cost: 62.657
+ Expanding node: (22, 65), cost: 20.899
 
- Expanding node: (21, 52), cost: 37.243
+ Expanding node: (22, 64), cost: 21.899
 
- Expanding node: (17, 41), cost: 48.828
+ Expanding node: (22, 63), cost: 22.899
 
- Expanding node: (21, 51), cost: 38.243
+ Expanding node: (21, 42), cost: 43.485
 
- Expanding node: (13, 83), cost: 7.071
+ Expanding node: (22, 62), cost: 23.899
 
- Expanding node: (13, 82), cost: 8.071
+ Expanding node: (22, 61), cost: 24.899
 
- Expanding node: (15, 65), cost: 25.071
+ Expanding node: (14, 37), cost: 49.728
 
- Expanding node: (15, 64), cost: 26.071
+ Expanding node: (14, 36), cost: 50.728
 
- Expanding node: (15, 63), cost: 27.071
+ Expanding node: (14, 35), cost: 51.728
 
- Expanding node: (15, 62), cost: 28.071
+ Expanding node: (14, 34), cost: 52.728
 
- Expanding node: (15, 61), cost: 29.071
+ Expanding node: (14, 33), cost: 53.728
 
- Expanding node: (15, 60), cost: 30.071
+ Expanding node: (14, 32), cost: 54.728
 
- Expanding node: (15, 59), cost: 31.071
+ Expanding node: (14, 31), cost: 55.728
 
- Expanding node: (15, 58), cost: 32.071
+ Expanding node: (14, 30), cost: 56.728
 
- Expanding node: (15, 57), cost: 33.071
+ Expanding node: (14, 29), cost: 57.728
 
- Expanding node: (15, 56), cost: 34.071
+ Expanding node: (14, 28), cost: 58.728
 
- Expanding node: (15, 55), cost: 35.071
+ Expanding node: (14, 27), cost: 59.728
 
- Expanding node: (15, 54), cost: 36.071
+ Expanding node: (14, 26), cost: 60.728
 
- Expanding node: (15, 38), cost: 52.071
+ Expanding node: (14, 25), cost: 61.728
 
- Expanding node: (15, 37), cost: 53.071
+ Expanding node: (16, 24), cost: 61.899
 
- Expanding node: (21, 50), cost: 39.243
+ Expanding node: (14, 24), cost: 62.728
 
- Expanding node: (15, 36), cost: 54.071
+ Expanding node: (15, 23), cost: 63.314
 
- Expanding node: (15, 35), cost: 55.071
+ Expanding node: (14, 23), cost: 63.728
 
- Expanding node: (15, 34), cost: 56.071
-
- Expanding node: (15, 33), cost: 57.071
-
- Expanding node: (18, 89), cost: 1.000
-
- Expanding node: (15, 32), cost: 58.071
-
- Expanding node: (15, 31), cost: 59.071
-
- Expanding node: (16, 26), cost: 63.657
-
- Expanding node: (15, 30), cost: 60.071
-
- Expanding node: (21, 49), cost: 40.243
-
- Expanding node: (15, 29), cost: 61.071
-
- Expanding node: (15, 28), cost: 62.071
-
- Expanding node: (21, 48), cost: 41.243
-
- Expanding node: (15, 27), cost: 63.071
-
- Expanding node: (22, 84), cost: 5.657
-
- Expanding node: (22, 83), cost: 6.657
-
- Expanding node: (22, 82), cost: 7.657
-
- Expanding node: (15, 26), cost: 64.071
-
- Expanding node: (22, 81), cost: 8.657
-
- Expanding node: (21, 47), cost: 42.243
-
- Expanding node: (22, 80), cost: 9.657
-
- Expanding node: (21, 86), cost: 3.828
-
- Expanding node: (21, 86), cost: 3.828
-
- Expanding node: (22, 79), cost: 10.657
-
- Expanding node: (22, 78), cost: 11.657
-
- Expanding node: (15, 25), cost: 65.071
-
- Expanding node: (22, 77), cost: 12.657
-
- Expanding node: (21, 46), cost: 43.243
-
- Expanding node: (14, 85), cost: 5.243
-
- Expanding node: (14, 85), cost: 5.243
-
- Expanding node: (22, 76), cost: 13.657
-
- Expanding node: (22, 75), cost: 14.657
-
- Expanding node: (16, 25), cost: 64.657
-
- Expanding node: (22, 74), cost: 15.657
-
- Expanding node: (20, 88), cost: 2.000
-
- Expanding node: (22, 73), cost: 16.657
-
- Expanding node: (21, 45), cost: 44.243
-
- Expanding node: (16, 67), cost: 23.243
-
- Expanding node: (22, 72), cost: 17.657
-
- Expanding node: (22, 71), cost: 18.657
-
- Expanding node: (15, 24), cost: 66.071
-
- Expanding node: (22, 70), cost: 19.657
-
- Expanding node: (21, 44), cost: 45.243
-
- Expanding node: (22, 69), cost: 20.657
-
- Expanding node: (22, 68), cost: 21.657
-
- Expanding node: (16, 40), cost: 50.243
-
- Expanding node: (22, 67), cost: 22.657
-
- Expanding node: (22, 66), cost: 23.657
-
- Expanding node: (21, 43), cost: 46.243
-
- Expanding node: (22, 65), cost: 24.657
-
- Expanding node: (22, 64), cost: 25.657
-
- Expanding node: (15, 87), cost: 3.414
-
- Expanding node: (22, 63), cost: 26.657
-
- Expanding node: (21, 42), cost: 47.243
-
- Expanding node: (22, 62), cost: 27.657
-
- Expanding node: (22, 61), cost: 28.657
-
- Expanding node: (17, 89), cost: 1.414
-
- Expanding node: (14, 37), cost: 53.485
-
- Expanding node: (14, 36), cost: 54.485
-
- Expanding node: (14, 35), cost: 55.485
-
- Expanding node: (14, 34), cost: 56.485
-
- Expanding node: (14, 33), cost: 57.485
-
- Expanding node: (14, 32), cost: 58.485
-
- Expanding node: (14, 31), cost: 59.485
-
- Expanding node: (14, 30), cost: 60.485
-
- Expanding node: (14, 29), cost: 61.485
-
- Expanding node: (14, 28), cost: 62.485
-
- Expanding node: (14, 27), cost: 63.485
-
- Expanding node: (14, 26), cost: 64.485
-
- Expanding node: (14, 25), cost: 65.485
-
- Expanding node: (16, 24), cost: 65.657
-
- Expanding node: (14, 24), cost: 66.485
-
- Expanding node: (15, 23), cost: 67.071
-
- Expanding node: (14, 23), cost: 67.485
-
- Expanding node: (14, 22), cost: 68.485
+ Expanding node: (14, 22), cost: 64.728
 
  Final path:
-  Step 0: Grid[18, 88], value=1
-  Step 1: Grid[18, 87], value=1
-  Step 2: Grid[18, 86], value=1
-  Step 3: Grid[18, 85], value=1
-  Step 4: Grid[18, 84], value=0
-  Step 5: Grid[18, 83], value=0
-  Step 6: Grid[18, 82], value=0
-  Step 7: Grid[18, 81], value=1
-  Step 8: Grid[18, 80], value=1
-  Step 9: Grid[18, 79], value=1
-  Step 10: Grid[19, 78], value=1
-  Step 11: Grid[19, 77], value=1
-  Step 12: Grid[19, 76], value=1
-  Step 13: Grid[19, 75], value=1
-  Step 14: Grid[19, 74], value=1
-  Step 15: Grid[19, 73], value=1
-  Step 16: Grid[19, 72], value=1
-  Step 17: Grid[19, 71], value=1
-  Step 18: Grid[19, 70], value=0
-  Step 19: Grid[19, 69], value=0
-  Step 20: Grid[19, 68], value=0
-  Step 21: Grid[19, 67], value=1
-  Step 22: Grid[19, 66], value=1
-  Step 23: Grid[19, 65], value=1
-  Step 24: Grid[19, 64], value=1
-  Step 25: Grid[19, 63], value=1
-  Step 26: Grid[19, 62], value=1
-  Step 27: Grid[19, 61], value=1
-  Step 28: Grid[19, 60], value=1
-  Step 29: Grid[19, 59], value=1
-  Step 30: Grid[19, 58], value=1
-  Step 31: Grid[19, 57], value=0
-  Step 32: Grid[19, 56], value=0
-  Step 33: Grid[19, 55], value=0
-  Step 34: Grid[19, 54], value=1
-  Step 35: Grid[19, 53], value=1
-  Step 36: Grid[19, 52], value=1
-  Step 37: Grid[19, 51], value=1
-  Step 38: Grid[19, 50], value=1
-  Step 39: Grid[19, 49], value=1
-  Step 40: Grid[19, 48], value=1
-  Step 41: Grid[19, 47], value=1
-  Step 42: Grid[19, 46], value=1
-  Step 43: Grid[19, 45], value=1
-  Step 44: Grid[19, 44], value=1
-  Step 45: Grid[19, 43], value=0
-  Step 46: Grid[19, 42], value=0
-  Step 47: Grid[19, 41], value=0
-  Step 48: Grid[19, 40], value=1
-  Step 49: Grid[18, 39], value=1
-  Step 50: Grid[17, 38], value=1
-  Step 51: Grid[16, 37], value=1
-  Step 52: Grid[16, 36], value=1
-  Step 53: Grid[16, 35], value=1
-  Step 54: Grid[16, 34], value=1
-  Step 55: Grid[16, 33], value=1
-  Step 56: Grid[16, 32], value=1
-  Step 57: Grid[16, 31], value=1
-  Step 58: Grid[16, 30], value=0
-  Step 59: Grid[16, 29], value=0
-  Step 60: Grid[16, 28], value=0
-  Step 61: Grid[16, 27], value=1
-  Step 62: Grid[16, 26], value=1
-  Step 63: Grid[15, 25], value=1
-  Step 64: Grid[15, 24], value=1
-  Step 65: Grid[15, 23], value=1
-  Step 66: Grid[14, 22], value=1
-Start value: 1
+  Step 0: Grid[15, 83], value=0
+  Step 1: Grid[15, 82], value=0
+  Step 2: Grid[16, 81], value=1
+  Step 3: Grid[17, 80], value=1
+  Step 4: Grid[18, 79], value=1
+  Step 5: Grid[19, 78], value=1
+  Step 6: Grid[19, 77], value=1
+  Step 7: Grid[19, 76], value=1
+  Step 8: Grid[19, 75], value=1
+  Step 9: Grid[19, 74], value=1
+  Step 10: Grid[19, 73], value=1
+  Step 11: Grid[19, 72], value=1
+  Step 12: Grid[19, 71], value=1
+  Step 13: Grid[19, 70], value=0
+  Step 14: Grid[19, 69], value=0
+  Step 15: Grid[19, 68], value=0
+  Step 16: Grid[19, 67], value=1
+  Step 17: Grid[19, 66], value=1
+  Step 18: Grid[19, 65], value=1
+  Step 19: Grid[19, 64], value=1
+  Step 20: Grid[19, 63], value=1
+  Step 21: Grid[19, 62], value=1
+  Step 22: Grid[19, 61], value=1
+  Step 23: Grid[19, 60], value=1
+  Step 24: Grid[19, 59], value=1
+  Step 25: Grid[19, 58], value=1
+  Step 26: Grid[19, 57], value=0
+  Step 27: Grid[19, 56], value=0
+  Step 28: Grid[19, 55], value=0
+  Step 29: Grid[19, 54], value=1
+  Step 30: Grid[19, 53], value=1
+  Step 31: Grid[19, 52], value=1
+  Step 32: Grid[19, 51], value=1
+  Step 33: Grid[19, 50], value=1
+  Step 34: Grid[19, 49], value=1
+  Step 35: Grid[19, 48], value=1
+  Step 36: Grid[19, 47], value=1
+  Step 37: Grid[19, 46], value=1
+  Step 38: Grid[19, 45], value=1
+  Step 39: Grid[19, 44], value=1
+  Step 40: Grid[19, 43], value=0
+  Step 41: Grid[19, 42], value=0
+  Step 42: Grid[19, 41], value=0
+  Step 43: Grid[19, 40], value=1
+  Step 44: Grid[18, 39], value=1
+  Step 45: Grid[17, 38], value=1
+  Step 46: Grid[16, 37], value=1
+  Step 47: Grid[16, 36], value=1
+  Step 48: Grid[16, 35], value=1
+  Step 49: Grid[16, 34], value=1
+  Step 50: Grid[16, 33], value=1
+  Step 51: Grid[16, 32], value=1
+  Step 52: Grid[16, 31], value=1
+  Step 53: Grid[16, 30], value=0
+  Step 54: Grid[16, 29], value=0
+  Step 55: Grid[16, 28], value=0
+  Step 56: Grid[16, 27], value=1
+  Step 57: Grid[16, 26], value=1
+  Step 58: Grid[15, 25], value=1
+  Step 59: Grid[15, 24], value=1
+  Step 60: Grid[15, 23], value=1
+  Step 61: Grid[14, 22], value=1
+Start value: 0
 Goal value: 1
