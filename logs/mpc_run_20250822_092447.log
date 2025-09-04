@@ -1,0 +1,830 @@
+09:24:47 [INFO] === New MPC Session Started ===
+09:24:47 [DEBUG] matplotlib data path: /usr/share/matplotlib/mpl-data
+09:24:47 [DEBUG] CONFIGDIR=/home/max/.config/matplotlib
+09:24:47 [DEBUG] interactive is False
+09:24:47 [DEBUG] platform is linux
+09:24:47 [DEBUG] loaded modules: ['sys', 'builtins', '_frozen_importlib', '_imp', '_thread', '_warnings', '_weakref', '_io', 'marshal', 'posix', '_frozen_importlib_external', 'time', 'zipimport', '_codecs', 'codecs', 'encodings.aliases', 'encodings', 'encodings.utf_8', '_signal', '_abc', 'abc', 'io', '__main__', '_stat', 'stat', '_collections_abc', 'genericpath', 'posixpath', 'os.path', 'os', '_sitebuiltins', 'types', 'importlib._bootstrap', 'importlib._bootstrap_external', 'warnings', 'importlib', 'importlib._abc', 'itertools', 'keyword', '_operator', 'operator', 'reprlib', '_collections', 'collections', '_functools', 'functools', 'contextlib', 'importlib.util', 'importlib.machinery', 'mpl_toolkits', 'phply', 'ruamel', 'zope', 'apport_python_hook', 'sitecustomize', 'site', 'crowdnav', 'crowdnav.env', 'gym.error', 'gym.version', 'collections.abc', 'enum', '_sre', 'sre_constants', 'sre_parse', 'sre_compile', '_locale', 'copyreg', 're', 'typing.io', 'typing.re', 'typing', 'numpy._utils._convertions', 'numpy._utils', 'numpy._globals', 'numpy.exceptions', 'numpy.version', 'numpy._distributor_init', 'numpy._utils._inspect', 'math', '_datetime', 'datetime', 'numpy.core._exceptions', 'numpy.dtypes', 'numpy.core._multiarray_umath', 'numpy.core.overrides', 'numpy.core.multiarray', 'numpy.core.umath', 'numbers', 'numpy.core._string_helpers', 'fnmatch', 'ntpath', 'errno', 'urllib', 'ipaddress', 'urllib.parse', 'pathlib', '_struct', 'struct', '_compat_pickle', '_pickle', 'pickle', 'numpy.compat.py3k', 'numpy.compat', 'numpy.core._dtype', 'numpy.core._type_aliases', 'numpy.core.numerictypes', '_contextvars', 'contextvars', 'numpy.core._ufunc_config', 'numpy.core._methods', 'numpy.core.fromnumeric', 'numpy.core.shape_base', 'numpy.core.arrayprint', 'numpy.core._asarray', 'numpy.core.numeric', 'numpy.core.defchararray', 'numpy.core.records', 'numpy.core.memmap', 'numpy.core.function_base', 'numpy.core._machar', 'numpy.core.getlimits', 'numpy.core.einsumfunc', 'numpy.core._multiarray_tests', 'numpy.core._add_newdocs', 'numpy.core._add_newdocs_scalars', 'numpy.core._dtype_ctypes', '_ast', 'ast', '_ctypes', 'ctypes._endian', 'ctypes', 'numpy.core._internal', 'numpy._pytesttester', 'numpy.core', 'numpy.__config__', 'numpy.lib.mixins', 'numpy.lib.ufunclike', 'numpy.lib.type_check', 'numpy.lib.scimath', 'numpy.lib.stride_tricks', 'numpy.lib.twodim_base', 'numpy.linalg._umath_linalg', '__future__', 'numpy._typing._nested_sequence', 'numpy._typing._nbit', 'numpy._typing._char_codes', 'numpy._typing._scalars', 'numpy._typing._shape', 'numpy._typing._dtype_like', 'numpy._typing._array_like', 'numpy._typing', 'numpy.linalg.linalg', 'numpy.linalg', 'numpy.matrixlib.defmatrix', 'numpy.matrixlib', 'numpy.lib.histograms', 'numpy.lib.function_base', 'numpy.lib.index_tricks', 'numpy.lib.nanfunctions', 'numpy.lib.shape_base', 'numpy.lib.polynomial', 'textwrap', 'signal', '_weakrefset', 'threading', 'fcntl', '_posixsubprocess', 'select', 'selectors', 'subprocess', 'platform', 'numpy.lib.utils', 'numpy.lib.arraysetops', 'weakref', 'numpy.lib.format', 'numpy.lib._datasource', 'numpy.lib._iotools', 'numpy.lib.npyio', 'numpy.lib.arrayterator', 'numpy.lib.arraypad', 'numpy.lib._version', 'numpy.lib', 'numpy.fft._pocketfft_internal', 'numpy.fft._pocketfft', 'numpy.fft.helper', 'numpy.fft', 'numpy.polynomial.polyutils', 'numpy.polynomial._polybase', 'numpy.polynomial.polynomial', 'numpy.polynomial.chebyshev', 'numpy.polynomial.legendre', 'numpy.polynomial.hermite', 'numpy.polynomial.hermite_e', 'numpy.polynomial.laguerre', 'numpy.polynomial', 'cython_runtime', '_cython_3_0_8', 'numpy.random._common', 'binascii', 'base64', '_hashlib', '_blake2', 'hashlib', 'hmac', '_bisect', 'bisect', '_random', '_sha512', 'random', 'secrets', 'numpy.random.bit_generator', 'numpy.random._bounded_integers', 'numpy.random._mt19937', 'numpy.random.mtrand', 'numpy.random._philox', 'numpy.random._pcg64', 'numpy.random._sfc64', 'numpy.random._generator', 'numpy.random._pickle', 'numpy.random', 'numpy.ctypeslib', '_opcode', 'opcode', 'dis', 'token', 'tokenize', 'linecache', 'inspect', 'numpy.ma.core', 'numpy.ma.extras', 'numpy.ma', 'numpy', 'gym.utils.colorize', 'gym.utils.ezpickle', 'gym.utils', 'gym.logger', 'gym.utils.seeding', 'gym.spaces.space', 'gym.spaces.box', 'gym.spaces.dict', 'gym.spaces.discrete', 'gym.spaces.multi_discrete', 'gym.spaces.graph', 'gym.spaces.multi_binary', 'gym.spaces.sequence', 'gym.spaces.text', 'gym.spaces.tuple', 'gym.spaces.utils', 'gym.spaces', 'gym.core', 'copy', '_heapq', 'heapq', 'difflib', 'dataclasses', 'cv2.load_config_py3', 'cv2.version', 'numpy._core', 'numpy._core._multiarray_umath', 'cv2.gapi.core', 'cv2.gapi.core.cpu', 'cv2.gapi.core.fluid', 'cv2.gapi.core.ocl', 'cv2.gapi.ie', 'cv2.gapi.ie.detail', 'cv2.gapi.imgproc', 'cv2.gapi.imgproc.fluid', 'cv2.gapi.oak', 'cv2.gapi.onnx', 'cv2.gapi.onnx.ep', 'cv2.gapi.ot', 'cv2.gapi.ot.cpu', 'cv2.gapi.ov', 'cv2.gapi.own', 'cv2.gapi.own.detail', 'cv2.gapi.render', 'cv2.gapi.render.ocv', 'cv2.gapi.streaming', 'cv2.gapi.video', 'cv2.gapi.wip', 'cv2.gapi.wip.draw', 'cv2.gapi.wip.gst', 'cv2.gapi.wip.onevpl', 'cv2.utils.fs', 'cv2.utils.nested', 'cv2.gapi', 'cv2.ogl', 'cv2.data', 'cv2.detail', 'cv2.flann', 'cv2.ml', 'cv2.aruco', 'cv2.qt', 'cv2.utils', 'cv2.typing', 'cv2.samples', 'cv2.barcode', 'cv2.segmentation', 'cv2.ocl', 'cv2.cuda', 'cv2.parallel', 'cv2.dnn', 'cv2.Error', 'cv2.videoio_registry', 'cv2.ipp', 'cv2.fisheye', 'cv2.misc.version', 'cv2.misc', 'cv2.mat_wrapper', 'cv2', 'gym.wrappers.atari_preprocessing', 'gym.wrappers.autoreset', 'gym.wrappers.clip_action', 'gym.wrappers.filter_observation', 'gym.wrappers.flatten_observation', 'gym.wrappers.frame_stack', 'gym.wrappers.gray_scale_observation', 'gym.wrappers.human_rendering', 'gym.wrappers.normalize', 'gym.wrappers.order_enforcing', 'gym.wrappers.record_episode_statistics', 'gym.wrappers.monitoring', '_json', 'json.scanner', 'json.decoder', 'json.encoder', 'json', 'zlib', '_compression', '_bz2', 'bz2', '_lzma', 'lzma', 'shutil', 'tempfile', 'gym.wrappers.monitoring.video_recorder', 'gym.wrappers.record_video', 'gym.wrappers.render_collection', 'gym.wrappers.rescale_action', 'gym.wrappers.resize_observation', 'gym.utils.step_api_compatibility', 'gym.wrappers.step_api_compatibility', 'gym.wrappers.time_aware_observation', 'gym.wrappers.time_limit', 'gym.wrappers.transform_observation', 'gym.wrappers.transform_reward', 'gym.wrappers.vector_list_info', 'gym.wrappers', 'gym.wrappers.compatibility', 'gym.utils.passive_env_checker', 'gym.wrappers.env_checker', '_csv', 'csv', 'email', 'zipfile', 'uu', 'quopri', '_socket', 'array', 'socket', 'locale', 'calendar', 'email._parseaddr', 'email.base64mime', '_string', 'string', 'email.quoprimime', 'email.errors', 'email.encoders', 'email.charset', 'email.utils', 'email.header', 'email._policybase', 'email._encoded_words', 'email.iterators', 'email.message', 'importlib.metadata._functools', 'importlib.metadata._text', 'importlib.metadata._adapters', 'importlib.metadata._meta', 'importlib.metadata._collections', 'importlib.metadata._itertools', 'importlib.abc', 'importlib.metadata', 'gym.envs.registration', 'gym.envs', 'multiprocessing.process', 'multiprocessing.reduction', 'multiprocessing.context', '__mp_main__', 'multiprocessing', 'gym.vector.utils.misc', 'gym.vector.utils.numpy_utils', 'gym.vector.utils.shared_memory', 'gym.vector.utils.spaces', 'gym.vector.utils', 'gym.vector.vector_env', 'gym.vector.async_vector_env', 'gym.vector.sync_vector_env', 'gym.vector', 'gym_notices', 'gym_notices.notices', 'gym', 'pybullet', 'pybullet_data', 'traceback', 'atexit', 'logging', 'crowdnav.logger_setup', 'crowdnav.config', 'crowdnav.kinematics', 'crowdnav.dynamics', 'crowdnav.sensors', 'crowdnav.control', 'crowdnav.control.align', 'crowdnav.control.track', 'crowdnav.planning', 'swig_runtime_data4', 'casadi._casadi', 'casadi.casadi', 'casadi', 'crowdnav.planning.mpc_runner', 'crowdnav.utils2', 'crowdnav.utils2.coord', 'crowdnav.planning.path_mgr', 'crowdnav.utils2.hud', 'crowdnav.mpc', 'crowdnav.world', 'crowdnav.utils', 'matplotlib', 'pprint', 'packaging.__about__', 'packaging', 'packaging._structures', 'packaging.version', 'matplotlib._api.deprecation', 'matplotlib._api', 'matplotlib._version', 'gzip', 'shlex', 'matplotlib._c_internal_utils', 'matplotlib.cbook', 'matplotlib.docstring', 'PIL._version', 'PIL', 'PIL.ImageMode', 'PIL.TiffTags', 'PIL._binary', 'PIL._util', 'PIL._imaging', 'PIL.Image', 'PIL.ImageChops', 'PIL.ImageFile', 'PIL.GimpGradientFile', 'PIL.GimpPaletteFile', 'PIL.ImageColor', 'PIL.PaletteFile', 'PIL.ImagePalette', 'PIL.ImageSequence', 'PIL.PngImagePlugin', 'matplotlib._path', 'matplotlib.bezier', 'matplotlib.path', 'matplotlib.transforms', 'matplotlib.ticker', 'matplotlib.scale', 'matplotlib._color_data', 'matplotlib.colors', 'pyparsing', 'matplotlib.fontconfig_pattern', 'matplotlib._enums', 'cycler', 'matplotlib.rcsetup', 'matplotlib.ft2font', 'dateutil._version', 'dateutil', 'kiwisolver']
+09:24:47 [DEBUG] CACHEDIR=/home/max/.cache/matplotlib
+09:24:47 [DEBUG] Using fontManager instance from /home/max/.cache/matplotlib/fontlist-v330.json
+09:24:48 [DEBUG] Loaded backend TkAgg version unknown.
+09:24:48 [INFO] CrowdNavPyBulletEnv initializing...
+09:24:51 [INFO] World ready | grid: (112, 112), res: 0.1, N=10, T=0.1
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.65,-4.35,+2.84) wp0=(+0.25,-4.25) v=+0.166 ω=-1.013 wp_prog=0/39 ok=True iters=8
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.25, -4.25], [0.14999999999999947, -4.15]] theta_ref0..2=[2.3561944901923493, 2.3561944901923484, 2.4728611568590333] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.64,-4.35,+2.78) wp0=(+0.25,-4.25) v=+0.166 ω=-0.869 wp_prog=0/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.25, -4.25], [0.14999999999999947, -4.15]] theta_ref0..2=[2.3561944901923493, 2.3561944901923484, 2.4728611568590195] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.63,-4.34,+2.71) wp0=(+0.25,-4.25) v=+0.166 ω=-0.534 wp_prog=0/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.25, -4.25], [0.14999999999999947, -4.15]] theta_ref0..2=[2.3561944901923493, 2.3561944901923484, 2.4728611568590164] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.61,-4.33,+2.66) wp0=(+0.25,-4.25) v=+0.166 ω=-0.437 wp_prog=0/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.25, -4.25], [0.14999999999999947, -4.15]] theta_ref0..2=[2.3561944901923493, 2.3561944901923484, 2.4728611568590155] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.60,-4.33,+2.61) wp0=(+0.25,-4.25) v=+0.166 ω=-0.280 wp_prog=0/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.25, -4.25], [0.14999999999999947, -4.15]] theta_ref0..2=[2.3561944901923493, 2.3561944901923484, 2.472861156859015] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.58,-4.32,+2.59) wp0=(+0.25,-4.25) v=+0.166 ω=-0.199 wp_prog=0/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.25, -4.25], [0.14999999999999947, -4.15]] theta_ref0..2=[2.3561944901923493, 2.3561944901923484, 2.472861156859015] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.57,-4.31,+2.57) wp0=(+0.25,-4.25) v=+0.166 ω=-0.213 wp_prog=0/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.25, -4.25], [0.14999999999999947, -4.15]] theta_ref0..2=[2.3561944901923493, 2.3561944901923484, 2.472861156859015] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.55,-4.30,+2.54) wp0=(+0.25,-4.25) v=+0.166 ω=-0.185 wp_prog=1/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.25, -4.25], [0.14999999999999947, -4.15]] theta_ref0..2=[2.3561944901923493, 2.3561944901923484, 2.472861156859015] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.54,-4.29,+2.53) wp0=(+0.15,-4.15) v=+0.173 ω=-0.098 wp_prog=1/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.14999999999999947, -4.15], [0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.3561944901923484, 2.4436944901923483, 2.4218194901923473] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.52,-4.28,+2.52) wp0=(+0.15,-4.15) v=+0.168 ω=-0.100 wp_prog=1/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.14999999999999947, -4.15], [0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.3561944901923475, 2.4655694901923475, 2.4382257401923466] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.51,-4.27,+2.51) wp0=(+0.15,-4.15) v=+0.167 ω=-0.111 wp_prog=1/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.14999999999999947, -4.15], [0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.3561944901923466, 2.471038240192347, 2.4423273026923464] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.50,-4.26,+2.49) wp0=(+0.15,-4.15) v=+0.166 ω=-0.117 wp_prog=1/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.14999999999999947, -4.15], [0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.356194490192346, 2.4724054276923466, 2.443352693317346] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.48,-4.25,+2.48) wp0=(+0.15,-4.15) v=+0.166 ω=-0.164 wp_prog=1/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.14999999999999947, -4.15], [0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.3561944901923457, 2.472747224567346, 2.4436090409735955] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.47,-4.24,+2.47) wp0=(+0.15,-4.15) v=+0.166 ω=-0.168 wp_prog=1/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.14999999999999947, -4.15], [0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.3561944901923457, 2.4728326737860957, 2.4436731278876582] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:51 [INFO] [MPC] state=(+0.46,-4.23,+2.45) wp0=(+0.15,-4.15) v=+0.166 ω=-0.167 wp_prog=2/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.14999999999999947, -4.15], [0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.3561944901923457, 2.472854036090783, 2.4436891496161737] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.02 vmax_loc=0.19
+09:24:51 [INFO] [MPC] state=(+0.44,-4.21,+2.43) wp0=(+0.05,-4.05) v=+0.192 ω=-0.082 wp_prog=2/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.04999999999999982, -4.050000000000001], [-0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.4436944901923456, 2.4218194901923455, 2.4054132401923454] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:51 [DEBUG] corner=0.04 vmax_loc=0.18
+09:24:51 [INFO] [MPC] state=(+0.43,-4.20,+2.42) wp0=(+0.05,-4.05) v=+0.185 ω=-0.098 wp_prog=3/39 ok=True iters=6
+09:24:51 [DEBUG] [MPC IN] path_xy0..1=[[0.04999999999999982, -4.050000000000001], [-0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.5311944901923455, 2.4874444901923454, 2.454631990192345] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:52 [DEBUG] corner=0.07 vmax_loc=0.18
+09:24:52 [INFO] [MPC] state=(+0.42,-4.19,+2.41) wp0=(+0.05,-4.05) v=+0.179 ω=-0.273 wp_prog=3/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[0.04999999999999982, -4.050000000000001], [-0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.6186944901923455, 2.553069490192345, 2.503850740192345] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:52 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.40,-4.18,+2.38) wp0=(+0.05,-4.05) v=+0.173 ω=-0.223 wp_prog=3/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[0.04999999999999982, -4.050000000000001], [-0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.7061944901923454, 2.618694490192345, 2.553069490192345] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:52 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.39,-4.16,+2.36) wp0=(+0.05,-4.05) v=+0.168 ω=-0.043 wp_prog=3/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[0.04999999999999982, -4.050000000000001], [-0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.7936944901923453, 2.6843194901923453, 2.6022882401923453] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:52 [DEBUG] corner=0.13 vmax_loc=0.16
+09:24:52 [INFO] [MPC] state=(+0.38,-4.15,+2.36) wp0=(+0.05,-4.05) v=+0.163 ω=-0.079 wp_prog=3/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[0.04999999999999982, -4.050000000000001], [-0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.880669031041707, 2.7495503958293668, 2.651211419420111] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:52 [DEBUG] corner=0.14 vmax_loc=0.16
+09:24:52 [INFO] [MPC] state=(+0.36,-4.14,+2.35) wp0=(+0.05,-4.05) v=+0.162 ω=-0.078 wp_prog=4/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[0.04999999999999982, -4.050000000000001], [-0.04999999999999982, -4.050000000000001]] theta_ref0..2=[2.9458999366787286, 2.8093125514663884, 2.6960330361478775] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:52 [DEBUG] corner=0.10 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.35,-4.13,+2.34) wp0=(-0.15,-3.95) v=+0.170 ω=+0.110 wp_prog=4/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.15000000000000036, -3.95], [-0.25, -3.8500000000000005]] theta_ref0..2=[2.8583999366787287, 2.7586280903756437, 2.6580196903298186] weights=[18.0, 7.5, 0.25, 0.5, 0.18, 0.0] vmin_soft=0.080
+09:24:52 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.34,-4.12,+2.35) wp0=(-0.15,-3.95) v=+0.172 ω=-0.006 wp_prog=4/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.15000000000000036, -3.95], [-0.25, -3.8500000000000005]] theta_ref0..2=[2.770899936678729, 2.6803319751029573, 2.5992976038753035] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.08 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.33,-4.10,+2.35) wp0=(-0.15,-3.95) v=+0.174 ω=-0.083 wp_prog=4/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.15000000000000036, -3.95], [-0.25, -3.8500000000000005]] theta_ref0..2=[2.683399936678729, 2.6015985750571335, 2.5402475538409357] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.06 vmax_loc=0.18
+09:24:52 [INFO] [MPC] state=(+0.32,-4.09,+2.34) wp0=(-0.15,-3.95) v=+0.180 ω=-0.137 wp_prog=4/39 ok=True iters=5
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.15000000000000036, -3.95], [-0.25, -3.8500000000000005]] theta_ref0..2=[2.6015985750571327, 2.540247553840936, 2.494234287928788] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.05 vmax_loc=0.18
+09:24:52 [INFO] [MPC] state=(+0.30,-4.08,+2.33) wp0=(-0.15,-3.95) v=+0.184 ω=-0.123 wp_prog=4/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.15000000000000036, -3.95], [-0.25, -3.8500000000000005]] theta_ref0..2=[2.5402475538409357, 2.4942342879287884, 2.459724338494677] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.03 vmax_loc=0.19
+09:24:52 [INFO] [MPC] state=(+0.29,-4.06,+2.32) wp0=(-0.15,-3.95) v=+0.188 ω=-0.140 wp_prog=4/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.15000000000000036, -3.95], [-0.25, -3.8500000000000005]] theta_ref0..2=[2.494234287928788, 2.4597243384946776, 2.433841876419094] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.03 vmax_loc=0.19
+09:24:52 [INFO] [MPC] state=(+0.28,-4.05,+2.30) wp0=(-0.15,-3.95) v=+0.191 ω=-0.135 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.15000000000000036, -3.95], [-0.25, -3.8500000000000005]] theta_ref0..2=[2.459724338494677, 2.4338418764190948, 2.4144300298624066] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.26,-4.03,+2.29) wp0=(-0.25,-3.85) v=+0.173 ω=+0.153 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.4338418764190948, 2.4144300298624066, 2.5019300298624065] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.25,-4.02,+2.31) wp0=(-0.25,-3.85) v=+0.167 ω=+0.057 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.414430029862408, 2.3998711449448917, 2.5128858661742703] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.24,-4.01,+2.31) wp0=(-0.25,-3.85) v=+0.166 ω=-0.015 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3998711449448926, 2.388951981256755, 2.507435452486134] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.23,-4.00,+2.31) wp0=(-0.25,-3.85) v=+0.166 ω=-0.063 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3889519812567563, 2.380762608490653, 2.4999308194895233] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.22,-3.98,+2.30) wp0=(-0.25,-3.85) v=+0.166 ω=-0.090 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.380762608490654, 2.374620578916076, 2.493448139059438] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.21,-3.97,+2.29) wp0=(-0.25,-3.85) v=+0.166 ω=-0.100 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3746205789160775, 2.370014056735144, 2.4883725773162175] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.20,-3.96,+2.28) wp0=(-0.25,-3.85) v=+0.166 ω=-0.097 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.370014056735145, 2.3665591650994444, 2.484512518153638] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.18,-3.94,+2.27) wp0=(-0.25,-3.85) v=+0.166 ω=-0.086 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3665591650994453, 2.3639679963726694, 2.4816041268179116] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.17,-3.93,+2.26) wp0=(-0.25,-3.85) v=+0.166 ω=-0.345 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3639679963726707, 2.3620246198275887, 2.4794194965751695] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.16,-3.92,+2.23) wp0=(-0.25,-3.85) v=+0.166 ω=+0.061 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.36202461982759, 2.360567087418778, 2.477780189707876] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.15,-3.91,+2.24) wp0=(-0.25,-3.85) v=+0.166 ω=+0.023 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3605670874187794, 2.35947393811217, 2.4765505010110966] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.14,-3.89,+2.24) wp0=(-0.25,-3.85) v=+0.166 ω=+0.002 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3594739381121714, 2.3586540761322143, 2.475628182351935] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.13,-3.88,+2.24) wp0=(-0.25,-3.85) v=+0.166 ω=-0.007 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3586540761322152, 2.358039179647247, 2.474936430323419] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.12,-3.87,+2.24) wp0=(-0.25,-3.85) v=+0.166 ω=-0.007 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.358039179647248, 2.3575780072835215, 2.474417613043496] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.11,-3.85,+2.24) wp0=(-0.25,-3.85) v=+0.166 ω=+0.000 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.357578007283523, 2.357232128010728, 2.47402849926892] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.10,-3.84,+2.24) wp0=(-0.25,-3.85) v=+0.166 ω=+0.476 wp_prog=5/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.357232128010729, 2.356972718556132, 2.4737366637343294] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.09,-3.83,+2.29) wp0=(-0.25,-3.85) v=+0.166 ω=-0.172 wp_prog=5/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3569727185561336, 2.356778161465186, 2.473517787032472] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.08,-3.81,+2.27) wp0=(-0.25,-3.85) v=+0.166 ω=+0.440 wp_prog=5/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.356778161465187, 2.3566322436469758, 2.47335362949335] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.07,-3.80,+2.31) wp0=(-0.25,-3.85) v=+0.166 ω=+0.333 wp_prog=7/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.25, -3.8500000000000005], [-0.35000000000000053, -3.7500000000000004]] theta_ref0..2=[2.3566322436469767, 2.3565228052833183, 2.473230511335826] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.06,-3.79,+2.35) wp0=(-0.35,-3.75) v=+0.171 ω=+0.339 wp_prog=7/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.35000000000000053, -3.7500000000000004], [-0.4500000000000002, -3.6500000000000004]] theta_ref0..2=[2.3565228052833183, 2.444022805283318, 2.538824731796445] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.04,-3.78,+2.38) wp0=(-0.35,-3.75) v=+0.168 ω=+0.225 wp_prog=8/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.35000000000000053, -3.7500000000000004], [-0.4500000000000002, -3.6500000000000004]] theta_ref0..2=[2.3564407265105745, 2.4658362462037604, 2.5715833676019315] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.10 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.03,-3.76,+2.41) wp0=(-0.45,-3.65) v=+0.171 ω=+0.319 wp_prog=8/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.4500000000000002, -3.6500000000000004], [-0.5499999999999998, -3.6500000000000004]] theta_ref0..2=[2.4439407265105744, 2.536914606433871, 2.633081796725886] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.02,-3.75,+2.44) wp0=(-0.45,-3.65) v=+0.172 ω=+0.173 wp_prog=8/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.4500000000000002, -3.6500000000000004], [-0.5499999999999998, -3.6500000000000004]] theta_ref0..2=[2.5314407265105743, 2.6203091964913985, 2.7110023465500204] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(+0.00,-3.74,+2.46) wp0=(-0.45,-3.65) v=+0.173 ω=+0.118 wp_prog=8/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.4500000000000002, -3.6500000000000004], [-0.5499999999999998, -3.6500000000000004]] theta_ref0..2=[2.618940726510574, 2.7067828440057804, 2.7953377196418403] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(-0.01,-3.73,+2.47) wp0=(-0.45,-3.65) v=+0.173 ω=+0.084 wp_prog=8/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.4500000000000002, -3.6500000000000004], [-0.5499999999999998, -3.6500000000000004]] theta_ref0..2=[2.706440726510574, 2.7940262558843756, 2.88091785531073] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(-0.02,-3.72,+2.48) wp0=(-0.45,-3.65) v=+0.173 ω=+0.065 wp_prog=8/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.4500000000000002, -3.6500000000000004], [-0.5499999999999998, -3.6500000000000004]] theta_ref0..2=[2.793940726510574, 2.880853708280379, 2.9460384446077326] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.07 vmax_loc=0.18
+09:24:52 [INFO] [MPC] state=(-0.04,-3.71,+2.48) wp0=(-0.45,-3.65) v=+0.179 ω=+0.054 wp_prog=8/39 ok=True iters=5
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.4500000000000002, -3.6500000000000004], [-0.5499999999999998, -3.6500000000000004]] theta_ref0..2=[2.880853708280379, 2.9460384446077326, 2.9949269968532475] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.05 vmax_loc=0.18
+09:24:52 [INFO] [MPC] state=(-0.05,-3.70,+2.49) wp0=(-0.45,-3.65) v=+0.183 ω=-0.043 wp_prog=8/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.4500000000000002, -3.6500000000000004], [-0.5499999999999998, -3.6500000000000004]] theta_ref0..2=[2.9460384446077326, 2.9949269968532475, 3.0315934110373837] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.04 vmax_loc=0.19
+09:24:52 [INFO] [MPC] state=(-0.07,-3.69,+2.49) wp0=(-0.45,-3.65) v=+0.187 ω=-0.007 wp_prog=9/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.4500000000000002, -3.6500000000000004], [-0.5499999999999998, -3.6500000000000004]] theta_ref0..2=[2.9949269968532475, 3.0315934110373837, 3.059093221675486] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.03 vmax_loc=0.19
+09:24:52 [INFO] [MPC] state=(-0.08,-3.67,+2.48) wp0=(-0.65,-3.65) v=+0.190 ω=+0.295 wp_prog=9/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.6500000000000004, -3.6500000000000004], [-0.75, -3.6500000000000004]] theta_ref0..2=[3.0315934110373837, 3.059093221675486, 3.0797180796540626] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.02 vmax_loc=0.19
+09:24:52 [INFO] [MPC] state=(-0.10,-3.66,+2.51) wp0=(-0.65,-3.65) v=+0.192 ω=+0.707 wp_prog=9/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.6500000000000004, -3.6500000000000004], [-0.75, -3.6500000000000004]] theta_ref0..2=[3.059093221675486, 3.0797180796540626, 3.0951867231379953] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.02 vmax_loc=0.19
+09:24:52 [INFO] [MPC] state=(-0.11,-3.65,+2.56) wp0=(-0.65,-3.65) v=+0.194 ω=-0.142 wp_prog=9/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.6500000000000004, -3.6500000000000004], [-0.75, -3.6500000000000004]] theta_ref0..2=[3.0797180796540626, 3.0951867231379953, 3.1067882057509446] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.01 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.13,-3.64,+2.55) wp0=(-0.65,-3.65) v=+0.196 ω=-0.084 wp_prog=9/39 ok=True iters=5
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.6500000000000004, -3.6500000000000004], [-0.75, -3.6500000000000004]] theta_ref0..2=[3.0951867231379953, 3.1067882057509446, 3.1154893177106566] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.01 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.14,-3.63,+2.54) wp0=(-0.65,-3.65) v=+0.197 ω=+0.552 wp_prog=9/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.6500000000000004, -3.6500000000000004], [-0.75, -3.6500000000000004]] theta_ref0..2=[3.1067882057509446, 3.1154893177106566, 3.122015151680441] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.01 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.16,-3.62,+2.57) wp0=(-0.65,-3.65) v=+0.198 ω=+0.377 wp_prog=9/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.6500000000000004, -3.6500000000000004], [-0.75, -3.6500000000000004]] theta_ref0..2=[3.1154893177106566, 3.122015151680441, 3.126909527157779] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.17,-3.61,+2.60) wp0=(-0.65,-3.65) v=+0.198 ω=-0.349 wp_prog=9/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.6500000000000004, -3.6500000000000004], [-0.75, -3.6500000000000004]] theta_ref0..2=[3.122015151680441, 3.126909527157779, 3.130580308765783] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.19,-3.60,+2.58) wp0=(-0.65,-3.65) v=+0.199 ω=+0.354 wp_prog=10/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.6500000000000004, -3.6500000000000004], [-0.75, -3.6500000000000004]] theta_ref0..2=[3.126909527157779, 3.130580308765783, 3.1333333949717854] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.21,-3.59,+2.60) wp0=(-0.75,-3.65) v=+0.199 ω=+0.395 wp_prog=10/39 ok=True iters=5
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.130580308765783, 3.1333333949717854, 3.1353982096262873] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.22,-3.58,+2.63) wp0=(-0.75,-3.65) v=+0.199 ω=+0.267 wp_prog=10/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.1333333949717854, 3.1353982096262873, 3.1369468206171636] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.24,-3.57,+2.65) wp0=(-0.75,-3.65) v=+0.199 ω=+0.208 wp_prog=10/39 ok=True iters=5
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.1353982096262873, 3.1369468206171636, 3.138108278860321] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.26,-3.56,+2.66) wp0=(-0.75,-3.65) v=+0.200 ω=+0.338 wp_prog=10/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.1369468206171636, 3.138108278860321, 3.138979372542689] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.27,-3.55,+2.68) wp0=(-0.75,-3.65) v=+0.200 ω=+0.424 wp_prog=10/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.138108278860321, 3.138979372542689, 3.139632692804465] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.29,-3.54,+2.71) wp0=(-0.75,-3.65) v=+0.200 ω=+0.321 wp_prog=10/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.138979372542689, 3.139632692804465, 3.140122683000797] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.31,-3.54,+2.73) wp0=(-0.75,-3.65) v=+0.200 ω=+0.677 wp_prog=10/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.139632692804465, 3.140122683000797, 3.140490175648046] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.33,-3.53,+2.77) wp0=(-0.75,-3.65) v=+0.200 ω=+0.644 wp_prog=10/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.140122683000797, 3.140490175648046, 3.1407657951334826] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.34,-3.52,+2.81) wp0=(-0.75,-3.65) v=+0.200 ω=+1.532 wp_prog=10/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.140490175648046, 3.1407657951334826, 3.1409725097475603] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.36,-3.52,+2.89) wp0=(-0.75,-3.65) v=+0.200 ω=+0.264 wp_prog=10/39 ok=True iters=8
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.1407657951334826, 3.1409725097475603, 3.1411275457081187] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.37,-3.52,+2.92) wp0=(-0.75,-3.65) v=+0.200 ω=+1.461 wp_prog=10/39 ok=True iters=8
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.1409725097475603, 3.1411275457081187, 3.141243822678537] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.39,-3.51,+3.00) wp0=(-0.75,-3.65) v=+0.200 ω=+0.857 wp_prog=10/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.1411275457081187, 3.141243822678537, 3.1413310304063513] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.40,-3.51,+3.04) wp0=(-0.75,-3.65) v=+0.200 ω=+0.865 wp_prog=10/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.141243822678537, 3.1413310304063513, 3.1413964362022115] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.42,-3.51,+3.09) wp0=(-0.75,-3.65) v=+0.200 ω=+0.625 wp_prog=10/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.1413310304063513, 3.1413964362022115, 3.141445490549107] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.44,-3.51,+3.12) wp0=(-0.75,-3.65) v=+0.200 ω=+0.509 wp_prog=11/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.75, -3.6500000000000004], [-0.8500000000000005, -3.6500000000000004]] theta_ref0..2=[3.1413964362022115, 3.141445490549107, 3.141482281309279] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.46,-3.51,+3.15) wp0=(-0.85,-3.65) v=+0.200 ω=+1.143 wp_prog=11/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.8500000000000005, -3.6500000000000004], [-0.9500000000000002, -3.6500000000000004]] theta_ref0..2=[3.141445490549107, 3.141482281309279, 3.141509874379407] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.47,-3.51,+3.21) wp0=(-0.85,-3.65) v=+0.200 ω=-0.282 wp_prog=11/39 ok=True iters=8
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.8500000000000005, -3.6500000000000004], [-0.9500000000000002, -3.6500000000000004]] theta_ref0..2=[3.141482281309279, 3.141509874379407, 3.1415305691820037] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.49,-3.51,+3.20) wp0=(-0.85,-3.65) v=+0.200 ω=-0.360 wp_prog=11/39 ok=True iters=7
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.8500000000000005, -3.6500000000000004], [-0.9500000000000002, -3.6500000000000004]] theta_ref0..2=[3.141509874379407, 3.1415305691820037, 3.141546090283951] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.51,-3.51,+3.17) wp0=(-0.85,-3.65) v=+0.200 ω=+0.689 wp_prog=11/39 ok=True iters=8
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.8500000000000005, -3.6500000000000004], [-0.9500000000000002, -3.6500000000000004]] theta_ref0..2=[3.1415305691820037, 3.141546090283951, 3.1415577311104115] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.53,-3.51,+3.21) wp0=(-0.85,-3.65) v=+0.200 ω=-0.538 wp_prog=11/39 ok=True iters=8
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.8500000000000005, -3.6500000000000004], [-0.9500000000000002, -3.6500000000000004]] theta_ref0..2=[3.141546090283951, 3.1415577311104115, 3.1415664617302568] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:52 [INFO] [MPC] state=(-0.54,-3.51,+3.18) wp0=(-0.85,-3.65) v=+0.200 ω=-0.572 wp_prog=12/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.8500000000000005, -3.6500000000000004], [-0.9500000000000002, -3.6500000000000004]] theta_ref0..2=[3.1415577311104115, 3.1415664617302568, 3.141573009695141] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(-0.56,-3.51,+3.14) wp0=(-0.95,-3.65) v=+0.173 ω=-0.677 wp_prog=12/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.9500000000000002, -3.6500000000000004], [-1.0500000000000007, -3.6500000000000004]] theta_ref0..2=[3.1415664617302568, 3.141573009695141, 3.054073009695141] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(-0.58,-3.51,+3.08) wp0=(-0.95,-3.65) v=+0.168 ω=-0.409 wp_prog=12/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.9500000000000002, -3.6500000000000004], [-1.0500000000000007, -3.6500000000000004]] theta_ref0..2=[3.141573009695141, 3.141577920668804, 3.0322016929253883] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(-0.60,-3.51,+3.04) wp0=(-0.95,-3.65) v=+0.167 ω=-0.355 wp_prog=12/39 ok=True iters=6
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.9500000000000002, -3.6500000000000004], [-1.0500000000000007, -3.6500000000000004]] theta_ref0..2=[3.141577920668804, 3.141581603899051, 3.0267366261556354] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:52 [INFO] [MPC] state=(-0.61,-3.51,+3.00) wp0=(-0.95,-3.65) v=+0.166 ω=+0.956 wp_prog=12/39 ok=True iters=8
+09:24:52 [DEBUG] [MPC IN] path_xy0..1=[[-0.9500000000000002, -3.6500000000000004], [-1.0500000000000007, -3.6500000000000004]] theta_ref0..2=[3.141581603899051, 3.1415843663217364, 3.025372431280211] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:52 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.63,-3.51,+3.07) wp0=(-0.95,-3.65) v=+0.166 ω=-0.435 wp_prog=12/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-0.9500000000000002, -3.6500000000000004], [-1.0500000000000007, -3.6500000000000004]] theta_ref0..2=[3.1415843663217364, 3.1415864381387504, 3.0250329364241155] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.64,-3.51,+3.03) wp0=(-0.95,-3.65) v=+0.166 ω=+0.905 wp_prog=13/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-0.9500000000000002, -3.6500000000000004], [-1.0500000000000007, -3.6500000000000004]] theta_ref0..2=[3.1415864381387504, 3.141587992001511, 3.024949228107162] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.66,-3.51,+3.09) wp0=(-1.05,-3.65) v=+0.173 ω=-0.648 wp_prog=13/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.0500000000000007, -3.6500000000000004], [-1.1500000000000004, -3.6500000000000004]] theta_ref0..2=[3.141587992001511, 3.054087992001511, 3.0759641573985816] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.68,-3.50,+3.04) wp0=(-1.05,-3.65) v=+0.168 ω=-0.348 wp_prog=13/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.0500000000000007, -3.6500000000000004], [-1.1500000000000004, -3.6500000000000004]] theta_ref0..2=[3.1415891573985815, 3.0322138660493136, 3.0595585629344333] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.69,-3.50,+3.00) wp0=(-1.05,-3.65) v=+0.167 ω=-0.092 wp_prog=13/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.0500000000000007, -3.6500000000000004], [-1.1500000000000004, -3.6500000000000004]] theta_ref0..2=[3.1415900314463845, 3.0267459900971168, 3.0554576559702857] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.71,-3.50,+2.99) wp0=(-1.05,-3.65) v=+0.166 ω=-0.048 wp_prog=13/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.0500000000000007, -3.6500000000000004], [-1.1500000000000004, -3.6500000000000004]] theta_ref0..2=[3.1415906869822368, 3.025379512760957, 3.054432797968166] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.73,-3.50,+2.99) wp0=(-1.05,-3.65) v=+0.166 ω=-0.004 wp_prog=13/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.0500000000000007, -3.6500000000000004], [-1.1500000000000004, -3.6500000000000004]] theta_ref0..2=[3.1415911786341257, 3.0250382621658334, 3.0541768600218235] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.74,-3.49,+2.99) wp0=(-1.05,-3.65) v=+0.166 ω=+1.063 wp_prog=14/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.0500000000000007, -3.6500000000000004], [-1.1500000000000004, -3.6500000000000004]] theta_ref0..2=[3.1415915473730425, 3.02495322607124, 3.0541130829508782] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.76,-3.49,+3.07) wp0=(-1.15,-3.65) v=+0.172 ω=-0.469 wp_prog=14/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.1500000000000004, -3.6500000000000004], [-1.25, -3.5500000000000003]] theta_ref0..2=[3.0540915473730426, 3.07596682392723, 2.983003388683142] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.77,-3.49,+3.02) wp0=(-1.15,-3.65) v=+0.171 ω=+0.859 wp_prog=14/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.1500000000000004, -3.6500000000000004], [-1.25, -3.5500000000000003]] theta_ref0..2=[2.9665915473730426, 3.0103418239272304, 2.9160072151162084] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.79,-3.49,+3.09) wp0=(-1.15,-3.65) v=+0.171 ω=-0.483 wp_prog=14/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.1500000000000004, -3.6500000000000004], [-1.25, -3.5500000000000003]] theta_ref0..2=[2.8790915473730427, 2.94471682392723, 2.8500394217244747] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.81,-3.49,+3.04) wp0=(-1.15,-3.65) v=+0.171 ω=+0.855 wp_prog=14/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.1500000000000004, -3.6500000000000004], [-1.25, -3.5500000000000003]] theta_ref0..2=[2.791591547373043, 2.8790918239272303, 2.7843287233765412] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.82,-3.49,+3.11) wp0=(-1.15,-3.65) v=+0.168 ω=-0.497 wp_prog=14/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.1500000000000004, -3.6500000000000004], [-1.25, -3.5500000000000003]] theta_ref0..2=[2.704091547373043, 2.8134668239272305, 2.7186822987895582] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.13 vmax_loc=0.16
+09:24:53 [INFO] [MPC] state=(-0.84,-3.49,+3.05) wp0=(-1.15,-3.65) v=+0.163 ω=+0.866 wp_prog=15/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.1500000000000004, -3.6500000000000004], [-1.25, -3.5500000000000003]] theta_ref0..2=[2.6171172830778677, 2.748236125705849, 2.6533476689767763] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.08 vmax_loc=0.18
+09:24:53 [INFO] [MPC] state=(-0.85,-3.49,+3.12) wp0=(-1.25,-3.55) v=+0.176 ω=+0.298 wp_prog=15/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.25, -3.5500000000000003], [-1.3500000000000005, -3.5500000000000003]] theta_ref0..2=[2.7046172830778676, 2.628021993734863, 2.5600651178492337] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.87,-3.49,+3.14) wp0=(-1.25,-3.55) v=+0.168 ω=+0.262 wp_prog=15/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.25, -3.5500000000000003], [-1.3500000000000005, -3.5500000000000003]] theta_ref0..2=[2.7921172830778676, 2.683136584856487, 2.601401061190452] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.13 vmax_loc=0.16
+09:24:53 [INFO] [MPC] state=(-0.88,-3.49,+3.16) wp0=(-1.25,-3.55) v=+0.163 ω=+0.222 wp_prog=15/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.25, -3.5500000000000003], [-1.3500000000000005, -3.5500000000000003]] theta_ref0..2=[2.879486125705849, 2.748663216827473, 2.6505460351686914] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.14 vmax_loc=0.16
+09:24:53 [INFO] [MPC] state=(-0.90,-3.49,+3.19) wp0=(-1.25,-3.55) v=+0.162 ω=-1.054 wp_prog=15/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.25, -3.5500000000000003], [-1.3500000000000005, -3.5500000000000003]] theta_ref0..2=[2.945012757676835, 2.8084253724644945, 2.6953676518964578] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.13 vmax_loc=0.16
+09:24:53 [INFO] [MPC] state=(-0.92,-3.49,+3.10) wp0=(-1.25,-3.55) v=+0.163 ω=+0.308 wp_prog=15/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.25, -3.5500000000000003], [-1.3500000000000005, -3.5500000000000003]] theta_ref0..2=[2.9941577316550743, 2.860224641857429, 2.7342171039411585] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.13 vmax_loc=0.16
+09:24:53 [INFO] [MPC] state=(-0.93,-3.49,+3.12) wp0=(-1.25,-3.55) v=+0.163 ω=+0.294 wp_prog=15/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.25, -3.5500000000000003], [-1.3500000000000005, -3.5500000000000003]] theta_ref0..2=[3.031016462138754, 2.900818507068423, 2.771668156286607] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.13 vmax_loc=0.16
+09:24:53 [INFO] [MPC] state=(-0.95,-3.49,+3.15) wp0=(-1.25,-3.55) v=+0.164 ω=+0.262 wp_prog=16/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.25, -3.5500000000000003], [-1.3500000000000005, -3.5500000000000003]] theta_ref0..2=[3.0586605100015136, 2.931700009268241, 2.8041920460228322] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.10 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.96,-3.49,+3.17) wp0=(-1.35,-3.55) v=+0.169 ω=+0.053 wp_prog=16/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.3500000000000005, -3.5500000000000003], [-1.4500000000000002, -3.4500000000000006]] theta_ref0..2=[2.9711605100015137, 2.8737953848181954, 2.7688945501193545] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-0.98,-3.49,+3.18) wp0=(-1.35,-3.55) v=+0.171 ω=+0.041 wp_prog=16/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.3500000000000005, -3.5500000000000003], [-1.4500000000000002, -3.4500000000000006]] theta_ref0..2=[2.883660510001514, 2.793694228705684, 2.6999943090591016] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.00,-3.49,+3.18) wp0=(-1.35,-3.55) v=+0.173 ω=+0.034 wp_prog=16/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.3500000000000005, -3.5500000000000003], [-1.4500000000000002, -3.4500000000000006]] theta_ref0..2=[2.796160510001514, 2.708043939677556, 2.620081577306253] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.01,-3.49,+3.18) wp0=(-1.35,-3.55) v=+0.173 ω=+0.027 wp_prog=16/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.3500000000000005, -3.5500000000000003], [-1.4500000000000002, -3.4500000000000006]] theta_ref0..2=[2.708660510001514, 2.6210063674205246, 2.5548033981134792] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.07 vmax_loc=0.18
+09:24:53 [INFO] [MPC] state=(-1.03,-3.49,+3.19) wp0=(-1.35,-3.55) v=+0.178 ω=+0.024 wp_prog=16/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.3500000000000005, -3.5500000000000003], [-1.4500000000000002, -3.4500000000000006]] theta_ref0..2=[2.621160510001514, 2.5549190050492223, 2.5052378763350025] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.05 vmax_loc=0.18
+09:24:53 [INFO] [MPC] state=(-1.05,-3.49,+3.19) wp0=(-1.35,-3.55) v=+0.183 ω=+0.023 wp_prog=17/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.3500000000000005, -3.5500000000000003], [-1.4500000000000002, -3.4500000000000006]] theta_ref0..2=[2.554919005049222, 2.505237876335003, 2.467977029799338] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.04 vmax_loc=0.19
+09:24:53 [INFO] [MPC] state=(-1.07,-3.49,+3.19) wp0=(-1.45,-3.45) v=+0.187 ω=+0.037 wp_prog=18/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.4500000000000002, -3.4500000000000006], [-1.5500000000000007, -3.3500000000000005]] theta_ref0..2=[2.505237876335003, 2.467977029799338, 2.4400313948975896] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.03 vmax_loc=0.19
+09:24:53 [INFO] [MPC] state=(-1.09,-3.49,+3.20) wp0=(-1.55,-3.35) v=+0.190 ω=-0.092 wp_prog=18/39 ok=True iters=5
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.5500000000000007, -3.3500000000000005], [-1.6500000000000004, -3.2500000000000004]] theta_ref0..2=[2.467977029799338, 2.4400313948975896, 2.4190721687212786] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.02 vmax_loc=0.19
+09:24:53 [INFO] [MPC] state=(-1.11,-3.49,+3.19) wp0=(-1.55,-3.35) v=+0.192 ω=-0.071 wp_prog=18/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.5500000000000007, -3.3500000000000005], [-1.6500000000000004, -3.2500000000000004]] theta_ref0..2=[2.440031394897589, 2.419072168721278, 2.403352749089045] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.02 vmax_loc=0.19
+09:24:53 [INFO] [MPC] state=(-1.13,-3.49,+3.18) wp0=(-1.55,-3.35) v=+0.194 ω=-0.051 wp_prog=18/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.5500000000000007, -3.3500000000000005], [-1.6500000000000004, -3.2500000000000004]] theta_ref0..2=[2.4190721687212777, 2.4033527490890445, 2.3915631843648697] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.01 vmax_loc=0.20
+09:24:53 [INFO] [MPC] state=(-1.15,-3.49,+3.18) wp0=(-1.55,-3.35) v=+0.196 ω=-0.028 wp_prog=18/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.5500000000000007, -3.3500000000000005], [-1.6500000000000004, -3.2500000000000004]] theta_ref0..2=[2.403352749089044, 2.3915631843648693, 2.3827210108217383] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.01 vmax_loc=0.20
+09:24:53 [INFO] [MPC] state=(-1.17,-3.49,+3.17) wp0=(-1.55,-3.35) v=+0.197 ω=-0.004 wp_prog=18/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.5500000000000007, -3.3500000000000005], [-1.6500000000000004, -3.2500000000000004]] theta_ref0..2=[2.391563184364869, 2.382721010821738, 2.3760893806643897] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.01 vmax_loc=0.20
+09:24:53 [INFO] [MPC] state=(-1.19,-3.49,+3.17) wp0=(-1.55,-3.35) v=+0.197 ω=+0.791 wp_prog=18/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.5500000000000007, -3.3500000000000005], [-1.6500000000000004, -3.2500000000000004]] theta_ref0..2=[2.3827210108217374, 2.3760893806643892, 2.371115658046378] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:53 [INFO] [MPC] state=(-1.20,-3.50,+3.22) wp0=(-1.55,-3.35) v=+0.198 ω=+0.741 wp_prog=18/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.5500000000000007, -3.3500000000000005], [-1.6500000000000004, -3.2500000000000004]] theta_ref0..2=[2.376089380664389, 2.371115658046378, 2.3673853660828694] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:53 [INFO] [MPC] state=(-1.22,-3.50,+3.26) wp0=(-1.55,-3.35) v=+0.199 ω=-0.445 wp_prog=18/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.5500000000000007, -3.3500000000000005], [-1.6500000000000004, -3.2500000000000004]] theta_ref0..2=[2.371115658046377, 2.367385366082869, 2.364587647110238] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:53 [INFO] [MPC] state=(-1.24,-3.50,+3.23) wp0=(-1.55,-3.35) v=+0.199 ω=-0.413 wp_prog=19/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.5500000000000007, -3.3500000000000005], [-1.6500000000000004, -3.2500000000000004]] theta_ref0..2=[2.3673853660828685, 2.3645876471102376, 2.362489357880764] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.26,-3.50,+3.20) wp0=(-1.65,-3.25) v=+0.173 ω=-0.268 wp_prog=19/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.3645876471102376, 2.362489357880764, 2.2749893578807643] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.27,-3.50,+3.18) wp0=(-1.65,-3.25) v=+0.168 ω=-0.219 wp_prog=19/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.362489357880764, 2.3609156409586594, 2.2519340701891855] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.29,-3.50,+3.16) wp0=(-1.65,-3.25) v=+0.167 ω=-0.170 wp_prog=19/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.3609156409586594, 2.3597353532670806, 2.245285032497607] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.31,-3.50,+3.14) wp0=(-1.65,-3.25) v=+0.166 ω=-1.017 wp_prog=19/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.3597353532670806, 2.3588501374983966, 2.242958861248199] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.32,-3.50,+3.06) wp0=(-1.65,-3.25) v=+0.166 ω=+0.116 wp_prog=20/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.3588501374983966, 2.3581862256718837, 2.2418793845659626] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.34,-3.50,+3.06) wp0=(-1.65,-3.25) v=+0.166 ω=-0.705 wp_prog=20/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.3581862256718837, 2.357688291801999, 2.24123606499299] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.36,-3.50,+3.00) wp0=(-1.65,-3.25) v=+0.166 ω=+0.384 wp_prog=20/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.357688291801999, 2.3573148413995852, 2.2407951472979364] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.37,-3.50,+3.04) wp0=(-1.65,-3.25) v=+0.166 ω=-0.591 wp_prog=20/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.3573148413995852, 2.357034753597775, 2.2404748520228153] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.39,-3.49,+2.98) wp0=(-1.65,-3.25) v=+0.166 ω=-0.501 wp_prog=20/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.357034753597775, 2.3568246877464176, 2.2402372288155172] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.41,-3.49,+2.93) wp0=(-1.65,-3.25) v=+0.166 ω=-0.396 wp_prog=20/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.3568246877464176, 2.356667138357899, 2.2400596609723036] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.42,-3.49,+2.89) wp0=(-1.65,-3.25) v=+0.166 ω=+0.106 wp_prog=20/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.356667138357899, 2.3565489763165104, 2.2399266474804587] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.44,-3.48,+2.90) wp0=(-1.65,-3.25) v=+0.166 ω=+0.186 wp_prog=20/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.3565489763165104, 2.356460354785469, 2.239826927959216] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.45,-3.48,+2.92) wp0=(-1.65,-3.25) v=+0.166 ω=+0.009 wp_prog=20/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.356460354785469, 2.3563938886371876, 2.2397521484676948] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.47,-3.48,+2.92) wp0=(-1.65,-3.25) v=+0.166 ω=-0.060 wp_prog=21/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.6500000000000004, -3.2500000000000004], [-1.7500000000000004, -3.1500000000000004]] theta_ref0..2=[2.3563938886371876, 2.356344039025977, 2.2396960663864065] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.49,-3.47,+2.92) wp0=(-1.75,-3.15) v=+0.171 ω=-0.095 wp_prog=21/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.7500000000000004, -3.1500000000000004], [-1.8500000000000005, -3.0500000000000003]] theta_ref0..2=[2.356344039025977, 2.268844039025977, 2.1740570458660846] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.50,-3.47,+2.91) wp0=(-1.75,-3.15) v=+0.168 ω=-0.575 wp_prog=21/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.7500000000000004, -3.1500000000000004], [-1.8500000000000005, -3.0500000000000003]] theta_ref0..2=[2.356306651817569, 2.246940998619671, 2.141220010431274] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.52,-3.46,+2.86) wp0=(-1.75,-3.15) v=+0.167 ω=+0.021 wp_prog=21/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.7500000000000004, -3.1500000000000004], [-1.8500000000000005, -3.0500000000000003]] theta_ref0..2=[2.3562786114112626, 2.2414442082133648, 2.1288881587678423] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.54,-3.46,+2.86) wp0=(-1.75,-3.15) v=+0.166 ω=-0.680 wp_prog=21/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.7500000000000004, -3.1500000000000004], [-1.8500000000000005, -3.0500000000000003]] theta_ref0..2=[2.356257581106533, 2.240054237883241, 2.124762718104391] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.55,-3.45,+2.80) wp0=(-1.75,-3.15) v=+0.166 ω=-0.300 wp_prog=21/39 ok=True iters=6
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.7500000000000004, -3.1500000000000004], [-1.8500000000000005, -3.0500000000000003]] theta_ref0..2=[2.3562418083779857, 2.2396949157542996, 2.1234618663418225] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.57,-3.45,+2.77) wp0=(-1.75,-3.15) v=+0.166 ω=-1.085 wp_prog=21/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.7500000000000004, -3.1500000000000004], [-1.8500000000000005, -3.0500000000000003]] theta_ref0..2=[2.3562299788315757, 2.2395962130622564, 2.123062626382148] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.58,-3.44,+2.69) wp0=(-1.75,-3.15) v=+0.166 ω=-1.015 wp_prog=21/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.7500000000000004, -3.1500000000000004], [-1.8500000000000005, -3.0500000000000003]] theta_ref0..2=[2.356221106671768, 2.23956488326939, 2.1229393190475796] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.60,-3.43,+2.61) wp0=(-1.75,-3.15) v=+0.166 ω=-1.830 wp_prog=21/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.7500000000000004, -3.1500000000000004], [-1.8500000000000005, -3.0500000000000003]] theta_ref0..2=[2.356214452551912, 2.2395520602312815, 2.122898874935356] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.61,-3.43,+2.50) wp0=(-1.75,-3.15) v=+0.166 ω=-0.732 wp_prog=22/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.7500000000000004, -3.1500000000000004], [-1.8500000000000005, -3.0500000000000003]] theta_ref0..2=[2.3562094619620204, 2.2395451115293357, 2.1228835523808405] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.10 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.62,-3.42,+2.43) wp0=(-1.85,-3.05) v=+0.170 ω=-1.461 wp_prog=22/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[2.2687094619620205, 2.1739183743538493, 2.0736596688605973] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.63,-3.41,+2.33) wp0=(-1.85,-3.05) v=+0.172 ω=-1.273 wp_prog=22/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[2.1812094619620206, 2.0918866900599777, 1.9998299347601325] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.64,-3.40,+2.25) wp0=(-1.85,-3.05) v=+0.173 ω=-1.161 wp_prog=22/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[2.0937094619620207, 2.00575376898651, 1.9167728104299155] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.65,-3.38,+2.17) wp0=(-1.85,-3.05) v=+0.173 ω=-0.965 wp_prog=22/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[2.0062094619620208, 1.918595538718143, 1.8316457357373315] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.66,-3.37,+2.10) wp0=(-1.85,-3.05) v=+0.173 ω=-0.873 wp_prog=22/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[1.9187094619620209, 1.83173117817024, 1.766497465326404] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.07 vmax_loc=0.18
+09:24:53 [INFO] [MPC] state=(-1.66,-3.36,+2.03) wp0=(-1.85,-3.05) v=+0.179 ω=-1.733 wp_prog=22/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[1.83173117817024, 1.766497465326404, 1.7175721806935271] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.05 vmax_loc=0.18
+09:24:53 [INFO] [MPC] state=(-1.67,-3.34,+1.92) wp0=(-1.85,-3.05) v=+0.183 ω=-0.243 wp_prog=22/39 ok=True iters=8
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[1.766497465326404, 1.7175721806935271, 1.6808782172188694] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.04 vmax_loc=0.19
+09:24:53 [INFO] [MPC] state=(-1.67,-3.33,+1.88) wp0=(-1.85,-3.05) v=+0.187 ω=-0.219 wp_prog=22/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[1.7175721806935271, 1.6808782172188694, 1.6533577446128762] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.03 vmax_loc=0.19
+09:24:53 [INFO] [MPC] state=(-1.68,-3.31,+1.86) wp0=(-1.85,-3.05) v=+0.190 ω=-0.199 wp_prog=22/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[1.6808782172188694, 1.6533577446128762, 1.6327173901583814] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.02 vmax_loc=0.19
+09:24:53 [INFO] [MPC] state=(-1.69,-3.29,+1.84) wp0=(-1.85,-3.05) v=+0.192 ω=-0.158 wp_prog=23/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -3.0500000000000003], [-1.8500000000000005, -2.95]] theta_ref0..2=[1.6533577446128762, 1.6327173901583814, 1.61723712431751] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.69,-3.27,+1.82) wp0=(-1.85,-2.85) v=+0.173 ω=+0.317 wp_prog=23/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.8500000000000005], [-1.8500000000000005, -2.7500000000000004]] theta_ref0..2=[1.6327173901583814, 1.7202173901583813, 1.7819723236981635] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.69,-3.25,+1.86) wp0=(-1.85,-2.85) v=+0.167 ω=+0.066 wp_prog=23/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.8500000000000005], [-1.8500000000000005, -2.7500000000000004]] theta_ref0..2=[1.61723712431751, 1.730482190777728, 1.8308547240078368] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.70,-3.24,+1.86) wp0=(-1.85,-2.85) v=+0.166 ω=+0.052 wp_prog=23/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.8500000000000005], [-1.8500000000000005, -2.7500000000000004]] theta_ref0..2=[1.6056269249368567, 1.7243407413970744, 1.838469237049765] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.70,-3.22,+1.87) wp0=(-1.85,-2.85) v=+0.166 ω=-0.101 wp_prog=23/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.8500000000000005], [-1.8500000000000005, -2.7500000000000004]] theta_ref0..2=[1.5969192754013666, 1.7162746419002934, 1.8343232906876614] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.71,-3.21,+1.86) wp0=(-1.85,-2.85) v=+0.166 ω=-0.204 wp_prog=23/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.8500000000000005], [-1.8500000000000005, -2.7500000000000004]] theta_ref0..2=[1.5903885382497491, 1.7093600641623852, 1.8281008707937043] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.71,-3.19,+1.84) wp0=(-1.85,-2.85) v=+0.166 ω=-0.268 wp_prog=23/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.8500000000000005], [-1.8500000000000005, -2.7500000000000004]] theta_ref0..2=[1.5854904853860359, 1.7039578800801232, 1.8224936277585184] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.72,-3.17,+1.81) wp0=(-1.85,-2.85) v=+0.166 ω=-0.308 wp_prog=23/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.8500000000000005], [-1.8500000000000005, -2.7500000000000004]] theta_ref0..2=[1.5818169457382512, 1.6998521793237191, 1.8180125414324189] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.72,-3.16,+1.78) wp0=(-1.85,-2.85) v=+0.166 ω=-0.082 wp_prog=23/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.8500000000000005], [-1.8500000000000005, -2.7500000000000004]] theta_ref0..2=[1.5790617910024125, 1.6967593880827392, 1.814572676420159] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.73,-3.14,+1.77) wp0=(-1.85,-2.85) v=+0.166 ω=-0.155 wp_prog=24/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.8500000000000005], [-1.8500000000000005, -2.7500000000000004]] theta_ref0..2=[1.5769954249505336, 1.694436415733585, 1.8119704809052286] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:53 [DEBUG] corner=0.10 vmax_loc=0.17
+09:24:53 [INFO] [MPC] state=(-1.73,-3.12,+1.75) wp0=(-1.85,-2.75) v=+0.170 ω=+0.023 wp_prog=24/39 ok=True iters=7
+09:24:53 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.7500000000000004], [-1.9500000000000002, -2.7500000000000004]] theta_ref0..2=[1.6644954249505335, 1.7594806726462964, 1.8601031247110296] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.73,-3.11,+1.76) wp0=(-1.85,-2.75) v=+0.172 ω=-0.064 wp_prog=24/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.7500000000000004], [-1.9500000000000002, -2.7500000000000004]] theta_ref0..2=[1.7519954249505334, 1.8413667368744742, 1.9335508338336131] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.74,-3.09,+1.75) wp0=(-1.85,-2.75) v=+0.173 ω=+1.063 wp_prog=24/39 ok=True iters=8
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.7500000000000004], [-1.9500000000000002, -2.7500000000000004]] theta_ref0..2=[1.8394954249505333, 1.9274632529315185, 2.0164851481570425] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.74,-3.08,+1.82) wp0=(-1.85,-2.75) v=+0.173 ω=+0.920 wp_prog=24/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.7500000000000004], [-1.9500000000000002, -2.7500000000000004]] theta_ref0..2=[1.9269954249505332, 2.0146123819457795, 2.1025805734985954] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.74,-3.06,+1.89) wp0=(-1.85,-2.75) v=+0.173 ω=-0.701 wp_prog=24/39 ok=True iters=8
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.7500000000000004], [-1.9500000000000002, -2.7500000000000004]] theta_ref0..2=[2.014495424950533, 2.1020246641993445, 2.1896636415241573] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.75,-3.05,+1.84) wp0=(-1.85,-2.75) v=+0.173 ω=+0.547 wp_prog=24/39 ok=True iters=8
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.7500000000000004], [-1.9500000000000002, -2.7500000000000004]] theta_ref0..2=[2.101995424950533, 2.189502734762736, 2.277042961453091] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.75,-3.03,+1.88) wp0=(-1.85,-2.75) v=+0.173 ω=+0.433 wp_prog=24/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.7500000000000004], [-1.9500000000000002, -2.7500000000000004]] theta_ref0..2=[2.189495424950533, 2.276997252403584, 2.3645086796659607] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.76,-3.01,+1.93) wp0=(-1.85,-2.75) v=+0.173 ω=+0.121 wp_prog=25/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-1.8500000000000005, -2.7500000000000004], [-1.9500000000000002, -2.7500000000000004]] theta_ref0..2=[2.276995424950533, 2.3644958818137956, 2.4519990812768366] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.76,-3.00,+1.94) wp0=(-2.05,-2.75) v=+0.173 ω=+0.414 wp_prog=25/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.0500000000000003, -2.7500000000000004], [-2.1500000000000004, -2.7500000000000004]] theta_ref0..2=[2.3644954249505328, 2.4519955391663486, 2.5394964246939704] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.77,-2.98,+1.98) wp0=(-2.05,-2.75) v=+0.173 ω=+0.290 wp_prog=25/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.0500000000000003, -2.7500000000000004], [-2.1500000000000004, -2.7500000000000004]] theta_ref0..2=[2.4519954249505327, 2.539495453504487, 2.626995696301858] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.78,-2.96,+2.01) wp0=(-2.05,-2.75) v=+0.173 ω=+0.157 wp_prog=26/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.0500000000000003, -2.7500000000000004], [-2.1500000000000004, -2.7500000000000004]] theta_ref0..2=[2.5394954249505326, 2.6269954320890214, 2.7144954981422305] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.79,-2.95,+2.03) wp0=(-2.15,-2.75) v=+0.173 ω=-0.276 wp_prog=26/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.1500000000000004, -2.7500000000000004], [-2.2500000000000004, -2.7500000000000004]] theta_ref0..2=[2.6269954249505325, 2.7144954267351546, 2.8019954445869235] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.79,-2.93,+2.00) wp0=(-2.15,-2.75) v=+0.173 ω=+0.639 wp_prog=26/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.1500000000000004, -2.7500000000000004], [-2.2500000000000004, -2.7500000000000004]] theta_ref0..2=[2.7144954249505324, 2.801995425396688, 2.886894732444964] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.08 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-1.80,-2.92,+2.05) wp0=(-2.15,-2.75) v=+0.174 ω=+0.412 wp_prog=26/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.1500000000000004, -2.7500000000000004], [-2.2500000000000004, -2.7500000000000004]] theta_ref0..2=[2.8019954249505323, 2.8868947321103473, 2.9505692124802088] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.06 vmax_loc=0.18
+09:24:54 [INFO] [MPC] state=(-1.81,-2.90,+2.09) wp0=(-2.15,-2.75) v=+0.179 ω=-0.335 wp_prog=26/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.1500000000000004, -2.7500000000000004], [-2.2500000000000004, -2.7500000000000004]] theta_ref0..2=[2.8868947321103473, 2.9505692124802088, 2.9983250727576047] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.05 vmax_loc=0.18
+09:24:54 [INFO] [MPC] state=(-1.82,-2.89,+2.06) wp0=(-2.15,-2.75) v=+0.184 ω=+0.357 wp_prog=26/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.1500000000000004, -2.7500000000000004], [-2.2500000000000004, -2.7500000000000004]] theta_ref0..2=[2.9505692124802088, 2.9983250727576047, 3.0341419679656516] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.04 vmax_loc=0.19
+09:24:54 [INFO] [MPC] state=(-1.83,-2.87,+2.09) wp0=(-2.15,-2.75) v=+0.187 ω=+0.317 wp_prog=26/39 ok=True iters=5
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.1500000000000004, -2.7500000000000004], [-2.2500000000000004, -2.7500000000000004]] theta_ref0..2=[2.9983250727576047, 3.0341419679656516, 3.0610046393716868] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.03 vmax_loc=0.19
+09:24:54 [INFO] [MPC] state=(-1.84,-2.86,+2.12) wp0=(-2.15,-2.75) v=+0.190 ω=+0.266 wp_prog=27/39 ok=True iters=6
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.1500000000000004, -2.7500000000000004], [-2.2500000000000004, -2.7500000000000004]] theta_ref0..2=[3.0341419679656516, 3.0610046393716868, 3.0811516429262134] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.02 vmax_loc=0.19
+09:24:54 [INFO] [MPC] state=(-1.85,-2.84,+2.15) wp0=(-2.25,-2.75) v=+0.193 ω=-0.107 wp_prog=27/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.2500000000000004, -2.7500000000000004], [-2.3500000000000005, -2.7500000000000004]] theta_ref0..2=[3.0610046393716868, 3.0811516429262134, 3.096261895592108] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.02 vmax_loc=0.19
+09:24:54 [INFO] [MPC] state=(-1.86,-2.82,+2.14) wp0=(-2.25,-2.75) v=+0.194 ω=-0.052 wp_prog=27/39 ok=True iters=6
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.2500000000000004, -2.7500000000000004], [-2.3500000000000005, -2.7500000000000004]] theta_ref0..2=[3.0811516429262134, 3.096261895592108, 3.1075945850915296] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.01 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.87,-2.81,+2.13) wp0=(-2.25,-2.75) v=+0.196 ω=+0.056 wp_prog=27/39 ok=True iters=6
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.2500000000000004, -2.7500000000000004], [-2.3500000000000005, -2.7500000000000004]] theta_ref0..2=[3.096261895592108, 3.1075945850915296, 3.1160941022160955] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.01 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.88,-2.79,+2.14) wp0=(-2.25,-2.75) v=+0.197 ω=+0.930 wp_prog=28/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.2500000000000004, -2.7500000000000004], [-2.3500000000000005, -2.7500000000000004]] theta_ref0..2=[3.1075945850915296, 3.1160941022160955, 3.12246874005952] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.01 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.89,-2.78,+2.19) wp0=(-2.35,-2.75) v=+0.198 ω=+0.085 wp_prog=28/39 ok=True iters=8
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1160941022160955, 3.12246874005952, 3.127249718442088] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.90,-2.76,+2.20) wp0=(-2.35,-2.75) v=+0.198 ω=+0.674 wp_prog=28/39 ok=True iters=9
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.12246874005952, 3.127249718442088, 3.1308354522290145] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.91,-2.74,+2.24) wp0=(-2.35,-2.75) v=+0.199 ω=+0.977 wp_prog=28/39 ok=True iters=12
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.127249718442088, 3.1308354522290145, 3.133524752569209] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.92,-2.73,+2.29) wp0=(-2.35,-2.75) v=+0.030 ω=-0.543 wp_prog=28/39 ok=True iters=11
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1308354522290145, 3.133524752569209, 3.1355417278243554] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.92,-2.73,+2.25) wp0=(-2.35,-2.75) v=+0.030 ω=-0.246 wp_prog=28/39 ok=True iters=13
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.133524752569209, 3.1355417278243554, 3.137054459265715] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.93,-2.73,+2.23) wp0=(-2.35,-2.75) v=+0.030 ω=+0.968 wp_prog=28/39 ok=True iters=12
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1355417278243554, 3.137054459265715, 3.1381890078467345] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.93,-2.72,+2.32) wp0=(-2.35,-2.75) v=+0.030 ω=+1.137 wp_prog=28/39 ok=True iters=11
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.137054459265715, 3.1381890078467345, 3.1390399192824994] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.93,-2.72,+2.44) wp0=(-2.35,-2.75) v=+0.030 ω=+1.245 wp_prog=28/39 ok=True iters=13
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1381890078467345, 3.1390399192824994, 3.139678102859323] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.93,-2.72,+2.57) wp0=(-2.35,-2.75) v=+0.030 ω=+0.907 wp_prog=28/39 ok=True iters=13
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1390399192824994, 3.139678102859323, 3.1401567405419404] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.93,-2.72,+2.66) wp0=(-2.35,-2.75) v=+0.030 ω=+0.638 wp_prog=28/39 ok=True iters=8
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.139678102859323, 3.1401567405419404, 3.1405157188039037] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.94,-2.72,+2.73) wp0=(-2.35,-2.75) v=+0.030 ω=+0.549 wp_prog=28/39 ok=True iters=10
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1401567405419404, 3.1405157188039037, 3.140784952500376] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.94,-2.72,+2.78) wp0=(-2.35,-2.75) v=+0.030 ω=+0.534 wp_prog=28/39 ok=True iters=11
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1405157188039037, 3.140784952500376, 3.1409868777727303] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.94,-2.72,+2.84) wp0=(-2.35,-2.75) v=+0.030 ω=+0.429 wp_prog=28/39 ok=True iters=10
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.140784952500376, 3.1409868777727303, 3.141138321726996] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.94,-2.72,+2.88) wp0=(-2.35,-2.75) v=+0.030 ω=+0.367 wp_prog=28/39 ok=True iters=12
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1409868777727303, 3.141138321726996, 3.1412519046926954] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.95,-2.72,+2.92) wp0=(-2.35,-2.75) v=+0.030 ω=+0.268 wp_prog=28/39 ok=True iters=9
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141138321726996, 3.1412519046926954, 3.14133709191697] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.95,-2.72,+2.95) wp0=(-2.35,-2.75) v=+0.030 ω=+0.213 wp_prog=29/39 ok=True iters=13
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1412519046926954, 3.14133709191697, 3.141400982335176] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.95,-2.72,+2.97) wp0=(-2.35,-2.75) v=+0.030 ω=-0.626 wp_prog=29/39 ok=True iters=8
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.14133709191697, 3.141400982335176, 3.14144890014883] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.95,-2.71,+2.91) wp0=(-2.35,-2.75) v=+0.030 ω=+0.411 wp_prog=29/39 ok=True iters=10
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141400982335176, 3.14144890014883, 3.141484838509071] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.96,-2.71,+2.94) wp0=(-2.35,-2.75) v=+0.030 ω=+0.346 wp_prog=29/39 ok=True iters=8
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.14144890014883, 3.141484838509071, 3.1415117922792515] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.96,-2.71,+2.98) wp0=(-2.35,-2.75) v=+0.030 ω=-0.805 wp_prog=29/39 ok=True iters=13
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141484838509071, 3.1415117922792515, 3.141532007606887] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.96,-2.71,+2.90) wp0=(-2.35,-2.75) v=+0.030 ω=+0.504 wp_prog=29/39 ok=True iters=12
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415117922792515, 3.141532007606887, 3.1415471691026133] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.96,-2.71,+2.95) wp0=(-2.35,-2.75) v=+0.030 ω=+0.459 wp_prog=29/39 ok=True iters=11
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141532007606887, 3.1415471691026133, 3.141558540224408] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.97,-2.71,+3.00) wp0=(-2.35,-2.75) v=+0.030 ω=+0.566 wp_prog=29/39 ok=True iters=10
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415471691026133, 3.141558540224408, 3.141567068565754] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.97,-2.71,+3.05) wp0=(-2.35,-2.75) v=+0.030 ω=+0.428 wp_prog=29/39 ok=True iters=11
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141558540224408, 3.141567068565754, 3.141573464821764] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.97,-2.71,+3.09) wp0=(-2.35,-2.75) v=+0.030 ω=+0.386 wp_prog=29/39 ok=True iters=10
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141567068565754, 3.141573464821764, 3.141578262013771] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.97,-2.71,+3.12) wp0=(-2.35,-2.75) v=+0.030 ω=-1.171 wp_prog=29/39 ok=True iters=12
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141573464821764, 3.141578262013771, 3.1415818599077765] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.98,-2.71,+3.01) wp0=(-2.35,-2.75) v=+0.030 ω=+0.802 wp_prog=29/39 ok=True iters=10
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141578262013771, 3.1415818599077765, 3.1415845583282804] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.98,-2.71,+3.07) wp0=(-2.35,-2.75) v=+0.030 ω=+0.430 wp_prog=29/39 ok=True iters=9
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415818599077765, 3.1415845583282804, 3.141586582143659] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.98,-2.71,+3.11) wp0=(-2.35,-2.75) v=+0.200 ω=-0.091 wp_prog=29/39 ok=True iters=14
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415845583282804, 3.141586582143659, 3.141588100005192] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-1.99,-2.71,+3.10) wp0=(-2.35,-2.75) v=+0.200 ω=-0.113 wp_prog=29/39 ok=True iters=17
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141586582143659, 3.141588100005192, 3.1415892384013424] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.01,-2.71,+3.08) wp0=(-2.35,-2.75) v=+0.030 ω=+0.496 wp_prog=29/39 ok=True iters=12
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141588100005192, 3.1415892384013424, 3.141590092198455] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.02,-2.71,+3.12) wp0=(-2.35,-2.75) v=+0.030 ω=+0.660 wp_prog=29/39 ok=True iters=12
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415892384013424, 3.141590092198455, 3.1415907325462893] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.02,-2.71,+3.17) wp0=(-2.35,-2.75) v=+0.030 ω=-0.304 wp_prog=29/39 ok=True iters=18
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141590092198455, 3.1415907325462893, 3.1415912128071652] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.02,-2.71,+3.14) wp0=(-2.35,-2.75) v=+0.030 ω=+0.205 wp_prog=29/39 ok=True iters=13
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415907325462893, 3.1415912128071652, 3.141591573002822] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.03,-2.71,+3.16) wp0=(-2.35,-2.75) v=+0.030 ω=-0.096 wp_prog=29/39 ok=True iters=13
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415912128071652, 3.141591573002822, 3.141591843149565] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.03,-2.71,+3.15) wp0=(-2.35,-2.75) v=+0.030 ω=+0.064 wp_prog=29/39 ok=True iters=13
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141591573002822, 3.141591843149565, 3.141592045759622] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.03,-2.71,+3.15) wp0=(-2.35,-2.75) v=+0.030 ω=-0.055 wp_prog=29/39 ok=True iters=12
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141591843149565, 3.141592045759622, 3.1415921977171646] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.04,-2.71,+3.15) wp0=(-2.35,-2.75) v=+0.030 ω=+0.031 wp_prog=29/39 ok=True iters=11
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.141592045759622, 3.1415921977171646, 3.1415923116853217] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.04,-2.71,+3.15) wp0=(-2.35,-2.75) v=+0.030 ω=-0.029 wp_prog=29/39 ok=True iters=10
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415921977171646, 3.1415923116853217, 3.1415923971614395] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.04,-2.71,+3.15) wp0=(-2.35,-2.75) v=+0.030 ω=+0.015 wp_prog=29/39 ok=True iters=10
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415923116853217, 3.1415923971614395, 3.141592461268528] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.04,-2.71,+3.15) wp0=(-2.35,-2.75) v=+0.200 ω=-0.257 wp_prog=30/39 ok=True iters=9
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.3500000000000005, -2.7500000000000004], [-2.45, -2.7500000000000004]] theta_ref0..2=[3.1415923971614395, 3.141592461268528, 3.141592509348844] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.06,-2.71,+3.12) wp0=(-2.55,-2.75) v=+0.200 ω=-1.234 wp_prog=30/39 ok=True iters=8
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.5500000000000003, -2.7500000000000004], [-2.6500000000000004, -2.7500000000000004]] theta_ref0..2=[3.141592461268528, 3.141592509348844, 3.1415925454090816] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.07,-2.71,+3.05) wp0=(-2.55,-2.75) v=+0.200 ω=+0.471 wp_prog=30/39 ok=True iters=14
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.5500000000000003, -2.7500000000000004], [-2.6500000000000004, -2.7500000000000004]] theta_ref0..2=[3.141592509348844, 3.1415925454090816, 3.1415925724542593] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.09,-2.71,+3.07) wp0=(-2.55,-2.75) v=+0.200 ω=+0.415 wp_prog=30/39 ok=True iters=6
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.5500000000000003, -2.7500000000000004], [-2.6500000000000004, -2.7500000000000004]] theta_ref0..2=[3.1415925454090816, 3.1415925724542593, 3.1415925927381427] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.11,-2.71,+3.09) wp0=(-2.55,-2.75) v=+0.200 ω=+0.344 wp_prog=30/39 ok=True iters=6
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.5500000000000003, -2.7500000000000004], [-2.6500000000000004, -2.7500000000000004]] theta_ref0..2=[3.1415925724542593, 3.1415925927381427, 3.1415926079510554] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.13,-2.70,+3.11) wp0=(-2.55,-2.75) v=+0.200 ω=+0.212 wp_prog=30/39 ok=True iters=6
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.5500000000000003, -2.7500000000000004], [-2.6500000000000004, -2.7500000000000004]] theta_ref0..2=[3.1415925927381427, 3.1415926079510554, 3.1415926193607397] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.00 vmax_loc=0.20
+09:24:54 [INFO] [MPC] state=(-2.15,-2.70,+3.13) wp0=(-2.55,-2.75) v=+0.200 ω=+0.174 wp_prog=31/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.5500000000000003, -2.7500000000000004], [-2.6500000000000004, -2.7500000000000004]] theta_ref0..2=[3.1415926079510554, 3.1415926193607397, 3.141592627918003] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-2.17,-2.70,+3.14) wp0=(-2.65,-2.75) v=+0.173 ω=+0.164 wp_prog=31/39 ok=True iters=6
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.6500000000000004, -2.7500000000000004], [-2.7500000000000004, -2.7500000000000004]] theta_ref0..2=[3.1415926193607397, 3.141592627918003, 3.229092627918003] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-2.18,-2.70,+3.16) wp0=(-2.65,-2.75) v=+0.168 ω=+0.133 wp_prog=31/39 ok=True iters=6
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.6500000000000004, -2.7500000000000004], [-2.7500000000000004, -2.7500000000000004]] theta_ref0..2=[3.141592627918003, 3.1415926343359506, 3.250967632731464] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-2.20,-2.70,+3.17) wp0=(-2.65,-2.75) v=+0.167 ω=-0.144 wp_prog=31/39 ok=True iters=6
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.6500000000000004, -2.7500000000000004], [-2.7500000000000004, -2.7500000000000004]] theta_ref0..2=[3.1415926343359506, 3.1415926391494113, 3.2564363875449245] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-2.22,-2.70,+3.16) wp0=(-2.65,-2.75) v=+0.166 ω=-1.013 wp_prog=31/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.6500000000000004, -2.7500000000000004], [-2.7500000000000004, -2.7500000000000004]] theta_ref0..2=[3.1415926391494113, 3.1415926427595067, 3.257803578955861] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-2.23,-2.70,+3.08) wp0=(-2.65,-2.75) v=+0.166 ω=+0.505 wp_prog=31/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.6500000000000004, -2.7500000000000004], [-2.7500000000000004, -2.7500000000000004]] theta_ref0..2=[3.1415926427595067, 3.141592645467078, 3.258145378839274] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:54 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:54 [INFO] [MPC] state=(-2.25,-2.70,+3.11) wp0=(-2.65,-2.75) v=+0.166 ω=-0.944 wp_prog=32/39 ok=True iters=7
+09:24:54 [DEBUG] [MPC IN] path_xy0..1=[[-2.6500000000000004, -2.7500000000000004], [-2.7500000000000004, -2.7500000000000004]] theta_ref0..2=[3.141592645467078, 3.141592647497757, 3.258230830333136] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.26,-2.70,+3.04) wp0=(-2.75,-2.75) v=+0.171 ω=+0.604 wp_prog=32/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.7500000000000004, -2.7500000000000004], [-2.8500000000000005, -2.7500000000000004]] theta_ref0..2=[3.141592647497757, 3.229092647497757, 3.323877193206602] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.28,-2.70,+3.09) wp0=(-2.75,-2.75) v=+0.168 ω=+0.585 wp_prog=32/39 ok=True iters=6
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.7500000000000004, -2.7500000000000004], [-2.8500000000000005, -2.7500000000000004]] theta_ref0..2=[3.141592649020766, 3.250967648640014, 3.356695034781661] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.11 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.30,-2.70,+3.13) wp0=(-2.75,-2.75) v=+0.167 ω=+0.277 wp_prog=32/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.7500000000000004, -2.7500000000000004], [-2.8500000000000005, -2.7500000000000004]] theta_ref0..2=[3.141592650163023, 3.2564363997822707, 3.369001058532118] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.31,-2.70,+3.16) wp0=(-2.75,-2.75) v=+0.166 ω=+0.238 wp_prog=32/39 ok=True iters=6
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.7500000000000004, -2.7500000000000004], [-2.8500000000000005, -2.7500000000000004]] theta_ref0..2=[3.1415926510197156, 3.257803588210354, 3.373102955790795] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.33,-2.70,+3.18) wp0=(-2.75,-2.75) v=+0.166 ω=-0.063 wp_prog=32/39 ok=True iters=6
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.7500000000000004, -2.7500000000000004], [-2.8500000000000005, -2.7500000000000004]] theta_ref0..2=[3.141592651662235, 3.258145385799265, 3.3743847782971477] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.12 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.35,-2.70,+3.17) wp0=(-2.75,-2.75) v=+0.166 ω=-0.072 wp_prog=33/39 ok=True iters=6
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.7500000000000004, -2.7500000000000004], [-2.8500000000000005, -2.7500000000000004]] theta_ref0..2=[3.1415926521441246, 3.2582308355579097, 3.3747693212427192] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.10 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.36,-2.70,+3.17) wp0=(-2.85,-2.75) v=+0.170 ω=-0.080 wp_prog=33/39 ok=True iters=6
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[3.2290926521441246, 3.3238771979975708, 3.424100228808858] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.38,-2.70,+3.16) wp0=(-2.85,-2.75) v=+0.172 ω=-0.994 wp_prog=33/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[3.3165926521441245, 3.405913788607486, 3.497960398657829] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.40,-2.70,+3.09) wp0=(-2.85,-2.75) v=+0.173 ω=+0.565 wp_prog=33/39 ok=True iters=8
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[3.4040926521441244, 3.492047936259965, 3.581026051859431] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.41,-2.70,+3.12) wp0=(-2.85,-2.75) v=+0.173 ω=+0.268 wp_prog=33/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[3.4915926521441243, 3.5792064731730844, 3.6671613678446713] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.43,-2.70,+3.15) wp0=(-2.85,-2.75) v=+0.173 ω=+0.238 wp_prog=33/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[3.579092652144124, 3.6666211074013644, 3.754256172512191] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.44,-2.70,+3.17) wp0=(-2.85,-2.75) v=+0.173 ω=-0.071 wp_prog=34/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[3.666592652144124, 3.754099765958434, 3.841638867596873] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.46,-2.70,+3.16) wp0=(-2.85,-2.75) v=+0.173 ω=+0.201 wp_prog=34/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[3.754092652144124, 3.8415944305977017, 3.9291055398474946] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.48,-2.70,+3.18) wp0=(-2.85,-2.75) v=+0.173 ω=-0.105 wp_prog=34/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[3.841592652144124, 3.9290930967575184, 4.016596207530013] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.50,-2.70,+3.17) wp0=(-2.85,-2.75) v=+0.173 ω=-1.056 wp_prog=34/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[3.929092652144124, 4.0165927632974725, 4.104093624355608] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.51,-2.70,+3.09) wp0=(-2.85,-2.75) v=+0.173 ω=+0.545 wp_prog=34/39 ok=True iters=8
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.016592652144124, 4.104092679932461, 4.191592916038248] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.53,-2.70,+3.13) wp0=(-2.85,-2.75) v=+0.173 ω=-1.017 wp_prog=34/39 ok=True iters=8
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.104092652144123, 4.191592659091207, 4.279092723327968] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.54,-2.70,+3.05) wp0=(-2.85,-2.75) v=+0.173 ω=+0.611 wp_prog=35/39 ok=True iters=8
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.7500000000000004], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.191592652144124, 4.279092653880895, 4.366592671242663] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.56,-2.70,+3.09) wp0=(-2.85,-2.85) v=+0.173 ω=+0.619 wp_prog=35/39 ok=True iters=7
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.279092652144124, 4.3665926525783165, 4.454092657244403] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.58,-2.70,+3.14) wp0=(-2.85,-2.85) v=+0.173 ω=+0.303 wp_prog=35/39 ok=True iters=8
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.366592652144124, 4.4540926522526725, 4.541592653500605] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.59,-2.70,+3.16) wp0=(-2.85,-2.85) v=+0.173 ω=+0.267 wp_prog=35/39 ok=True iters=8
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.454092652144125, 4.5415926521712615, 4.629092652503598] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.61,-2.70,+3.19) wp0=(-2.85,-2.85) v=+0.173 ω=-0.054 wp_prog=35/39 ok=True iters=8
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.541592652144125, 4.629092652150909, 4.716592652239081] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.63,-2.70,+3.18) wp0=(-2.85,-2.85) v=+0.173 ω=-0.073 wp_prog=35/39 ok=True iters=8
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.629092652144125, 4.716592652145821, 4.804092652169136] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.64,-2.70,+3.18) wp0=(-2.85,-2.85) v=+0.173 ω=-0.089 wp_prog=36/39 ok=True iters=9
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.716592652144126, 4.80409265214455, 4.891592652150696] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.66,-2.70,+3.17) wp0=(-2.85,-2.85) v=+0.173 ω=-1.098 wp_prog=36/39 ok=True iters=11
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.804092652144126, 4.891592652144232, 4.979092652145848] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.68,-2.70,+3.09) wp0=(-2.85,-2.85) v=+0.173 ω=+0.570 wp_prog=36/39 ok=True iters=11
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.891592652144126, 4.9790926521441525, 5.0665926521445765] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.69,-2.70,+3.13) wp0=(-2.85,-2.85) v=+0.173 ω=-1.068 wp_prog=36/39 ok=True iters=8
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[4.979092652144127, 5.066592652144133, 5.154092652144244] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
+09:24:55 [DEBUG] corner=0.09 vmax_loc=0.17
+09:24:55 [INFO] [MPC] state=(-2.71,-2.70,+3.05) wp0=(-2.85,-2.85) v=+0.173 ω=+0.624 wp_prog=36/39 ok=True iters=10
+09:24:55 [DEBUG] [MPC IN] path_xy0..1=[[-2.8500000000000005, -2.8500000000000005], [-2.8500000000000005, -2.8500000000000005]] theta_ref0..2=[5.066592652144127, 5.154092652144128, 5.241592652144157] weights=[18.0, 7.5, 0.25, 0.5, 0.06, 0.0] vmin_soft=0.030
