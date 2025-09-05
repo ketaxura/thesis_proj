@@ -101,25 +101,23 @@ def _make_theta_ref(path_xy: np.ndarray,
 
 
 def _max_curvature(path_xy: np.ndarray, k_window: int = 6, eps: float = 1e-3) -> float:
-    """
-    Approximate maximum curvature κ over the next few segments, using heading change per arc length.
-    Robust to sampling: use adjacent segment pair and average segment length.
-
-    κ_i ≈ |Δθ_i| / Δs_i,  where Δθ_i is heading change between segment i and i+1,
-    and Δs_i is the average length of those two segments.
-    """
     pts = np.asarray(path_xy, dtype=float)
-    if pts.shape[0] < 3:
+    if pts.shape[0] < 3: 
         return 0.0
-    # segment vectors and lengths
-    seg = np.diff(pts, axis=0)                                # (M-1, 2)
-    seg_len = np.linalg.norm(seg, axis=1)                     # (M-1,)
-    seg_len = np.maximum(seg_len, eps)
-    # segment headings (unwrap for continuity)
-    hdg = np.unwrap(np.arctan2(seg[:,1], seg[:,0]))           # (M-1,)
-    dtheta = np.abs(np.diff(hdg))                              # (M-2,)
-    ds = 0.5 * (seg_len[1:] + seg_len[:-1])                   # (M-2,)
-    kappa = dtheta / np.maximum(ds, eps)                       # (M-2,)
+    seg = np.diff(pts, axis=0)
+    seg_len = np.linalg.norm(seg, axis=1)
+
+    # NEW: drop tiny segments (e.g., < 5 cm)
+    keep = seg_len > 0.05
+    seg = seg[keep]
+    seg_len = seg_len[keep]
+    if seg.shape[0] < 2:
+        return 0.0
+
+    hdg = np.unwrap(np.arctan2(seg[:,1], seg[:,0]))
+    dtheta = np.abs(np.diff(hdg))
+    ds = 0.5 * (seg_len[1:] + seg_len[:-1])
+    kappa = dtheta / np.maximum(ds, eps)
     w = min(int(k_window), kappa.size)
     return float(np.max(kappa[:w])) if w > 0 else 0.0
 
@@ -242,7 +240,7 @@ class CrowdNavPyBulletEnv(gym.Env):
         pts = np.asarray(world_pts, dtype=float).reshape(-1, 2)
 
         # vertical markers
-        for w in pts[:max(0, int(vertical_count))]:
+        for w in pts[:max(0, 1)]:
             x, y = float(w[0]), float(w[1])
             uid = p.addUserDebugLine([x, y, 0], [x, y, 10], line_rgb, lineWidth=2, lifeTime=0)
             self._dbg_path_ids.append(uid)
@@ -487,7 +485,7 @@ class CrowdNavPyBulletEnv(gym.Env):
                 self.weights.w_theta
             ], dtype=float)
 
-            # --- Curvature-aware speed limiting (physics-consistent) ---
+            # --- Curvature-aware speed limiting (physics-consistent) --- START
             # Use pre-taper geometry: path_xy itself, not theta_ref
             kappa_max = _max_curvature(path_xy, k_window=6, eps=1e-3)
 
@@ -499,6 +497,7 @@ class CrowdNavPyBulletEnv(gym.Env):
 
             # Local cap and allow pivot if cap is tight
             vmax_local = float(np.clip(min(self.v_max, vcap_curv), 0.05, self.v_max))
+            
             if v_min_soft > 0.8 * vmax_local:
                 v_min_soft = 0.0
 
@@ -511,17 +510,20 @@ class CrowdNavPyBulletEnv(gym.Env):
             if self._force_pivot:
                 v_min_soft = 0.0
                 vmax_local = min(vmax_local, 0.05)
-
+                
+        
             logger.debug(
                 f"kappa_max={kappa_max:.3f} vcap_curv={vcap_curv:.3f} "
                 f"vmax_local={vmax_local:.3f} vmin_soft={v_min_soft:.3f}"
             )
 
+            # --- Curvature-aware speed limiting (physics-consistent) --- END
             # === TRACK (MPC) ===
             v, omega, U, mpc_dbg = self.track.step(
                 state, path_xy, theta_ref, obs_traj, static_flat, weights,
                 v_min_soft, vmax_local, self.ctrl.omega_max, self.dyn, self.T
             )
+
 
             # Refresh pose after applying the command
             self._update_pose()

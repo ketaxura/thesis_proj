@@ -80,7 +80,24 @@ def build_mpc_solver_random_obs(max_obs=0, max_static=8, N: int = 10, T: float =
         dy  = xk[1] - sy
         dsq = dx*dx + dy*dy
         # if a slot is padded with large 1e6, dsq is ~1e12 and contributes ~0
-        J += w_obs * ca.sum1(1.0 / (dsq + eps))
+        # distances from predicted state xk to static points (sx, sy)
+        d   = ca.sqrt(dsq)
+
+        # --- Two-zone obstacle cost ---
+        # Far-field: gentle inverse-square that never goes to zero
+        eps_far   = 0.08**2          # sets how "wide" the far field is (~8 cm)
+        w_far     = 0.15             # gentle weight (tune)
+        J += w_obs * w_far * ca.sum1(1.0 / (dsq + eps_far))
+
+        # Near-field: hard wall (quartic hinge)
+        robot_rad = 0.09
+        inflate   = 0.06   # was 0.10 → make r_infl = 0.15 m
+        w_near    = 3.0    # was 6.0 → still strong but less brutal
+        r_infl    = robot_rad + inflate
+        viol      = ca.fmax(0, r_infl - d)
+        J += w_obs * w_near * ca.sum1(viol**4)
+
+
 
         # speed bias
         J += w_speed * (v_des - uk[0])**2
