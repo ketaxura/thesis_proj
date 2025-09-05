@@ -17,7 +17,7 @@ from .utils2.hud import DebugHUD
 from .mpc import build_mpc_solver_random_obs
 from .world import create_world
 from .utils import update_astar_path, MAP_SCALE, map_size
-omega_max = 2.4
+
 v_max_cap = 0.20
 
 # === Heading helpers (place near other top-level helpers) ===
@@ -100,6 +100,33 @@ def _make_theta_ref(path_xy: np.ndarray,
 
 
 
+def _max_curvature(path_xy: np.ndarray, k_window: int = 6, eps: float = 1e-3) -> float:
+    """
+    Approximate maximum curvature κ over the next few segments, using heading change per arc length.
+    Robust to sampling: use adjacent segment pair and average segment length.
+
+    κ_i ≈ |Δθ_i| / Δs_i,  where Δθ_i is heading change between segment i and i+1,
+    and Δs_i is the average length of those two segments.
+    """
+    pts = np.asarray(path_xy, dtype=float)
+    if pts.shape[0] < 3:
+        return 0.0
+    # segment vectors and lengths
+    seg = np.diff(pts, axis=0)                                # (M-1, 2)
+    seg_len = np.linalg.norm(seg, axis=1)                     # (M-1,)
+    seg_len = np.maximum(seg_len, eps)
+    # segment headings (unwrap for continuity)
+    hdg = np.unwrap(np.arctan2(seg[:,1], seg[:,0]))           # (M-1,)
+    dtheta = np.abs(np.diff(hdg))                              # (M-2,)
+    ds = 0.5 * (seg_len[1:] + seg_len[:-1])                   # (M-2,)
+    kappa = dtheta / np.maximum(ds, eps)                       # (M-2,)
+    w = min(int(k_window), kappa.size)
+    return float(np.max(kappa[:w])) if w > 0 else 0.0
+
+
+
+
+
 
 
 class CrowdNavPyBulletEnv(gym.Env):
@@ -122,14 +149,18 @@ class CrowdNavPyBulletEnv(gym.Env):
         self._rng = np.random.default_rng(seed)
         self._last_seed = seed
         
-
-
         self.resolution = resolution
         self.world_size = map_size * MAP_SCALE
         self.half_size  = self.world_size / 2
         self.max_steps  = max_steps
         self.num_peds   = int(num_peds)
         self.max_static = int(max_static)
+        
+        
+        self._omega_sat_streak = 0
+        self._last_wp_idx = 0
+        self._force_pivot = False
+
 
         # world & robot
         (self.robot_id, self.left_wheel_joint_id, self.right_wheel_joint_id,
@@ -169,6 +200,7 @@ class CrowdNavPyBulletEnv(gym.Env):
     # grid/world helpers
     def world_to_grid(self, pos): return world_to_grid(pos, self.resolution, self.grid.shape)
     def grid_to_world(self, idx): return grid_to_world(idx, self.resolution, self.grid.shape)
+    
     
     
     
@@ -274,6 +306,12 @@ class CrowdNavPyBulletEnv(gym.Env):
         self._theta_ref_prev = None
         self.step_count = 0
         self.phase = "ALIGN"; self._align_ctr = 0
+        
+        
+        self._omega_sat_streak = 0
+        self._last_wp_idx = 0
+        self._force_pivot = False
+
 
         # (optional) clear old debug path items
         for i in getattr(self, "_dbg_path_ids", []):
@@ -334,12 +372,12 @@ class CrowdNavPyBulletEnv(gym.Env):
                                   vertical_count=10, connect=True,
                                   label_every=1, text_size=1.2)
 
-        # Prime HUD (you already throttle updates in step)
-        self.hud.follow(self.robot_pos, [
-            "MPC HUD",
-            "pos: -, - | v,w: -, -",
-            f"wp: 0/0 | phase: {self.phase}"
-        ])
+        # # Prime HUD (you already throttle updates in step)
+        # self.hud.follow(self.robot_pos, [
+        #     "MPC HUD",
+        #     "pos: -, - | v,w: -, -",
+        #     f"wp: 0/0 | phase: {self.phase}"
+        # ])
 
         # wheel dynamics tuning
         try:
@@ -389,8 +427,6 @@ class CrowdNavPyBulletEnv(gym.Env):
                                             self.wdog.vmin_base, self.wdog.vmin_boost, self.wdog.vmin_boost_horizon)
             self._wd.update(dgoal)
             v_min_soft, boosted = self._wd.vmin_soft()
-
-            # (light) global replan
         
             # (light) global replan
             path_xy, _ = self.path.sample_window(self.robot_pos, self.N)
@@ -440,57 +476,72 @@ class CrowdNavPyBulletEnv(gym.Env):
             else:
                 obs_traj = np.zeros(2*self.N*self.num_peds)
 
-            speed_w = (self.weights.speed_w_boost if boosted else self.weights.speed_w_base) * 0.6
+            # speed_w = (self.weights.speed_w_boost if boosted else self.weights.speed_w_base) * 0.6
 
             weights = np.array([
-                18.0,                               # w_track  : ↑ glue to path (lateral/waypoint)
-                self.weights.w_goal * 1.5,          # w_goal   : modest terminal pull
-                max(0.25, self.weights.w_smooth*2), # w_smooth : ↑ discourages sharp steering
-                max(0.5,  self.weights.w_obs),      # w_obs    : ↑ keep margin from walls
-                max(0.04, speed_w),                 # speed bias
-                0.00                                # w_theta  : **zero or very low** → no eager pre-turn
+                self.weights.w_track,
+                self.weights.w_goal,
+                self.weights.w_smooth,
+                self.weights.w_obs,
+                (self.weights.speed_w_boost if boosted else self.weights.speed_w_base),
+                self.weights.w_theta
             ], dtype=float)
 
+            # --- Curvature-aware speed limiting (physics-consistent) ---
+            # Use pre-taper geometry: path_xy itself, not theta_ref
+            kappa_max = _max_curvature(path_xy, k_window=6, eps=1e-3)
 
+            # Feasibility cap: avoid ω saturation → v ≤ ω_max / κ
+            if kappa_max <= 1e-3:
+                vcap_curv = self.v_max
+            else:
+                vcap_curv = self.ctrl.omega_max / kappa_max   # << use CONFIG ω_max
 
-            # Corner-aware speed limiting (reduce speed into bends)
-            k = min(5, len(theta_ref) - 1)
-            corneriness = float(np.max(np.abs(np.diff(theta_ref[:k+1])))) if k > 0 else 0.0
-            s = 1.0 / (1.0 + 3.0*corneriness)                  # ~1 on straight; drops near sharp turns
-            vmax_local = self.v_max * np.clip(0.35 + 0.65*s, 0.35, 1.0)
+            # Local cap and allow pivot if cap is tight
+            vmax_local = float(np.clip(min(self.v_max, vcap_curv), 0.05, self.v_max))
+            if v_min_soft > 0.8 * vmax_local:
+                v_min_soft = 0.0
 
+            # Pre-emptive pivot on large heading error (straight path but misaligned)
+            if abs(theta_error) > 0.7:               # ~40°
+                v_min_soft = 0.0
+                vmax_local = min(vmax_local, 0.08)
 
+            # Force pivot if we were saturated+stalled on the PREVIOUS cycle
+            if self._force_pivot:
+                v_min_soft = 0.0
+                vmax_local = min(vmax_local, 0.05)
 
-
-
-            # TRACK (MPC)
-            v, omega, U, mpc_dbg = self.track.step(
-                state, path_xy, theta_ref, obs_traj, static_flat, weights,
-                v_min_soft, vmax_local, omega_max, self.dyn, self.T
+            logger.debug(
+                f"kappa_max={kappa_max:.3f} vcap_curv={vcap_curv:.3f} "
+                f"vmax_local={vmax_local:.3f} vmin_soft={v_min_soft:.3f}"
             )
 
-            
-            logger.debug(f"corner={corneriness:.2f} vmax_loc={vmax_local:.2f}")
+            # === TRACK (MPC) ===
+            v, omega, U, mpc_dbg = self.track.step(
+                state, path_xy, theta_ref, obs_traj, static_flat, weights,
+                v_min_soft, vmax_local, self.ctrl.omega_max, self.dyn, self.T
+            )
 
-
-            
-            
+            # Refresh pose after applying the command
             self._update_pose()
 
-            # Waypoint progress (closest / total along *global* path)
+            # Waypoint progress (use latest pose)
             wp_idx, wp_total = self.path.progress(self.robot_pos)
-            if (self.step_count % 6) == 0:
-                # Update HUD near the robot
-                self.hud.follow(self.robot_pos, [
-                    # In HUD follow() call inside step():
-                    f"pos: ({self.robot_pos[0]:+.2f},{self.robot_pos[1]:+.2f}) θ={self.theta_cont:+.2f} rad",
-                    f"cmd: v={v:+.3f} m/s, ω={omega:+.3f} rad/s",
-                    f"wp: {wp_idx}/{wp_total} | phase: {self.phase}",
-                    f"U(v) min/max: {mpc_dbg.get('U_minmax_v',[None,None])[0]:.2f}/{mpc_dbg.get('U_minmax_v',[None,None])[1]:.2f}",
-                    f"solve: ok={mpc_dbg.get('solver_ok',False)} iters={mpc_dbg.get('solver_iters',-1)}"
-                ])
 
-            # Console logs (compact but informative)
+            # Update saturation/stall state for the NEXT cycle
+            sat = abs(omega) >= 0.95 * self.ctrl.omega_max
+            self._omega_sat_streak = self._omega_sat_streak + 1 if sat else 0
+            stalled = (wp_idx <= self._last_wp_idx)
+            self._force_pivot = (self._omega_sat_streak >= 15 and stalled)   # ~1.5 s at T=0.1
+            self._last_wp_idx = wp_idx
+
+            # Concise debug you can grep
+            logger.debug(
+                f"omega={omega:+.3f} sat_streak={self._omega_sat_streak} wp={wp_idx}/{wp_total}"
+            )
+
+            # Console log (optional)
             logger.info(
                 f"[MPC] state=({state[0]:+.2f},{state[1]:+.2f},{state[2]:+.2f}) "
                 f"wp0=({path_xy[0,0]:+.2f},{path_xy[0,1]:+.2f}) "
@@ -498,17 +549,6 @@ class CrowdNavPyBulletEnv(gym.Env):
                 f"ok={mpc_dbg.get('solver_ok',False)} iters={mpc_dbg.get('solver_iters',-1)}"
             )
 
-            # (Optional) dump first two waypoints and first three theta refs at DEBUG level
-            logger.debug(
-                f"[MPC IN] path_xy0..1={path_xy[:2].tolist()} "
-                f"theta_ref0..2={theta_ref[:3].tolist() if len(theta_ref)>=3 else theta_ref.tolist()} "
-                f"weights={weights.tolist()} vmin_soft={v_min_soft:.3f}"
-            )
-
-
-
-            # read pose
-            self._update_pose()
 
             # reward/done
             dist_to_goal = float(np.linalg.norm(self.goal_pos - self.robot_pos))

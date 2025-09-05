@@ -132,3 +132,5 @@ class Dynamics:
             if other_body is None
             else p.getContactPoints(bodyA=self.h.body, bodyB=other_body)
         )
+
+

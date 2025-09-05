@@ -48,7 +48,7 @@ class MPCWeights:
     w_track: float = 5.0
     w_goal: float = 5.0
     w_smooth: float = 0.10
-    w_obs: float = 0.5
-    w_theta: float = 0.1
+    w_obs: float = 0.2
+    w_theta: float = 0.6
     speed_w_base: float = 0.1
     speed_w_boost: float = 0.3
