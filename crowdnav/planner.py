@@ -6,6 +6,10 @@ from scipy.ndimage import binary_dilation
 from scipy.ndimage import binary_dilation
 import numpy as np
 
+
+
+ail=0
+
 def inflate_obstacles(grid, robot_radius_m, grid_resolution_m):
     """
     Inflate binary obstacle map by rounding the required radius (in cells),
@@ -60,7 +64,7 @@ def a_star(grid, start, goal):
 
     while open_set:
         _, current_cost, current = heapq.heappop(open_set)
-        print(f"\n Expanding node: {current}, cost: {current_cost:.3f}")
+        # print(f"\n Expanding node: {current}, cost: {current_cost:.3f}")
 
         if current == goal:
             # Reconstruct path
@@ -69,11 +73,14 @@ def a_star(grid, start, goal):
                 current = came_from[current]
                 path.append(current)
             path.reverse()
-            print("\n Final path:")
-            for i, (x, y) in enumerate(path):
-                print(f"  Step {i}: Grid[{x}, {y}], value={grid[y, x]}")
-            print("Start value:", grid[start[1], start[0]])
-            print("Goal value:", grid[goal[1], goal[0]])
+            
+
+
+            # print("\n Final path:")
+            # for i, (x, y) in enumerate(path):
+            #     print(f"  Step {i}: Grid[{x}, {y}], value={grid[y, x]}")
+            # print("Start value:", grid[start[1], start[0]])
+            # print("Goal value:", grid[goal[1], goal[0]])
             return path
 
         for dr, dc in neighbors:

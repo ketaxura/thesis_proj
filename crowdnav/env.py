@@ -19,6 +19,9 @@ from .world import create_world
 from .utils import update_astar_path, MAP_SCALE, map_size
 
 v_max_cap = 0.20
+ail=0
+REPLAN_PERIOD = 25   # steps ~ 2.5 s if T=0.1
+
 
 # === Heading helpers (place near other top-level helpers) ===
 def _unwrap(a: float) -> float:
@@ -45,6 +48,19 @@ def _smooth_to(prev_vec, target_vec, max_step=0.35):
     d = (d + np.pi) % (2*np.pi) - np.pi
     d = np.clip(d, -max_step, +max_step)
     return prev + d
+
+def _ensure_len_N(arr, N):
+    """
+    Ensure the first dimension has length N.
+    - If shorter, repeat the last element.
+    - If longer, crop.
+    Works for 1D (theta_ref) and 2D (path_xy) arrays.
+    """
+    a = np.asarray(arr)
+    if a.shape[0] < N:
+        pad = np.repeat(a[-1:,...], N - a.shape[0], axis=0)
+        return np.concatenate([a, pad], axis=0)
+    return a[:N]
 
 
 def _make_theta_ref(path_xy: np.ndarray,
@@ -122,6 +138,83 @@ def _max_curvature(path_xy: np.ndarray, k_window: int = 6, eps: float = 1e-3) ->
     return float(np.max(kappa[:w])) if w > 0 else 0.0
 
 
+def _poly_cumlen(P: np.ndarray):
+    P = np.asarray(P, dtype=float).reshape(-1, 2)
+    if len(P) < 2:
+        s = np.array([0.0], dtype=float)
+        return s, 0.0
+    d = np.linalg.norm(np.diff(P, axis=0), axis=1)
+    s = np.concatenate([[0.0], np.cumsum(d)])
+    return s, float(s[-1])
+
+def _project_s(P: np.ndarray, q: np.ndarray):
+    P = np.asarray(P, dtype=float).reshape(-1, 2)
+    q = np.asarray(q, dtype=float).reshape(2)
+    s_cum, L = _poly_cumlen(P)
+    if L <= 1e-9 or len(P) < 2:
+        return 0.0, 0.0, {"L": L, "d_min": float("inf")}
+    best_s, best_d2 = 0.0, float("inf")
+    for i in range(len(P) - 1):
+        a, b = P[i], P[i+1]
+        v = b - a
+        vv = float(np.dot(v, v)) + 1e-12
+        t = float(np.clip(np.dot(q - a, v) / vv, 0.0, 1.0))
+        p = a + t * v
+        d2 = float(np.dot(q - p, q - p))
+        s_here = s_cum[i] + t * np.linalg.norm(v)
+        if d2 < best_d2:
+            best_d2, best_s = d2, s_here
+    s_frac = 0.0 if L < 1e-9 else np.clip(best_s / L, 0.0, 1.0)
+    return best_s, float(s_frac), {"L": float(L), "d_min": float(np.sqrt(best_d2))}
+
+
+
+# ---- Polyline utilities (already in your file; keep) ----
+def _poly_cumlen(P):
+    import numpy as np
+    P = np.asarray(P, dtype=float).reshape(-1, 2)
+    if len(P) < 2:
+        s = np.array([0.0], dtype=float)
+        return s, 0.0
+    d = np.linalg.norm(np.diff(P, axis=0), axis=1)
+    s = np.concatenate([[0.0], np.cumsum(d)])
+    return s, float(s[-1])
+
+def _project_s(P, q):
+    import numpy as np
+    P = np.asarray(P, dtype=float).reshape(-1, 2)
+    q = np.asarray(q, dtype=float).reshape(2)
+    s_cum, L = _poly_cumlen(P)
+    if L <= 1e-9 or len(P) < 2:
+        return 0.0, 0.0, {"L": L, "d_min": float("inf")}
+    best_s, best_d2 = 0.0, float("inf")
+    for i in range(len(P) - 1):
+        a, b = P[i], P[i+1]
+        v = b - a
+        vv = float(np.dot(v, v)) + 1e-12
+        t = float(np.clip(np.dot(q - a, v) / vv, 0.0, 1.0))
+        p = a + t * v
+        d2 = float(np.dot(q - p, q - p))
+        s_here = s_cum[i] + t * np.linalg.norm(v)
+        if d2 < best_d2:
+            best_d2, best_s = d2, s_here
+    s_frac = 0.0 if L < 1e-9 else np.clip(best_s / L, 0.0, 1.0)
+    return best_s, float(s_frac), {"L": float(L), "d_min": float(np.sqrt(best_d2))}
+
+def _eval_poly_at_s(P, s_query):
+    """Linear interpolation on a piecewise-linear path by arc-length."""
+    import numpy as np
+    P = np.asarray(P, dtype=float).reshape(-1, 2)
+    s_cum, L = _poly_cumlen(P)
+    s = np.clip(float(s_query), 0.0, L)
+    # find segment i such that s in [s_i, s_{i+1}]
+    i = int(np.searchsorted(s_cum, s, side='right') - 1)
+    i = max(0, min(i, len(P) - 2))
+    ds = s - s_cum[i]
+    seg = P[i+1] - P[i]
+    seg_len = float(np.linalg.norm(seg)) + 1e-12
+    t = ds / seg_len
+    return P[i] + t * seg
 
 
 
@@ -147,6 +240,14 @@ class CrowdNavPyBulletEnv(gym.Env):
         self._rng = np.random.default_rng(seed)
         self._last_seed = seed
         
+        self._s_star = 0.0      # monotone progress along current path
+        self._s_last = 0.0      # for debugging/guard
+        self._path_L = 0.0
+
+        
+        
+        self._last_replan_step = -10**9
+
         self.resolution = resolution
         self.world_size = map_size * MAP_SCALE
         self.half_size  = self.world_size / 2
@@ -218,6 +319,8 @@ class CrowdNavPyBulletEnv(gym.Env):
             line_rgb: color for path lines
             text_rgb: color for waypoint numbers
         """
+        
+        
         # clear old items
         for i in self._dbg_path_ids:
             try: p.removeUserDebugItem(i)
@@ -239,6 +342,8 @@ class CrowdNavPyBulletEnv(gym.Env):
         # ensure array-like with shape (M,2)
         pts = np.asarray(world_pts, dtype=float).reshape(-1, 2)
 
+
+        
         # vertical markers
         for w in pts[:max(0, 1)]:
             x, y = float(w[0]), float(w[1])
@@ -252,21 +357,32 @@ class CrowdNavPyBulletEnv(gym.Env):
                                         [float(b[0]), float(b[1]), 0.01],
                                         line_rgb, lineWidth=2, lifeTime=0)
                 self._dbg_path_ids.append(uid)
+                
+        
 
         # numeric labels
         if label_every is None or label_every <= 0:
             label_every = 1
-        for i, (x, y) in enumerate(pts):
-            if (i % label_every) != 0:
-                continue
-            uid = p.addUserDebugText(
-                text=str(i),
-                textPosition=[float(x), float(y), float(z)],
-                textColorRGB=text_rgb,
-                textSize=float(text_size),
-                lifeTime=0
-            )
-            self._dbg_path_ids.append(uid)
+        
+        
+        
+        # for i, (x, y) in enumerate(pts):
+        #     if (i % label_every) != 0:
+        #         continue
+        #     uid = p.addUserDebugText(
+        #         text=str(i),
+        #         textPosition=[float(x), float(y), float(z)],
+        #         textColorRGB=text_rgb,
+        #         textSize=float(text_size),
+        #         lifeTime=0
+        #     )
+        #     self._dbg_path_ids.append(uid)
+            
+            
+        
+            
+            
+        
 
 
 
@@ -304,6 +420,7 @@ class CrowdNavPyBulletEnv(gym.Env):
         self._theta_ref_prev = None
         self.step_count = 0
         self.phase = "ALIGN"; self._align_ctr = 0
+        self._last_replan_step = -10**9
         
         
         self._omega_sat_streak = 0
@@ -317,6 +434,9 @@ class CrowdNavPyBulletEnv(gym.Env):
             except: pass
         self._dbg_path_ids = []
 
+
+        # from .utils2.coord import _coord_self_test
+        # _coord_self_test(self.grid.shape, self.resolution)
         # Choose start/goal
         if randomize:
             ok = False
@@ -364,18 +484,38 @@ class CrowdNavPyBulletEnv(gym.Env):
             p.addUserDebugLine([*self.goal_pos,0],[*self.goal_pos,10],[0,1,0], lineWidth=3, lifeTime=0)
             replanned = self.path.maybe_replan(0, self.robot_pos, self.goal_pos)
 
+        # after: replanned = self.path.maybe_replan(0, self.robot_pos, self.goal_pos)
+        # and before drawing the path
+        path_full = self.path.world_path()
+        if path_full is not None and len(path_full) >= 2:
+            s0, _, info = _project_s(np.asarray(path_full), self.robot_pos)
+            self._path_L = float(info["L"])
+            self._s_star = max(0.0, min(self._path_L, s0 - 0.05))  # tiny back hysteresis
+        else:
+            self._s_star = 0.0
+            self._path_L = 0.0
+
+
+
         # Draw the path if available
         if replanned:
+            
             self._draw_astar_path(self.path.world_path(),
                                   vertical_count=10, connect=True,
                                   label_every=1, text_size=1.2)
 
+
+
+        
         # # Prime HUD (you already throttle updates in step)
         # self.hud.follow(self.robot_pos, [
         #     "MPC HUD",
         #     "pos: -, - | v,w: -, -",
         #     f"wp: 0/0 | phase: {self.phase}"
         # ])
+        
+        
+        
 
         # wheel dynamics tuning
         try:
@@ -408,16 +548,66 @@ class CrowdNavPyBulletEnv(gym.Env):
     def step(self, action):
         try:
             self.step_count += 1
+            print(self.step_count)
             self._update_pose()
             state = np.array([*self.robot_pos, self.theta_cont], dtype=float)
-            
-            replanned = self.path.maybe_replan(self.step_count, self.robot_pos, self.goal_pos)
-            if replanned:
-                self._draw_astar_path(self.path.world_path(),
-                                    vertical_count=10, connect=True,
-                                    label_every=1)
 
-            # progress watchdog → v_min_soft + optional speed boost for weights
+
+
+            # --------- only TRACK below this line ---------
+
+            # Replan cadence + hysteresis
+            if not hasattr(self, "_last_plan_pose"):
+                self._last_plan_pose = self.robot_pos.copy()
+                self._last_plan_step = -999
+
+            REPLAN_EVERY_STEPS = int(round(5 / self.T))  # e.g., every 0.5 s
+            REPLAN_MOVE_THRESH = 0.08                      # replan if moved ≥ 8 cm
+            time_ok = (self.step_count - self._last_plan_step) >= REPLAN_EVERY_STEPS
+            move_ok = np.linalg.norm(self.robot_pos - self._last_plan_pose) >= REPLAN_MOVE_THRESH
+
+            # ----- build forward ribbon from monotone arc-length (exactly N points) -----
+            path_full = self.path.world_path()
+            if (path_full is None) or (len(path_full) < 2):
+                # fallback: straight line to goal with N samples
+                path_xy = np.linspace(self.robot_pos, self.goal_pos, self.N).astype(float)
+            else:
+                s_now, _, info = _project_s(np.asarray(path_full), self.robot_pos)
+                self._path_L = float(info["L"])
+
+                # monotone progress with tiny back hysteresis
+                BACK_HYST = 0.03
+                self._s_star = max(self._s_star, s_now - BACK_HYST)
+                self._s_star = float(np.clip(self._s_star, 0.0, self._path_L))
+
+                LOOKAHEAD = 0.40
+                s_head = float(min(self._path_L, self._s_star + 0.08))  # carrot offset
+                s_tail = float(min(self._path_L, s_head + LOOKAHEAD))
+                if s_tail <= s_head + 1e-9:
+                    s_grid = np.full(self.N, s_head, dtype=float)        # degenerate near goal
+                else:
+                    s_grid = np.linspace(s_head, s_tail, self.N, dtype=float)
+
+                path_xy = np.array([_eval_poly_at_s(path_full, s) for s in s_grid], dtype=float)
+
+
+            theta_ref  = _make_theta_ref(path_xy, self._theta_ref_prev, k_strong=3, alpha=0.25)
+            self._theta_ref_prev = theta_ref.copy()
+
+            # ALIGN uses tangent (not point-to-waypoint)
+            theta_des0  = float(theta_ref[0])
+            theta_error = _wrap_pi(theta_des0 - self.theta_cont)
+            if self.phase == "ALIGN":
+                if self.align.step(theta_error, self.dyn, self.T):
+                    self.phase = "TRACK"
+                self._update_pose()
+                dg = float(np.linalg.norm(self.goal_pos - self.robot_pos))
+                done = (dg < 0.2) or (self.step_count >= self.max_steps)
+                reward = 1.0 if dg < 0.2 else -0.01
+                return self._get_observation(), reward, done, {}
+
+
+            # progress watchdog (unchanged)
             dgoal = float(np.linalg.norm(self.goal_pos - self.robot_pos))
             from .utils2.watchdog import ProgressWatchdog
             if not hasattr(self, "_wd"):
@@ -425,37 +615,10 @@ class CrowdNavPyBulletEnv(gym.Env):
                                             self.wdog.vmin_base, self.wdog.vmin_boost, self.wdog.vmin_boost_horizon)
             self._wd.update(dgoal)
             v_min_soft, boosted = self._wd.vmin_soft()
-        
-            # (light) global replan
-            path_xy, _ = self.path.sample_window(self.robot_pos, self.N)
 
-            # Build a heading reference that discourages premature turning:
-            # - smooth vs last cycle
-            # - freeze beyond first k_strong steps (preview taper)
-            theta_ref = _make_theta_ref(path_xy, self._theta_ref_prev, k_strong=3, alpha=0.25)
-            self._theta_ref_prev = theta_ref.copy()
-
-
-            # initial heading to first waypoint
-            theta_des0 = np.arctan2(path_xy[0,1] - self.robot_pos[1], path_xy[0,0] - self.robot_pos[0])
-            theta_error = _wrap_pi(theta_des0 - self.theta_cont)
-
-
-            # ALIGN phase
-            if self.phase == "ALIGN":
-                if self.align.step(theta_error, self.dyn, self.T):
-                    self.phase = "TRACK"
-                # update pose & return obs+reward like before
-                self._update_pose()
-                dg = float(np.linalg.norm(self.goal_pos - self.robot_pos))
-                done = dg < 0.2 or self.step_count >= self.max_steps
-                reward = 1.0 if dg < 0.2 else -0.01
-                return self._get_observation(), reward, done, {}
-
-            # Build MPC params
+            # ----- build MPC params (unchanged) -----
             obs_vec = self._get_observation()
             lidar = obs_vec[:self.lcfg.num_rays]
-            # derive static candidates from lidar endpoints
             pos, quat, R = self.dyn.get_pose_full()
             origins = np.repeat(pos[None,:], self.lcfg.num_rays, axis=0)
             dirs_world = (R @ self.lidar.dirs.T).T
@@ -468,13 +631,10 @@ class CrowdNavPyBulletEnv(gym.Env):
             if static_flat.size < 2*self.max_static:
                 static_flat = np.concatenate([static_flat, np.full(2*self.max_static - static_flat.size, 1e6)])
 
-            # moving obstacles stub
             if self.num_peds > 0:
-                obs_traj = np.zeros(2*self.N*self.num_peds)  # (keep same size/shape as your solver expects)
+                obs_traj = np.zeros(2*self.N*self.num_peds)
             else:
                 obs_traj = np.zeros(2*self.N*self.num_peds)
-
-            # speed_w = (self.weights.speed_w_boost if boosted else self.weights.speed_w_base) * 0.6
 
             weights = np.array([
                 self.weights.w_track,
@@ -485,79 +645,106 @@ class CrowdNavPyBulletEnv(gym.Env):
                 self.weights.w_theta
             ], dtype=float)
 
-            # --- Curvature-aware speed limiting (physics-consistent) --- START
-            # Use pre-taper geometry: path_xy itself, not theta_ref
+
+
+            dist_to_goal = float(np.linalg.norm(self.goal_pos - self.robot_pos))
+            R_SLOW, R_STOP = 0.80, 0.1
+
+            # curvature cap
             kappa_max = _max_curvature(path_xy, k_window=6, eps=1e-3)
+            vcap_curv = self.v_max if kappa_max <= 1e-3 else self.ctrl.omega_max / max(kappa_max, 1e-6)
 
-            # Feasibility cap: avoid ω saturation → v ≤ ω_max / κ
-            if kappa_max <= 1e-3:
-                vcap_curv = self.v_max
-            else:
-                vcap_curv = self.ctrl.omega_max / kappa_max   # << use CONFIG ω_max
+            # goal funnel
+            v_cap_goal = self.v_max if dist_to_goal >= R_SLOW else self.v_max * (dist_to_goal / R_SLOW)
 
-            # Local cap and allow pivot if cap is tight
-            vmax_local = float(np.clip(min(self.v_max, vcap_curv), 0.05, self.v_max))
-            
-            if v_min_soft > 0.8 * vmax_local:
+            vmax_local = float(np.clip(min(v_cap_goal, vcap_curv, self.v_max), 0.03, self.v_max))
+            if dist_to_goal < 0.1:
                 v_min_soft = 0.0
 
-            # Pre-emptive pivot on large heading error (straight path but misaligned)
-            if abs(theta_error) > 0.7:               # ~40°
-                v_min_soft = 0.0
-                vmax_local = min(vmax_local, 0.08)
+            if dist_to_goal < R_STOP:
+                self.dyn.set_cmd(0.0, 0.0)
+                return self._get_observation(), 1.0, True, {"reason": "goal_reached"}
 
-            # Force pivot if we were saturated+stalled on the PREVIOUS cycle
-            if self._force_pivot:
-                v_min_soft = 0.0
-                vmax_local = min(vmax_local, 0.05)
-                
-        
-            logger.debug(
-                f"kappa_max={kappa_max:.3f} vcap_curv={vcap_curv:.3f} "
-                f"vmax_local={vmax_local:.3f} vmin_soft={v_min_soft:.3f}"
-            )
 
-            # --- Curvature-aware speed limiting (physics-consistent) --- END
             # === TRACK (MPC) ===
             v, omega, U, mpc_dbg = self.track.step(
                 state, path_xy, theta_ref, obs_traj, static_flat, weights,
                 v_min_soft, vmax_local, self.ctrl.omega_max, self.dyn, self.T
             )
 
-
-            # Refresh pose after applying the command
+            # pose update and progress
             self._update_pose()
+            
+            
+        
+            # --- Arc-length progress & termination (robust) ---
+            # ----- stable path window from arc-length (no replan here) -----
+            path_full = self.path.world_path()
+            if path_full is None or len(path_full) < 2:
+                # if we lost the path, do a single replan to seed it
+                if self.path.maybe_replan(self.step_count, self.robot_pos, self.goal_pos):
+                    path_full = self.path.world_path()
 
-            # Waypoint progress (use latest pose)
-            wp_idx, wp_total = self.path.progress(self.robot_pos)
+            if path_full is not None and len(path_full) >= 2:
+                # update arc-length projection, then enforce monotonic s*
+                s_now, _, info = _project_s(np.asarray(path_full), self.robot_pos)
+                self._path_L = float(info["L"])
+                # never decrease; allow tiny retreat (numerical) with hysteresis
+                BACK_HYST = 0.03
+                self._s_star = max(self._s_star, s_now - BACK_HYST)
+                self._s_star = float(np.clip(self._s_star, 0.0, self._path_L))
 
-            # Update saturation/stall state for the NEXT cycle
+                # build preview strictly ahead of s*
+                LOOKAHEAD = 0.40   # meters of path to feed MPC
+                DS        = max(0.05, LOOKAHEAD / max(2, self.N - 1))
+                s_head    = float(self._s_star + 0.08)  # small positive offset removes tangent flips
+                s_tail    = float(min(self._path_L, s_head + LOOKAHEAD))
+                samples   = int(1 + round((s_tail - s_head) / DS))
+                s_grid    = s_head + DS * np.arange(samples, dtype=float)
+                path_xy   = np.array([_eval_poly_at_s(path_full, s) for s in s_grid], dtype=float)
+
+                # tangent-based heading ref from this forward ribbon
+                theta_ref = _make_theta_ref(path_xy, self._theta_ref_prev, k_strong=3, alpha=0.25)
+                self._theta_ref_prev = theta_ref.copy()
+
+                # alignment target = tangent at the first sample (not “pointing to” a waypoint)
+                theta_des0  = float(theta_ref[0])
+                theta_error = _wrap_pi(theta_des0 - self.theta_cont)
+            else:
+                # safety fallback: aim at goal
+                path_xy   = np.array([self.robot_pos, self.goal_pos], dtype=float)
+                theta_ref = _make_theta_ref(path_xy, self._theta_ref_prev, k_strong=1, alpha=0.25)
+                theta_des0  = float(theta_ref[0])
+                theta_error = _wrap_pi(theta_des0 - self.theta_cont)
+
+            # ---- GUARANTEE exact N for the solver ----
+            path_xy   = _ensure_len_N(path_xy,   self.N)
+            theta_ref = _ensure_len_N(theta_ref, self.N)
+            # Optional quick checks (safe to comment out later)
+            # assert path_xy.shape == (self.N, 2),  f"path_xy shape {path_xy.shape}"
+            # assert theta_ref.shape == (self.N,),   f"theta_ref shape {theta_ref.shape}"
+                        
+
+
+            # --- termination & reward (now variables are defined) ---
+            s_goal = float(self._path_L)
+            s_star = float(self._s_star)
+            s_frac = 0.0 if s_goal <= 1e-9 else s_star / s_goal
+            dist_to_goal = float(np.linalg.norm(self.goal_pos - self.robot_pos))
+
+            done = (dist_to_goal < R_STOP) or (s_goal > 0 and s_star >= s_goal - 0.05) or (self.step_count >= self.max_steps)
+            reward = 1.0 if done else -0.01
+
+            logger.info(f"[PROG] s*={s_star:.2f}/{s_goal:.2f} ({100.0*s_frac:.1f}%) dist_goal={dist_to_goal:.2f}")
+
             sat = abs(omega) >= 0.95 * self.ctrl.omega_max
             self._omega_sat_streak = self._omega_sat_streak + 1 if sat else 0
-            stalled = (wp_idx <= self._last_wp_idx)
-            self._force_pivot = (self._omega_sat_streak >= 15 and stalled)   # ~1.5 s at T=0.1
-            self._last_wp_idx = wp_idx
+            logger.info(f"[MPC] state=({state[0]:+.2f},{state[1]:+.2f},{state[2]:+.2f}) "
+                        f"wp0=({path_xy[0,0]:+.2f},{path_xy[0,1]:+.2f}) "
+                        f"v={v:+.3f} ω={omega:+.3f} ok={mpc_dbg.get('solver_ok',False)} "
+                        f"iters={mpc_dbg.get('solver_iters',-1)}")
 
-            # Concise debug you can grep
-            logger.debug(
-                f"omega={omega:+.3f} sat_streak={self._omega_sat_streak} wp={wp_idx}/{wp_total}"
-            )
-
-            # Console log (optional)
-            logger.info(
-                f"[MPC] state=({state[0]:+.2f},{state[1]:+.2f},{state[2]:+.2f}) "
-                f"wp0=({path_xy[0,0]:+.2f},{path_xy[0,1]:+.2f}) "
-                f"v={v:+.3f} ω={omega:+.3f} wp_prog={wp_idx}/{wp_total} "
-                f"ok={mpc_dbg.get('solver_ok',False)} iters={mpc_dbg.get('solver_iters',-1)}"
-            )
-
-
-            # reward/done
-            dist_to_goal = float(np.linalg.norm(self.goal_pos - self.robot_pos))
-            done = dist_to_goal < 0.2 or self.step_count >= self.max_steps
-            reward = 1.0 if dist_to_goal < 0.2 else -0.01
             return self._get_observation(), reward, done, {}
-
         except Exception:
             logger.exception("Error in step()")
             traceback.print_exc()

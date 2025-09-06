@@ -1,0 +1,1871 @@
+20:25:10 [INFO] === New MPC Session Started ===
+20:25:10 [DEBUG] matplotlib data path: /usr/share/matplotlib/mpl-data
+20:25:10 [DEBUG] CONFIGDIR=/home/max/.config/matplotlib
+20:25:10 [DEBUG] interactive is False
+20:25:10 [DEBUG] platform is linux
+20:25:10 [DEBUG] loaded modules: ['sys', 'builtins', '_frozen_importlib', '_imp', '_thread', '_warnings', '_weakref', '_io', 'marshal', 'posix', '_frozen_importlib_external', 'time', 'zipimport', '_codecs', 'codecs', 'encodings.aliases', 'encodings', 'encodings.utf_8', '_signal', '_abc', 'abc', 'io', '__main__', '_stat', 'stat', '_collections_abc', 'genericpath', 'posixpath', 'os.path', 'os', '_sitebuiltins', 'types', 'importlib._bootstrap', 'importlib._bootstrap_external', 'warnings', 'importlib', 'importlib._abc', 'itertools', 'keyword', '_operator', 'operator', 'reprlib', '_collections', 'collections', '_functools', 'functools', 'contextlib', 'importlib.util', 'importlib.machinery', 'mpl_toolkits', 'phply', 'ruamel', 'zope', 'apport_python_hook', 'sitecustomize', 'site', 'crowdnav', 'crowdnav.env', 'gym.error', 'gym.version', 'collections.abc', 'enum', '_sre', 'sre_constants', 'sre_parse', 'sre_compile', '_locale', 'copyreg', 're', 'typing.io', 'typing.re', 'typing', 'numpy._utils._convertions', 'numpy._utils', 'numpy._globals', 'numpy.exceptions', 'numpy.version', 'numpy._distributor_init', 'numpy._utils._inspect', 'math', '_datetime', 'datetime', 'numpy.core._exceptions', 'numpy.dtypes', 'numpy.core._multiarray_umath', 'numpy.core.overrides', 'numpy.core.multiarray', 'numpy.core.umath', 'numbers', 'numpy.core._string_helpers', 'fnmatch', 'ntpath', 'errno', 'urllib', 'ipaddress', 'urllib.parse', 'pathlib', '_struct', 'struct', '_compat_pickle', '_pickle', 'pickle', 'numpy.compat.py3k', 'numpy.compat', 'numpy.core._dtype', 'numpy.core._type_aliases', 'numpy.core.numerictypes', '_contextvars', 'contextvars', 'numpy.core._ufunc_config', 'numpy.core._methods', 'numpy.core.fromnumeric', 'numpy.core.shape_base', 'numpy.core.arrayprint', 'numpy.core._asarray', 'numpy.core.numeric', 'numpy.core.defchararray', 'numpy.core.records', 'numpy.core.memmap', 'numpy.core.function_base', 'numpy.core._machar', 'numpy.core.getlimits', 'numpy.core.einsumfunc', 'numpy.core._multiarray_tests', 'numpy.core._add_newdocs', 'numpy.core._add_newdocs_scalars', 'numpy.core._dtype_ctypes', '_ast', 'ast', '_ctypes', 'ctypes._endian', 'ctypes', 'numpy.core._internal', 'numpy._pytesttester', 'numpy.core', 'numpy.__config__', 'numpy.lib.mixins', 'numpy.lib.ufunclike', 'numpy.lib.type_check', 'numpy.lib.scimath', 'numpy.lib.stride_tricks', 'numpy.lib.twodim_base', 'numpy.linalg._umath_linalg', '__future__', 'numpy._typing._nested_sequence', 'numpy._typing._nbit', 'numpy._typing._char_codes', 'numpy._typing._scalars', 'numpy._typing._shape', 'numpy._typing._dtype_like', 'numpy._typing._array_like', 'numpy._typing', 'numpy.linalg.linalg', 'numpy.linalg', 'numpy.matrixlib.defmatrix', 'numpy.matrixlib', 'numpy.lib.histograms', 'numpy.lib.function_base', 'numpy.lib.index_tricks', 'numpy.lib.nanfunctions', 'numpy.lib.shape_base', 'numpy.lib.polynomial', 'textwrap', 'signal', '_weakrefset', 'threading', 'fcntl', '_posixsubprocess', 'select', 'selectors', 'subprocess', 'platform', 'numpy.lib.utils', 'numpy.lib.arraysetops', 'weakref', 'numpy.lib.format', 'numpy.lib._datasource', 'numpy.lib._iotools', 'numpy.lib.npyio', 'numpy.lib.arrayterator', 'numpy.lib.arraypad', 'numpy.lib._version', 'numpy.lib', 'numpy.fft._pocketfft_internal', 'numpy.fft._pocketfft', 'numpy.fft.helper', 'numpy.fft', 'numpy.polynomial.polyutils', 'numpy.polynomial._polybase', 'numpy.polynomial.polynomial', 'numpy.polynomial.chebyshev', 'numpy.polynomial.legendre', 'numpy.polynomial.hermite', 'numpy.polynomial.hermite_e', 'numpy.polynomial.laguerre', 'numpy.polynomial', 'cython_runtime', '_cython_3_0_8', 'numpy.random._common', 'binascii', 'base64', '_hashlib', '_blake2', 'hashlib', 'hmac', '_bisect', 'bisect', '_random', '_sha512', 'random', 'secrets', 'numpy.random.bit_generator', 'numpy.random._bounded_integers', 'numpy.random._mt19937', 'numpy.random.mtrand', 'numpy.random._philox', 'numpy.random._pcg64', 'numpy.random._sfc64', 'numpy.random._generator', 'numpy.random._pickle', 'numpy.random', 'numpy.ctypeslib', '_opcode', 'opcode', 'dis', 'token', 'tokenize', 'linecache', 'inspect', 'numpy.ma.core', 'numpy.ma.extras', 'numpy.ma', 'numpy', 'gym.utils.colorize', 'gym.utils.ezpickle', 'gym.utils', 'gym.logger', 'gym.utils.seeding', 'gym.spaces.space', 'gym.spaces.box', 'gym.spaces.dict', 'gym.spaces.discrete', 'gym.spaces.multi_discrete', 'gym.spaces.graph', 'gym.spaces.multi_binary', 'gym.spaces.sequence', 'gym.spaces.text', 'gym.spaces.tuple', 'gym.spaces.utils', 'gym.spaces', 'gym.core', 'copy', '_heapq', 'heapq', 'difflib', 'dataclasses', 'cv2.load_config_py3', 'cv2.version', 'numpy._core', 'numpy._core._multiarray_umath', 'cv2.gapi.core', 'cv2.gapi.core.cpu', 'cv2.gapi.core.fluid', 'cv2.gapi.core.ocl', 'cv2.gapi.ie', 'cv2.gapi.ie.detail', 'cv2.gapi.imgproc', 'cv2.gapi.imgproc.fluid', 'cv2.gapi.oak', 'cv2.gapi.onnx', 'cv2.gapi.onnx.ep', 'cv2.gapi.ot', 'cv2.gapi.ot.cpu', 'cv2.gapi.ov', 'cv2.gapi.own', 'cv2.gapi.own.detail', 'cv2.gapi.render', 'cv2.gapi.render.ocv', 'cv2.gapi.streaming', 'cv2.gapi.video', 'cv2.gapi.wip', 'cv2.gapi.wip.draw', 'cv2.gapi.wip.gst', 'cv2.gapi.wip.onevpl', 'cv2.utils.fs', 'cv2.utils.nested', 'cv2.gapi', 'cv2.ogl', 'cv2.data', 'cv2.detail', 'cv2.flann', 'cv2.ml', 'cv2.aruco', 'cv2.qt', 'cv2.utils', 'cv2.typing', 'cv2.samples', 'cv2.barcode', 'cv2.segmentation', 'cv2.ocl', 'cv2.cuda', 'cv2.parallel', 'cv2.dnn', 'cv2.Error', 'cv2.videoio_registry', 'cv2.ipp', 'cv2.fisheye', 'cv2.misc.version', 'cv2.misc', 'cv2.mat_wrapper', 'cv2', 'gym.wrappers.atari_preprocessing', 'gym.wrappers.autoreset', 'gym.wrappers.clip_action', 'gym.wrappers.filter_observation', 'gym.wrappers.flatten_observation', 'gym.wrappers.frame_stack', 'gym.wrappers.gray_scale_observation', 'gym.wrappers.human_rendering', 'gym.wrappers.normalize', 'gym.wrappers.order_enforcing', 'gym.wrappers.record_episode_statistics', 'gym.wrappers.monitoring', '_json', 'json.scanner', 'json.decoder', 'json.encoder', 'json', 'zlib', '_compression', '_bz2', 'bz2', '_lzma', 'lzma', 'shutil', 'tempfile', 'gym.wrappers.monitoring.video_recorder', 'gym.wrappers.record_video', 'gym.wrappers.render_collection', 'gym.wrappers.rescale_action', 'gym.wrappers.resize_observation', 'gym.utils.step_api_compatibility', 'gym.wrappers.step_api_compatibility', 'gym.wrappers.time_aware_observation', 'gym.wrappers.time_limit', 'gym.wrappers.transform_observation', 'gym.wrappers.transform_reward', 'gym.wrappers.vector_list_info', 'gym.wrappers', 'gym.wrappers.compatibility', 'gym.utils.passive_env_checker', 'gym.wrappers.env_checker', '_csv', 'csv', 'email', 'zipfile', 'uu', 'quopri', '_socket', 'array', 'socket', 'locale', 'calendar', 'email._parseaddr', 'email.base64mime', '_string', 'string', 'email.quoprimime', 'email.errors', 'email.encoders', 'email.charset', 'email.utils', 'email.header', 'email._policybase', 'email._encoded_words', 'email.iterators', 'email.message', 'importlib.metadata._functools', 'importlib.metadata._text', 'importlib.metadata._adapters', 'importlib.metadata._meta', 'importlib.metadata._collections', 'importlib.metadata._itertools', 'importlib.abc', 'importlib.metadata', 'gym.envs.registration', 'gym.envs', 'multiprocessing.process', 'multiprocessing.reduction', 'multiprocessing.context', '__mp_main__', 'multiprocessing', 'gym.vector.utils.misc', 'gym.vector.utils.numpy_utils', 'gym.vector.utils.shared_memory', 'gym.vector.utils.spaces', 'gym.vector.utils', 'gym.vector.vector_env', 'gym.vector.async_vector_env', 'gym.vector.sync_vector_env', 'gym.vector', 'gym_notices', 'gym_notices.notices', 'gym', 'pybullet', 'pybullet_data', 'traceback', 'atexit', 'logging', 'crowdnav.logger_setup', 'crowdnav.config', 'crowdnav.kinematics', 'crowdnav.dynamics', 'crowdnav.sensors', 'crowdnav.control', 'crowdnav.control.align', 'crowdnav.control.track', 'crowdnav.planning', 'swig_runtime_data4', 'casadi._casadi', 'casadi.casadi', 'casadi', 'crowdnav.planning.mpc_runner', 'crowdnav.planning.path_mgr', 'crowdnav.utils2', 'crowdnav.utils2.coord', 'crowdnav.planning.path_math', 'crowdnav.utils', 'matplotlib', 'pprint', 'packaging.__about__', 'packaging', 'packaging._structures', 'packaging.version', 'matplotlib._api.deprecation', 'matplotlib._api', 'matplotlib._version', 'gzip', 'shlex', 'matplotlib._c_internal_utils', 'matplotlib.cbook', 'matplotlib.docstring', 'PIL._version', 'PIL', 'PIL.ImageMode', 'PIL.TiffTags', 'PIL._binary', 'PIL._util', 'PIL._imaging', 'PIL.Image', 'PIL.ImageChops', 'PIL.ImageFile', 'PIL.GimpGradientFile', 'PIL.GimpPaletteFile', 'PIL.ImageColor', 'PIL.PaletteFile', 'PIL.ImagePalette', 'PIL.ImageSequence', 'PIL.PngImagePlugin', 'matplotlib._path', 'matplotlib.bezier', 'matplotlib.path', 'matplotlib.transforms', 'matplotlib.ticker', 'matplotlib.scale', 'matplotlib._color_data', 'matplotlib.colors', 'pyparsing', 'matplotlib.fontconfig_pattern', 'matplotlib._enums', 'cycler', 'matplotlib.rcsetup', 'matplotlib.ft2font', 'dateutil._version', 'dateutil', 'kiwisolver']
+20:25:11 [DEBUG] CACHEDIR=/home/max/.cache/matplotlib
+20:25:11 [DEBUG] Using fontManager instance from /home/max/.cache/matplotlib/fontlist-v330.json
+20:25:11 [DEBUG] Loaded backend TkAgg version unknown.
+20:25:11 [INFO] CrowdNavPyBulletEnv initializing...
+20:25:15 [INFO] World ready | grid: (112, 112), res: 0.1, N=10, T=0.1
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.01/11.64 (0.1%) dist_goal=8.79
+20:25:17 [INFO] [MPC] state=(-3.95,+1.55,-0.06) wp0=(-3.65,+1.25) v=+0.200 ω=-2.400 ok=True iters=13
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.01/11.64 (0.1%) dist_goal=8.78
+20:25:17 [INFO] [MPC] state=(-3.95,+1.54,-0.16) wp0=(-3.65,+1.25) v=+0.200 ω=-2.400 ok=True iters=9
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.01/11.64 (0.1%) dist_goal=8.77
+20:25:17 [INFO] [MPC] state=(-3.93,+1.54,-0.28) wp0=(-3.65,+1.25) v=+0.200 ω=-2.400 ok=True iters=8
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.02/11.64 (0.2%) dist_goal=8.76
+20:25:17 [INFO] [MPC] state=(-3.92,+1.54,-0.41) wp0=(-3.65,+1.25) v=+0.200 ω=-2.400 ok=True iters=8
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.03/11.64 (0.2%) dist_goal=8.74
+20:25:17 [INFO] [MPC] state=(-3.91,+1.53,-0.54) wp0=(-3.65,+1.25) v=+0.200 ω=-2.352 ok=True iters=10
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.03/11.64 (0.3%) dist_goal=8.73
+20:25:17 [INFO] [MPC] state=(-3.90,+1.52,-0.67) wp0=(-3.65,+1.25) v=+0.200 ω=-1.752 ok=True iters=10
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.05/11.64 (0.4%) dist_goal=8.71
+20:25:17 [INFO] [MPC] state=(-3.89,+1.52,-0.76) wp0=(-3.65,+1.25) v=+0.200 ω=-1.140 ok=True iters=8
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.06/11.64 (0.5%) dist_goal=8.70
+20:25:17 [INFO] [MPC] state=(-3.88,+1.50,-0.82) wp0=(-3.65,+1.25) v=+0.200 ω=-0.574 ok=True iters=8
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.15/11.64 (1.3%) dist_goal=8.68
+20:25:17 [INFO] [MPC] state=(-3.87,+1.49,-0.86) wp0=(-3.65,+1.25) v=+0.200 ω=-0.106 ok=True iters=7
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.17/11.64 (1.4%) dist_goal=8.66
+20:25:17 [INFO] [MPC] state=(-3.85,+1.47,-0.87) wp0=(-3.55,+1.25) v=+0.200 ω=+0.592 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.19/11.64 (1.6%) dist_goal=8.64
+20:25:17 [INFO] [MPC] state=(-3.84,+1.46,-0.83) wp0=(-3.55,+1.25) v=+0.200 ω=+0.669 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.20/11.64 (1.7%) dist_goal=8.62
+20:25:17 [INFO] [MPC] state=(-3.83,+1.45,-0.80) wp0=(-3.55,+1.25) v=+0.200 ω=+0.696 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.22/11.64 (1.9%) dist_goal=8.60
+20:25:17 [INFO] [MPC] state=(-3.82,+1.44,-0.76) wp0=(-3.55,+1.25) v=+0.200 ω=+0.714 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.24/11.64 (2.1%) dist_goal=8.59
+20:25:17 [INFO] [MPC] state=(-3.80,+1.42,-0.71) wp0=(-3.55,+1.25) v=+0.200 ω=+0.715 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.26/11.64 (2.2%) dist_goal=8.57
+20:25:17 [INFO] [MPC] state=(-3.79,+1.41,-0.67) wp0=(-3.55,+1.25) v=+0.200 ω=+0.704 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.27/11.64 (2.4%) dist_goal=8.55
+20:25:17 [INFO] [MPC] state=(-3.78,+1.40,-0.63) wp0=(-3.45,+1.25) v=+0.200 ω=+0.746 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.29/11.64 (2.5%) dist_goal=8.54
+20:25:17 [INFO] [MPC] state=(-3.76,+1.39,-0.59) wp0=(-3.45,+1.25) v=+0.200 ω=+1.149 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.30/11.64 (2.6%) dist_goal=8.52
+20:25:17 [INFO] [MPC] state=(-3.75,+1.38,-0.53) wp0=(-3.45,+1.25) v=+0.200 ω=+0.987 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.32/11.64 (2.8%) dist_goal=8.50
+20:25:17 [INFO] [MPC] state=(-3.74,+1.37,-0.47) wp0=(-3.45,+1.25) v=+0.200 ω=+0.898 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.34/11.64 (2.9%) dist_goal=8.49
+20:25:17 [INFO] [MPC] state=(-3.72,+1.37,-0.42) wp0=(-3.45,+1.25) v=+0.200 ω=+0.747 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.44/11.64 (3.8%) dist_goal=8.47
+20:25:17 [INFO] [MPC] state=(-3.70,+1.36,-0.38) wp0=(-3.45,+1.25) v=+0.200 ω=+0.693 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.46/11.64 (4.0%) dist_goal=8.46
+20:25:17 [INFO] [MPC] state=(-3.69,+1.35,-0.34) wp0=(-3.25,+1.25) v=+0.200 ω=+0.963 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.47/11.64 (4.1%) dist_goal=8.44
+20:25:17 [INFO] [MPC] state=(-3.67,+1.35,-0.28) wp0=(-3.25,+1.25) v=+0.200 ω=+1.220 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.49/11.64 (4.2%) dist_goal=8.43
+20:25:17 [INFO] [MPC] state=(-3.66,+1.35,-0.22) wp0=(-3.25,+1.25) v=+0.200 ω=+0.929 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.51/11.64 (4.4%) dist_goal=8.41
+20:25:17 [INFO] [MPC] state=(-3.64,+1.34,-0.16) wp0=(-3.15,+1.25) v=+0.200 ω=+1.039 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.52/11.64 (4.5%) dist_goal=8.40
+20:25:17 [INFO] [MPC] state=(-3.63,+1.34,-0.11) wp0=(-3.15,+1.25) v=+0.200 ω=+0.888 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.54/11.64 (4.6%) dist_goal=8.39
+20:25:17 [INFO] [MPC] state=(-3.61,+1.34,-0.06) wp0=(-3.15,+1.25) v=+0.200 ω=+0.988 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.56/11.64 (4.8%) dist_goal=8.37
+20:25:17 [INFO] [MPC] state=(-3.59,+1.34,-0.01) wp0=(-3.15,+1.25) v=+0.200 ω=+0.364 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.58/11.64 (5.0%) dist_goal=8.36
+20:25:17 [INFO] [MPC] state=(-3.58,+1.34,+0.01) wp0=(-3.15,+1.25) v=+0.200 ω=+0.309 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.60/11.64 (5.1%) dist_goal=8.35
+20:25:17 [INFO] [MPC] state=(-3.56,+1.34,+0.03) wp0=(-3.15,+1.25) v=+0.200 ω=+0.249 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.62/11.64 (5.3%) dist_goal=8.33
+20:25:17 [INFO] [MPC] state=(-3.54,+1.34,+0.04) wp0=(-3.05,+1.25) v=+0.200 ω=+0.186 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.64/11.64 (5.5%) dist_goal=8.32
+20:25:17 [INFO] [MPC] state=(-3.52,+1.34,+0.06) wp0=(-3.05,+1.25) v=+0.200 ω=+0.037 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.66/11.64 (5.6%) dist_goal=8.30
+20:25:17 [INFO] [MPC] state=(-3.50,+1.34,+0.06) wp0=(-3.05,+1.25) v=+0.200 ω=+0.008 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.68/11.64 (5.8%) dist_goal=8.29
+20:25:17 [INFO] [MPC] state=(-3.48,+1.34,+0.06) wp0=(-3.05,+1.25) v=+0.200 ω=-0.011 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.70/11.64 (6.0%) dist_goal=8.27
+20:25:17 [INFO] [MPC] state=(-3.46,+1.34,+0.06) wp0=(-3.05,+1.25) v=+0.200 ω=-0.024 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.72/11.64 (6.1%) dist_goal=8.26
+20:25:17 [INFO] [MPC] state=(-3.44,+1.35,+0.06) wp0=(-3.05,+1.25) v=+0.200 ω=-0.420 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.74/11.64 (6.3%) dist_goal=8.25
+20:25:17 [INFO] [MPC] state=(-3.42,+1.35,+0.03) wp0=(-3.05,+1.25) v=+0.200 ω=+0.141 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.75/11.64 (6.5%) dist_goal=8.23
+20:25:17 [INFO] [MPC] state=(-3.40,+1.35,+0.04) wp0=(-3.05,+1.25) v=+0.200 ω=-0.390 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.77/11.64 (6.6%) dist_goal=8.22
+20:25:17 [INFO] [MPC] state=(-3.38,+1.35,+0.02) wp0=(-3.05,+1.25) v=+0.200 ω=+0.180 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.79/11.64 (6.8%) dist_goal=8.20
+20:25:17 [INFO] [MPC] state=(-3.36,+1.35,+0.03) wp0=(-3.05,+1.25) v=+0.200 ω=-0.354 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.81/11.64 (7.0%) dist_goal=8.19
+20:25:17 [INFO] [MPC] state=(-3.34,+1.35,+0.00) wp0=(-2.95,+1.25) v=+0.200 ω=-0.146 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.83/11.64 (7.2%) dist_goal=8.17
+20:25:17 [INFO] [MPC] state=(-3.32,+1.35,-0.01) wp0=(-2.95,+1.25) v=+0.200 ω=-0.107 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.85/11.64 (7.3%) dist_goal=8.16
+20:25:17 [INFO] [MPC] state=(-3.30,+1.35,-0.02) wp0=(-2.95,+1.25) v=+0.200 ω=-0.072 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.87/11.64 (7.5%) dist_goal=8.14
+20:25:17 [INFO] [MPC] state=(-3.28,+1.35,-0.03) wp0=(-2.95,+1.25) v=+0.200 ω=+0.077 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.89/11.64 (7.7%) dist_goal=8.13
+20:25:17 [INFO] [MPC] state=(-3.26,+1.35,-0.02) wp0=(-2.95,+1.25) v=+0.200 ω=+0.299 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.91/11.64 (7.8%) dist_goal=8.12
+20:25:17 [INFO] [MPC] state=(-3.24,+1.35,-0.00) wp0=(-2.75,+1.25) v=+0.200 ω=+0.233 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.93/11.64 (8.0%) dist_goal=8.10
+20:25:17 [INFO] [MPC] state=(-3.22,+1.35,+0.01) wp0=(-2.75,+1.25) v=+0.200 ω=+0.193 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.95/11.64 (8.2%) dist_goal=8.09
+20:25:17 [INFO] [MPC] state=(-3.20,+1.35,+0.03) wp0=(-2.75,+1.25) v=+0.200 ω=+0.146 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.97/11.64 (8.3%) dist_goal=8.07
+20:25:17 [INFO] [MPC] state=(-3.18,+1.35,+0.04) wp0=(-2.75,+1.25) v=+0.200 ω=-0.378 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=0.99/11.64 (8.5%) dist_goal=8.06
+20:25:17 [INFO] [MPC] state=(-3.16,+1.35,+0.01) wp0=(-2.75,+1.25) v=+0.200 ω=-0.180 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.01/11.64 (8.7%) dist_goal=8.04
+20:25:17 [INFO] [MPC] state=(-3.14,+1.35,-0.01) wp0=(-2.65,+1.25) v=+0.200 ω=-0.159 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.03/11.64 (8.9%) dist_goal=8.03
+20:25:17 [INFO] [MPC] state=(-3.12,+1.35,-0.02) wp0=(-2.65,+1.25) v=+0.200 ω=-0.102 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.05/11.64 (9.0%) dist_goal=8.01
+20:25:17 [INFO] [MPC] state=(-3.10,+1.35,-0.03) wp0=(-2.65,+1.25) v=+0.200 ω=+0.049 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.07/11.64 (9.2%) dist_goal=8.00
+20:25:17 [INFO] [MPC] state=(-3.08,+1.35,-0.03) wp0=(-2.65,+1.25) v=+0.200 ω=+0.275 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.09/11.64 (9.4%) dist_goal=7.99
+20:25:17 [INFO] [MPC] state=(-3.06,+1.35,-0.01) wp0=(-2.65,+1.25) v=+0.200 ω=+0.232 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.11/11.64 (9.5%) dist_goal=7.97
+20:25:17 [INFO] [MPC] state=(-3.04,+1.35,+0.00) wp0=(-2.55,+1.25) v=+0.200 ω=+0.122 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.13/11.64 (9.7%) dist_goal=7.96
+20:25:17 [INFO] [MPC] state=(-3.02,+1.35,+0.01) wp0=(-2.55,+1.25) v=+0.200 ω=+0.088 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.15/11.64 (9.9%) dist_goal=7.94
+20:25:17 [INFO] [MPC] state=(-3.00,+1.35,+0.02) wp0=(-2.55,+1.25) v=+0.200 ω=+0.063 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.17/11.64 (10.1%) dist_goal=7.93
+20:25:17 [INFO] [MPC] state=(-2.98,+1.35,+0.03) wp0=(-2.55,+1.25) v=+0.200 ω=+0.041 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.19/11.64 (10.2%) dist_goal=7.91
+20:25:17 [INFO] [MPC] state=(-2.96,+1.35,+0.03) wp0=(-2.55,+1.25) v=+0.200 ω=-0.471 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.21/11.64 (10.4%) dist_goal=7.90
+20:25:17 [INFO] [MPC] state=(-2.94,+1.35,-0.00) wp0=(-2.45,+1.25) v=+0.153 ω=-0.295 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.22/11.64 (10.5%) dist_goal=7.89
+20:25:17 [INFO] [MPC] state=(-2.93,+1.35,-0.03) wp0=(-2.45,+1.25) v=+0.153 ω=-0.099 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.24/11.64 (10.6%) dist_goal=7.88
+20:25:17 [INFO] [MPC] state=(-2.91,+1.35,-0.04) wp0=(-2.45,+1.25) v=+0.153 ω=-0.062 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.25/11.64 (10.8%) dist_goal=7.87
+20:25:17 [INFO] [MPC] state=(-2.90,+1.35,-0.05) wp0=(-2.45,+1.25) v=+0.153 ω=-0.035 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.27/11.64 (10.9%) dist_goal=7.86
+20:25:17 [INFO] [MPC] state=(-2.88,+1.35,-0.05) wp0=(-2.45,+1.25) v=+0.153 ω=-0.015 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.28/11.64 (11.0%) dist_goal=7.85
+20:25:17 [INFO] [MPC] state=(-2.87,+1.34,-0.05) wp0=(-2.45,+1.25) v=+0.153 ω=-0.001 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.30/11.64 (11.1%) dist_goal=7.83
+20:25:17 [INFO] [MPC] state=(-2.85,+1.34,-0.05) wp0=(-2.45,+1.25) v=+0.153 ω=+0.378 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.31/11.64 (11.3%) dist_goal=7.82
+20:25:17 [INFO] [MPC] state=(-2.84,+1.34,-0.02) wp0=(-2.45,+1.25) v=+0.153 ω=+0.163 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.33/11.64 (11.4%) dist_goal=7.81
+20:25:17 [INFO] [MPC] state=(-2.82,+1.34,-0.00) wp0=(-2.45,+1.25) v=+0.153 ω=+0.117 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.34/11.64 (11.5%) dist_goal=7.80
+20:25:17 [INFO] [MPC] state=(-2.81,+1.34,+0.00) wp0=(-2.45,+1.25) v=+0.153 ω=+0.090 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.36/11.64 (11.7%) dist_goal=7.79
+20:25:17 [INFO] [MPC] state=(-2.79,+1.34,+0.01) wp0=(-2.45,+1.25) v=+0.153 ω=+0.063 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.37/11.64 (11.8%) dist_goal=7.78
+20:25:17 [INFO] [MPC] state=(-2.77,+1.34,+0.02) wp0=(-2.45,+1.25) v=+0.153 ω=+0.040 ok=True iters=6
+20:25:17 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:17 [INFO] [PROG] s*=1.39/11.64 (11.9%) dist_goal=7.77
+20:25:17 [INFO] [MPC] state=(-2.76,+1.34,+0.02) wp0=(-2.45,+1.25) v=+0.153 ω=+0.023 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.40/11.64 (12.1%) dist_goal=7.76
+20:25:18 [INFO] [MPC] state=(-2.74,+1.34,+0.03) wp0=(-2.25,+1.25) v=+0.153 ω=-0.224 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.42/11.64 (12.2%) dist_goal=7.75
+20:25:18 [INFO] [MPC] state=(-2.73,+1.34,+0.00) wp0=(-2.25,+1.25) v=+0.153 ω=-0.157 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.44/11.64 (12.3%) dist_goal=7.74
+20:25:18 [INFO] [MPC] state=(-2.71,+1.34,-0.02) wp0=(-2.25,+1.25) v=+0.153 ω=-0.095 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.45/11.64 (12.5%) dist_goal=7.73
+20:25:18 [INFO] [MPC] state=(-2.70,+1.34,-0.03) wp0=(-2.25,+1.25) v=+0.153 ω=-0.062 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.47/11.64 (12.6%) dist_goal=7.71
+20:25:18 [INFO] [MPC] state=(-2.68,+1.34,-0.03) wp0=(-2.25,+1.25) v=+0.153 ω=-0.039 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.48/11.64 (12.7%) dist_goal=7.70
+20:25:18 [INFO] [MPC] state=(-2.67,+1.34,-0.04) wp0=(-2.25,+1.25) v=+0.153 ω=-0.021 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.50/11.64 (12.9%) dist_goal=7.69
+20:25:18 [INFO] [MPC] state=(-2.65,+1.34,-0.04) wp0=(-2.25,+1.25) v=+0.153 ω=-0.008 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.51/11.64 (13.0%) dist_goal=7.68
+20:25:18 [INFO] [MPC] state=(-2.64,+1.34,-0.04) wp0=(-2.15,+1.25) v=+0.153 ω=-0.143 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.53/11.64 (13.1%) dist_goal=7.67
+20:25:18 [INFO] [MPC] state=(-2.62,+1.34,-0.05) wp0=(-2.15,+1.25) v=+0.153 ω=+0.044 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.54/11.64 (13.3%) dist_goal=7.66
+20:25:18 [INFO] [MPC] state=(-2.60,+1.34,-0.05) wp0=(-2.15,+1.25) v=+0.153 ω=+0.381 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.56/11.64 (13.4%) dist_goal=7.65
+20:25:18 [INFO] [MPC] state=(-2.59,+1.34,-0.02) wp0=(-2.15,+1.25) v=+0.153 ω=-0.189 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.57/11.64 (13.5%) dist_goal=7.64
+20:25:18 [INFO] [MPC] state=(-2.57,+1.34,-0.04) wp0=(-2.15,+1.25) v=+0.153 ω=+0.353 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.59/11.64 (13.7%) dist_goal=7.63
+20:25:18 [INFO] [MPC] state=(-2.56,+1.34,-0.01) wp0=(-2.15,+1.25) v=+0.153 ω=-0.205 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.60/11.64 (13.8%) dist_goal=7.61
+20:25:18 [INFO] [MPC] state=(-2.54,+1.34,-0.03) wp0=(-2.05,+1.25) v=+0.153 ω=+0.077 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.62/11.64 (13.9%) dist_goal=7.60
+20:25:18 [INFO] [MPC] state=(-2.53,+1.34,-0.02) wp0=(-2.05,+1.25) v=+0.153 ω=-0.439 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.63/11.64 (14.0%) dist_goal=7.59
+20:25:18 [INFO] [MPC] state=(-2.51,+1.34,-0.07) wp0=(-2.05,+1.25) v=+0.153 ω=+0.183 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.65/11.64 (14.2%) dist_goal=7.58
+20:25:18 [INFO] [MPC] state=(-2.50,+1.34,-0.05) wp0=(-2.05,+1.25) v=+0.153 ω=+0.143 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.67/11.64 (14.3%) dist_goal=7.57
+20:25:18 [INFO] [MPC] state=(-2.48,+1.34,-0.04) wp0=(-2.05,+1.25) v=+0.153 ω=+0.113 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.68/11.64 (14.4%) dist_goal=7.56
+20:25:18 [INFO] [MPC] state=(-2.47,+1.34,-0.03) wp0=(-2.05,+1.25) v=+0.153 ω=+0.088 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.70/11.64 (14.6%) dist_goal=7.55
+20:25:18 [INFO] [MPC] state=(-2.45,+1.34,-0.02) wp0=(-2.05,+1.25) v=+0.153 ω=+0.015 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.71/11.64 (14.7%) dist_goal=7.54
+20:25:18 [INFO] [MPC] state=(-2.44,+1.33,-0.02) wp0=(-1.95,+1.25) v=+0.153 ω=-0.269 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.73/11.64 (14.8%) dist_goal=7.53
+20:25:18 [INFO] [MPC] state=(-2.42,+1.33,-0.05) wp0=(-1.95,+1.25) v=+0.153 ω=-0.171 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.74/11.64 (15.0%) dist_goal=7.52
+20:25:18 [INFO] [MPC] state=(-2.41,+1.33,-0.06) wp0=(-1.95,+1.25) v=+0.153 ω=-0.125 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.76/11.64 (15.1%) dist_goal=7.50
+20:25:18 [INFO] [MPC] state=(-2.39,+1.33,-0.08) wp0=(-1.95,+1.25) v=+0.153 ω=-0.078 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.77/11.64 (15.2%) dist_goal=7.49
+20:25:18 [INFO] [MPC] state=(-2.37,+1.33,-0.08) wp0=(-1.95,+1.25) v=+0.153 ω=-0.038 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.79/11.64 (15.4%) dist_goal=7.48
+20:25:18 [INFO] [MPC] state=(-2.36,+1.33,-0.09) wp0=(-1.95,+1.25) v=+0.153 ω=+0.440 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.80/11.64 (15.5%) dist_goal=7.47
+20:25:18 [INFO] [MPC] state=(-2.34,+1.33,-0.05) wp0=(-1.95,+1.25) v=+0.153 ω=-0.106 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.82/11.64 (15.6%) dist_goal=7.46
+20:25:18 [INFO] [MPC] state=(-2.33,+1.33,-0.06) wp0=(-1.95,+1.25) v=+0.153 ω=+0.375 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.83/11.64 (15.8%) dist_goal=7.45
+20:25:18 [INFO] [MPC] state=(-2.31,+1.33,-0.03) wp0=(-1.95,+1.25) v=+0.153 ω=+0.110 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.85/11.64 (15.9%) dist_goal=7.44
+20:25:18 [INFO] [MPC] state=(-2.30,+1.33,-0.02) wp0=(-1.95,+1.25) v=+0.153 ω=+0.088 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.86/11.64 (16.0%) dist_goal=7.43
+20:25:18 [INFO] [MPC] state=(-2.28,+1.33,-0.01) wp0=(-1.95,+1.25) v=+0.153 ω=+0.067 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.88/11.64 (16.2%) dist_goal=7.42
+20:25:18 [INFO] [MPC] state=(-2.27,+1.33,-0.00) wp0=(-1.95,+1.25) v=+0.153 ω=+0.049 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.90/11.64 (16.3%) dist_goal=7.41
+20:25:18 [INFO] [MPC] state=(-2.25,+1.33,+0.00) wp0=(-1.95,+1.25) v=+0.153 ω=+0.033 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.91/11.64 (16.4%) dist_goal=7.39
+20:25:18 [INFO] [MPC] state=(-2.24,+1.33,+0.01) wp0=(-1.85,+1.15) v=+0.200 ω=-0.401 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.93/11.64 (16.6%) dist_goal=7.38
+20:25:18 [INFO] [MPC] state=(-2.22,+1.33,-0.02) wp0=(-1.85,+1.15) v=+0.200 ω=-1.000 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.95/11.64 (16.7%) dist_goal=7.37
+20:25:18 [INFO] [MPC] state=(-2.20,+1.33,-0.07) wp0=(-1.85,+1.15) v=+0.200 ω=-0.930 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.96/11.64 (16.9%) dist_goal=7.36
+20:25:18 [INFO] [MPC] state=(-2.18,+1.32,-0.13) wp0=(-1.85,+1.15) v=+0.200 ω=-1.114 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=1.98/11.64 (17.0%) dist_goal=7.34
+20:25:18 [INFO] [MPC] state=(-2.17,+1.32,-0.19) wp0=(-1.85,+1.15) v=+0.200 ω=-1.064 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.00/11.64 (17.2%) dist_goal=7.33
+20:25:18 [INFO] [MPC] state=(-2.15,+1.32,-0.24) wp0=(-1.85,+1.15) v=+0.200 ω=-0.963 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.01/11.64 (17.3%) dist_goal=7.31
+20:25:18 [INFO] [MPC] state=(-2.14,+1.31,-0.30) wp0=(-1.85,+1.15) v=+0.200 ω=-0.869 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.03/11.64 (17.4%) dist_goal=7.30
+20:25:18 [INFO] [MPC] state=(-2.12,+1.31,-0.35) wp0=(-1.85,+1.15) v=+0.200 ω=-0.831 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.05/11.64 (17.6%) dist_goal=7.28
+20:25:18 [INFO] [MPC] state=(-2.10,+1.30,-0.39) wp0=(-1.85,+1.15) v=+0.200 ω=-0.743 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.06/11.64 (17.7%) dist_goal=7.26
+20:25:18 [INFO] [MPC] state=(-2.09,+1.29,-0.43) wp0=(-1.85,+1.15) v=+0.200 ω=-0.700 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.08/11.64 (17.9%) dist_goal=7.25
+20:25:18 [INFO] [MPC] state=(-2.07,+1.29,-0.47) wp0=(-1.85,+1.15) v=+0.200 ω=-0.523 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.10/11.64 (18.0%) dist_goal=7.23
+20:25:18 [INFO] [MPC] state=(-2.05,+1.28,-0.51) wp0=(-1.85,+1.15) v=+0.200 ω=-0.471 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.11/11.64 (18.1%) dist_goal=7.21
+20:25:18 [INFO] [MPC] state=(-2.04,+1.27,-0.53) wp0=(-1.85,+0.95) v=+0.200 ω=-0.599 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.13/11.64 (18.3%) dist_goal=7.19
+20:25:18 [INFO] [MPC] state=(-2.02,+1.26,-0.57) wp0=(-1.85,+0.95) v=+0.200 ω=-0.642 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.14/11.64 (18.4%) dist_goal=7.17
+20:25:18 [INFO] [MPC] state=(-2.01,+1.25,-0.61) wp0=(-1.85,+0.95) v=+0.200 ω=-0.603 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.16/11.64 (18.5%) dist_goal=7.16
+20:25:18 [INFO] [MPC] state=(-1.99,+1.24,-0.64) wp0=(-1.85,+0.95) v=+0.200 ω=-0.561 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.17/11.64 (18.7%) dist_goal=7.14
+20:25:18 [INFO] [MPC] state=(-1.98,+1.22,-0.68) wp0=(-1.85,+0.95) v=+0.200 ω=-0.553 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.19/11.64 (18.8%) dist_goal=7.12
+20:25:18 [INFO] [MPC] state=(-1.96,+1.21,-0.71) wp0=(-1.85,+0.95) v=+0.200 ω=-0.546 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.20/11.64 (18.9%) dist_goal=7.10
+20:25:18 [INFO] [MPC] state=(-1.95,+1.20,-0.74) wp0=(-1.85,+0.85) v=+0.200 ω=-0.576 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.36/11.64 (20.3%) dist_goal=7.08
+20:25:18 [INFO] [MPC] state=(-1.93,+1.19,-0.77) wp0=(-1.85,+0.85) v=+0.200 ω=-0.541 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.37/11.64 (20.4%) dist_goal=7.06
+20:25:18 [INFO] [MPC] state=(-1.92,+1.17,-0.81) wp0=(-1.85,+0.85) v=+0.200 ω=-0.522 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.39/11.64 (20.5%) dist_goal=7.04
+20:25:18 [INFO] [MPC] state=(-1.91,+1.16,-0.84) wp0=(-1.85,+0.85) v=+0.200 ω=-0.474 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.40/11.64 (20.6%) dist_goal=7.02
+20:25:18 [INFO] [MPC] state=(-1.89,+1.15,-0.87) wp0=(-1.85,+0.65) v=+0.200 ω=-0.520 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.42/11.64 (20.8%) dist_goal=7.01
+20:25:18 [INFO] [MPC] state=(-1.88,+1.13,-0.90) wp0=(-1.85,+0.65) v=+0.200 ω=-0.469 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.43/11.64 (20.9%) dist_goal=6.99
+20:25:18 [INFO] [MPC] state=(-1.87,+1.12,-0.93) wp0=(-1.85,+0.65) v=+0.200 ω=-0.414 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.45/11.64 (21.0%) dist_goal=6.97
+20:25:18 [INFO] [MPC] state=(-1.86,+1.10,-0.95) wp0=(-1.85,+0.65) v=+0.200 ω=-0.385 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.47/11.64 (21.2%) dist_goal=6.95
+20:25:18 [INFO] [MPC] state=(-1.85,+1.08,-0.98) wp0=(-1.85,+0.65) v=+0.200 ω=-0.388 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.48/11.64 (21.3%) dist_goal=6.93
+20:25:18 [INFO] [MPC] state=(-1.84,+1.07,-1.00) wp0=(-1.85,+0.65) v=+0.200 ω=-0.362 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.50/11.64 (21.5%) dist_goal=6.91
+20:25:18 [INFO] [MPC] state=(-1.83,+1.05,-1.03) wp0=(-1.85,+0.65) v=+0.200 ω=-0.473 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.51/11.64 (21.6%) dist_goal=6.89
+20:25:18 [INFO] [MPC] state=(-1.82,+1.03,-1.05) wp0=(-1.85,+0.65) v=+0.200 ω=-0.449 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.53/11.64 (21.8%) dist_goal=6.87
+20:25:18 [INFO] [MPC] state=(-1.81,+1.02,-1.08) wp0=(-1.85,+0.65) v=+0.200 ω=-0.432 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.55/11.64 (21.9%) dist_goal=6.85
+20:25:18 [INFO] [MPC] state=(-1.80,+1.00,-1.11) wp0=(-1.85,+0.65) v=+0.200 ω=-0.410 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.57/11.64 (22.1%) dist_goal=6.84
+20:25:18 [INFO] [MPC] state=(-1.79,+0.98,-1.14) wp0=(-1.85,+0.65) v=+0.200 ω=-0.388 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.58/11.64 (22.2%) dist_goal=6.82
+20:25:18 [INFO] [MPC] state=(-1.78,+0.97,-1.16) wp0=(-1.85,+0.65) v=+0.200 ω=-0.338 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.60/11.64 (22.4%) dist_goal=6.80
+20:25:18 [INFO] [MPC] state=(-1.78,+0.95,-1.18) wp0=(-1.85,+0.55) v=+0.200 ω=-0.051 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.62/11.64 (22.5%) dist_goal=6.78
+20:25:18 [INFO] [MPC] state=(-1.77,+0.93,-1.19) wp0=(-1.85,+0.55) v=+0.200 ω=-0.328 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.64/11.64 (22.7%) dist_goal=6.76
+20:25:18 [INFO] [MPC] state=(-1.76,+0.91,-1.21) wp0=(-1.85,+0.55) v=+0.200 ω=-0.291 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.66/11.64 (22.8%) dist_goal=6.74
+20:25:18 [INFO] [MPC] state=(-1.75,+0.89,-1.23) wp0=(-1.85,+0.55) v=+0.200 ω=-0.269 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.68/11.64 (23.0%) dist_goal=6.72
+20:25:18 [INFO] [MPC] state=(-1.75,+0.87,-1.25) wp0=(-1.85,+0.55) v=+0.200 ω=-0.250 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.70/11.64 (23.2%) dist_goal=6.71
+20:25:18 [INFO] [MPC] state=(-1.74,+0.86,-1.27) wp0=(-1.85,+0.55) v=+0.200 ω=-0.234 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.71/11.64 (23.3%) dist_goal=6.69
+20:25:18 [INFO] [MPC] state=(-1.73,+0.84,-1.28) wp0=(-1.75,+0.35) v=+0.200 ω=-0.780 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.73/11.64 (23.5%) dist_goal=6.67
+20:25:18 [INFO] [MPC] state=(-1.73,+0.82,-1.33) wp0=(-1.75,+0.35) v=+0.200 ω=-0.764 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.75/11.64 (23.6%) dist_goal=6.66
+20:25:18 [INFO] [MPC] state=(-1.73,+0.80,-1.37) wp0=(-1.75,+0.35) v=+0.200 ω=-0.573 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.77/11.64 (23.8%) dist_goal=6.64
+20:25:18 [INFO] [MPC] state=(-1.72,+0.78,-1.40) wp0=(-1.75,+0.35) v=+0.200 ω=-0.338 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.79/11.64 (24.0%) dist_goal=6.63
+20:25:18 [INFO] [MPC] state=(-1.72,+0.76,-1.43) wp0=(-1.75,+0.35) v=+0.200 ω=-0.460 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.81/11.64 (24.1%) dist_goal=6.61
+20:25:18 [INFO] [MPC] state=(-1.72,+0.75,-1.45) wp0=(-1.75,+0.35) v=+0.200 ω=-0.311 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.83/11.64 (24.3%) dist_goal=6.60
+20:25:18 [INFO] [MPC] state=(-1.71,+0.73,-1.47) wp0=(-1.75,+0.35) v=+0.200 ω=-0.136 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.85/11.64 (24.5%) dist_goal=6.58
+20:25:18 [INFO] [MPC] state=(-1.71,+0.71,-1.49) wp0=(-1.75,+0.35) v=+0.200 ω=-0.052 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.87/11.64 (24.6%) dist_goal=6.56
+20:25:18 [INFO] [MPC] state=(-1.71,+0.69,-1.49) wp0=(-1.75,+0.35) v=+0.200 ω=-0.224 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.89/11.64 (24.8%) dist_goal=6.55
+20:25:18 [INFO] [MPC] state=(-1.71,+0.67,-1.51) wp0=(-1.75,+0.35) v=+0.200 ω=-0.139 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.91/11.64 (25.0%) dist_goal=6.53
+20:25:18 [INFO] [MPC] state=(-1.71,+0.65,-1.52) wp0=(-1.65,+0.25) v=+0.200 ω=-0.173 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.93/11.64 (25.2%) dist_goal=6.52
+20:25:18 [INFO] [MPC] state=(-1.71,+0.63,-1.53) wp0=(-1.65,+0.25) v=+0.200 ω=-0.232 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.95/11.64 (25.3%) dist_goal=6.50
+20:25:18 [INFO] [MPC] state=(-1.71,+0.61,-1.55) wp0=(-1.65,+0.25) v=+0.200 ω=-0.251 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.97/11.64 (25.5%) dist_goal=6.49
+20:25:18 [INFO] [MPC] state=(-1.71,+0.59,-1.57) wp0=(-1.65,+0.25) v=+0.200 ω=-0.275 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=2.99/11.64 (25.7%) dist_goal=6.48
+20:25:18 [INFO] [MPC] state=(-1.71,+0.57,-1.59) wp0=(-1.65,+0.25) v=+0.200 ω=-0.280 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.01/11.64 (25.8%) dist_goal=6.46
+20:25:18 [INFO] [MPC] state=(-1.71,+0.55,-1.61) wp0=(-1.65,+0.15) v=+0.200 ω=-0.125 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.14/11.64 (27.0%) dist_goal=6.45
+20:25:18 [INFO] [MPC] state=(-1.71,+0.53,-1.63) wp0=(-1.65,+0.15) v=+0.200 ω=-0.122 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.16/11.64 (27.1%) dist_goal=6.43
+20:25:18 [INFO] [MPC] state=(-1.71,+0.51,-1.64) wp0=(-1.65,+0.05) v=+0.200 ω=-0.094 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.17/11.64 (27.2%) dist_goal=6.42
+20:25:18 [INFO] [MPC] state=(-1.71,+0.49,-1.65) wp0=(-1.65,+0.05) v=+0.200 ω=-0.074 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.18/11.64 (27.3%) dist_goal=6.41
+20:25:18 [INFO] [MPC] state=(-1.71,+0.47,-1.65) wp0=(-1.65,+0.05) v=+0.200 ω=-0.056 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.19/11.64 (27.4%) dist_goal=6.39
+20:25:18 [INFO] [MPC] state=(-1.71,+0.45,-1.66) wp0=(-1.65,+0.05) v=+0.200 ω=+0.200 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.21/11.64 (27.6%) dist_goal=6.38
+20:25:18 [INFO] [MPC] state=(-1.72,+0.43,-1.64) wp0=(-1.65,+0.05) v=+0.200 ω=+0.152 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.22/11.64 (27.7%) dist_goal=6.37
+20:25:18 [INFO] [MPC] state=(-1.72,+0.41,-1.63) wp0=(-1.65,+0.05) v=+0.200 ω=+0.110 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.23/11.64 (27.8%) dist_goal=6.35
+20:25:18 [INFO] [MPC] state=(-1.72,+0.39,-1.62) wp0=(-1.65,+0.05) v=+0.200 ω=+0.013 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.25/11.64 (27.9%) dist_goal=6.34
+20:25:18 [INFO] [MPC] state=(-1.72,+0.37,-1.62) wp0=(-1.65,-0.05) v=+0.200 ω=+0.020 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.26/11.64 (28.0%) dist_goal=6.33
+20:25:18 [INFO] [MPC] state=(-1.72,+0.35,-1.62) wp0=(-1.65,-0.05) v=+0.200 ω=+0.017 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.28/11.64 (28.1%) dist_goal=6.31
+20:25:18 [INFO] [MPC] state=(-1.72,+0.33,-1.62) wp0=(-1.65,-0.05) v=+0.200 ω=-0.061 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.29/11.64 (28.3%) dist_goal=6.30
+20:25:18 [INFO] [MPC] state=(-1.72,+0.30,-1.62) wp0=(-1.65,-0.05) v=+0.200 ω=-0.036 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.30/11.64 (28.4%) dist_goal=6.29
+20:25:18 [INFO] [MPC] state=(-1.72,+0.28,-1.62) wp0=(-1.65,-0.05) v=+0.200 ω=-0.019 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.32/11.64 (28.5%) dist_goal=6.27
+20:25:18 [INFO] [MPC] state=(-1.73,+0.26,-1.63) wp0=(-1.65,-0.05) v=+0.200 ω=-0.220 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.33/11.64 (28.6%) dist_goal=6.26
+20:25:18 [INFO] [MPC] state=(-1.73,+0.24,-1.64) wp0=(-1.65,-0.05) v=+0.200 ω=-0.161 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.41/11.64 (29.3%) dist_goal=6.25
+20:25:18 [INFO] [MPC] state=(-1.73,+0.22,-1.65) wp0=(-1.65,-0.05) v=+0.200 ω=-0.110 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.43/11.64 (29.5%) dist_goal=6.23
+20:25:18 [INFO] [MPC] state=(-1.73,+0.20,-1.66) wp0=(-1.65,-0.15) v=+0.200 ω=-0.063 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.45/11.64 (29.7%) dist_goal=6.22
+20:25:18 [INFO] [MPC] state=(-1.73,+0.18,-1.67) wp0=(-1.65,-0.15) v=+0.200 ω=-0.069 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.47/11.64 (29.8%) dist_goal=6.21
+20:25:18 [INFO] [MPC] state=(-1.73,+0.16,-1.68) wp0=(-1.65,-0.15) v=+0.200 ω=-0.033 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.49/11.64 (30.0%) dist_goal=6.20
+20:25:18 [INFO] [MPC] state=(-1.74,+0.14,-1.68) wp0=(-1.65,-0.35) v=+0.200 ω=+0.031 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.51/11.64 (30.2%) dist_goal=6.19
+20:25:18 [INFO] [MPC] state=(-1.74,+0.12,-1.68) wp0=(-1.65,-0.35) v=+0.200 ω=-0.101 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.53/11.64 (30.4%) dist_goal=6.17
+20:25:18 [INFO] [MPC] state=(-1.74,+0.10,-1.69) wp0=(-1.65,-0.35) v=+0.200 ω=-0.054 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.55/11.64 (30.5%) dist_goal=6.16
+20:25:18 [INFO] [MPC] state=(-1.74,+0.08,-1.69) wp0=(-1.65,-0.35) v=+0.200 ω=-0.022 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.57/11.64 (30.7%) dist_goal=6.15
+20:25:18 [INFO] [MPC] state=(-1.75,+0.06,-1.70) wp0=(-1.65,-0.35) v=+0.200 ω=-0.005 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.59/11.64 (30.9%) dist_goal=6.14
+20:25:18 [INFO] [MPC] state=(-1.75,+0.04,-1.70) wp0=(-1.65,-0.35) v=+0.200 ω=-0.173 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.61/11.64 (31.0%) dist_goal=6.13
+20:25:18 [INFO] [MPC] state=(-1.75,+0.02,-1.71) wp0=(-1.65,-0.35) v=+0.200 ω=-0.106 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.63/11.64 (31.2%) dist_goal=6.11
+20:25:18 [INFO] [MPC] state=(-1.75,+0.00,-1.72) wp0=(-1.65,-0.35) v=+0.200 ω=+0.206 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.65/11.64 (31.4%) dist_goal=6.10
+20:25:18 [INFO] [MPC] state=(-1.76,-0.02,-1.70) wp0=(-1.65,-0.35) v=+0.200 ω=+0.164 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.67/11.64 (31.6%) dist_goal=6.09
+20:25:18 [INFO] [MPC] state=(-1.76,-0.04,-1.69) wp0=(-1.65,-0.35) v=+0.200 ω=+0.126 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.69/11.64 (31.7%) dist_goal=6.08
+20:25:18 [INFO] [MPC] state=(-1.76,-0.06,-1.68) wp0=(-1.65,-0.45) v=+0.200 ω=+0.326 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.71/11.64 (31.9%) dist_goal=6.07
+20:25:18 [INFO] [MPC] state=(-1.76,-0.08,-1.66) wp0=(-1.65,-0.45) v=+0.200 ω=+0.025 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.73/11.64 (32.1%) dist_goal=6.06
+20:25:18 [INFO] [MPC] state=(-1.77,-0.10,-1.66) wp0=(-1.65,-0.45) v=+0.200 ω=+0.285 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.75/11.64 (32.2%) dist_goal=6.04
+20:25:18 [INFO] [MPC] state=(-1.77,-0.12,-1.64) wp0=(-1.65,-0.45) v=+0.200 ω=+0.307 ok=True iters=7
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.77/11.64 (32.4%) dist_goal=6.03
+20:25:18 [INFO] [MPC] state=(-1.77,-0.13,-1.62) wp0=(-1.65,-0.45) v=+0.200 ω=+0.241 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.79/11.64 (32.5%) dist_goal=6.02
+20:25:18 [INFO] [MPC] state=(-1.77,-0.15,-1.60) wp0=(-1.65,-0.65) v=+0.200 ω=+0.393 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.81/11.64 (32.7%) dist_goal=6.01
+20:25:18 [INFO] [MPC] state=(-1.77,-0.17,-1.58) wp0=(-1.65,-0.65) v=+0.200 ω=+0.367 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.83/11.64 (32.9%) dist_goal=5.99
+20:25:18 [INFO] [MPC] state=(-1.77,-0.19,-1.56) wp0=(-1.65,-0.65) v=+0.200 ω=+0.249 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.85/11.64 (33.0%) dist_goal=5.98
+20:25:18 [INFO] [MPC] state=(-1.77,-0.21,-1.54) wp0=(-1.65,-0.65) v=+0.200 ω=+0.287 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.87/11.64 (33.2%) dist_goal=5.97
+20:25:18 [INFO] [MPC] state=(-1.77,-0.23,-1.53) wp0=(-1.65,-0.65) v=+0.200 ω=+0.203 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.88/11.64 (33.4%) dist_goal=5.95
+20:25:18 [INFO] [MPC] state=(-1.77,-0.25,-1.51) wp0=(-1.65,-0.65) v=+0.200 ω=+0.388 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.90/11.64 (33.5%) dist_goal=5.94
+20:25:18 [INFO] [MPC] state=(-1.77,-0.27,-1.49) wp0=(-1.65,-0.65) v=+0.200 ω=+0.292 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.92/11.64 (33.7%) dist_goal=5.93
+20:25:18 [INFO] [MPC] state=(-1.76,-0.29,-1.47) wp0=(-1.65,-0.65) v=+0.200 ω=+0.182 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.94/11.64 (33.9%) dist_goal=5.91
+20:25:18 [INFO] [MPC] state=(-1.76,-0.31,-1.46) wp0=(-1.65,-0.65) v=+0.200 ω=+0.136 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.96/11.64 (34.0%) dist_goal=5.90
+20:25:18 [INFO] [MPC] state=(-1.76,-0.33,-1.44) wp0=(-1.65,-0.65) v=+0.200 ω=+0.002 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=3.98/11.64 (34.2%) dist_goal=5.88
+20:25:18 [INFO] [MPC] state=(-1.76,-0.35,-1.44) wp0=(-1.65,-0.65) v=+0.200 ω=+0.274 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=4.00/11.64 (34.4%) dist_goal=5.87
+20:25:18 [INFO] [MPC] state=(-1.75,-0.37,-1.42) wp0=(-1.65,-0.85) v=+0.200 ω=+0.114 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=4.02/11.64 (34.6%) dist_goal=5.85
+20:25:18 [INFO] [MPC] state=(-1.75,-0.39,-1.41) wp0=(-1.65,-0.85) v=+0.200 ω=-0.002 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=4.04/11.64 (34.7%) dist_goal=5.84
+20:25:18 [INFO] [MPC] state=(-1.75,-0.41,-1.41) wp0=(-1.65,-0.85) v=+0.200 ω=-0.027 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=4.06/11.64 (34.9%) dist_goal=5.82
+20:25:18 [INFO] [MPC] state=(-1.74,-0.43,-1.42) wp0=(-1.65,-0.85) v=+0.200 ω=-0.043 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=4.08/11.64 (35.1%) dist_goal=5.81
+20:25:18 [INFO] [MPC] state=(-1.74,-0.45,-1.42) wp0=(-1.65,-0.85) v=+0.200 ω=+0.146 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=4.10/11.64 (35.2%) dist_goal=5.79
+20:25:18 [INFO] [MPC] state=(-1.74,-0.47,-1.41) wp0=(-1.65,-0.85) v=+0.200 ω=-0.206 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=4.12/11.64 (35.4%) dist_goal=5.78
+20:25:18 [INFO] [MPC] state=(-1.73,-0.49,-1.42) wp0=(-1.65,-0.85) v=+0.200 ω=-0.179 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:18 [INFO] [PROG] s*=4.14/11.64 (35.6%) dist_goal=5.76
+20:25:18 [INFO] [MPC] state=(-1.73,-0.51,-1.44) wp0=(-1.65,-0.85) v=+0.200 ω=-0.155 ok=True iters=6
+20:25:18 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.16/11.64 (35.8%) dist_goal=5.75
+20:25:19 [INFO] [MPC] state=(-1.73,-0.53,-1.45) wp0=(-1.65,-0.85) v=+0.200 ω=-0.131 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.18/11.64 (35.9%) dist_goal=5.73
+20:25:19 [INFO] [MPC] state=(-1.73,-0.55,-1.46) wp0=(-1.65,-0.85) v=+0.200 ω=-0.290 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.20/11.64 (36.1%) dist_goal=5.72
+20:25:19 [INFO] [MPC] state=(-1.72,-0.57,-1.48) wp0=(-1.65,-0.95) v=+0.200 ω=-0.253 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.22/11.64 (36.3%) dist_goal=5.71
+20:25:19 [INFO] [MPC] state=(-1.72,-0.58,-1.50) wp0=(-1.65,-0.95) v=+0.200 ω=-0.206 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.24/11.64 (36.4%) dist_goal=5.69
+20:25:19 [INFO] [MPC] state=(-1.72,-0.60,-1.51) wp0=(-1.65,-0.95) v=+0.200 ω=-0.166 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.26/11.64 (36.6%) dist_goal=5.68
+20:25:19 [INFO] [MPC] state=(-1.72,-0.62,-1.53) wp0=(-1.65,-0.95) v=+0.200 ω=-0.130 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.28/11.64 (36.8%) dist_goal=5.67
+20:25:19 [INFO] [MPC] state=(-1.72,-0.65,-1.54) wp0=(-1.65,-0.95) v=+0.200 ω=-0.277 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.30/11.64 (36.9%) dist_goal=5.66
+20:25:19 [INFO] [MPC] state=(-1.72,-0.66,-1.56) wp0=(-1.65,-1.05) v=+0.200 ω=-0.212 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.32/11.64 (37.1%) dist_goal=5.64
+20:25:19 [INFO] [MPC] state=(-1.72,-0.68,-1.58) wp0=(-1.65,-1.05) v=+0.200 ω=-0.150 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.34/11.64 (37.3%) dist_goal=5.63
+20:25:19 [INFO] [MPC] state=(-1.72,-0.70,-1.59) wp0=(-1.65,-1.05) v=+0.200 ω=+0.131 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.36/11.64 (37.5%) dist_goal=5.62
+20:25:19 [INFO] [MPC] state=(-1.72,-0.72,-1.58) wp0=(-1.65,-1.05) v=+0.200 ω=-0.145 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.38/11.64 (37.6%) dist_goal=5.61
+20:25:19 [INFO] [MPC] state=(-1.72,-0.74,-1.59) wp0=(-1.65,-1.05) v=+0.200 ω=-0.105 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.40/11.64 (37.8%) dist_goal=5.60
+20:25:19 [INFO] [MPC] state=(-1.72,-0.76,-1.60) wp0=(-1.65,-1.15) v=+0.200 ω=-0.062 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.42/11.64 (38.0%) dist_goal=5.58
+20:25:19 [INFO] [MPC] state=(-1.72,-0.79,-1.60) wp0=(-1.65,-1.15) v=+0.200 ω=-0.037 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.44/11.64 (38.2%) dist_goal=5.57
+20:25:19 [INFO] [MPC] state=(-1.72,-0.81,-1.61) wp0=(-1.65,-1.15) v=+0.200 ω=+0.325 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.46/11.64 (38.3%) dist_goal=5.56
+20:25:19 [INFO] [MPC] state=(-1.72,-0.82,-1.59) wp0=(-1.65,-1.15) v=+0.200 ω=+0.182 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.48/11.64 (38.5%) dist_goal=5.55
+20:25:19 [INFO] [MPC] state=(-1.72,-0.84,-1.58) wp0=(-1.65,-1.15) v=+0.200 ω=+0.140 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.50/11.64 (38.7%) dist_goal=5.54
+20:25:19 [INFO] [MPC] state=(-1.72,-0.86,-1.57) wp0=(-1.65,-1.35) v=+0.200 ω=+0.099 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.52/11.64 (38.8%) dist_goal=5.53
+20:25:19 [INFO] [MPC] state=(-1.72,-0.88,-1.56) wp0=(-1.65,-1.35) v=+0.200 ω=+0.062 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.54/11.64 (39.0%) dist_goal=5.51
+20:25:19 [INFO] [MPC] state=(-1.72,-0.90,-1.55) wp0=(-1.65,-1.35) v=+0.200 ω=+0.035 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.56/11.64 (39.2%) dist_goal=5.50
+20:25:19 [INFO] [MPC] state=(-1.72,-0.92,-1.55) wp0=(-1.65,-1.35) v=+0.200 ω=-0.229 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.58/11.64 (39.4%) dist_goal=5.49
+20:25:19 [INFO] [MPC] state=(-1.72,-0.94,-1.56) wp0=(-1.65,-1.35) v=+0.200 ω=-0.177 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.60/11.64 (39.5%) dist_goal=5.48
+20:25:19 [INFO] [MPC] state=(-1.72,-0.96,-1.58) wp0=(-1.65,-1.35) v=+0.200 ω=-0.119 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.62/11.64 (39.7%) dist_goal=5.47
+20:25:19 [INFO] [MPC] state=(-1.72,-0.98,-1.59) wp0=(-1.65,-1.35) v=+0.200 ω=-0.072 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.64/11.64 (39.9%) dist_goal=5.46
+20:25:19 [INFO] [MPC] state=(-1.72,-1.00,-1.60) wp0=(-1.65,-1.35) v=+0.200 ω=-0.121 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.66/11.64 (40.0%) dist_goal=5.45
+20:25:19 [INFO] [MPC] state=(-1.72,-1.03,-1.61) wp0=(-1.65,-1.35) v=+0.200 ω=-0.081 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.68/11.64 (40.2%) dist_goal=5.43
+20:25:19 [INFO] [MPC] state=(-1.72,-1.05,-1.62) wp0=(-1.65,-1.35) v=+0.200 ω=-0.048 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.70/11.64 (40.4%) dist_goal=5.42
+20:25:19 [INFO] [MPC] state=(-1.72,-1.07,-1.62) wp0=(-1.65,-1.55) v=+0.200 ω=-0.026 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.72/11.64 (40.6%) dist_goal=5.41
+20:25:19 [INFO] [MPC] state=(-1.73,-1.09,-1.62) wp0=(-1.65,-1.55) v=+0.200 ω=-0.196 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.74/11.64 (40.7%) dist_goal=5.40
+20:25:19 [INFO] [MPC] state=(-1.73,-1.11,-1.64) wp0=(-1.65,-1.55) v=+0.200 ω=-0.139 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.76/11.64 (40.9%) dist_goal=5.39
+20:25:19 [INFO] [MPC] state=(-1.73,-1.13,-1.65) wp0=(-1.65,-1.55) v=+0.200 ω=-0.090 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.78/11.64 (41.1%) dist_goal=5.38
+20:25:19 [INFO] [MPC] state=(-1.73,-1.15,-1.66) wp0=(-1.65,-1.55) v=+0.200 ω=-0.074 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.80/11.64 (41.3%) dist_goal=5.37
+20:25:19 [INFO] [MPC] state=(-1.73,-1.17,-1.67) wp0=(-1.65,-1.55) v=+0.200 ω=-0.070 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.82/11.64 (41.4%) dist_goal=5.37
+20:25:19 [INFO] [MPC] state=(-1.73,-1.19,-1.67) wp0=(-1.65,-1.55) v=+0.200 ω=-0.034 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.84/11.64 (41.6%) dist_goal=5.36
+20:25:19 [INFO] [MPC] state=(-1.74,-1.21,-1.68) wp0=(-1.65,-1.55) v=+0.200 ω=-0.014 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.86/11.64 (41.8%) dist_goal=5.35
+20:25:19 [INFO] [MPC] state=(-1.74,-1.23,-1.68) wp0=(-1.65,-1.55) v=+0.200 ω=-0.132 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.88/11.64 (42.0%) dist_goal=5.34
+20:25:19 [INFO] [MPC] state=(-1.74,-1.25,-1.69) wp0=(-1.65,-1.55) v=+0.200 ω=-0.080 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.90/11.64 (42.1%) dist_goal=5.33
+20:25:19 [INFO] [MPC] state=(-1.74,-1.27,-1.70) wp0=(-1.65,-1.65) v=+0.200 ω=-0.014 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.92/11.64 (42.3%) dist_goal=5.32
+20:25:19 [INFO] [MPC] state=(-1.75,-1.29,-1.70) wp0=(-1.65,-1.65) v=+0.200 ω=+0.001 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.94/11.64 (42.5%) dist_goal=5.31
+20:25:19 [INFO] [MPC] state=(-1.75,-1.31,-1.70) wp0=(-1.65,-1.65) v=+0.200 ω=-0.172 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.96/11.64 (42.6%) dist_goal=5.31
+20:25:19 [INFO] [MPC] state=(-1.75,-1.33,-1.71) wp0=(-1.65,-1.65) v=+0.200 ω=-0.107 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=4.98/11.64 (42.8%) dist_goal=5.30
+20:25:19 [INFO] [MPC] state=(-1.75,-1.35,-1.72) wp0=(-1.65,-1.65) v=+0.200 ω=+0.207 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.00/11.64 (43.0%) dist_goal=5.29
+20:25:19 [INFO] [MPC] state=(-1.76,-1.37,-1.71) wp0=(-1.65,-1.85) v=+0.200 ω=+0.210 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.02/11.64 (43.2%) dist_goal=5.28
+20:25:19 [INFO] [MPC] state=(-1.76,-1.39,-1.69) wp0=(-1.65,-1.85) v=+0.200 ω=+0.157 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.04/11.64 (43.3%) dist_goal=5.27
+20:25:19 [INFO] [MPC] state=(-1.76,-1.41,-1.68) wp0=(-1.65,-1.85) v=+0.200 ω=+0.328 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.06/11.64 (43.5%) dist_goal=5.26
+20:25:19 [INFO] [MPC] state=(-1.76,-1.43,-1.66) wp0=(-1.65,-1.85) v=+0.200 ω=+0.029 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.08/11.64 (43.7%) dist_goal=5.25
+20:25:19 [INFO] [MPC] state=(-1.77,-1.45,-1.65) wp0=(-1.65,-1.85) v=+0.200 ω=+0.284 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.10/11.64 (43.8%) dist_goal=5.25
+20:25:19 [INFO] [MPC] state=(-1.77,-1.47,-1.63) wp0=(-1.65,-1.85) v=+0.200 ω=+0.280 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.12/11.64 (44.0%) dist_goal=5.24
+20:25:19 [INFO] [MPC] state=(-1.77,-1.48,-1.62) wp0=(-1.65,-1.85) v=+0.200 ω=+0.242 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.14/11.64 (44.1%) dist_goal=5.23
+20:25:19 [INFO] [MPC] state=(-1.77,-1.50,-1.60) wp0=(-1.65,-1.85) v=+0.200 ω=+0.401 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.16/11.64 (44.3%) dist_goal=5.22
+20:25:19 [INFO] [MPC] state=(-1.77,-1.52,-1.58) wp0=(-1.65,-1.85) v=+0.200 ω=+0.388 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.18/11.64 (44.5%) dist_goal=5.21
+20:25:19 [INFO] [MPC] state=(-1.77,-1.54,-1.56) wp0=(-1.65,-1.85) v=+0.200 ω=+0.265 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.20/11.64 (44.6%) dist_goal=5.20
+20:25:19 [INFO] [MPC] state=(-1.77,-1.56,-1.54) wp0=(-1.65,-2.05) v=+0.200 ω=+0.314 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.21/11.64 (44.8%) dist_goal=5.19
+20:25:19 [INFO] [MPC] state=(-1.77,-1.58,-1.52) wp0=(-1.65,-2.05) v=+0.200 ω=+0.232 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.23/11.64 (45.0%) dist_goal=5.18
+20:25:19 [INFO] [MPC] state=(-1.77,-1.60,-1.51) wp0=(-1.65,-2.05) v=+0.200 ω=+0.023 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.25/11.64 (45.1%) dist_goal=5.17
+20:25:19 [INFO] [MPC] state=(-1.77,-1.62,-1.50) wp0=(-1.65,-2.05) v=+0.200 ω=+0.400 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.27/11.64 (45.3%) dist_goal=5.16
+20:25:19 [INFO] [MPC] state=(-1.76,-1.64,-1.48) wp0=(-1.65,-2.05) v=+0.200 ω=+0.473 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.29/11.64 (45.5%) dist_goal=5.14
+20:25:19 [INFO] [MPC] state=(-1.76,-1.66,-1.45) wp0=(-1.65,-2.15) v=+0.200 ω=+0.170 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.31/11.64 (45.6%) dist_goal=5.13
+20:25:19 [INFO] [MPC] state=(-1.76,-1.68,-1.44) wp0=(-1.65,-2.15) v=+0.200 ω=+0.033 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.33/11.64 (45.8%) dist_goal=5.12
+20:25:19 [INFO] [MPC] state=(-1.76,-1.70,-1.44) wp0=(-1.65,-2.15) v=+0.200 ω=+0.279 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.35/11.64 (46.0%) dist_goal=5.11
+20:25:19 [INFO] [MPC] state=(-1.75,-1.72,-1.42) wp0=(-1.65,-2.15) v=+0.200 ω=+0.178 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.37/11.64 (46.1%) dist_goal=5.10
+20:25:19 [INFO] [MPC] state=(-1.75,-1.73,-1.40) wp0=(-1.65,-2.15) v=+0.200 ω=+0.052 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.39/11.64 (46.3%) dist_goal=5.08
+20:25:19 [INFO] [MPC] state=(-1.75,-1.75,-1.40) wp0=(-1.65,-2.25) v=+0.200 ω=+0.001 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.41/11.64 (46.5%) dist_goal=5.07
+20:25:19 [INFO] [MPC] state=(-1.74,-1.77,-1.40) wp0=(-1.65,-2.25) v=+0.200 ω=-0.027 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.43/11.64 (46.7%) dist_goal=5.06
+20:25:19 [INFO] [MPC] state=(-1.74,-1.79,-1.40) wp0=(-1.65,-2.25) v=+0.200 ω=-0.124 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.45/11.64 (46.8%) dist_goal=5.05
+20:25:19 [INFO] [MPC] state=(-1.74,-1.81,-1.41) wp0=(-1.65,-2.25) v=+0.200 ω=-0.110 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.47/11.64 (47.0%) dist_goal=5.03
+20:25:19 [INFO] [MPC] state=(-1.73,-1.83,-1.42) wp0=(-1.65,-2.25) v=+0.200 ω=-0.096 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.49/11.64 (47.2%) dist_goal=5.02
+20:25:19 [INFO] [MPC] state=(-1.73,-1.86,-1.43) wp0=(-1.65,-2.35) v=+0.200 ω=-0.082 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.51/11.64 (47.4%) dist_goal=5.01
+20:25:19 [INFO] [MPC] state=(-1.73,-1.88,-1.44) wp0=(-1.65,-2.35) v=+0.200 ω=-0.072 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.53/11.64 (47.5%) dist_goal=5.00
+20:25:19 [INFO] [MPC] state=(-1.73,-1.90,-1.45) wp0=(-1.65,-2.35) v=+0.200 ω=-0.238 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.55/11.64 (47.7%) dist_goal=4.99
+20:25:19 [INFO] [MPC] state=(-1.72,-1.92,-1.46) wp0=(-1.65,-2.35) v=+0.200 ω=-0.198 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.57/11.64 (47.9%) dist_goal=4.98
+20:25:19 [INFO] [MPC] state=(-1.72,-1.94,-1.48) wp0=(-1.65,-2.35) v=+0.200 ω=-0.163 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.59/11.64 (48.0%) dist_goal=4.97
+20:25:19 [INFO] [MPC] state=(-1.72,-1.96,-1.49) wp0=(-1.65,-2.35) v=+0.200 ω=-0.133 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.61/11.64 (48.2%) dist_goal=4.96
+20:25:19 [INFO] [MPC] state=(-1.72,-1.98,-1.50) wp0=(-1.65,-2.35) v=+0.200 ω=-0.381 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.63/11.64 (48.4%) dist_goal=4.95
+20:25:19 [INFO] [MPC] state=(-1.72,-1.99,-1.53) wp0=(-1.65,-2.35) v=+0.200 ω=-0.205 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.65/11.64 (48.5%) dist_goal=4.94
+20:25:19 [INFO] [MPC] state=(-1.72,-2.01,-1.55) wp0=(-1.65,-2.35) v=+0.200 ω=-0.151 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.67/11.64 (48.7%) dist_goal=4.93
+20:25:19 [INFO] [MPC] state=(-1.72,-2.03,-1.56) wp0=(-1.65,-2.35) v=+0.200 ω=-0.111 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.69/11.64 (48.9%) dist_goal=4.92
+20:25:19 [INFO] [MPC] state=(-1.72,-2.05,-1.57) wp0=(-1.65,-2.55) v=+0.200 ω=+0.014 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.71/11.64 (49.1%) dist_goal=4.92
+20:25:19 [INFO] [MPC] state=(-1.72,-2.07,-1.57) wp0=(-1.65,-2.55) v=+0.200 ω=+0.009 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.73/11.64 (49.2%) dist_goal=4.91
+20:25:19 [INFO] [MPC] state=(-1.72,-2.10,-1.57) wp0=(-1.65,-2.55) v=+0.200 ω=+0.004 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.75/11.64 (49.4%) dist_goal=4.90
+20:25:19 [INFO] [MPC] state=(-1.72,-2.12,-1.57) wp0=(-1.65,-2.55) v=+0.200 ω=+0.001 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.77/11.64 (49.6%) dist_goal=4.89
+20:25:19 [INFO] [MPC] state=(-1.72,-2.14,-1.57) wp0=(-1.65,-2.55) v=+0.200 ω=-0.001 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.79/11.64 (49.8%) dist_goal=4.88
+20:25:19 [INFO] [MPC] state=(-1.72,-2.16,-1.57) wp0=(-1.65,-2.65) v=+0.200 ω=+0.167 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.81/11.64 (49.9%) dist_goal=4.87
+20:25:19 [INFO] [MPC] state=(-1.72,-2.18,-1.55) wp0=(-1.65,-2.65) v=+0.200 ω=+0.141 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.83/11.64 (50.1%) dist_goal=4.87
+20:25:19 [INFO] [MPC] state=(-1.71,-2.20,-1.54) wp0=(-1.65,-2.65) v=+0.200 ω=+0.114 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.85/11.64 (50.3%) dist_goal=4.86
+20:25:19 [INFO] [MPC] state=(-1.71,-2.22,-1.53) wp0=(-1.65,-2.65) v=+0.200 ω=+0.079 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.87/11.64 (50.4%) dist_goal=4.85
+20:25:19 [INFO] [MPC] state=(-1.71,-2.24,-1.53) wp0=(-1.65,-2.65) v=+0.200 ω=-0.294 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.89/11.64 (50.6%) dist_goal=4.84
+20:25:19 [INFO] [MPC] state=(-1.71,-2.26,-1.55) wp0=(-1.65,-2.75) v=+0.153 ω=+0.186 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.90/11.64 (50.7%) dist_goal=4.84
+20:25:19 [INFO] [MPC] state=(-1.71,-2.27,-1.53) wp0=(-1.65,-2.75) v=+0.153 ω=-0.145 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.92/11.64 (50.8%) dist_goal=4.83
+20:25:19 [INFO] [MPC] state=(-1.71,-2.29,-1.54) wp0=(-1.65,-2.75) v=+0.153 ω=+0.204 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.93/11.64 (51.0%) dist_goal=4.82
+20:25:19 [INFO] [MPC] state=(-1.71,-2.30,-1.52) wp0=(-1.65,-2.75) v=+0.153 ω=-0.166 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.95/11.64 (51.1%) dist_goal=4.82
+20:25:19 [INFO] [MPC] state=(-1.71,-2.32,-1.54) wp0=(-1.65,-2.75) v=+0.153 ω=-0.115 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.96/11.64 (51.2%) dist_goal=4.81
+20:25:19 [INFO] [MPC] state=(-1.71,-2.33,-1.55) wp0=(-1.65,-2.75) v=+0.153 ω=-0.075 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.98/11.64 (51.4%) dist_goal=4.80
+20:25:19 [INFO] [MPC] state=(-1.71,-2.35,-1.56) wp0=(-1.65,-2.75) v=+0.153 ω=-0.049 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=5.99/11.64 (51.5%) dist_goal=4.80
+20:25:19 [INFO] [MPC] state=(-1.71,-2.36,-1.56) wp0=(-1.65,-2.85) v=+0.153 ω=+0.012 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.01/11.64 (51.6%) dist_goal=4.79
+20:25:19 [INFO] [MPC] state=(-1.71,-2.38,-1.56) wp0=(-1.65,-2.85) v=+0.153 ω=+0.097 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.03/11.64 (51.8%) dist_goal=4.79
+20:25:19 [INFO] [MPC] state=(-1.71,-2.39,-1.56) wp0=(-1.65,-2.85) v=+0.153 ω=-0.032 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.04/11.64 (51.9%) dist_goal=4.78
+20:25:19 [INFO] [MPC] state=(-1.71,-2.41,-1.56) wp0=(-1.65,-2.85) v=+0.153 ω=+0.068 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.06/11.64 (52.0%) dist_goal=4.78
+20:25:19 [INFO] [MPC] state=(-1.71,-2.43,-1.55) wp0=(-1.65,-2.85) v=+0.153 ω=+0.139 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.07/11.64 (52.2%) dist_goal=4.77
+20:25:19 [INFO] [MPC] state=(-1.71,-2.44,-1.54) wp0=(-1.65,-2.85) v=+0.153 ω=+0.335 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.09/11.64 (52.3%) dist_goal=4.76
+20:25:19 [INFO] [MPC] state=(-1.71,-2.46,-1.51) wp0=(-1.65,-2.85) v=+0.153 ω=+0.053 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.10/11.64 (52.4%) dist_goal=4.76
+20:25:19 [INFO] [MPC] state=(-1.71,-2.47,-1.50) wp0=(-1.65,-2.85) v=+0.153 ω=+0.097 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.12/11.64 (52.6%) dist_goal=4.75
+20:25:19 [INFO] [MPC] state=(-1.71,-2.49,-1.49) wp0=(-1.65,-2.85) v=+0.153 ω=+0.117 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.13/11.64 (52.7%) dist_goal=4.74
+20:25:19 [INFO] [MPC] state=(-1.70,-2.50,-1.48) wp0=(-1.65,-2.85) v=+0.153 ω=-0.034 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.15/11.64 (52.8%) dist_goal=4.74
+20:25:19 [INFO] [MPC] state=(-1.70,-2.52,-1.49) wp0=(-1.65,-2.85) v=+0.153 ω=+0.008 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.16/11.64 (53.0%) dist_goal=4.73
+20:25:19 [INFO] [MPC] state=(-1.70,-2.53,-1.48) wp0=(-1.65,-2.85) v=+0.153 ω=+0.025 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.18/11.64 (53.1%) dist_goal=4.72
+20:25:19 [INFO] [MPC] state=(-1.70,-2.55,-1.48) wp0=(-1.65,-2.85) v=+0.153 ω=+0.027 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.19/11.64 (53.2%) dist_goal=4.72
+20:25:19 [INFO] [MPC] state=(-1.70,-2.56,-1.48) wp0=(-1.55,-2.95) v=+0.153 ω=+0.057 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.21/11.64 (53.4%) dist_goal=4.71
+20:25:19 [INFO] [MPC] state=(-1.70,-2.58,-1.47) wp0=(-1.55,-2.95) v=+0.153 ω=-0.109 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.22/11.64 (53.5%) dist_goal=4.70
+20:25:19 [INFO] [MPC] state=(-1.70,-2.59,-1.48) wp0=(-1.55,-2.95) v=+0.153 ω=-0.234 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.24/11.64 (53.6%) dist_goal=4.70
+20:25:19 [INFO] [MPC] state=(-1.69,-2.61,-1.51) wp0=(-1.55,-2.95) v=+0.153 ω=-0.303 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.26/11.64 (53.8%) dist_goal=4.69
+20:25:19 [INFO] [MPC] state=(-1.69,-2.62,-1.54) wp0=(-1.55,-2.95) v=+0.153 ω=-0.304 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.27/11.64 (53.9%) dist_goal=4.69
+20:25:19 [INFO] [MPC] state=(-1.69,-2.64,-1.58) wp0=(-1.55,-2.95) v=+0.153 ω=-0.271 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.29/11.64 (54.0%) dist_goal=4.68
+20:25:19 [INFO] [MPC] state=(-1.69,-2.66,-1.61) wp0=(-1.55,-3.05) v=+0.153 ω=+0.050 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.30/11.64 (54.1%) dist_goal=4.68
+20:25:19 [INFO] [MPC] state=(-1.69,-2.67,-1.60) wp0=(-1.55,-3.05) v=+0.153 ω=-0.010 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.32/11.64 (54.3%) dist_goal=4.68
+20:25:19 [INFO] [MPC] state=(-1.70,-2.69,-1.60) wp0=(-1.55,-3.05) v=+0.153 ω=-0.039 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.33/11.64 (54.4%) dist_goal=4.67
+20:25:19 [INFO] [MPC] state=(-1.70,-2.70,-1.61) wp0=(-1.55,-3.05) v=+0.153 ω=-0.050 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.35/11.64 (54.5%) dist_goal=4.67
+20:25:19 [INFO] [MPC] state=(-1.70,-2.72,-1.61) wp0=(-1.55,-3.05) v=+0.153 ω=-0.049 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.36/11.64 (54.7%) dist_goal=4.66
+20:25:19 [INFO] [MPC] state=(-1.70,-2.73,-1.62) wp0=(-1.55,-3.05) v=+0.153 ω=-0.042 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.38/11.64 (54.8%) dist_goal=4.66
+20:25:19 [INFO] [MPC] state=(-1.70,-2.75,-1.62) wp0=(-1.55,-3.05) v=+0.153 ω=-0.034 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.39/11.64 (54.9%) dist_goal=4.66
+20:25:19 [INFO] [MPC] state=(-1.70,-2.76,-1.62) wp0=(-1.55,-3.15) v=+0.153 ω=+0.298 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.41/11.64 (55.1%) dist_goal=4.65
+20:25:19 [INFO] [MPC] state=(-1.70,-2.78,-1.60) wp0=(-1.55,-3.15) v=+0.153 ω=+0.243 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.42/11.64 (55.2%) dist_goal=4.65
+20:25:19 [INFO] [MPC] state=(-1.70,-2.79,-1.58) wp0=(-1.55,-3.15) v=+0.153 ω=+0.079 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.44/11.64 (55.3%) dist_goal=4.64
+20:25:19 [INFO] [MPC] state=(-1.70,-2.81,-1.57) wp0=(-1.55,-3.15) v=+0.153 ω=+0.046 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.46/11.64 (55.5%) dist_goal=4.64
+20:25:19 [INFO] [MPC] state=(-1.70,-2.82,-1.56) wp0=(-1.55,-3.15) v=+0.153 ω=+0.026 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.47/11.64 (55.6%) dist_goal=4.63
+20:25:19 [INFO] [MPC] state=(-1.70,-2.84,-1.56) wp0=(-1.55,-3.15) v=+0.153 ω=+0.012 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.47/11.64 (55.6%) dist_goal=4.63
+20:25:19 [INFO] [MPC] state=(-1.70,-2.86,-1.56) wp0=(-1.55,-3.15) v=+0.153 ω=+0.004 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.47/11.64 (55.6%) dist_goal=4.62
+20:25:19 [INFO] [MPC] state=(-1.70,-2.87,-1.56) wp0=(-1.55,-3.15) v=+0.153 ω=-0.002 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.47/11.64 (55.6%) dist_goal=4.62
+20:25:19 [INFO] [MPC] state=(-1.70,-2.89,-1.56) wp0=(-1.55,-3.15) v=+0.153 ω=-0.005 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.48/11.64 (55.7%) dist_goal=4.62
+20:25:19 [INFO] [MPC] state=(-1.70,-2.90,-1.56) wp0=(-1.55,-3.25) v=+0.153 ω=+0.335 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.49/11.64 (55.8%) dist_goal=4.61
+20:25:19 [INFO] [MPC] state=(-1.70,-2.92,-1.53) wp0=(-1.55,-3.25) v=+0.153 ω=+0.282 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.50/11.64 (55.9%) dist_goal=4.61
+20:25:19 [INFO] [MPC] state=(-1.70,-2.93,-1.50) wp0=(-1.55,-3.25) v=+0.153 ω=+0.208 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.51/11.64 (56.0%) dist_goal=4.60
+20:25:19 [INFO] [MPC] state=(-1.70,-2.95,-1.48) wp0=(-1.55,-3.25) v=+0.153 ω=+0.130 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.53/11.64 (56.1%) dist_goal=4.60
+20:25:19 [INFO] [MPC] state=(-1.69,-2.96,-1.47) wp0=(-1.55,-3.25) v=+0.153 ω=+0.074 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.54/11.64 (56.2%) dist_goal=4.59
+20:25:19 [INFO] [MPC] state=(-1.69,-2.98,-1.46) wp0=(-1.55,-3.25) v=+0.153 ω=+0.378 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=15.708 vcap_curv=0.153 vmax_local=0.153 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.66/11.64 (57.3%) dist_goal=4.58
+20:25:19 [INFO] [MPC] state=(-1.69,-2.99,-1.42) wp0=(-1.55,-3.25) v=+0.153 ω=+0.246 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.68/11.64 (57.4%) dist_goal=4.58
+20:25:19 [INFO] [MPC] state=(-1.69,-3.01,-1.40) wp0=(-1.55,-3.35) v=+0.200 ω=+0.480 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.70/11.64 (57.6%) dist_goal=4.57
+20:25:19 [INFO] [MPC] state=(-1.69,-3.03,-1.37) wp0=(-1.55,-3.35) v=+0.200 ω=+0.652 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.72/11.64 (57.7%) dist_goal=4.56
+20:25:19 [INFO] [MPC] state=(-1.68,-3.04,-1.33) wp0=(-1.55,-3.35) v=+0.200 ω=+0.637 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.73/11.64 (57.9%) dist_goal=4.55
+20:25:19 [INFO] [MPC] state=(-1.68,-3.06,-1.30) wp0=(-1.45,-3.35) v=+0.200 ω=+0.786 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.75/11.64 (58.0%) dist_goal=4.54
+20:25:19 [INFO] [MPC] state=(-1.67,-3.08,-1.25) wp0=(-1.45,-3.35) v=+0.200 ω=+0.747 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.77/11.64 (58.1%) dist_goal=4.53
+20:25:19 [INFO] [MPC] state=(-1.67,-3.09,-1.21) wp0=(-1.45,-3.35) v=+0.200 ω=+0.687 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.78/11.64 (58.3%) dist_goal=4.52
+20:25:19 [INFO] [MPC] state=(-1.66,-3.11,-1.17) wp0=(-1.45,-3.35) v=+0.200 ω=+0.649 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.80/11.64 (58.4%) dist_goal=4.51
+20:25:19 [INFO] [MPC] state=(-1.65,-3.13,-1.13) wp0=(-1.45,-3.35) v=+0.200 ω=+0.605 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.81/11.64 (58.6%) dist_goal=4.50
+20:25:19 [INFO] [MPC] state=(-1.64,-3.14,-1.10) wp0=(-1.45,-3.35) v=+0.200 ω=+0.555 ok=True iters=7
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.83/11.64 (58.7%) dist_goal=4.48
+20:25:19 [INFO] [MPC] state=(-1.63,-3.16,-1.06) wp0=(-1.35,-3.35) v=+0.200 ω=+0.627 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.85/11.64 (58.8%) dist_goal=4.47
+20:25:19 [INFO] [MPC] state=(-1.63,-3.17,-1.03) wp0=(-1.35,-3.35) v=+0.200 ω=+0.553 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.86/11.64 (59.0%) dist_goal=4.46
+20:25:19 [INFO] [MPC] state=(-1.62,-3.19,-0.99) wp0=(-1.35,-3.35) v=+0.200 ω=+0.472 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:19 [INFO] [PROG] s*=6.88/11.64 (59.1%) dist_goal=4.44
+20:25:19 [INFO] [MPC] state=(-1.61,-3.20,-0.96) wp0=(-1.35,-3.35) v=+0.200 ω=+0.620 ok=True iters=6
+20:25:19 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=6.89/11.64 (59.2%) dist_goal=4.43
+20:25:20 [INFO] [MPC] state=(-1.59,-3.22,-0.93) wp0=(-1.35,-3.35) v=+0.200 ω=+0.603 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=6.90/11.64 (59.3%) dist_goal=4.42
+20:25:20 [INFO] [MPC] state=(-1.58,-3.23,-0.89) wp0=(-1.35,-3.35) v=+0.200 ω=+0.546 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=6.92/11.64 (59.4%) dist_goal=4.40
+20:25:20 [INFO] [MPC] state=(-1.57,-3.25,-0.86) wp0=(-1.35,-3.35) v=+0.200 ω=+0.451 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=6.93/11.64 (59.6%) dist_goal=4.39
+20:25:20 [INFO] [MPC] state=(-1.56,-3.26,-0.83) wp0=(-1.25,-3.35) v=+0.200 ω=+0.527 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=6.94/11.64 (59.7%) dist_goal=4.37
+20:25:20 [INFO] [MPC] state=(-1.55,-3.27,-0.80) wp0=(-1.25,-3.35) v=+0.200 ω=+0.497 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=6.96/11.64 (59.8%) dist_goal=4.35
+20:25:20 [INFO] [MPC] state=(-1.53,-3.29,-0.77) wp0=(-1.25,-3.35) v=+0.200 ω=+0.428 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.05/11.64 (60.6%) dist_goal=4.34
+20:25:20 [INFO] [MPC] state=(-1.52,-3.30,-0.74) wp0=(-1.25,-3.35) v=+0.200 ω=+0.378 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.07/11.64 (60.7%) dist_goal=4.32
+20:25:20 [INFO] [MPC] state=(-1.51,-3.31,-0.72) wp0=(-1.15,-3.35) v=+0.200 ω=+0.477 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.08/11.64 (60.8%) dist_goal=4.30
+20:25:20 [INFO] [MPC] state=(-1.49,-3.33,-0.69) wp0=(-1.15,-3.35) v=+0.200 ω=+0.337 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.10/11.64 (61.0%) dist_goal=4.29
+20:25:20 [INFO] [MPC] state=(-1.48,-3.34,-0.67) wp0=(-1.15,-3.35) v=+0.200 ω=+0.356 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.11/11.64 (61.1%) dist_goal=4.27
+20:25:20 [INFO] [MPC] state=(-1.46,-3.35,-0.64) wp0=(-1.15,-3.35) v=+0.200 ω=+0.359 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.13/11.64 (61.2%) dist_goal=4.25
+20:25:20 [INFO] [MPC] state=(-1.45,-3.36,-0.62) wp0=(-0.95,-3.35) v=+0.200 ω=+0.506 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.14/11.64 (61.4%) dist_goal=4.24
+20:25:20 [INFO] [MPC] state=(-1.43,-3.37,-0.59) wp0=(-0.95,-3.35) v=+0.200 ω=+0.475 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.16/11.64 (61.5%) dist_goal=4.22
+20:25:20 [INFO] [MPC] state=(-1.42,-3.38,-0.56) wp0=(-0.95,-3.35) v=+0.200 ω=+0.422 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.17/11.64 (61.6%) dist_goal=4.20
+20:25:20 [INFO] [MPC] state=(-1.40,-3.39,-0.53) wp0=(-0.95,-3.35) v=+0.200 ω=+0.489 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.19/11.64 (61.8%) dist_goal=4.18
+20:25:20 [INFO] [MPC] state=(-1.38,-3.40,-0.50) wp0=(-0.95,-3.35) v=+0.200 ω=+0.478 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.21/11.64 (61.9%) dist_goal=4.16
+20:25:20 [INFO] [MPC] state=(-1.37,-3.41,-0.47) wp0=(-0.95,-3.35) v=+0.200 ω=+0.461 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.22/11.64 (62.1%) dist_goal=4.15
+20:25:20 [INFO] [MPC] state=(-1.35,-3.42,-0.44) wp0=(-0.95,-3.35) v=+0.200 ω=+0.440 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.24/11.64 (62.2%) dist_goal=4.13
+20:25:20 [INFO] [MPC] state=(-1.33,-3.43,-0.42) wp0=(-0.95,-3.35) v=+0.200 ω=+0.427 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.26/11.64 (62.4%) dist_goal=4.11
+20:25:20 [INFO] [MPC] state=(-1.32,-3.43,-0.39) wp0=(-0.95,-3.35) v=+0.200 ω=+0.135 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.28/11.64 (62.5%) dist_goal=4.09
+20:25:20 [INFO] [MPC] state=(-1.30,-3.44,-0.38) wp0=(-0.95,-3.35) v=+0.200 ω=+0.185 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.30/11.64 (62.7%) dist_goal=4.07
+20:25:20 [INFO] [MPC] state=(-1.28,-3.45,-0.36) wp0=(-0.95,-3.35) v=+0.200 ω=+0.219 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.32/11.64 (62.9%) dist_goal=4.05
+20:25:20 [INFO] [MPC] state=(-1.26,-3.45,-0.35) wp0=(-0.95,-3.35) v=+0.200 ω=-0.027 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.33/11.64 (63.0%) dist_goal=4.03
+20:25:20 [INFO] [MPC] state=(-1.24,-3.46,-0.35) wp0=(-0.75,-3.35) v=+0.200 ω=+0.482 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.35/11.64 (63.2%) dist_goal=4.01
+20:25:20 [INFO] [MPC] state=(-1.22,-3.47,-0.32) wp0=(-0.75,-3.35) v=+0.200 ω=+0.423 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.37/11.64 (63.3%) dist_goal=3.99
+20:25:20 [INFO] [MPC] state=(-1.21,-3.47,-0.29) wp0=(-0.75,-3.35) v=+0.200 ω=+0.385 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.39/11.64 (63.5%) dist_goal=3.98
+20:25:20 [INFO] [MPC] state=(-1.19,-3.48,-0.27) wp0=(-0.75,-3.35) v=+0.200 ω=+0.354 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.41/11.64 (63.6%) dist_goal=3.96
+20:25:20 [INFO] [MPC] state=(-1.17,-3.48,-0.24) wp0=(-0.75,-3.35) v=+0.200 ω=+0.698 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.42/11.64 (63.8%) dist_goal=3.94
+20:25:20 [INFO] [MPC] state=(-1.15,-3.49,-0.20) wp0=(-0.75,-3.35) v=+0.200 ω=+0.609 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.44/11.64 (63.9%) dist_goal=3.92
+20:25:20 [INFO] [MPC] state=(-1.13,-3.49,-0.17) wp0=(-0.75,-3.35) v=+0.200 ω=+0.779 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.46/11.64 (64.1%) dist_goal=3.90
+20:25:20 [INFO] [MPC] state=(-1.12,-3.49,-0.12) wp0=(-0.75,-3.35) v=+0.200 ω=+0.598 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.48/11.64 (64.2%) dist_goal=3.89
+20:25:20 [INFO] [MPC] state=(-1.10,-3.50,-0.09) wp0=(-0.75,-3.35) v=+0.200 ω=+0.409 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.49/11.64 (64.4%) dist_goal=3.87
+20:25:20 [INFO] [MPC] state=(-1.08,-3.50,-0.06) wp0=(-0.75,-3.35) v=+0.200 ω=+0.692 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.51/11.64 (64.5%) dist_goal=3.85
+20:25:20 [INFO] [MPC] state=(-1.06,-3.50,-0.03) wp0=(-0.75,-3.35) v=+0.200 ω=+0.501 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.53/11.64 (64.7%) dist_goal=3.83
+20:25:20 [INFO] [MPC] state=(-1.05,-3.50,-0.00) wp0=(-0.65,-3.35) v=+0.200 ω=+0.419 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.55/11.64 (64.9%) dist_goal=3.81
+20:25:20 [INFO] [MPC] state=(-1.03,-3.50,+0.02) wp0=(-0.65,-3.35) v=+0.200 ω=+0.251 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.57/11.64 (65.0%) dist_goal=3.79
+20:25:20 [INFO] [MPC] state=(-1.01,-3.50,+0.04) wp0=(-0.65,-3.35) v=+0.200 ω=+0.205 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.59/11.64 (65.2%) dist_goal=3.78
+20:25:20 [INFO] [MPC] state=(-0.99,-3.50,+0.05) wp0=(-0.65,-3.35) v=+0.200 ω=+0.158 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.61/11.64 (65.4%) dist_goal=3.76
+20:25:20 [INFO] [MPC] state=(-0.97,-3.50,+0.06) wp0=(-0.65,-3.35) v=+0.200 ω=+0.113 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.63/11.64 (65.6%) dist_goal=3.74
+20:25:20 [INFO] [MPC] state=(-0.95,-3.49,+0.08) wp0=(-0.55,-3.35) v=+0.200 ω=-0.051 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.65/11.64 (65.7%) dist_goal=3.72
+20:25:20 [INFO] [MPC] state=(-0.93,-3.49,+0.07) wp0=(-0.55,-3.35) v=+0.200 ω=-0.046 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.67/11.64 (65.9%) dist_goal=3.70
+20:25:20 [INFO] [MPC] state=(-0.91,-3.49,+0.07) wp0=(-0.55,-3.35) v=+0.200 ω=-0.044 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.69/11.64 (66.1%) dist_goal=3.68
+20:25:20 [INFO] [MPC] state=(-0.89,-3.49,+0.06) wp0=(-0.55,-3.35) v=+0.200 ω=-0.043 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.71/11.64 (66.3%) dist_goal=3.66
+20:25:20 [INFO] [MPC] state=(-0.87,-3.49,+0.06) wp0=(-0.55,-3.35) v=+0.200 ω=-0.045 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.73/11.64 (66.4%) dist_goal=3.64
+20:25:20 [INFO] [MPC] state=(-0.85,-3.49,+0.05) wp0=(-0.45,-3.35) v=+0.200 ω=-0.056 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.75/11.64 (66.6%) dist_goal=3.62
+20:25:20 [INFO] [MPC] state=(-0.83,-3.49,+0.05) wp0=(-0.45,-3.35) v=+0.200 ω=-0.056 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.77/11.64 (66.8%) dist_goal=3.60
+20:25:20 [INFO] [MPC] state=(-0.81,-3.49,+0.04) wp0=(-0.45,-3.35) v=+0.200 ω=-0.334 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.79/11.64 (66.9%) dist_goal=3.58
+20:25:20 [INFO] [MPC] state=(-0.79,-3.48,+0.02) wp0=(-0.45,-3.35) v=+0.200 ω=-0.278 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.81/11.64 (67.1%) dist_goal=3.56
+20:25:20 [INFO] [MPC] state=(-0.77,-3.48,-0.00) wp0=(-0.45,-3.35) v=+0.200 ω=-0.214 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.83/11.64 (67.3%) dist_goal=3.54
+20:25:20 [INFO] [MPC] state=(-0.75,-3.48,-0.02) wp0=(-0.25,-3.35) v=+0.200 ω=-0.149 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.85/11.64 (67.5%) dist_goal=3.52
+20:25:20 [INFO] [MPC] state=(-0.73,-3.48,-0.03) wp0=(-0.25,-3.35) v=+0.200 ω=-0.111 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.87/11.64 (67.6%) dist_goal=3.50
+20:25:20 [INFO] [MPC] state=(-0.71,-3.49,-0.04) wp0=(-0.25,-3.35) v=+0.200 ω=-0.076 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.89/11.64 (67.8%) dist_goal=3.48
+20:25:20 [INFO] [MPC] state=(-0.69,-3.49,-0.05) wp0=(-0.25,-3.35) v=+0.200 ω=-0.053 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.91/11.64 (68.0%) dist_goal=3.46
+20:25:20 [INFO] [MPC] state=(-0.67,-3.49,-0.06) wp0=(-0.25,-3.35) v=+0.200 ω=-0.037 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.93/11.64 (68.1%) dist_goal=3.44
+20:25:20 [INFO] [MPC] state=(-0.65,-3.49,-0.06) wp0=(-0.25,-3.35) v=+0.200 ω=-0.244 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.95/11.64 (68.3%) dist_goal=3.42
+20:25:20 [INFO] [MPC] state=(-0.63,-3.49,-0.08) wp0=(-0.25,-3.35) v=+0.200 ω=-0.183 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.97/11.64 (68.5%) dist_goal=3.40
+20:25:20 [INFO] [MPC] state=(-0.61,-3.49,-0.09) wp0=(-0.25,-3.35) v=+0.200 ω=-0.131 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=7.99/11.64 (68.7%) dist_goal=3.38
+20:25:20 [INFO] [MPC] state=(-0.59,-3.49,-0.10) wp0=(-0.25,-3.35) v=+0.200 ω=+0.244 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.01/11.64 (68.8%) dist_goal=3.36
+20:25:20 [INFO] [MPC] state=(-0.57,-3.50,-0.08) wp0=(-0.25,-3.35) v=+0.200 ω=+0.189 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.03/11.64 (69.0%) dist_goal=3.34
+20:25:20 [INFO] [MPC] state=(-0.55,-3.50,-0.07) wp0=(-0.05,-3.35) v=+0.200 ω=+0.112 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.05/11.64 (69.2%) dist_goal=3.32
+20:25:20 [INFO] [MPC] state=(-0.53,-3.50,-0.06) wp0=(-0.05,-3.35) v=+0.200 ω=+0.073 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.07/11.64 (69.3%) dist_goal=3.30
+20:25:20 [INFO] [MPC] state=(-0.51,-3.50,-0.05) wp0=(-0.05,-3.35) v=+0.200 ω=+0.182 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.09/11.64 (69.5%) dist_goal=3.28
+20:25:20 [INFO] [MPC] state=(-0.49,-3.50,-0.04) wp0=(-0.05,-3.35) v=+0.200 ω=+0.135 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.11/11.64 (69.7%) dist_goal=3.26
+20:25:20 [INFO] [MPC] state=(-0.47,-3.50,-0.03) wp0=(-0.05,-3.35) v=+0.200 ω=+0.089 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.13/11.64 (69.9%) dist_goal=3.24
+20:25:20 [INFO] [MPC] state=(-0.45,-3.50,-0.02) wp0=(-0.05,-3.35) v=+0.200 ω=+0.017 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.15/11.64 (70.0%) dist_goal=3.22
+20:25:20 [INFO] [MPC] state=(-0.43,-3.50,-0.02) wp0=(-0.05,-3.35) v=+0.200 ω=+0.256 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.17/11.64 (70.2%) dist_goal=3.20
+20:25:20 [INFO] [MPC] state=(-0.41,-3.50,-0.00) wp0=(-0.05,-3.35) v=+0.200 ω=+0.197 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.19/11.64 (70.4%) dist_goal=3.18
+20:25:20 [INFO] [MPC] state=(-0.39,-3.50,+0.01) wp0=(-0.05,-3.35) v=+0.200 ω=+0.100 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.21/11.64 (70.5%) dist_goal=3.16
+20:25:20 [INFO] [MPC] state=(-0.37,-3.50,+0.02) wp0=(-0.05,-3.35) v=+0.200 ω=+0.104 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.23/11.64 (70.7%) dist_goal=3.14
+20:25:20 [INFO] [MPC] state=(-0.35,-3.50,+0.03) wp0=(+0.05,-3.35) v=+0.200 ω=+0.094 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.25/11.64 (70.9%) dist_goal=3.13
+20:25:20 [INFO] [MPC] state=(-0.33,-3.50,+0.04) wp0=(+0.05,-3.35) v=+0.200 ω=+0.009 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.27/11.64 (71.1%) dist_goal=3.11
+20:25:20 [INFO] [MPC] state=(-0.31,-3.50,+0.04) wp0=(+0.05,-3.35) v=+0.200 ω=-0.020 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.29/11.64 (71.2%) dist_goal=3.09
+20:25:20 [INFO] [MPC] state=(-0.29,-3.50,+0.04) wp0=(+0.05,-3.35) v=+0.200 ω=-0.103 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.31/11.64 (71.4%) dist_goal=3.07
+20:25:20 [INFO] [MPC] state=(-0.27,-3.50,+0.03) wp0=(+0.05,-3.35) v=+0.200 ω=-0.192 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.33/11.64 (71.6%) dist_goal=3.05
+20:25:20 [INFO] [MPC] state=(-0.25,-3.50,+0.01) wp0=(+0.25,-3.35) v=+0.200 ω=-0.133 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.35/11.64 (71.8%) dist_goal=3.03
+20:25:20 [INFO] [MPC] state=(-0.23,-3.50,-0.00) wp0=(+0.25,-3.35) v=+0.200 ω=-0.226 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.37/11.64 (71.9%) dist_goal=3.01
+20:25:20 [INFO] [MPC] state=(-0.21,-3.50,-0.02) wp0=(+0.25,-3.35) v=+0.200 ω=-0.178 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.39/11.64 (72.1%) dist_goal=2.99
+20:25:20 [INFO] [MPC] state=(-0.19,-3.50,-0.03) wp0=(+0.25,-3.35) v=+0.200 ω=-0.192 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.41/11.64 (72.3%) dist_goal=2.97
+20:25:20 [INFO] [MPC] state=(-0.17,-3.50,-0.05) wp0=(+0.25,-3.35) v=+0.200 ω=-0.165 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.43/11.64 (72.4%) dist_goal=2.95
+20:25:20 [INFO] [MPC] state=(-0.15,-3.50,-0.06) wp0=(+0.25,-3.35) v=+0.200 ω=-0.144 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.45/11.64 (72.6%) dist_goal=2.93
+20:25:20 [INFO] [MPC] state=(-0.13,-3.50,-0.07) wp0=(+0.25,-3.35) v=+0.200 ω=-0.151 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.47/11.64 (72.8%) dist_goal=2.91
+20:25:20 [INFO] [MPC] state=(-0.11,-3.50,-0.08) wp0=(+0.25,-3.35) v=+0.200 ω=-0.132 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.49/11.64 (73.0%) dist_goal=2.89
+20:25:20 [INFO] [MPC] state=(-0.09,-3.51,-0.10) wp0=(+0.25,-3.35) v=+0.200 ω=-0.146 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.51/11.64 (73.1%) dist_goal=2.87
+20:25:20 [INFO] [MPC] state=(-0.07,-3.51,-0.11) wp0=(+0.25,-3.35) v=+0.200 ω=-0.104 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.53/11.64 (73.3%) dist_goal=2.85
+20:25:20 [INFO] [MPC] state=(-0.05,-3.51,-0.12) wp0=(+0.45,-3.35) v=+0.200 ω=-0.152 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.55/11.64 (73.5%) dist_goal=2.83
+20:25:20 [INFO] [MPC] state=(-0.03,-3.51,-0.13) wp0=(+0.45,-3.35) v=+0.200 ω=-0.164 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.57/11.64 (73.6%) dist_goal=2.81
+20:25:20 [INFO] [MPC] state=(-0.01,-3.51,-0.14) wp0=(+0.45,-3.35) v=+0.200 ω=-0.082 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.59/11.64 (73.8%) dist_goal=2.79
+20:25:20 [INFO] [MPC] state=(+0.01,-3.52,-0.15) wp0=(+0.45,-3.35) v=+0.200 ω=-0.176 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.61/11.64 (74.0%) dist_goal=2.77
+20:25:20 [INFO] [MPC] state=(+0.03,-3.52,-0.16) wp0=(+0.45,-3.35) v=+0.200 ω=-0.089 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.63/11.64 (74.2%) dist_goal=2.75
+20:25:20 [INFO] [MPC] state=(+0.05,-3.52,-0.17) wp0=(+0.45,-3.35) v=+0.200 ω=-0.023 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.65/11.64 (74.3%) dist_goal=2.73
+20:25:20 [INFO] [MPC] state=(+0.07,-3.53,-0.18) wp0=(+0.45,-3.35) v=+0.200 ω=-0.109 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.67/11.64 (74.5%) dist_goal=2.71
+20:25:20 [INFO] [MPC] state=(+0.09,-3.53,-0.19) wp0=(+0.45,-3.35) v=+0.200 ω=-0.035 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.69/11.64 (74.7%) dist_goal=2.69
+20:25:20 [INFO] [MPC] state=(+0.11,-3.54,-0.19) wp0=(+0.45,-3.35) v=+0.200 ω=+0.008 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.71/11.64 (74.8%) dist_goal=2.67
+20:25:20 [INFO] [MPC] state=(+0.13,-3.54,-0.19) wp0=(+0.45,-3.35) v=+0.200 ω=+0.001 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.73/11.64 (75.0%) dist_goal=2.65
+20:25:20 [INFO] [MPC] state=(+0.15,-3.54,-0.19) wp0=(+0.55,-3.35) v=+0.200 ω=+0.006 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.75/11.64 (75.2%) dist_goal=2.63
+20:25:20 [INFO] [MPC] state=(+0.17,-3.55,-0.19) wp0=(+0.55,-3.35) v=+0.200 ω=+0.025 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.77/11.64 (75.4%) dist_goal=2.61
+20:25:20 [INFO] [MPC] state=(+0.19,-3.55,-0.18) wp0=(+0.55,-3.35) v=+0.200 ω=+0.063 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.79/11.64 (75.5%) dist_goal=2.59
+20:25:20 [INFO] [MPC] state=(+0.21,-3.55,-0.18) wp0=(+0.55,-3.35) v=+0.200 ω=+0.057 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.81/11.64 (75.7%) dist_goal=2.56
+20:25:20 [INFO] [MPC] state=(+0.23,-3.56,-0.17) wp0=(+0.55,-3.35) v=+0.200 ω=+0.052 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.83/11.64 (75.9%) dist_goal=2.54
+20:25:20 [INFO] [MPC] state=(+0.25,-3.56,-0.17) wp0=(+0.75,-3.35) v=+0.200 ω=-0.065 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.85/11.64 (76.0%) dist_goal=2.52
+20:25:20 [INFO] [MPC] state=(+0.27,-3.57,-0.17) wp0=(+0.75,-3.35) v=+0.200 ω=-0.022 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.87/11.64 (76.2%) dist_goal=2.50
+20:25:20 [INFO] [MPC] state=(+0.29,-3.57,-0.18) wp0=(+0.75,-3.35) v=+0.200 ω=+0.003 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.89/11.64 (76.4%) dist_goal=2.48
+20:25:20 [INFO] [MPC] state=(+0.31,-3.57,-0.18) wp0=(+0.75,-3.35) v=+0.200 ω=+0.017 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.91/11.64 (76.6%) dist_goal=2.46
+20:25:20 [INFO] [MPC] state=(+0.33,-3.58,-0.17) wp0=(+0.75,-3.35) v=+0.200 ω=+0.026 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.93/11.64 (76.7%) dist_goal=2.44
+20:25:20 [INFO] [MPC] state=(+0.35,-3.58,-0.17) wp0=(+0.75,-3.35) v=+0.200 ω=+0.031 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.95/11.64 (76.9%) dist_goal=2.42
+20:25:20 [INFO] [MPC] state=(+0.37,-3.58,-0.17) wp0=(+0.75,-3.35) v=+0.200 ω=+0.033 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.97/11.64 (77.1%) dist_goal=2.40
+20:25:20 [INFO] [MPC] state=(+0.39,-3.59,-0.16) wp0=(+0.75,-3.35) v=+0.200 ω=+0.034 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=8.99/11.64 (77.2%) dist_goal=2.38
+20:25:20 [INFO] [MPC] state=(+0.41,-3.59,-0.16) wp0=(+0.75,-3.35) v=+0.200 ω=+0.035 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.01/11.64 (77.4%) dist_goal=2.36
+20:25:20 [INFO] [MPC] state=(+0.43,-3.59,-0.16) wp0=(+0.75,-3.35) v=+0.200 ω=+0.034 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.03/11.64 (77.6%) dist_goal=2.34
+20:25:20 [INFO] [MPC] state=(+0.45,-3.60,-0.15) wp0=(+0.95,-3.35) v=+0.200 ω=-0.139 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.05/11.64 (77.8%) dist_goal=2.32
+20:25:20 [INFO] [MPC] state=(+0.47,-3.60,-0.17) wp0=(+0.95,-3.35) v=+0.200 ω=-0.107 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.07/11.64 (77.9%) dist_goal=2.30
+20:25:20 [INFO] [MPC] state=(+0.49,-3.60,-0.18) wp0=(+0.95,-3.35) v=+0.200 ω=-0.060 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.09/11.64 (78.1%) dist_goal=2.28
+20:25:20 [INFO] [MPC] state=(+0.51,-3.61,-0.18) wp0=(+0.95,-3.35) v=+0.200 ω=+0.025 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.11/11.64 (78.3%) dist_goal=2.26
+20:25:20 [INFO] [MPC] state=(+0.53,-3.61,-0.18) wp0=(+0.95,-3.35) v=+0.200 ω=+0.025 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.13/11.64 (78.4%) dist_goal=2.24
+20:25:20 [INFO] [MPC] state=(+0.55,-3.61,-0.18) wp0=(+0.95,-3.35) v=+0.200 ω=-0.023 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.15/11.64 (78.6%) dist_goal=2.22
+20:25:20 [INFO] [MPC] state=(+0.57,-3.62,-0.18) wp0=(+0.95,-3.35) v=+0.200 ω=+0.045 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.17/11.64 (78.8%) dist_goal=2.20
+20:25:20 [INFO] [MPC] state=(+0.59,-3.62,-0.17) wp0=(+0.95,-3.35) v=+0.200 ω=+0.038 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.19/11.64 (79.0%) dist_goal=2.18
+20:25:20 [INFO] [MPC] state=(+0.61,-3.62,-0.17) wp0=(+0.95,-3.35) v=+0.200 ω=+0.033 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.21/11.64 (79.1%) dist_goal=2.16
+20:25:20 [INFO] [MPC] state=(+0.63,-3.63,-0.17) wp0=(+0.95,-3.35) v=+0.200 ω=+0.030 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.23/11.64 (79.3%) dist_goal=2.14
+20:25:20 [INFO] [MPC] state=(+0.65,-3.63,-0.16) wp0=(+1.05,-3.35) v=+0.200 ω=-0.044 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.25/11.64 (79.5%) dist_goal=2.12
+20:25:20 [INFO] [MPC] state=(+0.67,-3.63,-0.17) wp0=(+1.05,-3.35) v=+0.200 ω=-0.027 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.27/11.64 (79.7%) dist_goal=2.10
+20:25:20 [INFO] [MPC] state=(+0.69,-3.64,-0.17) wp0=(+1.05,-3.35) v=+0.200 ω=-0.119 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.29/11.64 (79.8%) dist_goal=2.08
+20:25:20 [INFO] [MPC] state=(+0.71,-3.64,-0.18) wp0=(+1.05,-3.35) v=+0.200 ω=-0.180 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.31/11.64 (80.0%) dist_goal=2.06
+20:25:20 [INFO] [MPC] state=(+0.73,-3.65,-0.20) wp0=(+1.05,-3.35) v=+0.200 ω=-0.230 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.33/11.64 (80.2%) dist_goal=2.04
+20:25:20 [INFO] [MPC] state=(+0.75,-3.65,-0.21) wp0=(+1.15,-3.45) v=+0.200 ω=+0.028 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.35/11.64 (80.3%) dist_goal=2.02
+20:25:20 [INFO] [MPC] state=(+0.77,-3.65,-0.21) wp0=(+1.15,-3.45) v=+0.200 ω=+0.110 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.37/11.64 (80.5%) dist_goal=2.00
+20:25:20 [INFO] [MPC] state=(+0.79,-3.66,-0.20) wp0=(+1.15,-3.45) v=+0.200 ω=+0.168 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.39/11.64 (80.7%) dist_goal=1.98
+20:25:20 [INFO] [MPC] state=(+0.81,-3.66,-0.19) wp0=(+1.15,-3.45) v=+0.200 ω=+0.203 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.41/11.64 (80.8%) dist_goal=1.96
+20:25:20 [INFO] [MPC] state=(+0.83,-3.67,-0.17) wp0=(+1.15,-3.45) v=+0.200 ω=+0.353 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.43/11.64 (81.0%) dist_goal=1.94
+20:25:20 [INFO] [MPC] state=(+0.85,-3.67,-0.15) wp0=(+1.15,-3.45) v=+0.200 ω=+0.411 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.44/11.64 (81.2%) dist_goal=1.92
+20:25:20 [INFO] [MPC] state=(+0.87,-3.67,-0.12) wp0=(+1.25,-3.45) v=+0.200 ω=+0.287 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.46/11.64 (81.3%) dist_goal=1.90
+20:25:20 [INFO] [MPC] state=(+0.89,-3.67,-0.10) wp0=(+1.25,-3.45) v=+0.200 ω=+0.122 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.88
+20:25:20 [INFO] [MPC] state=(+0.91,-3.68,-0.09) wp0=(+1.25,-3.45) v=+0.200 ω=+0.088 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.86
+20:25:20 [INFO] [MPC] state=(+0.93,-3.68,-0.08) wp0=(+1.45,-3.55) v=+0.200 ω=+0.180 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.84
+20:25:20 [INFO] [MPC] state=(+0.95,-3.68,-0.07) wp0=(+1.45,-3.55) v=+0.200 ω=+0.082 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.82
+20:25:20 [INFO] [MPC] state=(+0.97,-3.68,-0.06) wp0=(+1.45,-3.55) v=+0.200 ω=+0.028 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.80
+20:25:20 [INFO] [MPC] state=(+0.99,-3.68,-0.05) wp0=(+1.45,-3.55) v=+0.200 ω=+0.135 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.78
+20:25:20 [INFO] [MPC] state=(+1.01,-3.68,-0.04) wp0=(+1.45,-3.55) v=+0.200 ω=+0.107 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.76
+20:25:20 [INFO] [MPC] state=(+1.03,-3.68,-0.03) wp0=(+1.45,-3.55) v=+0.200 ω=+0.198 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.75
+20:25:20 [INFO] [MPC] state=(+1.05,-3.68,-0.02) wp0=(+1.45,-3.55) v=+0.200 ω=+0.202 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.73
+20:25:20 [INFO] [MPC] state=(+1.07,-3.68,-0.01) wp0=(+1.45,-3.55) v=+0.200 ω=+0.239 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.71
+20:25:20 [INFO] [MPC] state=(+1.09,-3.68,+0.01) wp0=(+1.45,-3.55) v=+0.200 ω=+0.281 ok=True iters=7
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.69
+20:25:20 [INFO] [MPC] state=(+1.11,-3.68,+0.03) wp0=(+1.45,-3.55) v=+0.200 ω=+0.438 ok=True iters=7
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.75/11.64 (83.8%) dist_goal=1.67
+20:25:20 [INFO] [MPC] state=(+1.12,-3.68,+0.05) wp0=(+1.45,-3.55) v=+0.200 ω=+0.461 ok=True iters=7
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.95/11.64 (85.5%) dist_goal=1.66
+20:25:20 [INFO] [MPC] state=(+1.14,-3.68,+0.08) wp0=(+1.45,-3.55) v=+0.200 ω=+0.480 ok=True iters=7
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.96/11.64 (85.6%) dist_goal=1.64
+20:25:20 [INFO] [MPC] state=(+1.16,-3.68,+0.10) wp0=(+1.65,-3.65) v=+0.200 ω=+0.325 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.97/11.64 (85.7%) dist_goal=1.62
+20:25:20 [INFO] [MPC] state=(+1.18,-3.68,+0.12) wp0=(+1.65,-3.65) v=+0.200 ω=+0.476 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.98/11.64 (85.8%) dist_goal=1.61
+20:25:20 [INFO] [MPC] state=(+1.20,-3.67,+0.15) wp0=(+1.65,-3.65) v=+0.200 ω=+0.578 ok=True iters=6
+20:25:20 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:20 [INFO] [PROG] s*=9.99/11.64 (85.8%) dist_goal=1.59
+20:25:20 [INFO] [MPC] state=(+1.22,-3.67,+0.19) wp0=(+1.65,-3.65) v=+0.200 ω=+0.572 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=9.99/11.64 (85.8%) dist_goal=1.58
+20:25:21 [INFO] [MPC] state=(+1.23,-3.67,+0.22) wp0=(+1.65,-3.65) v=+0.200 ω=+0.622 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=9.99/11.64 (85.8%) dist_goal=1.56
+20:25:21 [INFO] [MPC] state=(+1.25,-3.66,+0.26) wp0=(+1.65,-3.65) v=+0.200 ω=+0.615 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=9.99/11.64 (85.8%) dist_goal=1.55
+20:25:21 [INFO] [MPC] state=(+1.27,-3.66,+0.29) wp0=(+1.65,-3.65) v=+0.200 ω=+0.480 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=9.99/11.64 (85.8%) dist_goal=1.53
+20:25:21 [INFO] [MPC] state=(+1.29,-3.65,+0.32) wp0=(+1.65,-3.65) v=+0.200 ω=+0.460 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=9.99/11.64 (85.8%) dist_goal=1.52
+20:25:21 [INFO] [MPC] state=(+1.30,-3.65,+0.35) wp0=(+1.65,-3.65) v=+0.200 ω=+0.410 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=9.99/11.64 (85.8%) dist_goal=1.50
+20:25:21 [INFO] [MPC] state=(+1.32,-3.64,+0.38) wp0=(+1.65,-3.65) v=+0.200 ω=+0.331 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.00/11.64 (85.9%) dist_goal=1.49
+20:25:21 [INFO] [MPC] state=(+1.34,-3.63,+0.40) wp0=(+1.65,-3.65) v=+0.200 ω=+0.177 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.02/11.64 (86.1%) dist_goal=1.47
+20:25:21 [INFO] [MPC] state=(+1.36,-3.62,+0.41) wp0=(+1.75,-3.65) v=+0.200 ω=-0.040 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.04/11.64 (86.2%) dist_goal=1.46
+20:25:21 [INFO] [MPC] state=(+1.38,-3.62,+0.41) wp0=(+1.75,-3.65) v=+0.200 ω=-0.027 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.05/11.64 (86.4%) dist_goal=1.44
+20:25:21 [INFO] [MPC] state=(+1.40,-3.61,+0.41) wp0=(+1.75,-3.65) v=+0.200 ω=-0.027 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.11/11.64 (86.8%) dist_goal=1.43
+20:25:21 [INFO] [MPC] state=(+1.41,-3.60,+0.40) wp0=(+1.75,-3.65) v=+0.200 ω=-0.039 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.12/11.64 (86.9%) dist_goal=1.42
+20:25:21 [INFO] [MPC] state=(+1.43,-3.59,+0.40) wp0=(+1.85,-3.65) v=+0.200 ω=-0.249 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.12/11.64 (87.0%) dist_goal=1.40
+20:25:21 [INFO] [MPC] state=(+1.45,-3.58,+0.38) wp0=(+1.85,-3.65) v=+0.200 ω=-0.211 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.13/11.64 (87.0%) dist_goal=1.39
+20:25:21 [INFO] [MPC] state=(+1.47,-3.58,+0.37) wp0=(+1.85,-3.65) v=+0.200 ω=-0.181 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.14/11.64 (87.1%) dist_goal=1.37
+20:25:21 [INFO] [MPC] state=(+1.49,-3.57,+0.35) wp0=(+1.85,-3.65) v=+0.200 ω=-0.444 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.15/11.64 (87.2%) dist_goal=1.36
+20:25:21 [INFO] [MPC] state=(+1.51,-3.56,+0.32) wp0=(+1.85,-3.65) v=+0.200 ω=-0.376 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.16/11.64 (87.3%) dist_goal=1.35
+20:25:21 [INFO] [MPC] state=(+1.52,-3.56,+0.30) wp0=(+1.85,-3.65) v=+0.200 ω=-0.319 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.17/11.64 (87.4%) dist_goal=1.33
+20:25:21 [INFO] [MPC] state=(+1.54,-3.55,+0.28) wp0=(+1.85,-3.65) v=+0.200 ω=-0.269 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.18/11.64 (87.4%) dist_goal=1.32
+20:25:21 [INFO] [MPC] state=(+1.56,-3.55,+0.26) wp0=(+1.85,-3.65) v=+0.200 ω=-0.229 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.28/11.64 (88.4%) dist_goal=1.30
+20:25:21 [INFO] [MPC] state=(+1.58,-3.54,+0.24) wp0=(+1.85,-3.65) v=+0.200 ω=-0.197 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.30/11.64 (88.5%) dist_goal=1.29
+20:25:21 [INFO] [MPC] state=(+1.60,-3.54,+0.23) wp0=(+1.95,-3.65) v=+0.200 ω=-0.310 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.32/11.64 (88.7%) dist_goal=1.27
+20:25:21 [INFO] [MPC] state=(+1.62,-3.53,+0.21) wp0=(+1.95,-3.65) v=+0.200 ω=-0.264 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.34/11.64 (88.9%) dist_goal=1.26
+20:25:21 [INFO] [MPC] state=(+1.64,-3.53,+0.19) wp0=(+1.95,-3.65) v=+0.200 ω=-0.202 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.36/11.64 (89.0%) dist_goal=1.24
+20:25:21 [INFO] [MPC] state=(+1.66,-3.53,+0.17) wp0=(+2.05,-3.65) v=+0.200 ω=-0.370 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.38/11.64 (89.2%) dist_goal=1.23
+20:25:21 [INFO] [MPC] state=(+1.68,-3.52,+0.15) wp0=(+2.05,-3.65) v=+0.200 ω=-0.331 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.40/11.64 (89.3%) dist_goal=1.21
+20:25:21 [INFO] [MPC] state=(+1.70,-3.52,+0.13) wp0=(+2.05,-3.65) v=+0.200 ω=-0.285 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.42/11.64 (89.5%) dist_goal=1.20
+20:25:21 [INFO] [MPC] state=(+1.72,-3.52,+0.11) wp0=(+2.05,-3.65) v=+0.200 ω=-0.242 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=6.506 vcap_curv=0.369 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.44/11.64 (89.7%) dist_goal=1.18
+20:25:21 [INFO] [MPC] state=(+1.74,-3.51,+0.09) wp0=(+2.05,-3.65) v=+0.200 ω=-0.572 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.46/11.64 (89.8%) dist_goal=1.17
+20:25:21 [INFO] [MPC] state=(+1.76,-3.51,+0.06) wp0=(+2.25,-3.65) v=+0.200 ω=-0.622 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.47/11.64 (90.0%) dist_goal=1.15
+20:25:21 [INFO] [MPC] state=(+1.77,-3.51,+0.02) wp0=(+2.25,-3.65) v=+0.200 ω=-0.624 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.49/11.64 (90.1%) dist_goal=1.14
+20:25:21 [INFO] [MPC] state=(+1.79,-3.51,-0.03) wp0=(+2.25,-3.65) v=+0.200 ω=-0.547 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.51/11.64 (90.3%) dist_goal=1.12
+20:25:21 [INFO] [MPC] state=(+1.81,-3.51,-0.06) wp0=(+2.25,-3.65) v=+0.200 ω=-0.537 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.53/11.64 (90.5%) dist_goal=1.10
+20:25:21 [INFO] [MPC] state=(+1.83,-3.51,-0.09) wp0=(+2.25,-3.65) v=+0.200 ω=-0.511 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.55/11.64 (90.6%) dist_goal=1.09
+20:25:21 [INFO] [MPC] state=(+1.85,-3.52,-0.12) wp0=(+2.25,-3.65) v=+0.200 ω=-0.467 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.57/11.64 (90.8%) dist_goal=1.07
+20:25:21 [INFO] [MPC] state=(+1.87,-3.52,-0.15) wp0=(+2.25,-3.65) v=+0.200 ω=-0.409 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.59/11.64 (91.0%) dist_goal=1.05
+20:25:21 [INFO] [MPC] state=(+1.89,-3.52,-0.18) wp0=(+2.25,-3.65) v=+0.200 ω=+0.020 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.61/11.64 (91.1%) dist_goal=1.03
+20:25:21 [INFO] [MPC] state=(+1.91,-3.53,-0.18) wp0=(+2.25,-3.65) v=+0.200 ω=-0.010 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.63/11.64 (91.3%) dist_goal=1.01
+20:25:21 [INFO] [MPC] state=(+1.93,-3.53,-0.18) wp0=(+2.25,-3.65) v=+0.200 ω=-0.186 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.65/11.64 (91.5%) dist_goal=1.00
+20:25:21 [INFO] [MPC] state=(+1.94,-3.53,-0.19) wp0=(+2.25,-3.65) v=+0.200 ω=-0.151 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.67/11.64 (91.6%) dist_goal=0.98
+20:25:21 [INFO] [MPC] state=(+1.96,-3.54,-0.20) wp0=(+2.35,-3.75) v=+0.200 ω=-0.149 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.69/11.64 (91.8%) dist_goal=0.96
+20:25:21 [INFO] [MPC] state=(+1.98,-3.54,-0.22) wp0=(+2.35,-3.75) v=+0.200 ω=+0.193 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.70/11.64 (92.0%) dist_goal=0.94
+20:25:21 [INFO] [MPC] state=(+2.00,-3.55,-0.20) wp0=(+2.35,-3.75) v=+0.200 ω=-0.185 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.72/11.64 (92.1%) dist_goal=0.92
+20:25:21 [INFO] [MPC] state=(+2.02,-3.55,-0.21) wp0=(+2.35,-3.75) v=+0.200 ω=-0.158 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.74/11.64 (92.3%) dist_goal=0.91
+20:25:21 [INFO] [MPC] state=(+2.04,-3.55,-0.23) wp0=(+2.35,-3.75) v=+0.200 ω=-0.136 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.76/11.64 (92.5%) dist_goal=0.89
+20:25:21 [INFO] [MPC] state=(+2.06,-3.56,-0.24) wp0=(+2.45,-3.85) v=+0.200 ω=-0.133 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.78/11.64 (92.7%) dist_goal=0.87
+20:25:21 [INFO] [MPC] state=(+2.08,-3.56,-0.25) wp0=(+2.45,-3.85) v=+0.200 ω=+0.022 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.80/11.64 (92.8%) dist_goal=0.85
+20:25:21 [INFO] [MPC] state=(+2.10,-3.57,-0.25) wp0=(+2.45,-3.85) v=+0.200 ω=-0.014 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.82/11.64 (93.0%) dist_goal=0.83
+20:25:21 [INFO] [MPC] state=(+2.12,-3.57,-0.25) wp0=(+2.45,-3.85) v=+0.200 ω=-0.048 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.84/11.64 (93.2%) dist_goal=0.82
+20:25:21 [INFO] [MPC] state=(+2.14,-3.58,-0.25) wp0=(+2.45,-3.85) v=+0.200 ω=-0.075 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.86/11.64 (93.3%) dist_goal=0.80
+20:25:21 [INFO] [MPC] state=(+2.16,-3.59,-0.26) wp0=(+2.55,-3.95) v=+0.200 ω=-0.016 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.88/11.64 (93.5%) dist_goal=0.78
+20:25:21 [INFO] [MPC] state=(+2.18,-3.59,-0.26) wp0=(+2.55,-3.95) v=+0.200 ω=-0.040 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.90/11.64 (93.7%) dist_goal=0.76
+20:25:21 [INFO] [MPC] state=(+2.20,-3.60,-0.27) wp0=(+2.55,-3.95) v=+0.200 ω=-0.081 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.92/11.64 (93.8%) dist_goal=0.75
+20:25:21 [INFO] [MPC] state=(+2.22,-3.60,-0.28) wp0=(+2.55,-3.95) v=+0.200 ω=-0.109 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.93/11.64 (93.9%) dist_goal=0.73
+20:25:21 [INFO] [MPC] state=(+2.24,-3.61,-0.29) wp0=(+2.55,-3.95) v=+0.200 ω=-0.130 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.93/11.64 (93.9%) dist_goal=0.71
+20:25:21 [INFO] [MPC] state=(+2.26,-3.61,-0.30) wp0=(+2.55,-3.95) v=+0.200 ω=-0.248 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.95/11.64 (94.1%) dist_goal=0.69
+20:25:21 [INFO] [MPC] state=(+2.28,-3.62,-0.31) wp0=(+2.55,-3.95) v=+0.200 ω=-0.236 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.97/11.64 (94.2%) dist_goal=0.68
+20:25:21 [INFO] [MPC] state=(+2.30,-3.63,-0.33) wp0=(+2.55,-3.95) v=+0.200 ω=-0.224 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=10.98/11.64 (94.4%) dist_goal=0.66
+20:25:21 [INFO] [MPC] state=(+2.32,-3.63,-0.35) wp0=(+2.55,-3.95) v=+0.200 ω=-0.213 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.00/11.64 (94.5%) dist_goal=0.64
+20:25:21 [INFO] [MPC] state=(+2.33,-3.64,-0.36) wp0=(+2.55,-3.95) v=+0.200 ω=-0.204 ok=True iters=6
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.02/11.64 (94.7%) dist_goal=0.62
+20:25:21 [INFO] [MPC] state=(+2.35,-3.65,-0.38) wp0=(+2.55,-3.95) v=+0.200 ω=-0.196 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.04/11.64 (94.8%) dist_goal=0.61
+20:25:21 [INFO] [MPC] state=(+2.37,-3.65,-0.39) wp0=(+2.55,-3.95) v=+0.200 ω=-0.191 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.06/11.64 (95.0%) dist_goal=0.59
+20:25:21 [INFO] [MPC] state=(+2.39,-3.66,-0.41) wp0=(+2.55,-3.95) v=+0.200 ω=-0.184 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.08/11.64 (95.2%) dist_goal=0.57
+20:25:21 [INFO] [MPC] state=(+2.41,-3.67,-0.42) wp0=(+2.55,-3.95) v=+0.200 ω=-0.180 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.10/11.64 (95.3%) dist_goal=0.55
+20:25:21 [INFO] [MPC] state=(+2.43,-3.68,-0.43) wp0=(+2.65,-4.05) v=+0.200 ω=-0.047 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.11/11.64 (95.5%) dist_goal=0.54
+20:25:21 [INFO] [MPC] state=(+2.44,-3.69,-0.44) wp0=(+2.65,-4.05) v=+0.200 ω=-0.018 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.13/11.64 (95.7%) dist_goal=0.52
+20:25:21 [INFO] [MPC] state=(+2.46,-3.70,-0.44) wp0=(+2.65,-4.05) v=+0.200 ω=-0.039 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.15/11.64 (95.8%) dist_goal=0.50
+20:25:21 [INFO] [MPC] state=(+2.48,-3.71,-0.44) wp0=(+2.65,-4.05) v=+0.200 ω=-0.065 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.17/11.64 (96.0%) dist_goal=0.49
+20:25:21 [INFO] [MPC] state=(+2.50,-3.71,-0.45) wp0=(+2.65,-4.05) v=+0.200 ω=-0.089 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.19/11.64 (96.2%) dist_goal=0.47
+20:25:21 [INFO] [MPC] state=(+2.52,-3.72,-0.46) wp0=(+2.65,-4.05) v=+0.200 ω=-0.105 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.21/11.64 (96.3%) dist_goal=0.45
+20:25:21 [INFO] [MPC] state=(+2.54,-3.73,-0.47) wp0=(+2.65,-4.05) v=+0.200 ω=-0.118 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.23/11.64 (96.5%) dist_goal=0.44
+20:25:21 [INFO] [MPC] state=(+2.55,-3.74,-0.48) wp0=(+2.65,-4.05) v=+0.200 ω=-0.126 ok=True iters=7
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.25/11.64 (96.7%) dist_goal=0.42
+20:25:21 [INFO] [MPC] state=(+2.57,-3.75,-0.49) wp0=(+2.75,-4.15) v=+0.200 ω=-0.018 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.27/11.64 (96.8%) dist_goal=0.41
+20:25:21 [INFO] [MPC] state=(+2.59,-3.76,-0.49) wp0=(+2.75,-4.15) v=+0.200 ω=+0.109 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.29/11.64 (97.0%) dist_goal=0.39
+20:25:21 [INFO] [MPC] state=(+2.61,-3.77,-0.48) wp0=(+2.75,-4.15) v=+0.200 ω=+0.118 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.31/11.64 (97.2%) dist_goal=0.38
+20:25:21 [INFO] [MPC] state=(+2.63,-3.78,-0.47) wp0=(+2.75,-4.15) v=+0.200 ω=+0.246 ok=True iters=10
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.33/11.64 (97.3%) dist_goal=0.36
+20:25:21 [INFO] [MPC] state=(+2.64,-3.79,-0.45) wp0=(+2.75,-4.15) v=+0.200 ω=+0.319 ok=True iters=10
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.34/11.64 (97.5%) dist_goal=0.35
+20:25:21 [INFO] [MPC] state=(+2.66,-3.80,-0.43) wp0=(+2.75,-4.15) v=+0.200 ω=+0.336 ok=True iters=9
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.36/11.64 (97.6%) dist_goal=0.34
+20:25:21 [INFO] [MPC] state=(+2.68,-3.80,-0.41) wp0=(+2.75,-4.15) v=+0.200 ω=+0.229 ok=True iters=13
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.38/11.64 (97.8%) dist_goal=0.33
+20:25:21 [INFO] [MPC] state=(+2.70,-3.81,-0.39) wp0=(+2.75,-4.15) v=+0.200 ω=+0.224 ok=True iters=9
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.40/11.64 (97.9%) dist_goal=0.32
+20:25:21 [INFO] [MPC] state=(+2.72,-3.82,-0.37) wp0=(+2.75,-4.15) v=+0.200 ω=+0.203 ok=True iters=12
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.42/11.64 (98.1%) dist_goal=0.32
+20:25:21 [INFO] [MPC] state=(+2.73,-3.83,-0.36) wp0=(+2.75,-4.15) v=+0.200 ω=+0.178 ok=True iters=10
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.44/11.64 (98.3%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.75,-3.83,-0.34) wp0=(+2.75,-4.15) v=+0.200 ω=+0.085 ok=True iters=9
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.45/11.64 (98.4%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.77,-3.84,-0.34) wp0=(+2.75,-4.15) v=+0.200 ω=+0.122 ok=True iters=9
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.47/11.64 (98.6%) dist_goal=0.30
+20:25:21 [INFO] [MPC] state=(+2.79,-3.85,-0.32) wp0=(+2.75,-4.15) v=+0.200 ω=+0.201 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.49/11.64 (98.7%) dist_goal=0.30
+20:25:21 [INFO] [MPC] state=(+2.81,-3.85,-0.31) wp0=(+2.75,-4.15) v=+0.200 ω=+0.359 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.50/11.64 (98.8%) dist_goal=0.30
+20:25:21 [INFO] [MPC] state=(+2.83,-3.86,-0.28) wp0=(+2.75,-4.15) v=+0.200 ω=+0.549 ok=True iters=9
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.52/11.64 (99.0%) dist_goal=0.30
+20:25:21 [INFO] [MPC] state=(+2.85,-3.86,-0.25) wp0=(+2.75,-4.15) v=+0.200 ω=+0.656 ok=True iters=9
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.52/11.64 (99.0%) dist_goal=0.30
+20:25:21 [INFO] [MPC] state=(+2.86,-3.87,-0.21) wp0=(+2.75,-4.15) v=+0.030 ω=+0.530 ok=True iters=9
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.52/11.64 (99.0%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.87,-3.87,-0.17) wp0=(+2.75,-4.15) v=+0.030 ω=+0.363 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.53/11.64 (99.0%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.87,-3.87,-0.13) wp0=(+2.75,-4.15) v=+0.030 ω=+0.252 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.53/11.64 (99.1%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.87,-3.87,-0.11) wp0=(+2.75,-4.15) v=+0.030 ω=+0.163 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.53/11.64 (99.1%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.87,-3.87,-0.09) wp0=(+2.75,-4.15) v=+0.030 ω=+0.109 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.53/11.64 (99.1%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.88,-3.87,-0.08) wp0=(+2.75,-4.15) v=+0.030 ω=+0.073 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.53/11.64 (99.1%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.88,-3.87,-0.07) wp0=(+2.75,-4.15) v=+0.030 ω=+0.048 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.54/11.64 (99.1%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.88,-3.87,-0.06) wp0=(+2.75,-4.15) v=+0.030 ω=+0.032 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.54/11.64 (99.1%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.89,-3.87,-0.06) wp0=(+2.75,-4.15) v=+0.030 ω=+0.021 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.54/11.64 (99.2%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.89,-3.87,-0.06) wp0=(+2.75,-4.15) v=+0.030 ω=+0.013 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.54/11.64 (99.2%) dist_goal=0.31
+20:25:21 [INFO] [MPC] state=(+2.89,-3.87,-0.06) wp0=(+2.75,-4.15) v=+0.030 ω=+0.009 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.55/11.64 (99.2%) dist_goal=0.32
+20:25:21 [INFO] [MPC] state=(+2.89,-3.87,-0.06) wp0=(+2.75,-4.15) v=+0.030 ω=+0.005 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.030
+20:25:21 [INFO] [PROG] s*=11.55/11.64 (99.2%) dist_goal=0.32
+20:25:21 [INFO] [MPC] state=(+2.90,-3.87,-0.06) wp0=(+2.75,-4.15) v=+0.030 ω=+0.003 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.080
+20:25:21 [INFO] [PROG] s*=11.55/11.64 (99.3%) dist_goal=0.32
+20:25:21 [INFO] [MPC] state=(+2.90,-3.87,-0.06) wp0=(+2.75,-4.15) v=+0.080 ω=-0.326 ok=True iters=9
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.080
+20:25:21 [INFO] [PROG] s*=11.56/11.64 (99.3%) dist_goal=0.32
+20:25:21 [INFO] [MPC] state=(+2.91,-3.87,-0.09) wp0=(+2.75,-4.15) v=+0.080 ω=-0.215 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.080
+20:25:21 [INFO] [PROG] s*=11.57/11.64 (99.4%) dist_goal=0.33
+20:25:21 [INFO] [MPC] state=(+2.92,-3.87,-0.11) wp0=(+2.75,-4.15) v=+0.080 ω=-0.143 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.080
+20:25:21 [INFO] [PROG] s*=11.57/11.64 (99.4%) dist_goal=0.33
+20:25:21 [INFO] [MPC] state=(+2.92,-3.87,-0.13) wp0=(+2.75,-4.15) v=+0.080 ω=-0.093 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.080
+20:25:21 [INFO] [PROG] s*=11.58/11.64 (99.5%) dist_goal=0.33
+20:25:21 [INFO] [MPC] state=(+2.93,-3.87,-0.13) wp0=(+2.75,-4.15) v=+0.080 ω=-0.063 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.080
+20:25:21 [INFO] [PROG] s*=11.59/11.64 (99.5%) dist_goal=0.34
+20:25:21 [INFO] [MPC] state=(+2.94,-3.88,-0.14) wp0=(+2.75,-4.15) v=+0.080 ω=-0.043 ok=True iters=8
+20:25:21 [DEBUG] kappa_max=0.000 vcap_curv=0.200 vmax_local=0.200 vmin_soft=0.080
+20:25:21 [INFO] [PROG] s*=11.59/11.64 (99.6%) dist_goal=0.34
+20:25:21 [INFO] [MPC] state=(+2.95,-3.88,-0.14) wp0=(+2.75,-4.15) v=+0.080 ω=-0.030 ok=True iters=8

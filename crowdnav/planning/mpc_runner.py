@@ -109,8 +109,20 @@ class MPCRunner:
         """
         N = self.N
         state = np.asarray(state, dtype=float).ravel()
-        path_xy = np.asarray(path_xy, dtype=float).reshape(N, 2)
-        theta_ref = np.asarray(theta_ref, dtype=float).reshape(N)
+        path_xy = np.asarray(path_xy, dtype=float).reshape(-1, 2)
+        M = path_xy.shape[0]
+        if M < N:
+            pad = np.repeat(path_xy[-1:,:], N - M, axis=0)
+            path_xy = np.vstack([path_xy, pad])
+        elif M > N:
+            path_xy = path_xy[:N]
+            
+            
+        theta_ref = np.asarray(theta_ref, dtype=float).reshape(-1)
+        if theta_ref.shape[0] < N:
+            theta_ref = np.concatenate([theta_ref, np.repeat(theta_ref[-1], N - theta_ref.shape[0])])
+        elif theta_ref.shape[0] > N:
+            theta_ref = theta_ref[:N]
 
         # ---- Pack parameter vector exactly as expected by build_mpc_solver_random_obs() ----
         # P = [ x0(3), path_xy(2N), theta_ref(N), weights(6), v_des(1) ]

@@ -1,16 +1,21 @@
 # crowdnav/planning/path_mgr.py
 import numpy as np
 from ..utils2.coord import grid_to_world
+from .path_math import resample_equal, project_to_polyline, sample_forward, _cumlen
+from ..utils import update_astar_path
+
 
 class PathManager:
-    def __init__(self, grid, resolution, lookahead_wp=2, replan_every=10, lookahead_m=0.6):
+    def __init__(self, grid, resolution, replan_every=0, lookahead_m=0.4, ds=0.05):
         self.grid = grid
-        self.res = resolution
-        self.lookahead_wp = lookahead_wp
-        self.lookahead_m = float(lookahead_m)
-        self.replan_every = replan_every  # 0/None => no periodic replans
-        self.global_idx = []
-        self._world_cache = None
+        self.resolution = float(resolution)
+        self.replan_every = int(replan_every)
+        self.lookahead_m = float(lookahead_m)  # how far ahead to start window
+        self.ds = float(ds)                    # spacing for equalized path + window
+        self._poly_world = None                # original A* world coords (M,2)
+        self._poly_equal = None                # equal-Δs resampled (Meq,2)
+        self._S_equal = None                   # cumulative arc-length of equal poly
+        self._L = 0.0                          # total length (meters)
 
     def world_path(self):
         if self._world_cache is None and self.global_idx:
@@ -20,23 +25,43 @@ class PathManager:
             )
         return self._world_cache if self._world_cache is not None else np.empty((0,2))
 
-    def maybe_replan(self, step_count, robot_xy, goal_xy, force=False):
-            """Replan on schedule; if replan_every is 0/None, only replan at step 0 or when force=True."""
-            periodic = (self.replan_every is not None and self.replan_every > 0)
-
-            if periodic:
-                if (step_count % self.replan_every) != 0 and self.global_idx and not force:
-                    return False
-            else:
-                # plan once at reset; skip later unless forced
-                if step_count != 0 and self.global_idx and not force:
-                    return False
-
-            from ..utils import update_astar_path
-            self.global_idx = update_astar_path(robot_xy, goal_xy, self.grid, self.res) or []
-            self._world_cache = None
-            return bool(self.global_idx)
+    def maybe_replan(self, step_count, start_w, goal_w):
         
+        
+        poly_world = update_astar_path(self.grid, start_w, goal_w, self.resolution)
+        if poly_world is None or len(poly_world) < 1:
+            return False
+        self._poly_world = np.asarray(poly_world, dtype=float).reshape(-1, 2)
+        self._poly_equal = resample_equal(self._poly_world, self.ds)
+        self._S_equal = _cumlen(self._poly_equal)
+        self._L = float(self._S_equal[-1])
+        return True
+        
+        
+        
+    def world_path(self):
+        return self._poly_world
+
+    def total_length(self) -> float:
+        return float(self._L)
+
+    def project(self, xy):
+        """Project robot onto equalized path → (s*, proj_xy, seg_idx, tangent)."""
+        if self._poly_equal is None:
+            raise RuntimeError("Path not initialized")
+        return project_to_polyline(np.asarray(xy, float), self._poly_equal)
+
+    def sample_window(self, robot_pos, N):
+        """Sample N forward points starting at s*+lookahead_m with spacing ds."""
+        s_star, proj, seg_idx, tan = self.project(robot_pos)
+        pts = sample_forward(self._poly_equal, s_star, self.lookahead_m, int(N), self.ds)
+        return pts, dict(s_star=s_star, proj=proj, seg_idx=seg_idx, tan=tan)
+
+    def progress(self, robot_pos):
+        """Return (s*, s_frac∈[0,1], debug)."""
+        s_star, proj, seg_idx, tan = self.project(robot_pos)
+        frac = 0.0 if self._L < 1e-9 else float(s_star / self._L)
+        return float(s_star), frac, dict(proj=proj, seg_idx=seg_idx, tan=tan)
         
         
     # ---- helpers for geometric progress ----
@@ -104,9 +129,9 @@ class PathManager:
                                         [np.arctan2(dxy[-1,1], dxy[-1,0])]])
         return path_xy, theta_ref
 
-    # (optional) progress for HUD
-    def progress(self, robot_xy):
-        W = self.world_path()
-        if len(W) == 0: return 0, 0
-        _, i_seg, _ = self._closest_point_on_polyline(robot_xy, W)
-        return i_seg, len(W)-1
+    # # (optional) progress for HUD
+    # def progress(self, robot_xy):
+    #     W = self.world_path()
+    #     if len(W) == 0: return 0, 0
+    #     _, i_seg, _ = self._closest_point_on_polyline(robot_xy, W)
+    #     return i_seg, len(W)-1

@@ -118,137 +118,62 @@ def find_free_position(pos, label, grid, resolution, grid_size, robot_radius=0.1
 
     raise ValueError(f"Could not find a free {label} position inside the map near {pos}")
 
+def update_astar_path(grid, start_w, goal_w, resolution):
+    """
+    Build a path from start_w -> goal_w on 'grid' (0=free, 1=occ).
+    Returns world-space polyline as float array of shape (M,2).
+    """
+    import numpy as np
+    from .planner import a_star, inflate_obstacles
+    # Use the unified, battle-tested converters
+    from .utils2.coord import world_to_grid as w2g
+    from .utils2.coord import grid_to_world as g2w
 
-def update_astar_path(robot_pos, goal_pos, grid, resolution):
-    import matplotlib.pyplot as plt
+    # --- sanitize inputs ---
+    grid = np.asarray(grid, dtype=np.uint8)
+    start_w = np.asarray(start_w, dtype=float).reshape(-1)
+    goal_w  = np.asarray(goal_w,  dtype=float).reshape(-1)
+    if start_w.size < 2 or goal_w.size < 2:
+        raise ValueError(f"update_astar_path: start/goal must be 2D, got {start_w.shape}, {goal_w.shape}")
+
+    # --- world -> grid indices (row, col) using the SAME convention everywhere ---
+    start_idx = w2g(start_w[:2], float(resolution), grid.shape)
+    goal_idx  = w2g(goal_w[:2],  float(resolution), grid.shape)
     
-    
-    import matplotlib.pyplot as plt
 
-    # helper exactly like in your Env:
-    def world_to_grid(pos, half_size, res):
-        c = int((pos[0] + half_size) / res)   # x→col
-        r = int((pos[1] + half_size) / res)   # y→row
-        return (r, c)
+    # --- quick bounds/occ checks ---
+    H, W = grid.shape
+    def in_bounds(rc): return 0 <= rc[0] < H and 0 <= rc[1] < W
+    if not in_bounds(start_idx) or not in_bounds(goal_idx):
+        # no path
+        return np.empty((0,2), dtype=float)
+    if grid[start_idx] == 1 or grid[goal_idx] == 1:
+        # fall back: don’t plan into obstacles
+        return np.empty((0,2), dtype=float)
 
-    
-    try:
-        half_size = (grid.shape[0] * resolution) / 2
-        # use the helper, not the broken one‑liner
-        start_idx = world_to_grid(robot_pos, half_size, resolution)
-        goal_idx  = world_to_grid(goal_pos,  half_size, resolution)
-        
-        grid_size = grid.shape
+    # --- inflate obstacles (meters -> cells handled inside helper) ---
+    ROBOT_RADIUS = 0.11
+    INFLATION_SCALE = 0.8  # your choice above
+    inflation_radius_m = ROBOT_RADIUS * INFLATION_SCALE
+    inflated = inflate_obstacles(grid, inflation_radius_m, float(resolution))
+    # ensure start/goal cells are free after inflation
+    inflated[start_idx] = 0
+    inflated[goal_idx]  = 0
 
-        if not (0 <= start_idx[0] < grid_size[0] and 0 <= start_idx[1] < grid_size[1]):
-            print(start_idx)
-            print(f"Start index {start_idx} out of bounds.")
-            return []
+    # --- run A* on inflated grid (returns list of (row,col)) ---
+    path_rc = a_star(inflated, start_idx, goal_idx)
+    if not path_rc:
+        return np.empty((0,2), dtype=float)
 
-        if not (0 <= goal_idx[0] < grid_size[0] and 0 <= goal_idx[1] < grid_size[1]):
-            print(f"Goal index {goal_idx} out of bounds.")
-            return []
+    # normalize endpoints
+    if path_rc[0] != start_idx:
+        path_rc.insert(0, start_idx)
+    if path_rc[-1] != goal_idx:
+        path_rc.append(goal_idx)
 
-        if grid[start_idx[0], start_idx[1]] == 1:
-            print("Start position is inside obstacle.")
-            return []
+    # --- convert grid path -> world polyline ---
+    poly_world = np.empty((len(path_rc), 2), dtype=float)
+    for k, rc in enumerate(path_rc):
+        poly_world[k] = g2w(rc, float(resolution), grid.shape)  # (x,y) in meters
 
-        if grid[goal_idx[0], goal_idx[1]] == 1:
-            print("Goal position is inside obstacle.")
-            return []
-
-        #  Add debugging print and visualization
-        print("---- DEBUG A* INPUT ----")
-        print("Grid shape:", grid.shape)
-        print("Grid unique values:", np.unique(grid))
-        print("Start index:", start_idx, "Value:", grid[start_idx])
-        print("Goal index:", goal_idx, "Value:", grid[goal_idx])
-
-
-
-        
-        
-        # Call A*
-        # Save the original stdout
-        original_stdout = sys.stdout
- 
-
-
-        with open("astar_debug_log.txt", "w") as f:
-            sys.stdout = f  # Redirect prints to file
-
-            try:
-                # INFLATION_SCALE = 0.01
-                # # Example values — update based on your system
-                # # robot_radius = TURTLEBOT_RADIUS           # meters
-                # grid_resolution = resolution       # meters per cell
-                original_grid = grid
-
-                # 1) choose a fraction of the true radius you want as buffer
-                INFLATION_SCALE = 0.8               # e.g. 20% of robot radius
-                desired_m       = TURTLEBOT_RADIUS * INFLATION_SCALE
-
-                # 2) compute cells by rounding
-                cells = int(np.round(desired_m / resolution))
-                print("desired buffer [m]:", desired_m)
-                print("grid resolution [m]:", resolution)
-                print("inflation radius (cells):", cells)
-
-                # 3) call inflate_obstacles with meter args:
-                inflation_radius_m = cells * resolution
-                inflated_grid      = inflate_obstacles(original_grid,
-                                                    inflation_radius_m,
-                                                    resolution)
-                
-                inflated_grid[start_idx[0], start_idx[1]] = 0
-                inflated_grid[goal_idx[0],  goal_idx[1]]  = 0
-
-                print("raw occupied:",     np.sum(original_grid==1))
-                print("inflated occupied:", np.sum(inflated_grid==1))
-
-
-                print("dasdasdasdasdasdasdaj;lsdkja;lkjf;lsakfjsd;lfkj")
-                # Debug check:
-
-                print("inflation cells:", int(np.ceil(desired_m / resolution)))
-                print("raw occupied cells:", np.sum(original_grid == 1))
-                print("inflated occupied cells:", np.sum(inflated_grid == 1))
-                
-                #To show occup grid plot with the inflated obstacles.
-                #visualize_grid(inflated_grid, start_idx, goal_idx)
-
-                # plan on the inflated grid, not the raw one:
-                path = a_star(inflated_grid, start_idx, goal_idx)
-                
-                
-                
-            except Exception as e:
-                print("Exception during A*: ", e)
-                path = []  # Ensure path is defined
-
-            sys.stdout = original_stdout  # Reset to normal
-
-        print(" A* debug log saved to astar_debug_log.txt")
-                
-        if path:
-            if path[0] != start_idx:
-                path.insert(0, start_idx)
-            if path[-1] != goal_idx:
-                path.append(goal_idx)
-                # Check the path only if it exists
-        if not path:
-            print(" Empty or failed A* path.")
-            return []
-
-        for (y, x) in path:
-            if grid[y, x] == 1:
-                print(f" A* path goes through obstacle at grid[{y}, {x}]")
-
-        print(f" A* Path Length: {len(path)}")
-        return path
-
-    except Exception as e:
-        print(f"Error in update_astar_path: {e}")
-        import traceback
-        traceback.print_exc()
-        return []
+    return poly_world
