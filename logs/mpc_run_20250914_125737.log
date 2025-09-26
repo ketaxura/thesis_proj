@@ -1,0 +1,9 @@
+12:57:37 [INFO] === New MPC Session Started ===
+12:57:37 [DEBUG] matplotlib data path: /home/max/.local/lib/python3.10/site-packages/matplotlib/mpl-data
+12:57:37 [DEBUG] CONFIGDIR=/home/max/.config/matplotlib
+12:57:37 [DEBUG] interactive is False
+12:57:37 [DEBUG] platform is linux
+12:57:37 [DEBUG] CACHEDIR=/home/max/.cache/matplotlib
+12:57:37 [DEBUG] Using fontManager instance from /home/max/.cache/matplotlib/fontlist-v390.json
+12:57:38 [INFO] CrowdNavPyBulletEnv initializing...
+12:57:42 [INFO] World ready | grid: (250, 250), res: 0.1, N=10, T=0.1

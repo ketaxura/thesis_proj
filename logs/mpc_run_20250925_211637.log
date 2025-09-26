@@ -1,0 +1,577 @@
+21:16:37 [INFO] === New MPC Session Started ===
+21:16:37 [DEBUG] matplotlib data path: /home/max/.local/lib/python3.10/site-packages/matplotlib/mpl-data
+21:16:37 [DEBUG] CONFIGDIR=/home/max/.config/matplotlib
+21:16:37 [DEBUG] interactive is False
+21:16:37 [DEBUG] platform is linux
+21:16:37 [DEBUG] CACHEDIR=/home/max/.cache/matplotlib
+21:16:37 [DEBUG] Using fontManager instance from /home/max/.cache/matplotlib/fontlist-v390.json
+21:16:37 [DEBUG] falling back to hashlib hashing: `pip install xxhash`for 50x faster cache checks
+21:16:38 [INFO] CrowdNavPyBulletEnv initializing...
+21:16:38 [DEBUG] `trimesh.load(force='mesh')` is a compatibility wrapper for `trimesh.load_mesh`
+21:16:38 [DEBUG] 3 items cleared from cache: ['triangles', 'triangles_cross', 'face_normals']
+21:16:38 [DEBUG] 1 items cleared from cache: ['face_normals']
+21:16:41 [INFO] World ready | grid: (220, 120), res: 0.1, N=10, T=0.1
+21:16:42 [INFO] [PROG] s*=0.00/4.75 (0.0%) dist_goal=4.21
+21:16:42 [INFO] [MPC] state=(+3.07,+5.24,+4.67) wp0=(+3.05,+5.17) v=+0.200 ω=+0.361 ok=True iters=6
+21:16:42 [INFO] [PROG] s*=0.00/4.75 (0.0%) dist_goal=4.20
+21:16:42 [INFO] [MPC] state=(+3.07,+5.24,+4.62) wp0=(+3.05,+5.17) v=+0.200 ω=+0.554 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.02/4.75 (0.3%) dist_goal=4.18
+21:16:42 [INFO] [MPC] state=(+3.06,+5.22,+4.61) wp0=(+3.05,+5.15) v=+0.200 ω=+0.571 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.03/4.75 (0.7%) dist_goal=4.16
+21:16:42 [INFO] [MPC] state=(+3.06,+5.20,+4.65) wp0=(+3.05,+5.14) v=+0.200 ω=+0.398 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.05/4.75 (1.1%) dist_goal=4.14
+21:16:42 [INFO] [MPC] state=(+3.06,+5.19,+4.67) wp0=(+3.05,+5.12) v=+0.200 ω=+0.276 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.07/4.75 (1.5%) dist_goal=4.12
+21:16:42 [INFO] [MPC] state=(+3.06,+5.17,+4.68) wp0=(+3.05,+5.10) v=+0.200 ω=+0.185 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.09/4.75 (2.0%) dist_goal=4.10
+21:16:42 [INFO] [MPC] state=(+3.06,+5.15,+4.70) wp0=(+3.05,+5.08) v=+0.200 ω=+0.123 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.11/4.75 (2.4%) dist_goal=4.08
+21:16:42 [INFO] [MPC] state=(+3.06,+5.13,+4.71) wp0=(+3.05,+5.06) v=+0.200 ω=+0.063 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.13/4.75 (2.8%) dist_goal=4.06
+21:16:42 [INFO] [MPC] state=(+3.06,+5.11,+4.71) wp0=(+3.05,+5.04) v=+0.200 ω=+0.026 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.15/4.75 (3.2%) dist_goal=4.04
+21:16:42 [INFO] [MPC] state=(+3.06,+5.09,+4.72) wp0=(+3.05,+5.02) v=+0.200 ω=+0.005 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.17/4.75 (3.7%) dist_goal=4.02
+21:16:42 [INFO] [MPC] state=(+3.06,+5.07,+4.72) wp0=(+3.05,+5.00) v=+0.200 ω=-0.006 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.19/4.75 (4.1%) dist_goal=4.00
+21:16:42 [INFO] [MPC] state=(+3.06,+5.05,+4.72) wp0=(+3.05,+4.98) v=+0.200 ω=-0.012 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.21/4.75 (4.5%) dist_goal=3.99
+21:16:42 [INFO] [MPC] state=(+3.06,+5.03,+4.72) wp0=(+3.05,+4.96) v=+0.200 ω=-0.015 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.23/4.75 (4.9%) dist_goal=3.97
+21:16:42 [INFO] [MPC] state=(+3.06,+5.01,+4.71) wp0=(+3.05,+4.94) v=+0.200 ω=-0.016 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.26/4.75 (5.4%) dist_goal=3.95
+21:16:42 [INFO] [MPC] state=(+3.06,+4.99,+4.71) wp0=(+3.05,+4.91) v=+0.200 ω=-0.015 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.28/4.75 (5.8%) dist_goal=3.93
+21:16:42 [INFO] [MPC] state=(+3.06,+4.96,+4.71) wp0=(+3.05,+4.89) v=+0.200 ω=-0.013 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.30/4.75 (6.2%) dist_goal=3.91
+21:16:42 [INFO] [MPC] state=(+3.06,+4.94,+4.71) wp0=(+3.05,+4.87) v=+0.200 ω=-0.012 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.32/4.75 (6.7%) dist_goal=3.89
+21:16:42 [INFO] [MPC] state=(+3.06,+4.92,+4.71) wp0=(+3.05,+4.85) v=+0.200 ω=-0.012 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.34/4.75 (7.1%) dist_goal=3.87
+21:16:42 [INFO] [MPC] state=(+3.06,+4.90,+4.71) wp0=(+3.05,+4.83) v=+0.200 ω=-0.011 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.36/4.75 (7.5%) dist_goal=3.85
+21:16:42 [INFO] [MPC] state=(+3.06,+4.88,+4.71) wp0=(+3.05,+4.81) v=+0.200 ω=-0.011 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.38/4.75 (7.9%) dist_goal=3.83
+21:16:42 [INFO] [MPC] state=(+3.06,+4.86,+4.71) wp0=(+3.05,+4.79) v=+0.200 ω=-0.010 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.40/4.75 (8.4%) dist_goal=3.81
+21:16:42 [INFO] [MPC] state=(+3.06,+4.84,+4.71) wp0=(+3.05,+4.77) v=+0.200 ω=-0.009 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.42/4.75 (8.8%) dist_goal=3.79
+21:16:42 [INFO] [MPC] state=(+3.06,+4.82,+4.71) wp0=(+3.05,+4.75) v=+0.200 ω=-0.009 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.44/4.75 (9.2%) dist_goal=3.77
+21:16:42 [INFO] [MPC] state=(+3.06,+4.80,+4.71) wp0=(+3.05,+4.73) v=+0.200 ω=-0.013 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.46/4.75 (9.6%) dist_goal=3.75
+21:16:42 [INFO] [MPC] state=(+3.06,+4.78,+4.70) wp0=(+3.05,+4.71) v=+0.200 ω=+0.004 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.48/4.75 (10.1%) dist_goal=3.73
+21:16:42 [INFO] [MPC] state=(+3.06,+4.76,+4.71) wp0=(+3.05,+4.69) v=+0.200 ω=-0.012 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.50/4.75 (10.5%) dist_goal=3.71
+21:16:42 [INFO] [MPC] state=(+3.06,+4.74,+4.70) wp0=(+3.05,+4.67) v=+0.200 ω=-0.008 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.52/4.75 (10.9%) dist_goal=3.69
+21:16:42 [INFO] [MPC] state=(+3.06,+4.72,+4.70) wp0=(+3.05,+4.65) v=+0.200 ω=-0.006 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.54/4.75 (11.4%) dist_goal=3.67
+21:16:42 [INFO] [MPC] state=(+3.06,+4.70,+4.70) wp0=(+3.05,+4.63) v=+0.200 ω=-0.005 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.56/4.75 (11.8%) dist_goal=3.65
+21:16:42 [INFO] [MPC] state=(+3.06,+4.68,+4.70) wp0=(+3.05,+4.61) v=+0.200 ω=-0.004 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.58/4.75 (12.2%) dist_goal=3.63
+21:16:42 [INFO] [MPC] state=(+3.06,+4.66,+4.70) wp0=(+3.05,+4.59) v=+0.200 ω=-0.011 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.60/4.75 (12.6%) dist_goal=3.61
+21:16:42 [INFO] [MPC] state=(+3.06,+4.64,+4.70) wp0=(+3.05,+4.57) v=+0.200 ω=-0.006 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.62/4.75 (13.1%) dist_goal=3.59
+21:16:42 [INFO] [MPC] state=(+3.06,+4.62,+4.70) wp0=(+3.05,+4.55) v=+0.200 ω=-0.009 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.64/4.75 (13.5%) dist_goal=3.57
+21:16:42 [INFO] [MPC] state=(+3.06,+4.60,+4.70) wp0=(+3.05,+4.53) v=+0.200 ω=-0.010 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.66/4.75 (13.9%) dist_goal=3.56
+21:16:42 [INFO] [MPC] state=(+3.06,+4.58,+4.70) wp0=(+3.05,+4.51) v=+0.200 ω=-0.012 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.68/4.75 (14.3%) dist_goal=3.54
+21:16:42 [INFO] [MPC] state=(+3.06,+4.56,+4.70) wp0=(+3.05,+4.49) v=+0.200 ω=-0.014 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.70/4.75 (14.8%) dist_goal=3.52
+21:16:42 [INFO] [MPC] state=(+3.06,+4.54,+4.70) wp0=(+3.05,+4.47) v=+0.200 ω=-0.010 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.72/4.75 (15.2%) dist_goal=3.50
+21:16:42 [INFO] [MPC] state=(+3.06,+4.52,+4.70) wp0=(+3.05,+4.45) v=+0.200 ω=-0.006 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.74/4.75 (15.6%) dist_goal=3.48
+21:16:42 [INFO] [MPC] state=(+3.06,+4.50,+4.70) wp0=(+3.05,+4.43) v=+0.200 ω=-0.005 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.76/4.75 (16.0%) dist_goal=3.46
+21:16:42 [INFO] [MPC] state=(+3.06,+4.48,+4.70) wp0=(+3.05,+4.41) v=+0.200 ω=-0.007 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.78/4.75 (16.5%) dist_goal=3.44
+21:16:42 [INFO] [MPC] state=(+3.06,+4.46,+4.70) wp0=(+3.05,+4.39) v=+0.200 ω=-0.040 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.80/4.75 (16.9%) dist_goal=3.42
+21:16:42 [INFO] [MPC] state=(+3.06,+4.44,+4.69) wp0=(+3.05,+4.37) v=+0.200 ω=-0.039 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.82/4.75 (17.3%) dist_goal=3.40
+21:16:42 [INFO] [MPC] state=(+3.05,+4.42,+4.69) wp0=(+3.05,+4.35) v=+0.200 ω=-0.040 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.84/4.75 (17.7%) dist_goal=3.38
+21:16:42 [INFO] [MPC] state=(+3.05,+4.40,+4.69) wp0=(+3.05,+4.33) v=+0.200 ω=-0.028 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.86/4.75 (18.2%) dist_goal=3.36
+21:16:42 [INFO] [MPC] state=(+3.05,+4.38,+4.68) wp0=(+3.05,+4.31) v=+0.200 ω=-0.023 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.88/4.75 (18.6%) dist_goal=3.34
+21:16:42 [INFO] [MPC] state=(+3.05,+4.36,+4.68) wp0=(+3.05,+4.29) v=+0.200 ω=+0.019 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.90/4.75 (19.0%) dist_goal=3.32
+21:16:42 [INFO] [MPC] state=(+3.05,+4.34,+4.68) wp0=(+3.05,+4.27) v=+0.200 ω=+0.007 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.92/4.75 (19.5%) dist_goal=3.30
+21:16:42 [INFO] [MPC] state=(+3.05,+4.32,+4.68) wp0=(+3.05,+4.25) v=+0.200 ω=-0.019 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.94/4.75 (19.9%) dist_goal=3.28
+21:16:42 [INFO] [MPC] state=(+3.05,+4.30,+4.68) wp0=(+3.05,+4.23) v=+0.200 ω=-0.016 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.96/4.75 (20.3%) dist_goal=3.26
+21:16:42 [INFO] [MPC] state=(+3.05,+4.28,+4.68) wp0=(+3.05,+4.21) v=+0.200 ω=-0.012 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=0.98/4.75 (20.7%) dist_goal=3.24
+21:16:42 [INFO] [MPC] state=(+3.05,+4.26,+4.68) wp0=(+3.05,+4.19) v=+0.200 ω=-0.070 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.00/4.75 (21.2%) dist_goal=3.22
+21:16:42 [INFO] [MPC] state=(+3.05,+4.24,+4.67) wp0=(+3.05,+4.17) v=+0.200 ω=-0.064 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.03/4.75 (21.6%) dist_goal=3.20
+21:16:42 [INFO] [MPC] state=(+3.05,+4.22,+4.67) wp0=(+3.05,+4.14) v=+0.200 ω=-0.044 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.05/4.75 (22.0%) dist_goal=3.18
+21:16:42 [INFO] [MPC] state=(+3.05,+4.19,+4.66) wp0=(+3.05,+4.12) v=+0.200 ω=-0.039 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.07/4.75 (22.4%) dist_goal=3.16
+21:16:42 [INFO] [MPC] state=(+3.05,+4.17,+4.66) wp0=(+3.05,+4.10) v=+0.200 ω=-0.047 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.09/4.75 (22.9%) dist_goal=3.15
+21:16:42 [INFO] [MPC] state=(+3.05,+4.15,+4.65) wp0=(+3.05,+4.08) v=+0.200 ω=+0.028 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.11/4.75 (23.3%) dist_goal=3.13
+21:16:42 [INFO] [MPC] state=(+3.04,+4.13,+4.66) wp0=(+3.05,+4.06) v=+0.200 ω=+0.050 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.13/4.75 (23.7%) dist_goal=3.11
+21:16:42 [INFO] [MPC] state=(+3.04,+4.11,+4.66) wp0=(+3.05,+4.04) v=+0.200 ω=-0.057 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.15/4.75 (24.1%) dist_goal=3.09
+21:16:42 [INFO] [MPC] state=(+3.04,+4.09,+4.66) wp0=(+3.05,+4.02) v=+0.200 ω=-0.074 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.17/4.75 (24.6%) dist_goal=3.07
+21:16:42 [INFO] [MPC] state=(+3.04,+4.07,+4.65) wp0=(+3.05,+4.00) v=+0.200 ω=-0.066 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.19/4.75 (25.0%) dist_goal=3.05
+21:16:42 [INFO] [MPC] state=(+3.04,+4.05,+4.64) wp0=(+3.05,+3.98) v=+0.200 ω=-0.025 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.21/4.75 (25.4%) dist_goal=3.03
+21:16:42 [INFO] [MPC] state=(+3.04,+4.03,+4.64) wp0=(+3.05,+3.96) v=+0.200 ω=+0.130 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.23/4.75 (25.8%) dist_goal=3.01
+21:16:42 [INFO] [MPC] state=(+3.04,+4.01,+4.65) wp0=(+3.05,+3.94) v=+0.200 ω=-0.087 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.25/4.75 (26.3%) dist_goal=2.99
+21:16:42 [INFO] [MPC] state=(+3.04,+3.99,+4.64) wp0=(+3.05,+3.92) v=+0.200 ω=-0.041 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.27/4.75 (26.7%) dist_goal=2.97
+21:16:42 [INFO] [MPC] state=(+3.03,+3.97,+4.64) wp0=(+3.05,+3.90) v=+0.200 ω=-0.013 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.29/4.75 (27.1%) dist_goal=2.95
+21:16:42 [INFO] [MPC] state=(+3.03,+3.95,+4.64) wp0=(+3.05,+3.88) v=+0.200 ω=+0.004 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.31/4.75 (27.6%) dist_goal=2.93
+21:16:42 [INFO] [MPC] state=(+3.03,+3.93,+4.64) wp0=(+3.05,+3.86) v=+0.200 ω=-0.010 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.33/4.75 (28.0%) dist_goal=2.91
+21:16:42 [INFO] [MPC] state=(+3.03,+3.91,+4.64) wp0=(+3.05,+3.84) v=+0.200 ω=+0.004 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.35/4.75 (28.4%) dist_goal=2.89
+21:16:42 [INFO] [MPC] state=(+3.03,+3.89,+4.64) wp0=(+3.05,+3.82) v=+0.200 ω=+0.015 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.37/4.75 (28.8%) dist_goal=2.87
+21:16:42 [INFO] [MPC] state=(+3.03,+3.87,+4.64) wp0=(+3.05,+3.80) v=+0.200 ω=+0.054 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.39/4.75 (29.3%) dist_goal=2.85
+21:16:42 [INFO] [MPC] state=(+3.02,+3.85,+4.65) wp0=(+3.05,+3.78) v=+0.200 ω=+0.046 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.41/4.75 (29.7%) dist_goal=2.83
+21:16:42 [INFO] [MPC] state=(+3.02,+3.83,+4.65) wp0=(+3.05,+3.76) v=+0.200 ω=+0.040 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.43/4.75 (30.1%) dist_goal=2.81
+21:16:42 [INFO] [MPC] state=(+3.02,+3.81,+4.65) wp0=(+3.05,+3.74) v=+0.200 ω=+0.034 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.45/4.75 (30.5%) dist_goal=2.79
+21:16:42 [INFO] [MPC] state=(+3.02,+3.79,+4.66) wp0=(+3.05,+3.72) v=+0.200 ω=+0.030 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.47/4.75 (31.0%) dist_goal=2.77
+21:16:42 [INFO] [MPC] state=(+3.02,+3.77,+4.66) wp0=(+3.05,+3.70) v=+0.200 ω=-0.131 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.49/4.75 (31.4%) dist_goal=2.76
+21:16:42 [INFO] [MPC] state=(+3.02,+3.75,+4.65) wp0=(+3.05,+3.68) v=+0.200 ω=-0.086 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.51/4.75 (31.8%) dist_goal=2.74
+21:16:42 [INFO] [MPC] state=(+3.02,+3.73,+4.64) wp0=(+3.05,+3.66) v=+0.200 ω=-0.048 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.53/4.75 (32.2%) dist_goal=2.72
+21:16:42 [INFO] [MPC] state=(+3.02,+3.71,+4.64) wp0=(+3.05,+3.64) v=+0.200 ω=+0.141 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.55/4.75 (32.6%) dist_goal=2.70
+21:16:42 [INFO] [MPC] state=(+3.01,+3.69,+4.65) wp0=(+3.05,+3.62) v=+0.200 ω=+0.105 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.57/4.75 (33.1%) dist_goal=2.68
+21:16:42 [INFO] [MPC] state=(+3.01,+3.67,+4.66) wp0=(+3.05,+3.60) v=+0.200 ω=+0.066 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.59/4.75 (33.5%) dist_goal=2.66
+21:16:42 [INFO] [MPC] state=(+3.01,+3.65,+4.67) wp0=(+3.05,+3.58) v=+0.200 ω=+0.005 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.61/4.75 (33.9%) dist_goal=2.64
+21:16:42 [INFO] [MPC] state=(+3.01,+3.63,+4.67) wp0=(+3.05,+3.56) v=+0.200 ω=-0.007 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.63/4.75 (34.4%) dist_goal=2.62
+21:16:42 [INFO] [MPC] state=(+3.01,+3.61,+4.67) wp0=(+3.05,+3.54) v=+0.200 ω=-0.017 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.65/4.75 (34.8%) dist_goal=2.60
+21:16:42 [INFO] [MPC] state=(+3.01,+3.59,+4.66) wp0=(+3.05,+3.52) v=+0.200 ω=-0.029 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.67/4.75 (35.2%) dist_goal=2.58
+21:16:42 [INFO] [MPC] state=(+3.01,+3.57,+4.66) wp0=(+3.05,+3.50) v=+0.200 ω=-0.037 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.69/4.75 (35.6%) dist_goal=2.56
+21:16:42 [INFO] [MPC] state=(+3.01,+3.55,+4.66) wp0=(+3.05,+3.48) v=+0.200 ω=+0.187 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.71/4.75 (36.1%) dist_goal=2.54
+21:16:42 [INFO] [MPC] state=(+3.01,+3.53,+4.67) wp0=(+3.05,+3.46) v=+0.200 ω=-0.093 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.73/4.75 (36.5%) dist_goal=2.53
+21:16:42 [INFO] [MPC] state=(+3.01,+3.51,+4.66) wp0=(+3.05,+3.44) v=+0.200 ω=+0.147 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.75/4.75 (36.9%) dist_goal=2.51
+21:16:42 [INFO] [MPC] state=(+3.00,+3.49,+4.67) wp0=(+3.05,+3.42) v=+0.200 ω=+0.101 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.77/4.75 (37.3%) dist_goal=2.49
+21:16:42 [INFO] [MPC] state=(+3.00,+3.47,+4.68) wp0=(+3.05,+3.40) v=+0.200 ω=+0.056 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.79/4.75 (37.7%) dist_goal=2.47
+21:16:42 [INFO] [MPC] state=(+3.00,+3.45,+4.69) wp0=(+3.05,+3.38) v=+0.200 ω=-0.022 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.81/4.75 (38.2%) dist_goal=2.45
+21:16:42 [INFO] [MPC] state=(+3.00,+3.43,+4.69) wp0=(+3.05,+3.36) v=+0.200 ω=-0.199 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.83/4.75 (38.5%) dist_goal=2.43
+21:16:42 [INFO] [MPC] state=(+3.00,+3.41,+4.67) wp0=(+3.05,+3.34) v=+0.200 ω=-0.770 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=1.85/4.75 (38.9%) dist_goal=2.42
+21:16:42 [INFO] [MPC] state=(+3.00,+3.39,+4.63) wp0=(+3.05,+3.32) v=+0.200 ω=-1.216 ok=True iters=8
+21:16:42 [INFO] [PROG] s*=1.86/4.75 (39.2%) dist_goal=2.40
+21:16:42 [INFO] [MPC] state=(+3.00,+3.37,+4.57) wp0=(+3.05,+3.31) v=+0.200 ω=-1.111 ok=True iters=8
+21:16:42 [INFO] [PROG] s*=1.88/4.75 (39.6%) dist_goal=2.38
+21:16:42 [INFO] [MPC] state=(+3.00,+3.36,+4.50) wp0=(+3.05,+3.29) v=+0.200 ω=-1.002 ok=True iters=8
+21:16:42 [INFO] [PROG] s*=1.90/4.75 (39.9%) dist_goal=2.37
+21:16:42 [INFO] [MPC] state=(+2.99,+3.34,+4.45) wp0=(+3.05,+3.27) v=+0.200 ω=-0.681 ok=True iters=8
+21:16:42 [INFO] [PROG] s*=1.91/4.75 (40.3%) dist_goal=2.35
+21:16:42 [INFO] [MPC] state=(+2.99,+3.32,+4.41) wp0=(+3.05,+3.26) v=+0.200 ω=-0.509 ok=True iters=8
+21:16:42 [INFO] [PROG] s*=1.93/4.75 (40.7%) dist_goal=2.33
+21:16:42 [INFO] [MPC] state=(+2.98,+3.31,+4.38) wp0=(+3.04,+3.24) v=+0.200 ω=-0.144 ok=True iters=8
+21:16:42 [INFO] [PROG] s*=2.02/4.75 (42.5%) dist_goal=2.31
+21:16:42 [INFO] [MPC] state=(+2.97,+3.29,+4.37) wp0=(+2.98,+3.18) v=+0.200 ω=+0.121 ok=True iters=8
+21:16:42 [INFO] [PROG] s*=2.03/4.75 (42.7%) dist_goal=2.29
+21:16:42 [INFO] [MPC] state=(+2.97,+3.27,+4.38) wp0=(+2.97,+3.17) v=+0.200 ω=+1.895 ok=True iters=8
+21:16:42 [INFO] [PROG] s*=2.04/4.75 (42.9%) dist_goal=2.28
+21:16:42 [INFO] [MPC] state=(+2.96,+3.26,+4.47) wp0=(+2.97,+3.17) v=+0.200 ω=+1.587 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=2.05/4.75 (43.2%) dist_goal=2.27
+21:16:42 [INFO] [MPC] state=(+2.96,+3.24,+4.56) wp0=(+2.96,+3.16) v=+0.200 ω=+1.242 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=2.06/4.75 (43.4%) dist_goal=2.25
+21:16:42 [INFO] [MPC] state=(+2.96,+3.23,+4.63) wp0=(+2.95,+3.15) v=+0.200 ω=+1.022 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=2.07/4.75 (43.7%) dist_goal=2.24
+21:16:42 [INFO] [MPC] state=(+2.96,+3.21,+4.68) wp0=(+2.95,+3.14) v=+0.200 ω=+0.975 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=2.08/4.75 (43.9%) dist_goal=2.22
+21:16:42 [INFO] [MPC] state=(+2.96,+3.20,+4.73) wp0=(+2.95,+3.13) v=+0.200 ω=+0.619 ok=True iters=7
+21:16:42 [INFO] [PROG] s*=2.10/4.75 (44.2%) dist_goal=2.21
+21:16:42 [INFO] [MPC] state=(+2.96,+3.18,+4.76) wp0=(+2.95,+3.11) v=+0.200 ω=+0.508 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.12/4.75 (44.6%) dist_goal=2.19
+21:16:43 [INFO] [MPC] state=(+2.96,+3.16,+4.79) wp0=(+2.95,+3.09) v=+0.200 ω=+0.396 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.14/4.75 (45.0%) dist_goal=2.17
+21:16:43 [INFO] [MPC] state=(+2.96,+3.14,+4.81) wp0=(+2.95,+3.07) v=+0.200 ω=+0.435 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.16/4.75 (45.4%) dist_goal=2.16
+21:16:43 [INFO] [MPC] state=(+2.96,+3.12,+4.84) wp0=(+2.95,+3.05) v=+0.200 ω=+0.125 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.18/4.75 (45.9%) dist_goal=2.14
+21:16:43 [INFO] [MPC] state=(+2.97,+3.10,+4.85) wp0=(+2.95,+3.03) v=+0.200 ω=+0.066 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.20/4.75 (46.3%) dist_goal=2.12
+21:16:43 [INFO] [MPC] state=(+2.97,+3.08,+4.86) wp0=(+2.95,+3.01) v=+0.200 ω=+0.024 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.22/4.75 (46.7%) dist_goal=2.11
+21:16:43 [INFO] [MPC] state=(+2.97,+3.06,+4.86) wp0=(+2.95,+2.99) v=+0.200 ω=-0.153 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.24/4.75 (47.1%) dist_goal=2.09
+21:16:43 [INFO] [MPC] state=(+2.97,+3.04,+4.85) wp0=(+2.95,+2.97) v=+0.200 ω=-0.131 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.26/4.75 (47.5%) dist_goal=2.07
+21:16:43 [INFO] [MPC] state=(+2.98,+3.02,+4.83) wp0=(+2.95,+2.95) v=+0.200 ω=-0.088 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.28/4.75 (48.0%) dist_goal=2.06
+21:16:43 [INFO] [MPC] state=(+2.98,+3.00,+4.83) wp0=(+2.95,+2.93) v=+0.200 ω=-0.075 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.30/4.75 (48.4%) dist_goal=2.04
+21:16:43 [INFO] [MPC] state=(+2.98,+2.98,+4.82) wp0=(+2.95,+2.91) v=+0.200 ω=-0.065 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.32/4.75 (48.8%) dist_goal=2.02
+21:16:43 [INFO] [MPC] state=(+2.98,+2.96,+4.81) wp0=(+2.95,+2.89) v=+0.200 ω=-0.058 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.34/4.75 (49.2%) dist_goal=2.01
+21:16:43 [INFO] [MPC] state=(+2.99,+2.94,+4.81) wp0=(+2.95,+2.87) v=+0.200 ω=-0.218 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.36/4.75 (49.7%) dist_goal=1.99
+21:16:43 [INFO] [MPC] state=(+2.99,+2.92,+4.79) wp0=(+2.95,+2.85) v=+0.200 ω=-0.178 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.38/4.75 (50.1%) dist_goal=1.97
+21:16:43 [INFO] [MPC] state=(+2.99,+2.90,+4.78) wp0=(+2.95,+2.83) v=+0.200 ω=-0.140 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.40/4.75 (50.5%) dist_goal=1.95
+21:16:43 [INFO] [MPC] state=(+2.99,+2.88,+4.76) wp0=(+2.95,+2.81) v=+0.200 ω=-0.109 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.42/4.75 (50.9%) dist_goal=1.94
+21:16:43 [INFO] [MPC] state=(+2.99,+2.86,+4.75) wp0=(+2.95,+2.79) v=+0.200 ω=-0.048 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.44/4.75 (51.4%) dist_goal=1.92
+21:16:43 [INFO] [MPC] state=(+2.99,+2.84,+4.75) wp0=(+2.95,+2.77) v=+0.200 ω=-0.039 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.46/4.75 (51.8%) dist_goal=1.90
+21:16:43 [INFO] [MPC] state=(+2.99,+2.82,+4.75) wp0=(+2.95,+2.75) v=+0.200 ω=-0.033 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.48/4.75 (52.2%) dist_goal=1.89
+21:16:43 [INFO] [MPC] state=(+2.99,+2.80,+4.74) wp0=(+2.95,+2.73) v=+0.200 ω=-0.027 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.50/4.75 (52.6%) dist_goal=1.87
+21:16:43 [INFO] [MPC] state=(+2.99,+2.78,+4.74) wp0=(+2.95,+2.71) v=+0.200 ω=-0.023 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.52/4.75 (53.1%) dist_goal=1.85
+21:16:43 [INFO] [MPC] state=(+3.00,+2.76,+4.74) wp0=(+2.95,+2.69) v=+0.200 ω=-0.021 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.54/4.75 (53.5%) dist_goal=1.83
+21:16:43 [INFO] [MPC] state=(+3.00,+2.74,+4.74) wp0=(+2.95,+2.67) v=+0.200 ω=-0.018 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.56/4.75 (53.9%) dist_goal=1.82
+21:16:43 [INFO] [MPC] state=(+3.00,+2.72,+4.74) wp0=(+2.95,+2.65) v=+0.200 ω=-0.016 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.58/4.75 (54.3%) dist_goal=1.80
+21:16:43 [INFO] [MPC] state=(+3.00,+2.70,+4.73) wp0=(+2.95,+2.63) v=+0.200 ω=-0.193 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.60/4.75 (54.8%) dist_goal=1.78
+21:16:43 [INFO] [MPC] state=(+3.00,+2.68,+4.72) wp0=(+2.95,+2.61) v=+0.200 ω=-0.140 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.62/4.75 (55.2%) dist_goal=1.77
+21:16:43 [INFO] [MPC] state=(+3.00,+2.66,+4.70) wp0=(+2.95,+2.59) v=+0.200 ω=-0.085 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.64/4.75 (55.6%) dist_goal=1.75
+21:16:43 [INFO] [MPC] state=(+3.00,+2.64,+4.69) wp0=(+2.95,+2.57) v=+0.200 ω=-0.055 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.66/4.75 (56.0%) dist_goal=1.73
+21:16:43 [INFO] [MPC] state=(+3.00,+2.62,+4.69) wp0=(+2.95,+2.55) v=+0.200 ω=-0.035 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.68/4.75 (56.5%) dist_goal=1.71
+21:16:43 [INFO] [MPC] state=(+3.00,+2.60,+4.69) wp0=(+2.95,+2.53) v=+0.200 ω=+0.023 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.70/4.75 (56.9%) dist_goal=1.70
+21:16:43 [INFO] [MPC] state=(+2.99,+2.58,+4.69) wp0=(+2.95,+2.51) v=+0.200 ω=+0.146 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.72/4.75 (57.3%) dist_goal=1.68
+21:16:43 [INFO] [MPC] state=(+2.99,+2.56,+4.70) wp0=(+2.95,+2.49) v=+0.200 ω=+0.112 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.74/4.75 (57.7%) dist_goal=1.66
+21:16:43 [INFO] [MPC] state=(+2.99,+2.54,+4.71) wp0=(+2.95,+2.47) v=+0.200 ω=+0.084 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.76/4.75 (58.2%) dist_goal=1.65
+21:16:43 [INFO] [MPC] state=(+2.99,+2.52,+4.72) wp0=(+2.95,+2.45) v=+0.200 ω=+0.057 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.78/4.75 (58.6%) dist_goal=1.63
+21:16:43 [INFO] [MPC] state=(+2.99,+2.50,+4.72) wp0=(+2.95,+2.43) v=+0.200 ω=+0.037 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.80/4.75 (59.0%) dist_goal=1.61
+21:16:43 [INFO] [MPC] state=(+2.99,+2.48,+4.73) wp0=(+2.95,+2.41) v=+0.200 ω=+0.022 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.82/4.75 (59.4%) dist_goal=1.60
+21:16:43 [INFO] [MPC] state=(+3.00,+2.46,+4.73) wp0=(+2.95,+2.39) v=+0.200 ω=+0.012 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.84/4.75 (59.9%) dist_goal=1.58
+21:16:43 [INFO] [MPC] state=(+3.00,+2.44,+4.73) wp0=(+2.95,+2.37) v=+0.200 ω=+0.005 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.86/4.75 (60.3%) dist_goal=1.57
+21:16:43 [INFO] [MPC] state=(+3.00,+2.42,+4.73) wp0=(+2.95,+2.35) v=+0.200 ω=-0.001 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.88/4.75 (60.7%) dist_goal=1.55
+21:16:43 [INFO] [MPC] state=(+3.00,+2.40,+4.73) wp0=(+2.95,+2.33) v=+0.200 ω=-0.004 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.90/4.75 (61.1%) dist_goal=1.53
+21:16:43 [INFO] [MPC] state=(+3.00,+2.38,+4.73) wp0=(+2.95,+2.31) v=+0.200 ω=-0.185 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.92/4.75 (61.6%) dist_goal=1.52
+21:16:43 [INFO] [MPC] state=(+3.00,+2.36,+4.72) wp0=(+2.95,+2.29) v=+0.200 ω=-0.139 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.94/4.75 (62.0%) dist_goal=1.50
+21:16:43 [INFO] [MPC] state=(+3.00,+2.34,+4.70) wp0=(+2.95,+2.27) v=+0.200 ω=-0.093 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.96/4.75 (62.4%) dist_goal=1.49
+21:16:43 [INFO] [MPC] state=(+3.00,+2.32,+4.69) wp0=(+2.95,+2.25) v=+0.200 ω=-0.052 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=2.98/4.75 (62.8%) dist_goal=1.47
+21:16:43 [INFO] [MPC] state=(+3.00,+2.30,+4.69) wp0=(+2.95,+2.23) v=+0.200 ω=-0.031 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.00/4.75 (63.3%) dist_goal=1.46
+21:16:43 [INFO] [MPC] state=(+3.00,+2.28,+4.68) wp0=(+2.95,+2.21) v=+0.200 ω=+0.027 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.02/4.75 (63.7%) dist_goal=1.44
+21:16:43 [INFO] [MPC] state=(+3.00,+2.26,+4.69) wp0=(+2.95,+2.19) v=+0.200 ω=+0.149 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.04/4.75 (64.1%) dist_goal=1.42
+21:16:43 [INFO] [MPC] state=(+2.99,+2.24,+4.70) wp0=(+2.95,+2.17) v=+0.200 ω=+0.120 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.06/4.75 (64.5%) dist_goal=1.41
+21:16:43 [INFO] [MPC] state=(+2.99,+2.22,+4.71) wp0=(+2.95,+2.15) v=+0.200 ω=+0.087 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.09/4.75 (65.0%) dist_goal=1.39
+21:16:43 [INFO] [MPC] state=(+2.99,+2.20,+4.72) wp0=(+2.95,+2.13) v=+0.200 ω=+0.056 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.11/4.75 (65.4%) dist_goal=1.38
+21:16:43 [INFO] [MPC] state=(+2.99,+2.18,+4.72) wp0=(+2.95,+2.11) v=+0.200 ω=+0.036 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.13/4.75 (65.8%) dist_goal=1.37
+21:16:43 [INFO] [MPC] state=(+2.99,+2.16,+4.73) wp0=(+2.95,+2.09) v=+0.200 ω=+0.022 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.15/4.75 (66.2%) dist_goal=1.35
+21:16:43 [INFO] [MPC] state=(+3.00,+2.14,+4.73) wp0=(+2.95,+2.07) v=+0.200 ω=-0.214 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.17/4.75 (66.7%) dist_goal=1.34
+21:16:43 [INFO] [MPC] state=(+3.00,+2.12,+4.71) wp0=(+2.95,+2.05) v=+0.200 ω=-0.114 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.19/4.75 (67.1%) dist_goal=1.32
+21:16:43 [INFO] [MPC] state=(+3.00,+2.10,+4.70) wp0=(+2.95,+2.03) v=+0.200 ω=-0.082 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.21/4.75 (67.5%) dist_goal=1.31
+21:16:43 [INFO] [MPC] state=(+2.99,+2.08,+4.69) wp0=(+2.95,+2.01) v=+0.200 ω=-0.067 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.23/4.75 (67.9%) dist_goal=1.29
+21:16:43 [INFO] [MPC] state=(+2.99,+2.06,+4.69) wp0=(+2.95,+1.99) v=+0.200 ω=+0.005 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.25/4.75 (68.4%) dist_goal=1.28
+21:16:43 [INFO] [MPC] state=(+2.99,+2.04,+4.69) wp0=(+2.95,+1.96) v=+0.200 ω=-0.081 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.27/4.75 (68.8%) dist_goal=1.27
+21:16:43 [INFO] [MPC] state=(+2.99,+2.01,+4.68) wp0=(+2.95,+1.94) v=+0.200 ω=-0.069 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.29/4.75 (69.2%) dist_goal=1.25
+21:16:43 [INFO] [MPC] state=(+2.99,+1.99,+4.67) wp0=(+2.95,+1.92) v=+0.200 ω=-0.003 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.31/4.75 (69.7%) dist_goal=1.24
+21:16:43 [INFO] [MPC] state=(+2.99,+1.97,+4.67) wp0=(+2.95,+1.90) v=+0.200 ω=-0.022 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.33/4.75 (70.1%) dist_goal=1.22
+21:16:43 [INFO] [MPC] state=(+2.99,+1.95,+4.67) wp0=(+2.95,+1.88) v=+0.200 ω=-0.116 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.35/4.75 (70.5%) dist_goal=1.21
+21:16:43 [INFO] [MPC] state=(+2.99,+1.93,+4.66) wp0=(+2.95,+1.86) v=+0.200 ω=-0.104 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.37/4.75 (70.9%) dist_goal=1.20
+21:16:43 [INFO] [MPC] state=(+2.99,+1.91,+4.65) wp0=(+2.95,+1.84) v=+0.200 ω=-0.046 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.39/4.75 (71.4%) dist_goal=1.18
+21:16:43 [INFO] [MPC] state=(+2.99,+1.89,+4.65) wp0=(+2.95,+1.82) v=+0.200 ω=-0.063 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.41/4.75 (71.8%) dist_goal=1.17
+21:16:43 [INFO] [MPC] state=(+2.99,+1.87,+4.64) wp0=(+2.95,+1.80) v=+0.200 ω=-0.081 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.43/4.75 (72.2%) dist_goal=1.16
+21:16:43 [INFO] [MPC] state=(+2.98,+1.85,+4.63) wp0=(+2.95,+1.78) v=+0.200 ω=-0.096 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.45/4.75 (72.6%) dist_goal=1.14
+21:16:43 [INFO] [MPC] state=(+2.98,+1.83,+4.62) wp0=(+2.95,+1.76) v=+0.200 ω=-0.131 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.47/4.75 (73.0%) dist_goal=1.13
+21:16:43 [INFO] [MPC] state=(+2.98,+1.81,+4.61) wp0=(+2.95,+1.74) v=+0.200 ω=-0.795 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.48/4.75 (73.3%) dist_goal=1.12
+21:16:43 [INFO] [MPC] state=(+2.98,+1.79,+4.57) wp0=(+2.95,+1.73) v=+0.200 ω=-1.327 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.50/4.75 (73.7%) dist_goal=1.11
+21:16:43 [INFO] [MPC] state=(+2.98,+1.78,+4.50) wp0=(+2.95,+1.71) v=+0.200 ω=-1.369 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.51/4.75 (74.0%) dist_goal=1.09
+21:16:43 [INFO] [MPC] state=(+2.97,+1.76,+4.43) wp0=(+2.95,+1.70) v=+0.200 ω=-1.234 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.53/4.75 (74.3%) dist_goal=1.08
+21:16:43 [INFO] [MPC] state=(+2.97,+1.75,+4.36) wp0=(+2.95,+1.68) v=+0.200 ω=-1.175 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.54/4.75 (74.6%) dist_goal=1.07
+21:16:43 [INFO] [MPC] state=(+2.96,+1.73,+4.29) wp0=(+2.95,+1.67) v=+0.200 ω=-0.993 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.56/4.75 (75.0%) dist_goal=1.05
+21:16:43 [INFO] [MPC] state=(+2.95,+1.72,+4.24) wp0=(+2.95,+1.65) v=+0.200 ω=-0.813 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.57/4.75 (75.3%) dist_goal=1.03
+21:16:43 [INFO] [MPC] state=(+2.94,+1.70,+4.19) wp0=(+2.94,+1.64) v=+0.200 ω=-0.668 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.59/4.75 (75.6%) dist_goal=1.02
+21:16:43 [INFO] [MPC] state=(+2.93,+1.69,+4.15) wp0=(+2.93,+1.63) v=+0.200 ω=-0.551 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.63/4.75 (76.5%) dist_goal=1.00
+21:16:43 [INFO] [MPC] state=(+2.92,+1.67,+4.12) wp0=(+2.90,+1.60) v=+0.200 ω=-0.460 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.65/4.75 (76.9%) dist_goal=0.98
+21:16:43 [INFO] [MPC] state=(+2.91,+1.66,+4.09) wp0=(+2.89,+1.59) v=+0.200 ω=-0.410 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.67/4.75 (77.3%) dist_goal=0.96
+21:16:43 [INFO] [MPC] state=(+2.90,+1.64,+4.07) wp0=(+2.87,+1.57) v=+0.200 ω=-0.341 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.69/4.75 (77.7%) dist_goal=0.95
+21:16:43 [INFO] [MPC] state=(+2.89,+1.62,+4.05) wp0=(+2.86,+1.56) v=+0.200 ω=-0.279 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.71/4.75 (78.2%) dist_goal=0.93
+21:16:43 [INFO] [MPC] state=(+2.88,+1.61,+4.03) wp0=(+2.84,+1.54) v=+0.200 ω=-0.235 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.73/4.75 (78.6%) dist_goal=0.91
+21:16:43 [INFO] [MPC] state=(+2.86,+1.59,+4.01) wp0=(+2.83,+1.53) v=+0.200 ω=-0.236 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.75/4.75 (79.0%) dist_goal=0.89
+21:16:43 [INFO] [MPC] state=(+2.85,+1.58,+3.99) wp0=(+2.82,+1.52) v=+0.200 ω=-0.932 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.76/4.75 (79.3%) dist_goal=0.88
+21:16:43 [INFO] [MPC] state=(+2.84,+1.57,+3.94) wp0=(+2.81,+1.51) v=+0.200 ω=-1.426 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.78/4.75 (79.6%) dist_goal=0.86
+21:16:43 [INFO] [MPC] state=(+2.83,+1.55,+3.86) wp0=(+2.80,+1.50) v=+0.200 ω=-1.456 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.80/4.75 (79.9%) dist_goal=0.85
+21:16:43 [INFO] [MPC] state=(+2.82,+1.55,+3.79) wp0=(+2.78,+1.48) v=+0.200 ω=-1.321 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.81/4.75 (80.3%) dist_goal=0.83
+21:16:43 [INFO] [MPC] state=(+2.80,+1.54,+3.71) wp0=(+2.77,+1.47) v=+0.200 ω=-1.213 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.83/4.75 (80.6%) dist_goal=0.81
+21:16:43 [INFO] [MPC] state=(+2.79,+1.53,+3.65) wp0=(+2.76,+1.46) v=+0.200 ω=-0.994 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=3.85/4.75 (81.0%) dist_goal=0.79
+21:16:43 [INFO] [MPC] state=(+2.77,+1.52,+3.59) wp0=(+2.75,+1.45) v=+0.200 ω=-0.198 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.86/4.75 (81.4%) dist_goal=0.78
+21:16:43 [INFO] [MPC] state=(+2.76,+1.51,+3.58) wp0=(+2.73,+1.45) v=+0.198 ω=+0.582 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.92/4.75 (82.5%) dist_goal=0.76
+21:16:43 [INFO] [MPC] state=(+2.74,+1.50,+3.61) wp0=(+2.68,+1.45) v=+0.194 ω=+0.846 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.93/4.75 (82.8%) dist_goal=0.74
+21:16:43 [INFO] [MPC] state=(+2.73,+1.50,+3.66) wp0=(+2.66,+1.45) v=+0.190 ω=+0.972 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.95/4.75 (83.1%) dist_goal=0.73
+21:16:43 [INFO] [MPC] state=(+2.71,+1.49,+3.72) wp0=(+2.65,+1.45) v=+0.186 ω=+0.753 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.96/4.75 (83.4%) dist_goal=0.71
+21:16:43 [INFO] [MPC] state=(+2.70,+1.48,+3.77) wp0=(+2.64,+1.44) v=+0.182 ω=+0.544 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.97/4.75 (83.7%) dist_goal=0.69
+21:16:43 [INFO] [MPC] state=(+2.69,+1.47,+3.82) wp0=(+2.63,+1.43) v=+0.177 ω=+0.135 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=3.99/4.75 (84.0%) dist_goal=0.67
+21:16:43 [INFO] [MPC] state=(+2.67,+1.45,+3.83) wp0=(+2.62,+1.42) v=+0.173 ω=-0.474 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.01/4.75 (84.4%) dist_goal=0.66
+21:16:43 [INFO] [MPC] state=(+2.66,+1.44,+3.79) wp0=(+2.60,+1.40) v=+0.169 ω=-0.882 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.02/4.75 (84.7%) dist_goal=0.64
+21:16:43 [INFO] [MPC] state=(+2.64,+1.43,+3.72) wp0=(+2.59,+1.39) v=+0.165 ω=-1.116 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.04/4.75 (85.0%) dist_goal=0.63
+21:16:43 [INFO] [MPC] state=(+2.63,+1.43,+3.63) wp0=(+2.58,+1.38) v=+0.161 ω=-0.980 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.05/4.75 (85.3%) dist_goal=0.61
+21:16:43 [INFO] [MPC] state=(+2.62,+1.42,+3.55) wp0=(+2.57,+1.37) v=+0.157 ω=-0.834 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.07/4.75 (85.6%) dist_goal=0.60
+21:16:43 [INFO] [MPC] state=(+2.60,+1.41,+3.48) wp0=(+2.56,+1.36) v=+0.153 ω=-0.597 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.08/4.75 (85.9%) dist_goal=0.58
+21:16:43 [INFO] [MPC] state=(+2.59,+1.41,+3.42) wp0=(+2.55,+1.35) v=+0.149 ω=+0.153 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.09/4.75 (86.2%) dist_goal=0.57
+21:16:43 [INFO] [MPC] state=(+2.57,+1.41,+3.43) wp0=(+2.54,+1.35) v=+0.146 ω=+0.654 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.11/4.75 (86.5%) dist_goal=0.55
+21:16:43 [INFO] [MPC] state=(+2.56,+1.40,+3.50) wp0=(+2.53,+1.35) v=+0.142 ω=+0.898 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.12/4.75 (86.7%) dist_goal=0.54
+21:16:43 [INFO] [MPC] state=(+2.55,+1.40,+3.59) wp0=(+2.52,+1.35) v=+0.139 ω=+0.802 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.16/4.75 (87.6%) dist_goal=0.53
+21:16:43 [INFO] [MPC] state=(+2.54,+1.39,+3.67) wp0=(+2.47,+1.35) v=+0.135 ω=+0.623 ok=True iters=9
+21:16:43 [INFO] [PROG] s*=4.17/4.75 (87.8%) dist_goal=0.52
+21:16:43 [INFO] [MPC] state=(+2.52,+1.38,+3.74) wp0=(+2.46,+1.35) v=+0.132 ω=+0.572 ok=True iters=8
+21:16:43 [INFO] [PROG] s*=4.18/4.75 (88.1%) dist_goal=0.50
+21:16:43 [INFO] [MPC] state=(+2.51,+1.37,+3.79) wp0=(+2.45,+1.35) v=+0.129 ω=+0.360 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.19/4.75 (88.3%) dist_goal=0.49
+21:16:43 [INFO] [MPC] state=(+2.50,+1.37,+3.83) wp0=(+2.45,+1.35) v=+0.126 ω=+0.216 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.20/4.75 (88.5%) dist_goal=0.48
+21:16:43 [INFO] [MPC] state=(+2.49,+1.36,+3.85) wp0=(+2.44,+1.34) v=+0.123 ω=+0.126 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.21/4.75 (88.7%) dist_goal=0.47
+21:16:43 [INFO] [MPC] state=(+2.49,+1.35,+3.87) wp0=(+2.43,+1.33) v=+0.120 ω=-0.183 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.22/4.75 (88.9%) dist_goal=0.46
+21:16:43 [INFO] [MPC] state=(+2.48,+1.34,+3.85) wp0=(+2.43,+1.33) v=+0.117 ω=-0.513 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.25/4.75 (89.4%) dist_goal=0.44
+21:16:43 [INFO] [MPC] state=(+2.47,+1.33,+3.79) wp0=(+2.41,+1.31) v=+0.114 ω=-0.752 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.26/4.75 (89.7%) dist_goal=0.43
+21:16:43 [INFO] [MPC] state=(+2.46,+1.33,+3.72) wp0=(+2.40,+1.30) v=+0.111 ω=-1.332 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.27/4.75 (89.9%) dist_goal=0.42
+21:16:43 [INFO] [MPC] state=(+2.45,+1.32,+3.59) wp0=(+2.39,+1.29) v=+0.108 ω=-1.010 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.28/4.75 (90.1%) dist_goal=0.41
+21:16:43 [INFO] [MPC] state=(+2.44,+1.32,+3.49) wp0=(+2.38,+1.28) v=+0.105 ω=-0.768 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.29/4.75 (90.3%) dist_goal=0.40
+21:16:43 [INFO] [MPC] state=(+2.43,+1.31,+3.41) wp0=(+2.38,+1.28) v=+0.102 ω=-0.570 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.30/4.75 (90.5%) dist_goal=0.39
+21:16:43 [INFO] [MPC] state=(+2.41,+1.31,+3.35) wp0=(+2.37,+1.27) v=+0.100 ω=-0.414 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.30/4.75 (90.7%) dist_goal=0.38
+21:16:43 [INFO] [MPC] state=(+2.40,+1.31,+3.31) wp0=(+2.37,+1.27) v=+0.097 ω=-0.295 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.31/4.75 (90.8%) dist_goal=0.37
+21:16:43 [INFO] [MPC] state=(+2.39,+1.31,+3.28) wp0=(+2.36,+1.26) v=+0.095 ω=-0.193 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.32/4.75 (91.0%) dist_goal=0.36
+21:16:43 [INFO] [MPC] state=(+2.39,+1.31,+3.26) wp0=(+2.36,+1.26) v=+0.092 ω=-0.122 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.33/4.75 (91.1%) dist_goal=0.35
+21:16:43 [INFO] [MPC] state=(+2.38,+1.31,+3.25) wp0=(+2.35,+1.25) v=+0.090 ω=-0.083 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.33/4.75 (91.3%) dist_goal=0.34
+21:16:43 [INFO] [MPC] state=(+2.37,+1.30,+3.24) wp0=(+2.34,+1.25) v=+0.088 ω=-0.060 ok=True iters=7
+21:16:43 [INFO] [PROG] s*=4.34/4.75 (91.4%) dist_goal=0.34
+21:16:43 [INFO] [MPC] state=(+2.36,+1.30,+3.24) wp0=(+2.34,+1.25) v=+0.086 ω=-0.045 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.35/4.75 (91.5%) dist_goal=0.33
+21:16:44 [INFO] [MPC] state=(+2.35,+1.30,+3.23) wp0=(+2.33,+1.25) v=+0.084 ω=-0.035 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.35/4.75 (91.7%) dist_goal=0.32
+21:16:44 [INFO] [MPC] state=(+2.34,+1.30,+3.23) wp0=(+2.32,+1.25) v=+0.082 ω=-0.029 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.40/4.75 (92.7%) dist_goal=0.31
+21:16:44 [INFO] [MPC] state=(+2.33,+1.30,+3.23) wp0=(+2.27,+1.25) v=+0.080 ω=-0.025 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.41/4.75 (92.9%) dist_goal=0.31
+21:16:44 [INFO] [MPC] state=(+2.32,+1.30,+3.22) wp0=(+2.27,+1.25) v=+0.078 ω=-0.016 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.42/4.75 (93.0%) dist_goal=0.30
+21:16:44 [INFO] [MPC] state=(+2.32,+1.30,+3.22) wp0=(+2.26,+1.25) v=+0.077 ω=-0.002 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.42/4.75 (93.2%) dist_goal=0.29
+21:16:44 [INFO] [MPC] state=(+2.31,+1.30,+3.22) wp0=(+2.25,+1.25) v=+0.075 ω=-0.007 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.43/4.75 (93.3%) dist_goal=0.29
+21:16:44 [INFO] [MPC] state=(+2.30,+1.30,+3.22) wp0=(+2.24,+1.25) v=+0.073 ω=-0.010 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.44/4.75 (93.5%) dist_goal=0.28
+21:16:44 [INFO] [MPC] state=(+2.29,+1.30,+3.22) wp0=(+2.24,+1.25) v=+0.071 ω=-0.011 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.45/4.75 (93.6%) dist_goal=0.27
+21:16:44 [INFO] [MPC] state=(+2.29,+1.30,+3.22) wp0=(+2.23,+1.25) v=+0.070 ω=-0.012 ok=True iters=7
+21:16:44 [INFO] [PROG] s*=4.45/4.75 (93.8%) dist_goal=0.27
+21:16:44 [INFO] [MPC] state=(+2.28,+1.30,+3.22) wp0=(+2.22,+1.25) v=+0.068 ω=-0.013 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.46/4.75 (93.9%) dist_goal=0.26
+21:16:44 [INFO] [MPC] state=(+2.27,+1.30,+3.22) wp0=(+2.22,+1.25) v=+0.067 ω=-0.013 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.47/4.75 (94.0%) dist_goal=0.26
+21:16:44 [INFO] [MPC] state=(+2.27,+1.30,+3.22) wp0=(+2.21,+1.25) v=+0.065 ω=+0.171 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.47/4.75 (94.2%) dist_goal=0.25
+21:16:44 [INFO] [MPC] state=(+2.26,+1.30,+3.23) wp0=(+2.21,+1.25) v=+0.064 ω=+0.489 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.48/4.75 (94.3%) dist_goal=0.25
+21:16:44 [INFO] [MPC] state=(+2.26,+1.29,+3.28) wp0=(+2.20,+1.25) v=+0.063 ω=+0.719 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.48/4.75 (94.4%) dist_goal=0.24
+21:16:44 [INFO] [MPC] state=(+2.25,+1.29,+3.35) wp0=(+2.20,+1.25) v=+0.062 ω=+0.848 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.49/4.75 (94.5%) dist_goal=0.24
+21:16:44 [INFO] [MPC] state=(+2.25,+1.29,+3.44) wp0=(+2.19,+1.25) v=+0.060 ω=+0.915 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.49/4.75 (94.6%) dist_goal=0.23
+21:16:44 [INFO] [MPC] state=(+2.24,+1.29,+3.53) wp0=(+2.19,+1.25) v=+0.059 ω=+0.945 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.50/4.75 (94.7%) dist_goal=0.23
+21:16:44 [INFO] [MPC] state=(+2.24,+1.29,+3.63) wp0=(+2.18,+1.25) v=+0.058 ω=+0.690 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.50/4.75 (94.8%) dist_goal=0.22
+21:16:44 [INFO] [MPC] state=(+2.23,+1.29,+3.70) wp0=(+2.18,+1.25) v=+0.056 ω=+0.529 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.50/4.75 (94.9%) dist_goal=0.22
+21:16:44 [INFO] [MPC] state=(+2.23,+1.28,+3.75) wp0=(+2.17,+1.25) v=+0.055 ω=+0.431 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.51/4.75 (94.9%) dist_goal=0.21
+21:16:44 [INFO] [MPC] state=(+2.22,+1.28,+3.80) wp0=(+2.17,+1.25) v=+0.054 ω=+0.367 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.51/4.75 (95.0%) dist_goal=0.21
+21:16:44 [INFO] [MPC] state=(+2.22,+1.28,+3.84) wp0=(+2.16,+1.25) v=+0.053 ω=+0.314 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.52/4.75 (95.1%) dist_goal=0.20
+21:16:44 [INFO] [MPC] state=(+2.21,+1.27,+3.87) wp0=(+2.16,+1.25) v=+0.051 ω=+0.222 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.52/4.75 (95.2%) dist_goal=0.20
+21:16:44 [INFO] [MPC] state=(+2.21,+1.27,+3.89) wp0=(+2.16,+1.25) v=+0.050 ω=+0.142 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.52/4.75 (95.2%) dist_goal=0.19
+21:16:44 [INFO] [MPC] state=(+2.21,+1.27,+3.91) wp0=(+2.15,+1.25) v=+0.049 ω=+0.090 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.53/4.75 (95.3%) dist_goal=0.19
+21:16:44 [INFO] [MPC] state=(+2.20,+1.26,+3.92) wp0=(+2.15,+1.25) v=+0.048 ω=+0.057 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.53/4.75 (95.4%) dist_goal=0.18
+21:16:44 [INFO] [MPC] state=(+2.20,+1.26,+3.92) wp0=(+2.15,+1.25) v=+0.046 ω=+0.035 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.53/4.75 (95.5%) dist_goal=0.18
+21:16:44 [INFO] [MPC] state=(+2.20,+1.26,+3.92) wp0=(+2.15,+1.25) v=+0.045 ω=+0.022 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.54/4.75 (95.5%) dist_goal=0.17
+21:16:44 [INFO] [MPC] state=(+2.19,+1.25,+3.93) wp0=(+2.14,+1.24) v=+0.044 ω=+0.012 ok=True iters=8
+21:16:44 [INFO] [PROG] s*=4.54/4.75 (95.6%) dist_goal=0.17
+21:16:44 [INFO] [MPC] state=(+2.19,+1.25,+3.93) wp0=(+2.14,+1.24) v=+0.043 ω=+0.008 ok=True iters=10
+21:16:44 [INFO] [PROG] s*=4.54/4.75 (95.7%) dist_goal=0.16
+21:16:44 [INFO] [MPC] state=(+2.19,+1.25,+3.93) wp0=(+2.14,+1.24) v=+0.042 ω=+0.003 ok=True iters=10
+21:16:44 [INFO] [PROG] s*=4.55/4.75 (95.7%) dist_goal=0.16
+21:16:44 [INFO] [MPC] state=(+2.19,+1.24,+3.93) wp0=(+2.14,+1.24) v=+0.041 ω=+0.002 ok=True iters=10
+21:16:44 [INFO] [PROG] s*=4.55/4.75 (95.8%) dist_goal=0.16
+21:16:44 [INFO] [MPC] state=(+2.18,+1.24,+3.93) wp0=(+2.14,+1.24) v=+0.040 ω=+0.000 ok=True iters=10
+21:16:44 [INFO] [PROG] s*=4.55/4.75 (95.8%) dist_goal=0.15
+21:16:44 [INFO] [MPC] state=(+2.18,+1.24,+3.93) wp0=(+2.13,+1.23) v=+0.039 ω=-0.004 ok=True iters=10
+21:16:44 [INFO] [PROG] s*=4.55/4.75 (95.9%) dist_goal=0.15
+21:16:44 [INFO] [MPC] state=(+2.18,+1.23,+3.93) wp0=(+2.13,+1.23) v=+0.038 ω=-0.003 ok=True iters=11
+21:16:44 [INFO] [PROG] s*=4.56/4.75 (95.9%) dist_goal=0.14
+21:16:44 [INFO] [MPC] state=(+2.17,+1.23,+3.93) wp0=(+2.13,+1.23) v=+0.037 ω=-0.004 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.56/4.75 (96.0%) dist_goal=0.14
+21:16:44 [INFO] [MPC] state=(+2.17,+1.23,+3.93) wp0=(+2.13,+1.23) v=+0.036 ω=-0.003 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.56/4.75 (96.1%) dist_goal=0.14
+21:16:44 [INFO] [MPC] state=(+2.17,+1.23,+3.93) wp0=(+2.13,+1.23) v=+0.035 ω=-0.002 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.56/4.75 (96.1%) dist_goal=0.13
+21:16:44 [INFO] [MPC] state=(+2.17,+1.22,+3.93) wp0=(+2.12,+1.22) v=+0.034 ω=-0.002 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.59/4.75 (96.7%) dist_goal=0.13
+21:16:44 [INFO] [MPC] state=(+2.16,+1.22,+3.93) wp0=(+2.10,+1.20) v=+0.034 ω=-0.002 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.59/4.75 (96.7%) dist_goal=0.13
+21:16:44 [INFO] [MPC] state=(+2.16,+1.22,+3.93) wp0=(+2.10,+1.20) v=+0.033 ω=-0.001 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.60/4.75 (96.8%) dist_goal=0.12
+21:16:44 [INFO] [MPC] state=(+2.16,+1.22,+3.93) wp0=(+2.10,+1.20) v=+0.032 ω=-0.001 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.60/4.75 (96.9%) dist_goal=0.12
+21:16:44 [INFO] [MPC] state=(+2.16,+1.21,+3.93) wp0=(+2.10,+1.20) v=+0.031 ω=-0.000 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.60/4.75 (96.9%) dist_goal=0.12
+21:16:44 [INFO] [MPC] state=(+2.15,+1.21,+3.93) wp0=(+2.10,+1.20) v=+0.030 ω=-0.001 ok=True iters=9
+21:16:44 [INFO] [PROG] s*=4.61/4.75 (97.0%) dist_goal=0.12
+21:16:44 [INFO] [MPC] state=(+2.15,+1.21,+3.93) wp0=(+2.09,+1.19) v=+0.030 ω=-0.001 ok=True iters=5
+21:16:44 [INFO] [PROG] s*=4.61/4.75 (97.1%) dist_goal=0.11
+21:16:44 [INFO] [MPC] state=(+2.15,+1.21,+3.93) wp0=(+2.09,+1.19) v=+0.030 ω=-0.000 ok=True iters=5
+21:16:44 [INFO] [PROG] s*=4.61/4.75 (97.1%) dist_goal=0.11
+21:16:44 [INFO] [MPC] state=(+2.15,+1.21,+3.93) wp0=(+2.09,+1.19) v=+0.030 ω=-0.001 ok=True iters=5
+21:16:44 [INFO] [PROG] s*=4.62/4.75 (97.2%) dist_goal=0.11
+21:16:44 [INFO] [MPC] state=(+2.15,+1.20,+3.93) wp0=(+2.09,+1.19) v=+0.030 ω=-0.000 ok=True iters=5
+21:16:44 [INFO] [PROG] s*=4.62/4.75 (97.3%) dist_goal=0.10
+21:16:44 [INFO] [MPC] state=(+2.14,+1.20,+3.93) wp0=(+2.09,+1.19) v=+0.030 ω=-0.002 ok=True iters=5
+21:16:44 [INFO] [PROG] s*=4.62/4.75 (97.3%) dist_goal=0.10
+21:16:44 [INFO] [MPC] state=(+2.14,+1.20,+3.93) wp0=(+2.08,+1.18) v=+0.030 ω=-0.001 ok=True iters=5
+21:16:44 [INFO] [PROG] s*=4.62/4.75 (97.4%) dist_goal=0.10
+21:16:44 [INFO] [MPC] state=(+2.14,+1.20,+3.93) wp0=(+2.08,+1.18) v=+0.030 ω=-0.004 ok=True iters=5

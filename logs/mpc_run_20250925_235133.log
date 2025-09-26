@@ -1,0 +1,13 @@
+23:51:33 [INFO] === New MPC Session Started ===
+23:51:33 [DEBUG] matplotlib data path: /home/max/.local/lib/python3.10/site-packages/matplotlib/mpl-data
+23:51:33 [DEBUG] CONFIGDIR=/home/max/.config/matplotlib
+23:51:33 [DEBUG] interactive is False
+23:51:33 [DEBUG] platform is linux
+23:51:33 [DEBUG] CACHEDIR=/home/max/.cache/matplotlib
+23:51:33 [DEBUG] Using fontManager instance from /home/max/.cache/matplotlib/fontlist-v390.json
+23:51:33 [DEBUG] falling back to hashlib hashing: `pip install xxhash`for 50x faster cache checks
+23:51:33 [INFO] CrowdNavPyBulletEnv initializing...
+23:51:33 [DEBUG] `trimesh.load(force='mesh')` is a compatibility wrapper for `trimesh.load_mesh`
+23:51:33 [DEBUG] 3 items cleared from cache: ['triangles', 'triangles_cross', 'face_normals']
+23:51:33 [DEBUG] 1 items cleared from cache: ['face_normals']
+23:51:36 [INFO] World ready | grid: (220, 120), res: 0.1, N=10, T=0.1

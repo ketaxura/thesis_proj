@@ -13,6 +13,7 @@ import sys
 MAX_STATIC=12
 # Constants for the CrowdNavPyBulletEnv
 MAP_SCALE = 0.45
+
 WHEEL_RADIUS = 0.033  # TurtleBot3 wheel radius in meters
 WHEEL_BASE = 0.160    # TurtleBot3 wheel base distance in meters
 map_size=25.0

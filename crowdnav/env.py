@@ -1,9 +1,12 @@
 # crowdnav/env.py (import block)
 import gym, numpy as np, pybullet as p, pybullet_data, traceback
+import time
 from gym import spaces
+
 
 from .logger_setup import logger
 from .config import TB3, ControlCfg, LidarCfg, Waypointing, WatchdogCfg, MPCWeights
+from .world import USE_OBJ_MAP, SPAWN_BBOX_START, SPAWN_BBOX_GOAL
 from .dynamics import Dynamics
 from .sensors import LidarSensor
 from .control.align import AlignController
@@ -18,9 +21,15 @@ from .mpc import build_mpc_solver_random_obs
 from .world import create_world
 from .utils import update_astar_path, MAP_SCALE, map_size
 
+
+
+
 v_max_cap = 0.20
 ail=0
 REPLAN_PERIOD = 25   # steps ~ 2.5 s if T=0.1
+
+
+
 
 
 # === Heading helpers (place near other top-level helpers) ===
@@ -225,6 +234,17 @@ class CrowdNavPyBulletEnv(gym.Env):
         super().__init__()
         logger.info("CrowdNavPyBulletEnv initializing...")
         self.client = p.connect(p.GUI)
+        
+        
+        p.configureDebugVisualizer(p.COV_ENABLE_GUI, 0)  # hide right-side Params & top bars
+        p.configureDebugVisualizer(p.COV_ENABLE_RGB_BUFFER_PREVIEW, 0)
+        p.configureDebugVisualizer(p.COV_ENABLE_DEPTH_BUFFER_PREVIEW, 0)
+        p.configureDebugVisualizer(p.COV_ENABLE_SEGMENTATION_MARK_PREVIEW, 0)
+        p.configureDebugVisualizer(p.COV_ENABLE_MOUSE_PICKING, 0)      # optional
+        p.configureDebugVisualizer(p.COV_ENABLE_KEYBOARD_SHORTCUTS, 0) # optional
+        
+        p.configureDebugVisualizer(p.COV_ENABLE_SHADOWS, 0)
+
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.setGravity(0, 0, -9.81)
         self._dbg_path_ids = []   # pybullet debug item ids for the A* path
@@ -244,7 +264,6 @@ class CrowdNavPyBulletEnv(gym.Env):
         self._s_last = 0.0      # for debugging/guard
         self._path_L = 0.0
 
-        
         
         self._last_replan_step = -10**9
 
@@ -290,6 +309,13 @@ class CrowdNavPyBulletEnv(gym.Env):
         self.theta_cont = 0.0     # <-- new: continuous heading
         self.goal_pos = np.array([4.0, 4.0])
         self._theta_ref_prev = None
+        
+        
+        self._spawn_rect = {
+            "start": SPAWN_BBOX_START if USE_OBJ_MAP else None,
+            "goal":  SPAWN_BBOX_GOAL  if USE_OBJ_MAP else None,
+        }
+
 
         # limits
         self.v_max = min(v_max_cap, self.tb3.v_max_cap)
@@ -379,25 +405,48 @@ class CrowdNavPyBulletEnv(gym.Env):
         #     self._dbg_path_ids.append(uid)
             
             
-        
+    def _draw_spawn_rect(self, rect, rgb):
+        if rect is None: return
+        x0, y0, x1, y1 = rect
+        pts = [(x0,y0,0.02),(x1,y0,0.02),(x1,y1,0.02),(x0,y1,0.02)]
+        for a,b in zip(pts, pts[1:]+pts[:1]):
+            p.addUserDebugLine(a,b,rgb, lineWidth=2, lifeTime=0)
+
+
             
-            
         
-
-
-
     def find_free_grid(self, label, avoid=None, min_dist=0.5, max_attempts=200, border_margin=0.2):
         """
-        Sample a free world cell for <label>, optionally far from 'avoid'.
-        border_margin: keep samples at least this many meters away from world edges.
+        Sample a free world cell for <label> within an optional spawn rectangle.
+        If no rectangle, sample the whole grid extent (your current behavior).
         """
-        
-        half = float(self.half_size)
-        margin = float(border_margin)
+        rect = self._spawn_rect.get(label, None)
+
+        def _sample_world_xy():
+            if rect is not None:
+                x0, y0, x1, y1 = rect
+                # normalize (in case inputs are swapped)
+                lo_x, hi_x = (min(x0, x1), max(x0, x1))
+                lo_y, hi_y = (min(y0, y1), max(y0, y1))
+                x = self._rng.uniform(lo_x, hi_x)
+                y = self._rng.uniform(lo_y, hi_y)
+                return x, y
+            else:
+                # fallback: derive from grid shape (centered-at-origin assumption)
+                H, W = self.grid.shape
+                half_x = 0.5 * W * self.resolution
+                half_y = 0.5 * H * self.resolution
+                m = float(border_margin)
+                x = self._rng.uniform(-half_x + m, +half_x - m)
+                y = self._rng.uniform(-half_y + m, +half_y - m)
+                return x, y
+
         for _ in range(int(max_attempts)):
-            x = self._rng.uniform(-half + margin, half - margin)
-            y = self._rng.uniform(-half + margin, half - margin)
+            x, y = _sample_world_xy()
             r, c = self.world_to_grid((x, y))
+            # bounds & free check
+            if r < 0 or r >= self.grid.shape[0] or c < 0 or c >= self.grid.shape[1]:
+                continue
             if self.grid[r, c] != 0:
                 continue
             w = self.grid_to_world((r, c))
@@ -406,7 +455,10 @@ class CrowdNavPyBulletEnv(gym.Env):
                 if np.linalg.norm(w - ref) < float(min_dist):
                     continue
             return (r, c)
+
         raise ValueError(f"Could not find free {label} cell after {max_attempts} tries")
+
+
 
 
     def reset(self, visualize: bool = False,
@@ -416,6 +468,8 @@ class CrowdNavPyBulletEnv(gym.Env):
         """
         If randomize=True, pick random free start/goal with a valid A* path and
         a minimum separation in meters.
+        
+        
         """
         self._theta_ref_prev = None
         self.step_count = 0
@@ -426,6 +480,14 @@ class CrowdNavPyBulletEnv(gym.Env):
         self._omega_sat_streak = 0
         self._last_wp_idx = 0
         self._force_pivot = False
+        
+        
+            # call in reset(), once per episode
+        if USE_OBJ_MAP:
+            self._draw_spawn_rect(self._spawn_rect["start"], (0,0,1))
+            self._draw_spawn_rect(self._spawn_rect["goal"],  (0,1,0))
+
+        # time.sleep(2000) #REMOVE THIS WHEN FOR REALSIES
 
 
         # (optional) clear old debug path items
@@ -483,6 +545,9 @@ class CrowdNavPyBulletEnv(gym.Env):
             self.dyn.reset_pose(self.robot_pos, self.theta, z=0.008)
             p.addUserDebugLine([*self.goal_pos,0],[*self.goal_pos,10],[0,1,0], lineWidth=3, lifeTime=0)
             replanned = self.path.maybe_replan(0, self.robot_pos, self.goal_pos)
+            
+            
+        
 
         # after: replanned = self.path.maybe_replan(0, self.robot_pos, self.goal_pos)
         # and before drawing the path
@@ -496,7 +561,6 @@ class CrowdNavPyBulletEnv(gym.Env):
             self._path_L = 0.0
 
 
-
         # Draw the path if available
         if replanned:
             
@@ -504,18 +568,6 @@ class CrowdNavPyBulletEnv(gym.Env):
                                   vertical_count=10, connect=True,
                                   label_every=1, text_size=1.2)
 
-
-
-        
-        # # Prime HUD (you already throttle updates in step)
-        # self.hud.follow(self.robot_pos, [
-        #     "MPC HUD",
-        #     "pos: -, - | v,w: -, -",
-        #     f"wp: 0/0 | phase: {self.phase}"
-        # ])
-        
-        
-        
 
         # wheel dynamics tuning
         try:
@@ -547,6 +599,9 @@ class CrowdNavPyBulletEnv(gym.Env):
 
     def step(self, action):
         try:
+            # time.sleep(2000) #REMOVE THIS WHEN FOR REALSIES
+            
+            
             self.step_count += 1
             print(self.step_count)
             self._update_pose()
